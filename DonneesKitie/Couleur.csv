@@ -1,4 +1,4 @@
-﻿idCouleur;Couleur
+IdCouleur;NomCouleur
 1;Blanc
 2;Noir
 3;Chocolat
@@ -7,7 +7,7 @@
 6;Charbonnée
 7;Gris
 8;Bleu
-9;Tricolor(Noir, Blanc, Marron)
+9;Tricolore (Noir, Blanc, Marron)
 10;Feu
 11;Beige
 12;Bringe
