@@ -1,0 +1,121 @@
+ Box  ;  Num  ;  Dat. Ent  ;   ;  Naiss  ;   ;  Stér  ;  Race  ;  Couleur  ;  Nom  ;  Identification  ;  2nd V 
+R101  ;  085242  ;  02/01/2020  ;  AB  ;  09/2012 (7 a)  ;  F  ;  X  ;  TERRIER JACK RUSSEL  ;  BLANC & FAUVE  ;  PEPETTE  ;  802025753  ;  10/01/2020  
+R101  ;  085268  ;  06/01/2020  ;   ;  04/2008 (11 a)  ;  M  ;  X  ;  JACK RUSSEL  ;  NOIR ET BLANC  ;  DINGO DIT DISCO  ;  500069127  ;  24/01/2020  
+R102  ;  085067  ;  26/11/2019  ;   ;  11/2013 (6 a)  ;  M  ;  X  ;  X JACK RUSSEL  ;  BLANC & MARRON  ;  HAWAI  ;  743141270  ;  24/12/2019  
+R105  ;  085244  ;  02/01/2020  ;   ;  01/2012 (8 a)  ;  M  ;  X  ;  FAUVE DE BRETAGNE  ;  FAUVE  ;  SAMY  ;  743185967  ;  24/01/2020  
+R105  ;  085306  ;  10/01/2020  ;  AB  ;  05/2008 (11 a)  ;  M  ;   ;  EPAGNEUL BRETON  ;  BLANC & MARRON  ;  BILLY  ;  604021670  ;   
+R106  ;  085159  ;  14/12/2019  ;   ;  12/2009 (10 a)  ;  F  ;  X  ;  GRIFFON BLEU DE GASG  ;  TRICOLORE  ;  OLGA  ;  743185979  ;  10/01/2020  
+R106  ;  085379  ;  25/01/2020  ;   ;  05/2010 (9 a)  ;  M  ;  X  ;  X CANICHE  ;  NOIR  ;  FILOU  ;  604150223  ;   
+R106  ;  085405  ;  31/01/2020  ;  AB  ;  07/2017 (2 a)  ;  F  ;  X  ;  YORKSHIRE X  ;  NOIR ET FEU  ;  NINA  ;  238AVS  ;  24/12/2019  
+R107  ;  084816  ;  17/10/2019  ;   ;  04/2018 (1 a)  ;  F  ;  X  ;  BEAGLE  ;  TRICOLORE  ;  L6BX26  ;  712678707  ;  26/11/2019  
+R107  ;  084817  ;  17/10/2019  ;   ;  08/2015 (4 a)  ;  F  ;  X  ;  BEAGLE  ;  TRICOLORE  ;  E1BK22  ;  712339421  ;  26/11/2019  
+R107  ;  085357  ;  21/01/2020  ;   ;  04/2018 (1 a)  ;  F  ;  X  ;  BEAGLE  ;  TRICOLORE  ;  OLLIE  ;  712678597  ;  26/11/2019  
+R108  ;  085267  ;  06/01/2020  ;   ;  03/2019 (11 M)  ;  M  ;  X  ;  EPAGNEUL BRETON  ;  MARRON ET BLANC  ;  MARCO  ;  743185862  ;  24/01/2020  
+R108  ;  085343  ;  17/01/2020  ;  AB  ;  08/2018 (1 a)  ;  M  ;  X  ;  X BORDER  ;  TRICOLORE  ;  OPS  ;  600192550  ;  15/11/2019  
+R109  ;  085279  ;  07/01/2020  ;   ;  06/2015 (4 a)  ;  F  ;  X  ;  X JACK  ;  NOIR & BLANC  ;  AYA  ;  743185385  ;  31/01/2020  
+R109  ;  085294  ;  09/01/2020  ;   ;  02/2016 (4 a)  ;  M  ;  X  ;  X CHASSE  ;  MARRON ET BLANC  ;  NELSON  ;  731679311  ;  31/01/2020  
+R110  ;  085192  ;  20/12/2019  ;   ;  12/2009 (10 a)  ;  M  ;  X  ;  GRIFFON  ;  NOIR ET BLANC  ;  NIKOS  ;  743185886  ;  10/01/2020  
+R110  ;  085214  ;  26/12/2019  ;   ;  12/2017 (2 a)  ;  M  ;  X  ;  X BEAGLE  ;  TRICOLORE  ;  PLATO  ;  743140960  ;  14/01/2020  
+R111  ;  084554  ;  10/09/2019  ;   ;  04/2015 (4 a)  ;  M  ;  X  ;  X JACK RUSSEL  ;  BLANC & MARRON  ;  ROXY  ;  731559353  ;  05/04/2019  
+R112  ;  085118  ;  09/12/2019  ;   ;  01/2018 (2 a)  ;  F  ;  X  ;  X RATIER  ;  BEIGE  ;  PAPRIKA  ;  743185870  ;  31/01/2020  
+R112  ;  085133  ;  10/12/2019  ;  AB  ;  08/2018 (1 a)  ;  F  ;  X  ;  X BOULEDOGUE  ;  BLANC & BRINGE  ;  PEPITA  ;  743185584  ;  31/01/2020  
+R112  ;  085134  ;  10/12/2019  ;  AB  ;  01/2016 (4 a)  ;  M  ;  X  ;  X BOULEDOGUE  ;  MARRON ET BLANC  ;  PIRATE  ;  743185925  ;  31/01/2020  
+R112  ;  085138  ;  11/12/2019  ;   ;  01/2016 (4 a)  ;  F  ;  X  ;  X RATIER GRIFFON  ;  BRINGE  ;  POMME  ;  743186333  ;  31/01/2020  
+R113  ;  085060  ;  23/11/2019  ;  AB  ;  04/2009 (10 a)  ;  F  ;  X  ;  BEAGLE  ;  TRICOLORE  ;  BELLA  ;  743140974  ;  03/01/2020  
+R113  ;  085282  ;  07/01/2020  ;   ;  02/2007 (13 a)  ;  M  ;  X  ;  BEAGLE  ;  TRICOLORE  ;  CHIPS DIT DORI  ;  700256398  ;  23/08/2019  
+R114  ;  085226  ;  28/12/2019  ;   ;  12/2017 (2 a)  ;  M  ;  X  ;  X JACK PAPILLON  ;  FAUVE & BLANC  ;  POKI  ;  201766694  ;   
+R114  ;  085255  ;  03/01/2020  ;  AB  ;  02/2015 (5 a)  ;  M  ;  X  ;  CANICHE  ;  ABRICOT  ;  DJANGO  ;  500751919  ;  31/01/2020  
+R114  ;  085284  ;  07/01/2020  ;  AB  ;  04/2014 (5 a)  ;  M  ;  X  ;  COCKER ANGLAIS  ;  NOIR ET FEU  ;  JANGO  ;  810539115  ;  14/01/2020  
+R201  ;  085361  ;  22/01/2020  ;   ;  01/2019 (1 a)  ;  F  ;   ;  X CHASSE  ;  TRICOLORE  ;  EPICE  ;  743185874  ;   
+R201  ;  085381  ;  27/01/2020  ;   ;  01/2018 (2 a)  ;  M  ;   ;  X BRUNO DU JURA  ;  NOIR ET FEU  ;  GALAK  ;  743186067  ;   
+R202  ;  085328  ;  15/01/2020  ;   ;  01/2018 (2 a)  ;  M  ;  X  ;  X BERGER  ;  BEIGE  ;  GIANI  ;  743186127  ;  31/01/2020  
+R203  ;  085370  ;  24/01/2020  ;   ;  06/2019 (8 M)  ;  M  ;   ;  X EPAGNEUL  ;  BLANC ET NOIR  ;  BALOO  ;  100106783  ;   
+R203  ;  085371  ;  24/01/2020  ;   ;  10/2018 (1 a)  ;  F  ;   ;  X BERGER  ;  FAUVE  ;  CORA  ;  100107161  ;   
+R204  ;  085250  ;  03/01/2020  ;   ;  01/2019 (1 a)  ;  F  ;  X  ;  X BRAQUE FRANCAIS  ;  MARRON ET BLANC  ;  FURAX  ;  100068026  ;  21/01/2020  
+R204  ;  085295  ;  09/01/2020  ;   ;  01/2016 (4 a)  ;  M  ;  X  ;  X CHASSE  ;  NOIR ET FEU  ;  ESPOIR  ;  743185952  ;   
+R204  ;  085296  ;  09/01/2020  ;   ;  01/2019 (1 a)  ;  F  ;  X  ;  X CHASSE  ;  TRICOLORE  ;  DJUNE  ;  743185918  ;   
+R205  ;  085263  ;  04/01/2020  ;   ;  03/2015 (4 a)  ;  F  ;  X  ;  X BERGER  ;  MARRON ET BLANC  ;  LUDIVINE  ;  606191738  ;   
+R205  ;  085264  ;  04/01/2020  ;   ;  12/2012 (7 a)  ;  F  ;  X  ;  X MALINOIS  ;  BICOLORE & FAUVE & NOIR  ;  BONNIE  ;  606100377  ;   
+R206  ;  085315  ;  11/01/2020  ;   ;  11/2018 (1 a)  ;  M  ;  X  ;  X CANE CORSO  ;  BRINGE  ;  PABLO  ;  608177696  ;   
+R206  ;  085327  ;  15/01/2020  ;   ;  07/2018 (1 a)  ;  F  ;  X  ;  X BERGER  ;  NOIR & BRINGE  ;  ETNA  ;  743185920  ;   
+R207  ;  085380  ;  25/01/2020  ;   ;  07/2018 (1 a)  ;  F  ;   ;  CROISE BERGER  ;  NOIR ET FEU  ;  MEITAY  ;  501507555  ;   
+R207  ;  085384  ;  27/01/2020  ;  AB  ;  07/2012 (7 a)  ;  M  ;   ;  X GRIFFON SETTER  ;  BLANC ET NOIR  ;  HARPER  ;  811542404  ;  14/03/2019  
+R208  ;  085414  ;  02/02/2020  ;   ;  06/2019 (8 M)  ;  M  ;  X  ;  X CHASSE  ;  MARRON ET BLANC  ;  PASSO  ;  732642022  ;  25/10/2019  
+R209  ;  085163  ;  14/12/2019  ;  AB  ;  02/2014 (6 a)  ;  M  ;  X  ;  X CHASSE  ;  NOIR ET BLANC  ;  FALCO  ;  016602813  ;  10/01/2020  
+R209  ;  085323  ;  13/01/2020  ;   ;  01/2019 (1 a)  ;  F  ;  X  ;  JACK RUSSEL  ;  BLANC & BRINGE  ;  PINA  ;  600230009  ;   
+R210  ;  085103  ;  04/12/2019  ;   ;  08/2017 (2 a)  ;  M  ;  X  ;  TY BERGER  ;  FAUVE & CHARBONNEE  ;  ZANGO  ;  501408688  ;  24/12/2019  
+R210  ;  085290  ;  08/01/2020  ;  AB  ;  11/2015 (4 a)  ;  F  ;  X  ;  EPAGNEUL BRETON  ;  BICOLORE & NOIR ET BLANC  ;  LAIKA  ;  732539708  ;  31/12/2019  
+R211  ;  085332  ;  16/01/2020  ;   ;  01/2016 (4 a)  ;  M  ;  X  ;  EPAGNEUL BRETON  ;  MARRON ET BLANC  ;  ASTON  ;  743185953  ;   
+R211  ;  085333  ;  16/01/2020  ;   ;  01/2016 (4 a)  ;  M  ;  X  ;  EPAGNEUL BRETON  ;  MARRON ET BLANC  ;  SNOOP  ;  743186265  ;   
+R212  ;  085203  ;  22/12/2019  ;   ;  09/2018 (1 a)  ;  M  ;  X  ;  X GRIFFON  ;  FAUVE & CHARBONNEE  ;  HATCHI  ;  743057463  ;  04/10/2019  
+R212  ;  085322  ;  13/01/2020  ;   ;  01/2011 (9 a)  ;  F  ;  X  ;  X ARIEGEOIS  ;  TRICOLORE  ;  FIDJI  ;  604321869  ;   
+R213  ;  085312  ;  11/01/2020  ;   ;  01/2019 (1 a)  ;  M  ;  X  ;  X BERGER  ;  BRINGE  ;  APOLO  ;  743185950  ;   
+R213  ;  085319  ;  13/01/2020  ;   ;  02/2019 (1 a)  ;  F  ;  X  ;  X BORDER COLLIE  ;  NOIR ET BLANC  ;  ALIKA  ;  743185900  ;   
+R214  ;  085390  ;  29/01/2020  ;   ;  01/2016 (4 a)  ;  M  ;   ;  X BERGER  ;  FAUVE  ;  DYLAN  ;  743186061  ;   
+R214  ;  085391  ;  29/01/2020  ;   ;  / ()  ;  M  ;   ;  MALINOIS X BA  ;  BRINGE  ;  FLAMM  ;  743186097  ;   
+R301  ;  085185  ;  19/12/2019  ;   ;  12/2018 (1 a)  ;  M  ;  X  ;  X BEAGLE  ;  BLANC ET NOIR & BRINGE  ;  MYLO  ;  732563697  ;  07/01/2020  
+R302  ;  084983  ;  10/11/2019  ;   ;  02/2014 (6 a)  ;  M  ;  X  ;  X DOGUE  ;  BLANC & MARRON  ;  NERVAL  ;  014752163  ;  20/09/2019  
+R304  ;  084132  ;  15/07/2019  ;   ;  08/2014 (5 a)  ;  F  ;  X  ;  X BERGER  ;  NOIR ET FEU  ;  MADIBA  ;  743019910  ;  27/08/2019  
+R304  ;  085065  ;  25/11/2019  ;  AB  ;  06/2018 (1 a)  ;  M  ;  X  ;  X BERGER GRIFFON  ;  NOIR ET FEU  ;  PACHA EX KENDJI  ;  732642085  ;  09/07/2019  
+R305  ;  084292  ;  07/08/2019  ;   ;  11/2018 (1 a)  ;  M  ;  X  ;  X BERGER/MALINOIS  ;  FAUVE  ;  BOUBA  ;  608258509  ;  27/08/2019  
+R306  ;  085249  ;  03/01/2020  ;   ;  01/2012 (8 a)  ;  M  ;  X  ;  X BERGER  ;  NOIR ET MARRON  ;  TYSON  ;  100068035  ;  21/01/2020  
+R307  ;  085232  ;  29/12/2019  ;  AB  ;  12/2008 (11 a)  ;  M  ;  X  ;  X BORDER LAB  ;  NOIR  ;  ROCKY  ;  743186111  ;  24/01/2020  
+R308  ;  084763  ;  10/10/2019  ;   ;  03/2015 (4 a)  ;  M  ;  X  ;  X BERGER  ;  BLANC & NOIR  ;  CAMENBERT  ;  606205619  ;  12/11/2019  
+R309  ;  085246  ;  02/01/2020  ;   ;  07/2014 (5 a)  ;  M  ;  X  ;  X LABRADOR BERGER  ;  NOIR & BLANC  ;  ATHOS  ;  731508984  ;  28/10/2019  
+R310  ;  084360  ;  16/08/2019  ;   ;  03/2015 (4 a)  ;  M  ;  X  ;  X BERGER  ;  MARRON ET BLANC  ;  TURTLE  ;  606201420  ;  13/08/2019  
+R311  ;  084865  ;  24/10/2019  ;   ;  10/2014 (5 a)  ;  M  ;  X  ;  X BERGER  ;  ARLEQUIN & NOIR & BLANC  ;  PIERROT  ;  743105688  ;  15/11/2019  
+R312  ;  085399  ;  30/01/2020  ;   ;  10/2017 (2 a)  ;  M  ;  X  ;  BERGER ALLEMAND X MA  ;  FAUVE & NOIR  ;  NOX  ;  732340306  ;  06/12/2019  
+R313  ;  085260  ;  04/01/2020  ;   ;  01/2016 (4 a)  ;  M  ;  X  ;  EPAGNEUL BRETON  ;  TRICOLORE  ;  MAX  ;  600041407  ;  24/01/2020  
+R403  ;  085330  ;  15/01/2020  ;   ;  09/2017 (2 a)  ;  F  ;  X  ;  CANE CORSO BERGER  ;  TRICOLORE  ;  CHANCE  ;  501387833  ;  28/05/2019  
+R405  ;  085309  ;  11/01/2020  ;   ;  01/2014 (6 a)  ;  M  ;  X  ;  X AKITA AMERICAIN  ;  NOIR ET BLANC  ;  TAO  ;  606090147  ;   
+R406  ;  085299  ;  09/01/2020  ;   ;  11/2017 (2 a)  ;  M  ;  X  ;  X GRIFFON KORTHAL  ;  NOIR ET BLANC  ;  BOSCO  ;  732192145  ;  09/05/2019  
+R407  ;  085123  ;  09/12/2019  ;   ;  04/2009 (10 a)  ;  M  ;  X  ;  BERGER DE BEAUCE  ;  NOIR ET FEU  ;  JACK  ;  500262918  ;  12/10/2019  
+R408  ;  084866  ;  24/10/2019  ;   ;  10/2016 (3 a)  ;  M  ;  X  ;  X DOGUE  ;  FAUVE & BLANC  ;  MURPHY  ;  812084551  ;  05/11/2019  
+R410  ;  085147  ;  12/12/2019  ;   ;  03/2011 (8 a)  ;  F  ;  X  ;  PITBULL  ;  BRINGE & BLEU & BLANC  ;  GEISHA  ;  731020202  ;  03/01/2020  
+R411  ;  083954  ;  20/06/2019  ;   ;  11/2014 (5 a)  ;  M  ;  X  ;  PITBULL  ;  NOIR  ;  TYE  ;  606558989  ;  09/07/2019  
+R412  ;  084185  ;  22/07/2019  ;   ;  07/2018 (1 a)  ;  M  ;  X  ;  PITBULL  ;  NOIR ET BLANC  ;  ARROW  ;  732579116  ;  09/08/2019  
+R413  ;  083701  ;  30/04/2019  ;   ;  04/2017 (2 a)  ;  M  ;  X  ;  PITBULL  ;  NOIR ET BLANC  ;  DOOGGY  ;  732578930  ;  17/05/2019  
+R414  ;  085228  ;  28/12/2019  ;   ;  12/2017 (2 a)  ;  F  ;  X  ;  AMERICAIN BULLY  ;  FAUVE  ;  INAYA  ;  811375114  ;  31/01/2020  
+R501  ;  083017  ;  26/11/2018  ;   ;  12/2016 (3 a)  ;  M  ;  X  ;  PITBULL  ;  FAUVE & BLANC  ;  SLAM  ;  732448639  ;  20/12/2019  
+R502  ;  083018  ;  26/11/2018  ;   ;  12/2016 (3 a)  ;  M  ;  X  ;  PITBULL  ;  NOIR ET BLANC  ;  ENOX  ;  732448688  ;  20/12/2019  
+R503  ;  085098  ;  04/12/2019  ;   ;  12/2018 (1 a)  ;  F  ;  X  ;  PITBULL  ;  FAUVE  ;  ULINE  ;  743141209  ;  31/12/2019  
+R504  ;  083847  ;  03/06/2019  ;   ;  12/2009 (10 a)  ;  M  ;  X  ;  STAFFORDSHIRE TERRIE  ;  BLANC & GRIS  ;  E TINO  ;  802037260  ;  25/06/2019  
+R505  ;  084888  ;  26/10/2019  ;   ;  04/2016 (3 a)  ;  M  ;  X  ;  STAFFORDSHIRE TERRIE  ;  FAUVE & BLANC  ;  MOKA DIT MEIKO  ;  731452679  ;  19/11/2019  
+R506  ;  083376  ;  13/02/2019  ;   ;  09/2016 (3 a)  ;  M  ;  X  ;  PITBULL  ;  NOIR ET BLANC  ;  TYSON  ;  501217962  ;  08/03/2019  
+R507  ;  083294  ;  24/01/2019  ;  AB  ;  05/2017 (2 a)  ;  M  ;  X  ;  STAFFORDSHIRE TERRIE  ;  NOIR ET BLANC  ;  NACHOS DE L IMPREINTE DE GOLIA  ;  811381926  ;  30/07/2019  
+R508  ;  084787  ;  13/10/2019  ;   ;  12/2014 (5 a)  ;  M  ;  X  ;  STAFFORDSHIRE TERRIE  ;  NOIR ET BLANC  ;  JOE DIT SULTAN  ;  606380724  ;  07/05/2019  
+R509  ;  079842  ;  10/06/2017  ;   ;  08/2013 (6 a)  ;  M  ;  X  ;  PITBULL  ;  GRIS ET BLANC  ;  ROCKY  ;  711025363  ;  11/10/2019  
+R510  ;  085300  ;  09/01/2020  ;   ;  07/2014 (5 a)  ;  M  ;  X  ;  PITBULL  ;  BLEU & BLANC  ;  BOSS  ;  732645334  ;  23/07/2019  
+R511  ;  085408  ;  31/01/2020  ;   ;  11/2007 (12 a)  ;  M  ;  X  ;  X STAFFIE  ;  NOIR ET BLANC  ;  PICSOU  ;  500048691  ;  11/01/2019  
+R512  ;  083893  ;  11/06/2019  ;   ;  06/2018 (1 a)  ;  M  ;  X  ;  PITBULL  ;  NOIR & BRINGE  ;  OWEN  ;  732645184  ;  05/07/2019  
+R513  ;  085031  ;  20/11/2019  ;   ;  11/2018 (1 a)  ;  M  ;  X  ;  PITBULL  ;  MARRON ET BLANC  ;  MUJDAT  ;  743104287  ;  03/12/2019  
+R514  ;  079723  ;  20/05/2017  ;   ;  02/2014 (6 a)  ;  F  ;  X  ;  X TERRIER  ;  BRINGE & BLANC  ;  MACHA  ;  731559255  ;  15/02/2019  
+R601  ;  084460  ;  28/08/2019  ;   ;  09/2015 (4 a)  ;  M  ;  X  ;  X MALINOIS  ;  BICOLORE & FAUVE & BLANC  ;  PRINCE  ;  743019646  ;  27/08/2019  
+R602  ;  083344  ;  05/02/2019  ;   ;  01/2017 (3 a)  ;  M  ;  X  ;  X GROENENDAEL  ;  NOIR  ;  JAGGER  ;  732137576  ;  14/01/2020  
+R603  ;  085213  ;  26/12/2019  ;   ;  11/2018 (1 a)  ;  F  ;  X  ;  X DOGUE ARGENTIN  ;  NOIR ET BLANC  ;  KIARA  ;  501631093  ;  31/01/2020  
+R604  ;  083597  ;  05/04/2019  ;   ;  09/2014 (5 a)  ;  M  ;  X  ;  EPAGNEUL BRETON  ;  BICOLORE & NOIR ET BLANC  ;  PETIT  ;  732033195  ;  11/10/2019  
+R605  ;  084130  ;  15/07/2019  ;   ;  07/2007 (12 a)  ;  M  ;  X  ;  TY COCKER  ;  NOIR ET BLANC  ;  CHARLY  ;  602218702  ;  02/08/2019  
+R606  ;  084707  ;  03/10/2019  ;   ;  01/2015 (5 a)  ;  F  ;  X  ;  XBERGER BELGE MALINO  ;  FAUVE & CHARBONNEE & NOIR  ;  GOLF  ;  501080512  ;  25/10/2019  
+R608  ;  084751  ;  09/10/2019  ;   ;  12/2016 (3 a)  ;  F  ;  X  ;  X BERGER  ;  NOIR  ;  NAYA  ;  743105653  ;  03/12/2019  
+R608  ;  084967  ;  08/11/2019  ;   ;  09/2018 (1 a)  ;  M  ;  X  ;  X BERGER  ;  NOIR  ;  DARK  ;  743057283  ;  04/10/2019  
+R609  ;  083155  ;  26/12/2018  ;   ;  05/2017 (2 a)  ;  F  ;  X  ;  X JACK  ;  BLANC & MARRON & NOIR  ;  LILI  ;  732192345  ;  18/06/2019  
+R610  ;  081456  ;  13/03/2018  ;   ;  07/2014 (5 a)  ;  M  ;  X  ;  BERGER BELGE MALINOI  ;  FAUVE & CHARBONNEE  ;  PANACHE  ;  732192089  ;  05/04/2019  
+R611  ;  083837  ;  01/06/2019  ;   ;  11/2016 (3 a)  ;  M  ;  X  ;  X GRIFFON BERGER  ;  NOIR ET BLANC  ;  SPIKE  ;  743105720  ;  10/12/2019  
+R612  ;  084784  ;  12/10/2019  ;   ;  11/2014 (5 a)  ;  M  ;  X  ;  X RATIER  ;  NOIR  ;  CHAMALLOW  ;  712252412  ;  06/09/2019  
+R613  ;  084116  ;  12/07/2019  ;   ;  11/2012 (7 a)  ;  F  ;  X  ;  X GRIFFON  ;  NOIR  ;  KALY  ;  743141300  ;  20/12/2019  
+R614  ;  081532  ;  29/03/2018  ;   ;  08/2012 (7 a)  ;  M  ;  X  ;  BERGER ALLEMAND  ;  NOIR ET FEU  ;  HERCULE  ;  500561547  ;  05/04/2019  
+R701  ;  083845  ;  03/06/2019  ;   ;  05/2017 (2 a)  ;  M  ;  X  ;  TERRIER DE CHASSE AL  ;  NOIR ET FEU  ;  PILOU  ;  600112272  ;  30/08/2019  
+R701  ;  085407  ;  31/01/2020  ;   ;  11/2018 (1 a)  ;  F  ;  X  ;  X GRIFFON  ;  NOIR ET BLANC  ;  ANETH DIT ETOILE  ;  743141181  ;  03/12/2019  
+R702  ;  083329  ;  01/02/2019  ;  AB  ;  01/2015 (5 a)  ;  M  ;  X  ;  XLABRADOR  ;  BLANC & BEIGE & TRUITE  ;  LYLO  ;  810673865  ;  08/03/2019  
+R703  ;  082644  ;  06/10/2018  ;   ;  02/2015 (5 a)  ;  M  ;  X  ;  X GRIFFON  ;  BLANC ET NOIR  ;  LENNY  ;  732137799  ;  08/03/2019  
+R704  ;  083319  ;  30/01/2019  ;   ;  12/2015 (4 a)  ;  M  ;  X  ;  MALINOIS  ;  CHARBONNEE & NOIR  ;  KIPPER  ;  731701634  ;  09/08/2019  
+R705  ;  085215  ;  26/12/2019  ;   ;  10/2017 (2 a)  ;  M  ;  X  ;  SHARPEI  ;  CHOCOLAT  ;  COLT  ;  732234302  ;  09/08/2019  
+R706  ;  081511  ;  22/03/2018  ;   ;  10/2008 (11 a)  ;  M  ;  X  ;  X BERGER  ;  NOIR ET FEU  ;  CARAMEL  ;  400009792  ;  09/08/2019  
+R707  ;  084683  ;  30/09/2019  ;   ;  08/2013 (6 a)  ;  F  ;  X  ;  X BERGER  ;  BRINGE  ;  CHAINA  ;  500770405  ;  24/01/2020  
+R708  ;  085115  ;  07/12/2019  ;  AB  ;  06/2009 (10 a)  ;  M  ;  X  ;  TY LABRADOR BERGER  ;  MARRON & BLANC  ;  STRYKE  ;  602842530  ;  25/07/2019  
+R709  ;  083887  ;  09/06/2019  ;  AB  ;  07/2017 (2 a)  ;  F  ;  X  ;  X LABARDOR BULL TERR  ;  NOIR & BLANC  ;  ETOILE  ;  732301158  ;  30/08/2019  
+R710  ;  085314  ;  11/01/2020  ;   ;  12/2009 (10 a)  ;  M  ;  X  ;  BERGER BELGE MALINOI  ;  FAUVE  ;  E PITT VON DER GLUCKEN  ;  602824117  ;   
+R711  ;  085179  ;  18/12/2019  ;   ;  10/2012 (7 a)  ;  F  ;  X  ;  X BERGER  ;  TRICOLORE  ;  LUNA  ;  606594777  ;  03/01/2020  
+R712  ;  085223  ;  28/12/2019  ;   ;  01/2014 (6 a)  ;  M  ;  X  ;  MALINOIS  ;  CHARBONNEE  ;  ELTON  ;  743186025  ;   
+R713  ;  084191  ;  23/07/2019  ;   ;  02/2013 (7 a)  ;  F  ;  X  ;  ROTWEILLER  ;  NOIR ET FEU  ;  ISIS  ;  604884959  ;  09/08/2019  
+R714  ;  085235  ;  29/12/2019  ;   ;  09/2018 (1 a)  ;  M  ;  X  ;  X BERGER  ;  NOIR ET BLANC  ;  TYSON  ;  608298259  ;  24/09/2019
