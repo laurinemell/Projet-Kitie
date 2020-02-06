@@ -1,4 +1,4 @@
-﻿etatLegal;Description
-1;Chiens d'attaque : permis de détention, identification, stérilisation, casier vierge, muselière, interdit dans les lieux publics
-2;Chiens de garde/défense : permis de détention, identification, stérilisation, casier vierge, muselière
-3;Autres chiens
+etatLegal;Description;Races;Obligations
+1;Chiens d'attaque;Pitbull, Boerbull;permis de détention, identification, stérilisation, casier vierge, muselière, interdit dans les lieux publics
+2;Chiens de garde/défense;Am Staff, Tosa, Rottweiler;permis de détention, identification, stérilisation, casier vierge, muselière
+3;Autres chiens;;
