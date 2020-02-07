@@ -8,184 +8,161 @@ idRace;nomRace
 7;Ariegeois
 8;Barzoï
 9;Basset des Alpes
-10;Beagle
-11;Beauceron
-12;Berger
-13;Berger allemand
-14;Berger allemand ma
+10;Basset Fauve de Bretagne
+11;Beagle
+12;Beauceron
+13;Berger
+14;Berger allemand
 15;Berger Australien
-16;Berger belge malino
-17;Berger belge malinoi
-18;Berger belge malinois
-19;Berger de beauce
-20;Berger griffon
-21;Berger Hollandais
-22;Berger/malinois
-23;Bernhardiner
-24;Bichon havanais
-25;Bichon maltais
-26;Billy
-27;Boerbull
-28;Boersoel
-29;Border
-30;Border collie
-31;Border lab
-32;Bouledogue
-33;Bouledogue Anglais
-34;Bouledogue français
-35;Bouvier bernois
-36;Boxer
-37;Braque francais
-38;Bruno du jura
-39;Bulldog anglais
-40;Bullmastiff
-41;Cane corso
-42;Cane corso berger
-43;Caniche
-44;Carlin
-45;Cavalier King Charles
-46;Cavalier King Charles Spaniel
-47;Chasse
-48;Chihuahua
-49;Cocker
-50;Cocker américain
-51;Cocker anglais
-52;Colley
-53;Croise berger
-54;Dalmatien
-55;Danois
-56;Dobermann
-57;Dogue
-58;Dogue allemand
-59;Dogue argentin
-60;Epagneul
-61;Epagneul breton
-62;Épagneul tibétain
-63;Eurasier
-64;Fauve de bretagne
-65;Fox terrier
-66;Golden Retriever
-67;Griffon
-68;Griffon berger
-69;Griffon bleu de gasg
-70;Griffon korthal
-71;Griffon setter
-72;Groenendael
-73;Hokkaïdo
-74;Husky
-75;Irish setter
-76;Irish terrier
-77;Irish wolfhound
-78;Italian greyhound
-79;Jack
-80;Jack papillon
-81;Jack russel
-82;Jack Russell
-83;Jagdterrier allemand
-84;Komondor
-85;Labardor bull terr
-86;Labrador
-87;Labrador berger
-88;Landseer
-89;Lévrier
-90;Lévrier afghan
-91;Lévrier anglais
-92;Lévrier ecossais
-93;Lévrier espagnol
-94;Lévrier hongrois
-95;Lévrier irlandais
-96;Lévrier polonais
-97;Lévrier sicilien
-98;Lévrier whippet
-99;Lhassa apso
-100;Loulou nain
-101;Malinois
-102;Maltais
-103;Manchester terrier
-104;Mastiff
-105;Mastiff tibétain
-106;Mâtin de navarre
-107;Mâtin des pyrénées
-108;Mâtin espagnol
-109;Mâtin napolitain
-110;Montagne des pyrénées
-111;Mops
-112;Newfoundland
-113;Norfolk-terrier
-114;Norwich terrier
-115;Old country bulldog
-116;Old english sheepdog
-117;Otterhound
-118;Pékinois
-119;Pinscher
-120;Pinscher allemand
-121;Pinscher autrichien à poil court
-122;Pinscher nain
-123;Pitbull
-124;Pointer
-125;Poitevin
-126;Ratier
-127;Ratier griffon
-128;Retriever
-129;Retriever à poil bouclé
-130;Retriever à poil plat
-131;Retriever de la baie de chesapeake
-132;Retriever de la Nouvelle-Ecosse
-133;Retriever doré
-134;Retriever du labrador
-135;Riezenschnauzer
-136;Rottweiler
-137;Rotweiller
-138;Russian toy
-139;Russkaya psovaya borzaya
-140;Russkiy toy
-141;Saint bernard
-142;Schipperke
-143;Sharpei
-144;Sheltie
-145;Shetland sheepdog
-146;Shiba
-147;Shiba inu
-148;Shichon
-149;Shih tzu
-150;Spitz
-151;Spitz allemand
-152;Staffie
-153;Staffordshire bull terrier
-154;Staffordshire terrie
-155;Staffordshire terrier
-156;Teckel
-157;Terre-neuve
-158;Terrier
-159;Terrier de chasse al
-160;Terrier jack russel
-161;Terrier tibétain
-162;Tosa
-163;Toy-terrier
-164;Ty berger
-165;Ty cocker
-166;Ty labrador berger
-167;U cursinu
-168;Vallhund suédois
-169;Vizsla
-170;Waterside-terrier
-171;Weimaraner
-172;Weisser schweizer schäferhund
-173;Welsh corgi
-174;Welsh corgi cardigan
-175;Welsh corgi pembroke
-176;Welsh springer spaniel
-177;Welsh terrier
-178;West-highland white-terrier
-179;Westfälische dachsbracke
-180;Westie
-181;Wetterhoun
-182;Whippet
-183;Wolfhound
-184;Xoloitzcuintle
-185;Yorkshire
-186;Yorshire
-187;Youjak
-188;Zwergaffen
-189;Zwergpinscher
-190;Zwergschnauzer
+16;Berger belge
+17;Berger de beauce
+18;Berger Hollandais
+19;Bernhardiner
+20;Bichon havanais
+21;Bichon maltais
+22;Billy
+23;bleu de gascogne
+24;Boerbull
+25;Boersoel
+26;Border collie
+27;Bouledogue
+28;Bouledogue Anglais
+29;Bouledogue français
+30;Bouvier bernois
+31;Boxer
+32;Braque francais
+33;Bruno du jura
+34;Bullmastiff
+35;Cane corso
+36;Caniche
+37;Carlin
+38;Cavalier King Charles
+39;Cavalier King Charles Spaniel
+40;Chasse
+41;Chihuahua
+42;Cocker
+43;Cocker américain
+44;Cocker anglais
+45;Colley
+46;Dalmatien
+47;Danois
+48;Dobermann
+49;Dogue
+50;Dogue allemand
+51;Dogue argentin
+52;Epagneul
+53;Epagneul breton
+54;Épagneul tibétain
+55;Eurasier
+56;Fox terrier
+57;Golden Retriever
+58;Griffon
+59;Griffon korthal
+60;Groenendael
+61;Hokkaïdo
+62;Husky
+63;Irish terrier
+64;Irish wolfhound
+65;Italian greyhound
+66;Jack Russell
+67;Jagdterrier allemand
+68;Komondor
+69;Labrador
+70;Landseer
+71;Lévrier
+72;Lévrier afghan
+73;Lévrier anglais
+74;Lévrier ecossais
+75;Lévrier espagnol
+76;Lévrier hongrois
+77;Lévrier irlandais
+78;Lévrier polonais
+79;Lévrier sicilien
+80;Lévrier whippet
+81;Lhassa apso
+82;Loulou nain
+83;Malinois
+84;Maltais
+85;Manchester terrier
+86;Mastiff
+87;Mastiff tibétain
+88;Mâtin de navarre
+89;Mâtin des pyrénées
+90;Mâtin espagnol
+91;Mâtin napolitain
+92;Montagne des pyrénées
+93;Mops
+94;Newfoundland
+95;Norfolk-terrier
+96;Norwich terrier
+97;Old country bulldog
+98;Old english sheepdog
+99;Otterhound
+100;Papillon
+101;Pékinois
+102;Pinscher
+103;Pinscher allemand
+104;Pinscher autrichien à poil court
+105;Pinscher nain
+106;Pitbull
+107;Pointer
+108;Poitevin
+109;Ratier
+110;Retriever
+111;Retriever à poil bouclé
+112;Retriever à poil plat
+113;Retriever de la baie de chesapeake
+114;Retriever de la Nouvelle-Ecosse
+115;Retriever doré
+116;Retriever du labrador
+117;Riezenschnauzer
+118;Rottweiler
+119;Russian toy
+120;Russkaya psovaya borzaya
+121;Russkiy toy
+122;Saint bernard
+123;Schipperke
+124;setter
+125;Sharpei
+126;Sheltie
+127;Shetland sheepdog
+128;Shiba
+129;Shiba inu
+130;Shichon
+131;Shih tzu
+132;Spitz
+133;Spitz allemand
+134;Staffie
+135;Staffordshire bull terrier
+136;Staffordshire terrier
+137;Teckel
+138;Terre-neuve
+139;Terrier
+140;Terrier tibétain
+141;Tosa
+142;Toy-terrier
+143;U cursinu
+144;Vallhund suédois
+145;Vizsla
+146;Waterside-terrier
+147;Weimaraner
+148;Weisser schweizer schäferhund
+149;Welsh corgi
+150;Welsh corgi cardigan
+151;Welsh corgi pembroke
+152;Welsh springer spaniel
+153;Welsh terrier
+154;West-highland white-terrier
+155;Westfälische dachsbracke
+156;Westie
+157;Wetterhoun
+158;Whippet
+159;Wolfhound
+160;Xoloitzcuintle
+161;Yorkshire
+162;Yorshire
+163;Youjak
+164;Zwergaffen
+165;Zwergpinscher
+166;Zwergschnauzer
+167;Bull terrier
