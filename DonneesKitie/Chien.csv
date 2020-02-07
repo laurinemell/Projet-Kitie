@@ -1,4 +1,4 @@
-Identification;NomChien;DateNaissanceChien;DateEntree;DateSortie;Sexe;Sterilisation;Tarification;Mordeur
+IdChien;NomChien;DateNaissanceChien;DateEntree;DateSortie;Sexe;Sterilisation;Tarification;Mordeur
   802025753  ;  PEPETTE  ;  09/2012 ;  02/01/2020  ;;1;1;3;
   500069127  ;  DINGO DIT DISCO  ;  04/2008 ;  06/01/2020  ;;0;1;1;
   743141270  ;  HAWAI  ;  11/2013   ;  26/11/2019  ;;0;1;1;
