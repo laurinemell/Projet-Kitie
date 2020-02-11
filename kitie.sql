@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 10, 2020 at 03:44 PM
+-- Generation Time: Feb 11, 2020 at 03:42 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -977,7 +977,7 @@ INSERT INTO `lof` (`idLof`, `Lof`) VALUES
 
 CREATE TABLE `loger` (
   `idBox` varchar(4) DEFAULT NULL,
-  `idChien` int(9) DEFAULT NULL,
+  `idChien` int(10) DEFAULT NULL,
   `dateDebut` varchar(10) DEFAULT NULL,
   `dateFin` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1171,7 +1171,6 @@ CREATE TABLE `races` (
 --
 
 INSERT INTO `races` (`idRace`, `nomRace`) VALUES
-(0, 'Aucune'),
 (1, 'Affenpinscher'),
 (2, 'Akita'),
 (3, 'Akita americain'),
@@ -1552,6 +1551,13 @@ ALTER TABLE `lof`
   ADD PRIMARY KEY (`idLof`);
 
 --
+-- Indexes for table `loger`
+--
+ALTER TABLE `loger`
+  ADD KEY `seLoger` (`idBox`),
+  ADD KEY `idChienLoger` (`idChien`);
+
+--
 -- Indexes for table `maladie`
 --
 ALTER TABLE `maladie`
@@ -1654,6 +1660,13 @@ ALTER TABLE `etreraces`
   ADD CONSTRAINT `etreDeRace` FOREIGN KEY (`idRace`) REFERENCES `races` (`idRace`),
   ADD CONSTRAINT `etrelof` FOREIGN KEY (`Lof`) REFERENCES `lof` (`idLof`),
   ADD CONSTRAINT `idChien1` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`);
+
+--
+-- Constraints for table `loger`
+--
+ALTER TABLE `loger`
+  ADD CONSTRAINT `idChienLoger` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
+  ADD CONSTRAINT `seLoger` FOREIGN KEY (`idBox`) REFERENCES `box` (`idBox`);
 
 --
 -- Constraints for table `utilisateur`
