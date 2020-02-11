@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 08, 2020 at 08:57 PM
+-- Generation Time: Feb 10, 2020 at 03:44 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -335,7 +335,7 @@ INSERT INTO `couleur` (`idCouleur`, `nomCouleur`) VALUES
 --
 
 CREATE TABLE `etatlegal` (
-  `etatLegal` int(1) NOT NULL,
+  `idCategorie` int(1) NOT NULL,
   `description` varchar(23) DEFAULT NULL,
   `races` varchar(26) DEFAULT NULL,
   `obligations` varchar(109) DEFAULT NULL
@@ -345,7 +345,7 @@ CREATE TABLE `etatlegal` (
 -- Dumping data for table `etatlegal`
 --
 
-INSERT INTO `etatlegal` (`etatLegal`, `description`, `races`, `obligations`) VALUES
+INSERT INTO `etatlegal` (`idCategorie`, `description`, `races`, `obligations`) VALUES
 (1, 'Chiens d\'attaque', 'Pitbull, Boerbull', 'permis de détention, identification, stérilisation, casier vierge, muselière, interdit dans les lieux publics'),
 (2, 'Chiens de garde/défense', 'Am Staff, Tosa, Rottweiler', 'permis de détention, identification, stérilisation, casier vierge, muselière'),
 (3, 'Autres chiens', '', '');
@@ -358,10 +358,225 @@ INSERT INTO `etatlegal` (`etatLegal`, `description`, `races`, `obligations`) VAL
 
 CREATE TABLE `etredecouleur` (
   `idChien` int(10) NOT NULL,
-  `idCouleur1` int(2) NOT NULL,
-  `idCouleur2` int(2) NOT NULL,
-  `idCouleur3` int(2) NOT NULL
+  `idCouleur` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `etredecouleur`
+--
+
+INSERT INTO `etredecouleur` (`idChien`, `idCouleur`) VALUES
+(810673865, 16),
+(743105688, 15),
+(606100377, 14),
+(732539708, 14),
+(743019646, 14),
+(732033195, 14),
+(500751919, 13),
+(743186333, 12),
+(608177696, 12),
+(743185950, 12),
+(743186097, 12),
+(731020202, 12),
+(731559255, 12),
+(500770405, 12),
+(743185584, 12),
+(743185920, 12),
+(600230009, 12),
+(732645184, 12),
+(732563697, 12),
+(743185870, 11),
+(743186127, 11),
+(810673865, 11),
+(743565979, 10),
+(810539115, 10),
+(743186067, 10),
+(743185952, 10),
+(501507555, 10),
+(743019910, 10),
+(732642085, 10),
+(500262918, 10),
+(500561547, 10),
+(600112272, 10),
+(400009792, 10),
+(604884959, 10),
+(743185979, 9),
+(712678707, 9),
+(712339421, 9),
+(712678597, 9),
+(600192550, 9),
+(743140960, 9),
+(743140974, 9),
+(700256398, 9),
+(743185874, 9),
+(743185918, 9),
+(604321869, 9),
+(600041407, 9),
+(501387833, 9),
+(606594777, 9),
+(732645334, 8),
+(731020202, 8),
+(711025363, 7),
+(802037260, 7),
+(731701634, 6),
+(743186025, 6),
+(501408688, 6),
+(743057463, 6),
+(501080512, 6),
+(732192089, 6),
+(743185967, 5),
+(201766694, 5),
+(100107161, 5),
+(501408688, 5),
+(743057463, 5),
+(743186061, 5),
+(608258509, 5),
+(732340306, 5),
+(812084551, 5),
+(811375114, 5),
+(732448639, 5),
+(743141209, 5),
+(731452679, 5),
+(501080512, 5),
+(732192089, 5),
+(602824117, 5),
+(802025753, 5),
+(606100377, 5),
+(743019646, 5),
+(743185862, 4),
+(731679311, 4),
+(743185925, 4),
+(100068026, 4),
+(606191738, 4),
+(732642022, 4),
+(743185953, 4),
+(743186265, 4),
+(606201420, 4),
+(743104287, 4),
+(602842530, 4),
+(743141270, 4),
+(604021670, 4),
+(731559353, 4),
+(14752163, 4),
+(100068035, 4),
+(732192345, 4),
+(732234302, 3),
+(500069127, 2),
+(604150223, 2),
+(743565979, 2),
+(743185385, 2),
+(743185886, 2),
+(810539115, 2),
+(743186067, 2),
+(743185952, 2),
+(743185920, 2),
+(501507555, 2),
+(16602813, 2),
+(743185900, 2),
+(743019910, 2),
+(732642085, 2),
+(100068035, 2),
+(743186111, 2),
+(731508984, 2),
+(606090147, 2),
+(732192145, 2),
+(500262918, 2),
+(606558989, 2),
+(732579116, 2),
+(732578930, 2),
+(732448688, 2),
+(501217962, 2),
+(811381926, 2),
+(606380724, 2),
+(500048691, 2),
+(732645184, 2),
+(732137576, 2),
+(501631093, 2),
+(602218702, 2),
+(743105653, 2),
+(743057283, 2),
+(743105720, 2),
+(712252412, 2),
+(743141300, 2),
+(500561547, 2),
+(600112272, 2),
+(743141181, 2),
+(400009792, 2),
+(732301158, 2),
+(604884959, 2),
+(608298259, 2),
+(100106783, 2),
+(811542404, 2),
+(732539708, 2),
+(732563697, 2),
+(606205619, 2),
+(743105688, 2),
+(732340306, 2),
+(732033195, 2),
+(732137799, 2),
+(731701634, 2),
+(606100377, 2),
+(501080512, 2),
+(732192345, 2),
+(802025753, 1),
+(743141270, 1),
+(604021670, 1),
+(731559353, 1),
+(743185584, 1),
+(100106783, 1),
+(811542404, 1),
+(600230009, 1),
+(732563697, 1),
+(14752163, 1),
+(606205619, 1),
+(802037260, 1),
+(732192345, 1),
+(810673865, 1),
+(732137799, 1),
+(500069127, 1),
+(743185862, 1),
+(743185385, 1),
+(731679311, 1),
+(743185886, 1),
+(743185925, 1),
+(201766694, 1),
+(100068026, 1),
+(606191738, 1),
+(732642022, 1),
+(16602813, 1),
+(743185953, 1),
+(743186265, 1),
+(743185900, 1),
+(731508984, 1),
+(606201420, 1),
+(606090147, 1),
+(732192145, 1),
+(812084551, 1),
+(732579116, 1),
+(732578930, 1),
+(732448639, 1),
+(732448688, 1),
+(731452679, 1),
+(501217962, 1),
+(811381926, 1),
+(606380724, 1),
+(711025363, 1),
+(732645334, 1),
+(500048691, 1),
+(743104287, 1),
+(731559255, 1),
+(501631093, 1),
+(602218702, 1),
+(743105720, 1),
+(743141181, 1),
+(602842530, 1),
+(732301158, 1),
+(608298259, 1),
+(732539708, 1),
+(743105688, 1),
+(731020202, 1),
+(743019646, 1),
+(732033195, 1);
 
 -- --------------------------------------------------------
 
@@ -374,6 +589,162 @@ CREATE TABLE `etremalade` (
   `idChien` int(10) DEFAULT NULL,
   `dateDiagnostique` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `etreraces`
+--
+
+CREATE TABLE `etreraces` (
+  `idChien` int(9) DEFAULT NULL,
+  `idRace` int(3) DEFAULT NULL,
+  `Categorie` int(1) DEFAULT NULL,
+  `Lof` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `etreraces`
+--
+
+INSERT INTO `etreraces` (`idChien`, `idRace`, `Categorie`, `Lof`) VALUES
+(802025753, 66, 3, 0),
+(500069127, 66, 3, 0),
+(743141270, 66, 3, 0),
+(743185967, 168, 3, 0),
+(604021670, 53, 3, 0),
+(743185979, 58, 3, 0),
+(743185979, 23, 3, 0),
+(604150223, 36, 3, 0),
+(743565979, 161, 3, 0),
+(712678707, 11, 3, 0),
+(712339421, 11, 3, 0),
+(712678597, 11, 3, 0),
+(743185862, 53, 3, 0),
+(600192550, 26, 3, 0),
+(743185385, 66, 3, 0),
+(731679311, 40, 3, 0),
+(743185886, 58, 3, 0),
+(743140960, 11, 3, 0),
+(731559353, 66, 3, 0),
+(743185870, 109, 3, 0),
+(743185584, 27, 3, 0),
+(743185925, 27, 3, 0),
+(743186333, 109, 3, 0),
+(743186333, 58, 3, 0),
+(743140974, 11, 3, 0),
+(700256398, 11, 3, 0),
+(201766694, 100, 3, 0),
+(201766694, 66, 3, 0),
+(500751919, 36, 3, 0),
+(810539115, 44, 3, 0),
+(743185874, 40, 3, 0),
+(743186067, 33, 3, 0),
+(743186127, 13, 3, 0),
+(100106783, 52, 3, 0),
+(100107161, 13, 3, 0),
+(100068026, 32, 3, 0),
+(743185952, 40, 3, 0),
+(743185918, 40, 3, 0),
+(606191738, 13, 3, 0),
+(606100377, 83, 3, 0),
+(608177696, 35, 3, 0),
+(743185920, 13, 3, 0),
+(501507555, 13, 3, 0),
+(811542404, 124, 3, 0),
+(811542404, 58, 3, 0),
+(732642022, 40, 3, 0),
+(16602813, 40, 3, 0),
+(600230009, 66, 3, 0),
+(501408688, 13, 3, 0),
+(732539708, 53, 3, 0),
+(743185953, 53, 3, 0),
+(743186265, 53, 3, 0),
+(743057463, 58, 3, 0),
+(604321869, 7, 3, 0),
+(743185950, 13, 3, 0),
+(743185900, 26, 3, 0),
+(743186061, 13, 3, 0),
+(743186097, 14, 3, 0),
+(743186097, 83, 3, 0),
+(732563697, 11, 3, 0),
+(14752163, 50, 3, 0),
+(743019910, 13, 3, 0),
+(732642085, 58, 3, 0),
+(732642085, 13, 3, 0),
+(608258509, 83, 3, 0),
+(608258509, 13, 3, 0),
+(100068035, 13, 3, 0),
+(743186111, 69, 3, 0),
+(743186111, 26, 3, 0),
+(606205619, 13, 3, 0),
+(731508984, 69, 3, 0),
+(731508984, 13, 3, 0),
+(606201420, 13, 3, 0),
+(743105688, 13, 3, 0),
+(732340306, 83, 3, 0),
+(732340306, 14, 3, 0),
+(600041407, 53, 3, 0),
+(501387833, 13, 3, 0),
+(501387833, 35, 3, 0),
+(606090147, 3, 3, 0),
+(732192145, 59, 3, 0),
+(500262918, 17, 3, 0),
+(812084551, 50, 3, 0),
+(731020202, 106, 1, 0),
+(606558989, 106, 1, 0),
+(732579116, 106, 1, 0),
+(732578930, 106, 1, 0),
+(811375114, 4, 3, 0),
+(732448639, 106, 1, 0),
+(732448688, 106, 1, 0),
+(743141209, 106, 1, 0),
+(802037260, 136, 2, 1),
+(731452679, 136, 2, 1),
+(501217962, 106, 1, 0),
+(811381926, 136, 2, 1),
+(606380724, 136, 2, 1),
+(711025363, 106, 1, 0),
+(732645334, 106, 1, 0),
+(500048691, 136, 3, 0),
+(732645184, 106, 1, 0),
+(743104287, 106, 1, 0),
+(731559255, 139, 3, 0),
+(743019646, 83, 3, 0),
+(732137576, 60, 3, 0),
+(501631093, 51, 3, 0),
+(732033195, 53, 3, 0),
+(602218702, 42, 3, 0),
+(501080512, 83, 3, 0),
+(501080512, 16, 3, 0),
+(743105653, 13, 3, 0),
+(743057283, 13, 3, 0),
+(732192345, 66, 3, 0),
+(732192089, 83, 3, 0),
+(732192089, 16, 3, 0),
+(743105720, 13, 3, 0),
+(743105720, 58, 3, 0),
+(712252412, 109, 3, 0),
+(743141300, 58, 3, 0),
+(500561547, 14, 3, 1),
+(600112272, 67, 3, 0),
+(743141181, 58, 3, 0),
+(810673865, 69, 3, 0),
+(732137799, 58, 3, 0),
+(731701634, 83, 3, 0),
+(732234302, 125, 3, 0),
+(400009792, 13, 3, 0),
+(500770405, 13, 3, 0),
+(602842530, 13, 3, 0),
+(602842530, 69, 3, 0),
+(732301158, 167, 3, 0),
+(732301158, 69, 3, 0),
+(602824117, 83, 3, 0),
+(602824117, 16, 3, 0),
+(606594777, 13, 3, 0),
+(743186025, 83, 3, 0),
+(604884959, 118, 3, 1),
+(608298259, 13, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -454,9 +825,110 @@ INSERT INTO `etresociable` (`idChien`, `idIndividu`, `Appreciation`) VALUES
 
 CREATE TABLE `etrevaccine` (
   `idChien` int(10) DEFAULT NULL,
-  `idVaccin` varchar(1) DEFAULT NULL,
+  `idVaccin` int(1) DEFAULT NULL,
   `dateVaccin` varchar(14) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `etrevaccine`
+--
+
+INSERT INTO `etrevaccine` (`idChien`, `idVaccin`, `dateVaccin`) VALUES
+(802025753, 1, '2020-01-10'),
+(500069127, 1, '2020-01-24'),
+(743141270, 1, '2019-12-24'),
+(743185967, 1, '2020-01-24'),
+(743185979, 1, '2020-01-10'),
+(743565979, 1, '2019-12-24'),
+(712678707, 1, '2019-11-26'),
+(712339421, 1, '2019-11-26'),
+(712678597, 1, '2019-11-26'),
+(743185862, 1, '2020-01-24'),
+(600192550, 1, '2019-11-15'),
+(743185385, 1, '2020-01-31'),
+(731679311, 1, '2020-01-31'),
+(743185886, 1, '2020-01-10'),
+(743140960, 1, '2020-01-14'),
+(731559353, 1, '2019-04-05'),
+(743185870, 1, '2020-01-31'),
+(743185584, 1, '2020-01-31'),
+(743185925, 1, '2020-01-31'),
+(743186333, 1, '2020-01-31'),
+(743140974, 1, '2020-01-03'),
+(700256398, 1, '2019-08-23'),
+(500751919, 1, '2020-01-31'),
+(810539115, 1, '2020-01-14'),
+(743186127, 1, '2020-01-31'),
+(100068026, 1, '2020-01-21'),
+(811542404, 1, '2019-03-14'),
+(732642022, 1, '2019-10-25'),
+(16602813, 1, '2020-01-10'),
+(501408688, 1, '2019-12-24'),
+(732539708, 1, '2019-12-31'),
+(743057463, 1, '2019-10-04'),
+(732563697, 1, '2020-01-07'),
+(14752163, 1, '2019-09-20'),
+(743019910, 1, '2019-08-27'),
+(732642085, 1, '2019-07-09'),
+(608258509, 1, '2019-08-27'),
+(100068035, 1, '2020-01-21'),
+(743186111, 1, '2020-01-24'),
+(606205619, 1, '2019-11-12'),
+(731508984, 1, '2019-10-28'),
+(606201420, 1, '2019-08-13'),
+(743105688, 1, '2019-11-15'),
+(732340306, 1, '2019-12-06'),
+(600041407, 1, '2020-01-24'),
+(501387833, 1, '2019-05-28'),
+(732192145, 1, '2019-05-09'),
+(500262918, 1, '2019-10-12'),
+(812084551, 1, '2019-11-05'),
+(731020202, 1, '2020-01-03'),
+(606558989, 1, '2019-07-09'),
+(732579116, 1, '2019-08-09'),
+(732578930, 1, '2019-05-17'),
+(811375114, 1, '2020-01-31'),
+(732448639, 1, '2019-12-20'),
+(732448688, 1, '2019-12-20'),
+(743141209, 1, '2019-12-31'),
+(802037260, 1, '2019-06-25'),
+(731452679, 1, '2019-11-19'),
+(501217962, 1, '2019-03-08'),
+(811381926, 1, '2019-07-30'),
+(606380724, 1, '2019-05-07'),
+(711025363, 1, '2019-10-11'),
+(732645334, 1, '2019-07-23'),
+(500048691, 1, '2019-01-11'),
+(732645184, 1, '2019-07-05'),
+(743104287, 1, '2019-12-03'),
+(731559255, 1, '2019-02-15'),
+(743019646, 1, '2019-08-27'),
+(732137576, 1, '2020-01-14'),
+(501631093, 1, '2020-01-31'),
+(732033195, 1, '2019-10-11'),
+(602218702, 1, '2019-08-02'),
+(501080512, 1, '2019-10-25'),
+(743105653, 1, '2019-12-03'),
+(743057283, 1, '2019-10-04'),
+(732192345, 1, '2019-06-18'),
+(732192089, 1, '2019-04-05'),
+(743105720, 1, '2019-12-10'),
+(712252412, 1, '2019-09-06'),
+(743141300, 1, '2019-12-20'),
+(500561547, 1, '2019-04-05'),
+(600112272, 1, '2019-08-30'),
+(743141181, 1, '2019-12-03'),
+(810673865, 1, '2019-03-08'),
+(732137799, 1, '2019-03-08'),
+(731701634, 1, '2019-08-09'),
+(732234302, 1, '2019-08-09'),
+(400009792, 1, '2019-08-09'),
+(500770405, 1, '2020-01-24'),
+(602842530, 1, '2019-07-25'),
+(732301158, 1, '2019-08-30'),
+(606594777, 1, '2020-01-03'),
+(604884959, 1, '2019-08-09'),
+(608298259, 1, '2019-09-24');
 
 -- --------------------------------------------------------
 
@@ -686,6 +1158,192 @@ INSERT INTO `mordeur` (`idMordeur`, `Evaluation`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `races`
+--
+
+CREATE TABLE `races` (
+  `idRace` int(3) NOT NULL,
+  `nomRace` varchar(34) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `races`
+--
+
+INSERT INTO `races` (`idRace`, `nomRace`) VALUES
+(0, 'Aucune'),
+(1, 'Affenpinscher'),
+(2, 'Akita'),
+(3, 'Akita americain'),
+(4, 'Americain bully'),
+(5, 'American Staffordshire Terrier'),
+(6, 'Amstaff'),
+(7, 'Ariegeois'),
+(8, 'Barzoï'),
+(9, 'Basset des Alpes'),
+(10, 'Basset'),
+(11, 'Beagle'),
+(12, 'Beauceron'),
+(13, 'Berger'),
+(14, 'Berger allemand'),
+(15, 'Berger Australien'),
+(16, 'Berger belge'),
+(17, 'Berger de beauce'),
+(18, 'Berger Hollandais'),
+(19, 'Bernhardiner'),
+(20, 'Bichon havanais'),
+(21, 'Bichon maltais'),
+(22, 'Billy'),
+(23, 'Bleu de gascogne'),
+(24, 'Boerbull'),
+(25, 'Boersoel'),
+(26, 'Border collie'),
+(27, 'Bouledogue'),
+(28, 'Bouledogue Anglais'),
+(29, 'Bouledogue français'),
+(30, 'Bouvier bernois'),
+(31, 'Boxer'),
+(32, 'Braque francais'),
+(33, 'Bruno du jura'),
+(34, 'Bullmastiff'),
+(35, 'Cane corso'),
+(36, 'Caniche'),
+(37, 'Carlin'),
+(38, 'Cavalier King Charles'),
+(39, 'Cavalier King Charles Spaniel'),
+(40, 'Chasse'),
+(41, 'Chihuahua'),
+(42, 'Cocker'),
+(43, 'Cocker américain'),
+(44, 'Cocker anglais'),
+(45, 'Colley'),
+(46, 'Dalmatien'),
+(47, 'Danois'),
+(48, 'Dobermann'),
+(49, 'Dogue'),
+(50, 'Dogue allemand'),
+(51, 'Dogue argentin'),
+(52, 'Epagneul'),
+(53, 'Epagneul breton'),
+(54, 'Épagneul tibétain'),
+(55, 'Eurasier'),
+(56, 'Fox terrier'),
+(57, 'Golden Retriever'),
+(58, 'Griffon'),
+(59, 'Griffon korthal'),
+(60, 'Groenendael'),
+(61, 'Hokkaïdo'),
+(62, 'Husky'),
+(63, 'Irish terrier'),
+(64, 'Irish wolfhound'),
+(65, 'Italian greyhound'),
+(66, 'Jack Russell'),
+(67, 'Jagdterrier allemand'),
+(68, 'Komondor'),
+(69, 'Labrador'),
+(70, 'Landseer'),
+(71, 'Lévrier'),
+(72, 'Lévrier afghan'),
+(73, 'Lévrier anglais'),
+(74, 'Lévrier ecossais'),
+(75, 'Lévrier espagnol'),
+(76, 'Lévrier hongrois'),
+(77, 'Lévrier irlandais'),
+(78, 'Lévrier polonais'),
+(79, 'Lévrier sicilien'),
+(80, 'Lévrier whippet'),
+(81, 'Lhassa apso'),
+(82, 'Loulou nain'),
+(83, 'Malinois'),
+(84, 'Maltais'),
+(85, 'Manchester terrier'),
+(86, 'Mastiff'),
+(87, 'Mastiff tibétain'),
+(88, 'Mâtin de navarre'),
+(89, 'Mâtin des pyrénées'),
+(90, 'Mâtin espagnol'),
+(91, 'Mâtin napolitain'),
+(92, 'Montagne des pyrénées'),
+(93, 'Mops'),
+(94, 'Newfoundland'),
+(95, 'Norfolk-terrier'),
+(96, 'Norwich terrier'),
+(97, 'Old country bulldog'),
+(98, 'Old english sheepdog'),
+(99, 'Otterhound'),
+(100, 'Papillon'),
+(101, 'Pékinois'),
+(102, 'Pinscher'),
+(103, 'Pinscher allemand'),
+(104, 'Pinscher autrichien à poil court'),
+(105, 'Pinscher nain'),
+(106, 'Pitbull'),
+(107, 'Pointer'),
+(108, 'Poitevin'),
+(109, 'Ratier'),
+(110, 'Retriever'),
+(111, 'Retriever à poil bouclé'),
+(112, 'Retriever à poil plat'),
+(113, 'Retriever de la baie de chesapeake'),
+(114, 'Retriever de la Nouvelle-Ecosse'),
+(115, 'Retriever doré'),
+(116, 'Retriever du labrador'),
+(117, 'Riezenschnauzer'),
+(118, 'Rottweiler'),
+(119, 'Russian toy'),
+(120, 'Russkaya psovaya borzaya'),
+(121, 'Russkiy toy'),
+(122, 'Saint bernard'),
+(123, 'Schipperke'),
+(124, 'setter'),
+(125, 'Sharpei'),
+(126, 'Sheltie'),
+(127, 'Shetland sheepdog'),
+(128, 'Shiba'),
+(129, 'Shiba inu'),
+(130, 'Shichon'),
+(131, 'Shih tzu'),
+(132, 'Spitz'),
+(133, 'Spitz allemand'),
+(134, 'Staffie'),
+(135, 'Staffordshire bull terrier'),
+(136, 'Staffordshire terrier'),
+(137, 'Teckel'),
+(138, 'Terre-neuve'),
+(139, 'Terrier'),
+(140, 'Terrier tibétain'),
+(141, 'Tosa'),
+(142, 'Toy-terrier'),
+(143, 'U cursinu'),
+(144, 'Vallhund suédois'),
+(145, 'Vizsla'),
+(146, 'Waterside-terrier'),
+(147, 'Weimaraner'),
+(148, 'Weisser schweizer schäferhund'),
+(149, 'Welsh corgi'),
+(150, 'Welsh corgi cardigan'),
+(151, 'Welsh corgi pembroke'),
+(152, 'Welsh springer spaniel'),
+(153, 'Welsh terrier'),
+(154, 'West-highland white-terrier'),
+(155, 'Westfälische dachsbracke'),
+(156, 'Westie'),
+(157, 'Wetterhoun'),
+(158, 'Whippet'),
+(159, 'Wolfhound'),
+(160, 'Xoloitzcuintle'),
+(161, 'Yorkshire'),
+(162, 'Yorshire'),
+(163, 'Youjak'),
+(164, 'Zwergaffen'),
+(165, 'Zwergpinscher'),
+(166, 'Zwergschnauzer'),
+(167, 'Bull terrier'),
+(168, 'Fauve de Bretagne');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sexe`
 --
 
@@ -724,10 +1382,10 @@ INSERT INTO `sexehumain` (`sexeHum`, `etat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `statu`
+-- Table structure for table `statut`
 --
 
-CREATE TABLE `statu` (
+CREATE TABLE `statut` (
   `idStatut` int(1) NOT NULL,
   `Statut` varchar(8) DEFAULT NULL,
   `Lecture` int(1) DEFAULT NULL,
@@ -735,10 +1393,10 @@ CREATE TABLE `statu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `statu`
+-- Dumping data for table `statut`
 --
 
-INSERT INTO `statu` (`idStatut`, `Statut`, `Lecture`, `Modification`) VALUES
+INSERT INTO `statut` (`idStatut`, `Statut`, `Lecture`, `Modification`) VALUES
 (1, 'Employé', 1, 1),
 (2, 'Bénévole', 1, 0);
 
@@ -791,7 +1449,7 @@ INSERT INTO `tarification` (`idTarification`, `description`, `tarif`) VALUES
 
 CREATE TABLE `utilisateur` (
   `idUtilisateur` int(10) NOT NULL,
-  `statut` int(1) DEFAULT NULL,
+  `idStatut` int(1) DEFAULT NULL,
   `nom` varchar(25) DEFAULT NULL,
   `prenom` varchar(25) DEFAULT NULL,
   `age` int(3) DEFAULT NULL,
@@ -856,16 +1514,14 @@ ALTER TABLE `couleur`
 -- Indexes for table `etatlegal`
 --
 ALTER TABLE `etatlegal`
-  ADD PRIMARY KEY (`etatLegal`);
+  ADD PRIMARY KEY (`idCategorie`);
 
 --
 -- Indexes for table `etredecouleur`
 --
 ALTER TABLE `etredecouleur`
   ADD KEY `id` (`idChien`),
-  ADD KEY `idCouleur1` (`idCouleur1`),
-  ADD KEY `idCouleur2` (`idCouleur2`),
-  ADD KEY `idCouleur3` (`idCouleur3`);
+  ADD KEY `idCouleur1` (`idCouleur`);
 
 --
 -- Indexes for table `etremalade`
@@ -873,6 +1529,15 @@ ALTER TABLE `etredecouleur`
 ALTER TABLE `etremalade`
   ADD KEY `idChien` (`idChien`),
   ADD KEY `idMaladie` (`idMaladie`);
+
+--
+-- Indexes for table `etreraces`
+--
+ALTER TABLE `etreraces`
+  ADD KEY `idChien1` (`idChien`),
+  ADD KEY `etreDeRace` (`idRace`),
+  ADD KEY `etrelof` (`Lof`),
+  ADD KEY `etatLegal` (`Categorie`);
 
 --
 -- Indexes for table `individu`
@@ -899,6 +1564,12 @@ ALTER TABLE `mordeur`
   ADD PRIMARY KEY (`idMordeur`);
 
 --
+-- Indexes for table `races`
+--
+ALTER TABLE `races`
+  ADD PRIMARY KEY (`idRace`);
+
+--
 -- Indexes for table `sexe`
 --
 ALTER TABLE `sexe`
@@ -911,9 +1582,9 @@ ALTER TABLE `sexehumain`
   ADD PRIMARY KEY (`sexeHum`);
 
 --
--- Indexes for table `statu`
+-- Indexes for table `statut`
 --
-ALTER TABLE `statu`
+ALTER TABLE `statut`
   ADD PRIMARY KEY (`idStatut`);
 
 --
@@ -933,7 +1604,8 @@ ALTER TABLE `tarification`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`idUtilisateur`),
-  ADD KEY `idSexe1` (`idSexe`);
+  ADD KEY `idSexe1` (`idSexe`),
+  ADD KEY `leStatu` (`idStatut`);
 
 --
 -- Indexes for table `vaccin`
@@ -965,9 +1637,7 @@ ALTER TABLE `chien`
 --
 ALTER TABLE `etredecouleur`
   ADD CONSTRAINT `id` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
-  ADD CONSTRAINT `idCouleur1` FOREIGN KEY (`idCouleur1`) REFERENCES `couleur` (`idCouleur`),
-  ADD CONSTRAINT `idCouleur2` FOREIGN KEY (`idCouleur2`) REFERENCES `couleur` (`idCouleur`),
-  ADD CONSTRAINT `idCouleur3` FOREIGN KEY (`idCouleur3`) REFERENCES `couleur` (`idCouleur`);
+  ADD CONSTRAINT `idCouleur1` FOREIGN KEY (`idCouleur`) REFERENCES `couleur` (`idCouleur`);
 
 --
 -- Constraints for table `etremalade`
@@ -977,10 +1647,20 @@ ALTER TABLE `etremalade`
   ADD CONSTRAINT `idMaladie` FOREIGN KEY (`idMaladie`) REFERENCES `maladie` (`idMaladie`);
 
 --
+-- Constraints for table `etreraces`
+--
+ALTER TABLE `etreraces`
+  ADD CONSTRAINT `etatLegal` FOREIGN KEY (`Categorie`) REFERENCES `etatlegal` (`idCategorie`),
+  ADD CONSTRAINT `etreDeRace` FOREIGN KEY (`idRace`) REFERENCES `races` (`idRace`),
+  ADD CONSTRAINT `etrelof` FOREIGN KEY (`Lof`) REFERENCES `lof` (`idLof`),
+  ADD CONSTRAINT `idChien1` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`);
+
+--
 -- Constraints for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  ADD CONSTRAINT `idSexe1` FOREIGN KEY (`idSexe`) REFERENCES `sexehumain` (`sexeHum`);
+  ADD CONSTRAINT `idSexe1` FOREIGN KEY (`idSexe`) REFERENCES `sexehumain` (`sexeHum`),
+  ADD CONSTRAINT `leStatu` FOREIGN KEY (`idStatut`) REFERENCES `statut` (`idStatut`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
