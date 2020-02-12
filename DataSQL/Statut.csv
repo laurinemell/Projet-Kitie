@@ -1,2 +1,2 @@
-1;Employé;Lecture et modification
-2;Bénévole;Lecture
+1;Employé;TRUE;TRUE
+2;Bénévole;TRUE;FALSE
