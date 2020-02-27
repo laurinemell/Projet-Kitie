@@ -1,0 +1,51 @@
+
+html {background-color: orange;}
+h1 {color: whitesmoke;
+	 text-align: right;}
+p {color: whitesmoke;
+	text-align: right;
+	width: 200px;
+	}
+#logo {margin-left: 0;
+		 margin-top: 0;
+		 width: 200px;}
+#barreRecherche{border-radius: 10px;
+					 border-color: orange;
+					 box-shadow: none;}
+#img1{border-radius: 90px;
+		width: 360px}
+		
+.rond {
+  display: inline-block;
+  border: 2px dotted orange;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+img {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+
+/* Bonus : keep aspect-ratio */ 
+img {
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* Bonus : effect on :hover */
+img {
+  transition: object-position .25s;
+}
+img:hover {
+  object-position: center
+}
+
+/* Deco */
+body {
+  padding: 2em
+}
+
+	
