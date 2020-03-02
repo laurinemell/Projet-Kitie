@@ -12,7 +12,7 @@
 			<br>
 			<input type="submit" id="valider" name="name">
 		</div>
-		<div id="barreCriteres">
+		/*<div id="barreCriteres">
 			<label for="taille">Taille</label>
 			<select name="taille" id="taille">
 			<option value="">Choix d'une taille</option>
@@ -25,6 +25,7 @@
 			} 
 		$rep ->closeCursor()
 		?>	
+		*/
 			</select>
 		</div>
 			
