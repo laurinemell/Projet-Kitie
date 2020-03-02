@@ -30,7 +30,7 @@
 		<div>
 			<input class="foc" type="text" name="id"value=""  placeholder="Identifiant"/>
 			<br>
-			<input class="foc" type="text" name="mdp"value="" placeholder="Mot de passe"/>
+			<input class="foc" type="password" name="mdp"value="" placeholder="Mot de passe"/>
 			<br>
 			<input class="fb" type="submit"value="Valider"/>
 		</div>
