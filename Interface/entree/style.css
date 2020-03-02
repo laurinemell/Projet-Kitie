@@ -1,0 +1,30 @@
+html{
+	background-color : whitesmoke;
+	font-family: Open Sans; 
+	font-size: 18px; font-style: normal; 
+	font-variant: normal; font-weight: 700; 
+	line-height: 26.4px;
+}
+.fo{
+	/*Défini les boutons oranges*/
+  background-color:#FEBE7E;
+  border: none;=
+  color: darkgray;
+  padding: 16px 50px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 32px;
+}
+
+.fb{
+	/*Défini les boutons bleus*/
+  background-color:#3B76C8;
+  border: none;
+  color: whitesmoke;
+  padding: 16px 50px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 32px;
+}
