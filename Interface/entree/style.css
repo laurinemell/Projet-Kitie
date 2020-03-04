@@ -33,3 +33,15 @@ html{
   cursor: pointer;
   border-radius: 32px;
 }
+
+.bouton{
+	width: 100%;
+	text-align: center;
+	height: 100%
+	}
+.bouton_img{
+	top: 50%;
+	transform: translateY(-50%);
+	position: relative;
+	height: 200px;
+}
