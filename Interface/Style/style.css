@@ -33,3 +33,48 @@ html{
   cursor: pointer;
   border-radius: 32px;
 }
+
+.rectangle{
+  width: 5%;
+  background-color: #FEBE7E;
+  height: 100%;
+}
+
+.rond {
+  display: inline-block;
+  border: 2px solid orange;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+img {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+
+/* Bonus : keep aspect-ratio */ 
+img {
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* Bonus : effect on :hover */
+img {
+  transition: object-position .25s;
+}
+img:hover {
+  object-position: center
+}
+
+/* Deco */
+body {
+  padding: 2em
+}
+
+#imagesAcc{
+  width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+}

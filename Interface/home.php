@@ -1,11 +1,11 @@
 <html>
 	<head>
 		<title> Projet Kitie </title>
-		<link rel="stylesheet" href="style.css" type="text/css" />
-		<link rel="stylesheet" href="home.css" type="text/css" />		
+		<link rel="stylesheet" href="Style/style.css" type="text/css" />
+		<link rel="stylesheet" href="Style/home.css" type="text/css" />		
 	</head>
 	<body>
-		<a href="connexion.php ?>"><img id="logo" src="spaLogo.png"></a>
+		<a href="Connexe/connexion.php ?>"><img id="logo" src="Image/spaLogo.png"></a>
 		<div id="recherche">
 			<input type="text" id="barreRecherche" name="name">
 			<br>
@@ -24,15 +24,15 @@
 			</p>
 		</div>
 		<div id="imagesAcc">
-			<div class="rond"><img src="Kitie.jpg" alt="miaou" /></div>
-			<div  class="rond"> <img src="lakita.jpg"> </div>
-			<div  class="rond"> <img src="lakita.jpg"> </div>
-			<div  class="rond"> <img src="lakita.jpg"> </div>
-			<div  class="rond"> <img src="lakita.jpg"> </div>
-			<div  class="rond"> <img src="lakita.jpg"> </div>
-			<div  class="rond"> <img src="lakita.jpg"> </div>
-			<div  class="rond"> <img src="lakita.jpg"> </div>
-			<div  class="rond"> <img src="lakita.jpg"> </div>
+			<div class="rond"><img src="Image/Kitie.jpg" alt="miaou" /></div>
+			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
+			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
+			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
+			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
+			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
+			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
+			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
+			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
 		</div>
 	</body>
 </html>

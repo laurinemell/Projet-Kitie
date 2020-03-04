@@ -1,12 +1,12 @@
 <html>
 	<head>
 	<title>Ajout Bénévole</title>
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="../Style/style.css" type="text/css" />
 	<link rel="stylesheet" href="ajout-benevole.css" type="text/css" />
 	</head>
-	<img id="logo" src="spaLogo.png">
+	<img id="logo" src="../Image/spaLogo.png">
 	<body>
-		
+		<form action="enregistrement.php" method="get" autocomplete="off">
 		<div id="Formulaire">
 			<div id="FormulaireAjout">
 			<label for="nom"> Nom </label>
@@ -32,9 +32,9 @@
 			<input class="fo" type="button" name="benevole "value="Benevole"/>
 			<input class="fo" type="button" name="employe "value="Employé"/>
 			</div>
-			<input id="val" class="fb" type="button" name="valider"value="Valider"/>
-			<input id="ann" class="fb" type="button" name="annuler"value="Annuler"/>
+			<input id="val" class="fb" type="submit" name="valider"value="Valider"/>
+			<input id="ann" class="fb" type="submit" name="annuler"value="Annuler"/>
 		</div>
-		
+		</form>
 	</body>
 </html>
