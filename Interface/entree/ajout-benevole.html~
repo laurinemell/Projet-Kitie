@@ -1,12 +1,10 @@
 <html>
 	<head>
 	<title>Ajout Bénévole</title>
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="ajout-benevole.css" type="text/css" />
+	<link rel="stylesheet" href="kitie.css" type="text/css" />
 	</head>
 	<img id="logo" src="spaLogo.png">
 	<body>
-		
 		<div id="Formulaire">
 			<div id="FormulaireAjout">
 			<label for="nom"> Nom </label>
