@@ -6,8 +6,8 @@ html{
 	line-height: 20px;
 }
 #logo{
-  margin-left: 0;
-  margin-top: 0;
+  margin-left: -50px;
+  margin-top: -45px;
   width: 200px;
 }
 .fo{

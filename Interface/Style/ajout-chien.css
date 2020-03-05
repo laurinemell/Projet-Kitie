@@ -1,3 +1,25 @@
+html{
+	background-color: whitesmoke;
+}
+#logo{
+	margin-left: 0;
+	margin-top: 0;
+	width: 200px;
+}
+p{
+	font face="times new roman">Votre texte</font;
+}
+.fo{
+	/*Défini les boutons oranges*/
+  background-color:#FEBE7E;
+  border: none;
+  color: darkgray;
+  padding: 16px 50px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 32px;
+}
 #FormulaireAjout{
 	width: 35%;
 	height: 100%;
