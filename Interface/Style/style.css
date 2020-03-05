@@ -6,8 +6,8 @@ html{
 	line-height: 20px;
 }
 #logo{
-  margin-left: -50px;
-  margin-top: -45px;
+  margin-left: -30px;
+  margin-top: -35px;
   width: 200px;
 }
 .fo{
@@ -20,7 +20,7 @@ html{
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 32px;
-  float: right;
+
 }
 
 .fb{
@@ -79,3 +79,13 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+
+.separation{
+	clear: both;
+	position: absolute;
+	margin-top :-400px;
+	margin-left: 900px;
+	height: 1000px;
+	width : 25px;
+	background: #FF8000;
+	}
