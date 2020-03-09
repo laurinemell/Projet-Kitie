@@ -1,0 +1,12 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<title>Bouton echec</title>
+</head>
+<body>
+<img id="logo" src="spaLogo.png">
+<div class="bouton">
+<img src="Echec.PNG" alt="bouton echec" class="bouton_img">
+</div>
+</body>
+</html>
