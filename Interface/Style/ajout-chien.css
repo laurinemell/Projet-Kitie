@@ -16,12 +16,13 @@ p{
 		width: 35%;
 	height: 100%;
 	float: left;
-	margin-left:-130px;
+	margin-left:-50px;
 	padding-top: 3%;
 }
 
-#val{
-	margin-left: 40%;
+#valider{
+margin-left: -300px;
+
 }
 #ann{
 	margin-right: 25%
@@ -44,21 +45,6 @@ text-decoration: none;
   cursor: pointer;
   border-radius: 15px;
   float: bottom;
-}
-.va{
-background-color:#3B76C8;
-  border: solid black 2px;
-  color: white;
-  padding: 16px 50px;
-text-decoration: none;
-  cursor: pointer;
-  border-radius: 15px;
-  float: bottom;
-font-family: times new roman;
-font-weight: bold;
-font-size: 14pt;
-text-align: center;
-margin-left: -15px;
 }
 
 #rondChien{
