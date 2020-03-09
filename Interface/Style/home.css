@@ -1,27 +1,29 @@
 /*Mise en forme*/
 #recherche{
-	margin-right: 400px;
 	margin-top: -5%;
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #barreRecherche{
 	border-radius: 25px;
 	border : 5px solid #FF8000; 
-	width: 500px;
-	vertical-align: middle;
-	margin-right: 100px;
+	width: 100%;
 	}
  
  #interlude{
 	background-color: #FF8000;
-	width: 20%;
+	width: 17%;
 	margin-right: -50px;
 	padding-right: 50px;
+	padding-left: 10px;
 	border-radius: 50px;
-	height: 100%;
+	height: 90%;
 	padding-top: 20px;
 	float: right;
 	color: whitesmoke;
+	margin-top: -5%;
 }
  
  /*Style des images*/
@@ -59,4 +61,8 @@ img:hover {
 	width: 700px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+#valider{
+	background-color: #FF8000;
 }
