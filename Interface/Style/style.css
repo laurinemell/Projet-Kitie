@@ -1,12 +1,13 @@
 html{
-	background-color : whitesmoke;
+  background-color : whitesmoke;
+}
+body{
+  margin: 0px;
 }
 *{
   border-color: red solid 5px;
 }
 #logo{
-  margin-left: -30px;
-  margin-top: -35px;
   width: 200px;
 }
 .fo{
@@ -69,9 +70,6 @@ img:hover {
 }
 
 /* Deco */
-body {
-  padding: 2em;
-}
 
 #imagesAcc{
   width: 700px;

@@ -1,16 +1,16 @@
 /*Mise en forme*/
 #recherche{
-	margin-right: auto;
-	margin-left: auto;
+	margin-right: 400px;
 	margin-top: -5%;
 }
 
-#barreRecherche{border-radius: 25px;
-					 border : 5px solid #FF8000; 
-					 width: 500px;
-					 vertical-align: middle;
-					 margin-right: 100px;
-					 }
+#barreRecherche{
+	border-radius: 25px;
+	border : 5px solid #FF8000; 
+	width: 500px;
+	vertical-align: middle;
+	margin-right: 100px;
+	}
  
  #interlude{
 	background-color: #FF8000;
@@ -25,39 +25,36 @@
 }
  
  /*Style des images*/
- .rond {
-  display: inline-block;
-  border: 2px solid orange;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
+.rond {
+	display: inline-block;
+	border: 2px solid orange;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
 }
+
 img {
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
 }
 
 /* Bonus : keep aspect-ratio */ 
 img {
-  object-fit: cover;
-  object-position: right center;
+	object-fit: cover;
+	object-position: right center;
 }
 
 /* Bonus : effect on :hover */
 img {
-  transition: object-position .25s;
+	transition: object-position .25s;
 }
 img:hover {
-  object-position: center
+	object-position: center
 }
 
 /* Deco */
-body {
-  padding: 2em
-}
-
 #imagesAcc{
 	width: 700px;
 	margin-right: auto;
