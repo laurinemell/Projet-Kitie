@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="Style/home.css" type="text/css" />		
 	</head>
 	<body>
-		<a href="Connexe/connexion.php ?>"><img id="logo" src="Image/spaLogo.png"></a>
+		<a href="Connexe/connexion.php>"><img id="logo" src="Image/spaLogo.png"></a>
 		<div id="recherche">
 			<input type="text" id="barreRecherche" name="name">
 			<br>

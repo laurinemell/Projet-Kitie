@@ -1,8 +1,8 @@
 /*Mise en forme*/
 #recherche{
-	width: 750px;
 	margin-right: auto;
 	margin-left: auto;
+	margin-top: -5%;
 }
 
 #barreRecherche{border-radius: 25px;
