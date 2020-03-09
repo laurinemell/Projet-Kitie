@@ -1,9 +1,5 @@
 html{
 	background-color : whitesmoke;
-	font-family: Times new roman; 
-	font-size: 18px; font-style: normal; 
-	font-variant: normal; font-weight: 700; 
-	line-height: 20px;
 }
 *{
   border-color: red solid 5px;
@@ -16,7 +12,7 @@ html{
 .fo{
 	/*Défini les boutons oranges*/
   background-color:#FEBE7E;
-  border: none;=
+  border: none;
   color: darkgray;
   padding: 16px 50px;
   text-decoration: none;
@@ -69,12 +65,12 @@ img {
   transition: object-position .25s;
 }
 img:hover {
-  object-position: center
+  object-position: center;
 }
 
 /* Deco */
 body {
-  padding: 2em
+  padding: 2em;
 }
 
 #imagesAcc{
