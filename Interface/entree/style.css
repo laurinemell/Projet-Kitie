@@ -1,9 +1,14 @@
 html{
 	background-color : whitesmoke;
-	font-family: Open Sans; 
+	font-family: Times new roman; 
 	font-size: 18px; font-style: normal; 
 	font-variant: normal; font-weight: 700; 
-	line-height: 26.4px;
+	line-height: 20px;
+}
+#logo{
+  margin-left: 0;
+  margin-top: 0;
+  width: 200px;
 }
 .fo{
 	/*Défini les boutons oranges*/

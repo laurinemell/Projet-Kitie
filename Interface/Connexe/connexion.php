@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Connexion</title>
-		<link rel="stylesheet" href="kitie.css" type="text/css" />
+		<link rel="stylesheet" href="../Style/style.css" type="text/css" />
 		<style type="text/css">
 		.foc{
 			/*Défini les boutons oranges*/
@@ -24,7 +24,7 @@
 }
 		</style>
 	</head>
-		<img id="logo" src="spaLogo.png">
+		<img id="logo" src="../Image/spaLogo.png">
 	<body>
 		<form action="interface-benevole.php" method="get" autocomplete="on">
 		<div>
