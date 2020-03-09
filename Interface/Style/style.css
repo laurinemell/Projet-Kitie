@@ -1,8 +1,6 @@
-html{
-  background-color : whitesmoke;
-}
 body{
   margin: 0px;
+  background-color: whitesmoke;
 }
 *{
   border-color: red solid 5px;
