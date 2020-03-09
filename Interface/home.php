@@ -9,7 +9,8 @@
 		<div id="recherche">
 			<input type="text" id="barreRecherche" name="name">
 			<br>
-			<input type="submit" id="valider" name="name">
+			<center><input type="submit" id="valider" name="name"><img src="Image/recherche.png"></center>
+
 		</div> 
 		<div id="interlude">
 			<h1> La SPA en quelques mots </h1>
@@ -24,15 +25,17 @@
 			</p>
 		</div>
 		<div id="imagesAcc">
-			<div class="rond"><img src="Image/Kitie.jpg" alt="miaou" /></div>
-			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
-			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
-			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
-			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
-			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
-			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
-			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
-			<div  class="rond"> <img src="Image/lakita.jpg"> </div>
+			<?php
+				include "bd.php";
+				$bdd = getBD();
+				$rep = $bdd->query('select * from chien');
+				$ligne = $rep->fetch();
+				$i=0;
+				while ($ligne = $rep ->fetch()&& $i<=9) { 
+					echo '<div id=photo'.$i.'class="rond"> <img src="Image/'.$ligne["photo"].'> </div>';
+					$i=$i+1;
+			} 
+			?>
 		</div>
 	</body>
 </html>
