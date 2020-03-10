@@ -5,112 +5,44 @@
 
 <?php
 
-function enregistrer($nom,$prenom,$id,$mdp,$ajoutAnimal,$modifierAnimal,$benevole,$employe,$sexeH){
+/* on devrait peut-être demander de confirmer le mot de passe ? */
+
+function enregistrer($nom,$prenom,$id,$mdp,$statut,$sexeH){
 /* ajoutAnimal et modifierAnimal ne servent à rien puisque dans la BD le statut enmployé donne le droit de tout modifier et le statut benevole donne le froit de lecture */
 /* les boutons du formulaire "benevole" et "employé" ne font rien apparemment quand on clique dessus */
 	$bdd = new PDO('mysql:host=localhost:8889;dbname=projet_kitie;charset=utf8',
 'root', 'root');
-/*Attention il faut ajouter auto incrementation dans la BD si on veut que ça marche sans saisir l'id à chaque fois et donc enlever le parametre id*/
-	$req="INSERT INTO `utilisateur` (`idUtilisateur`,`nom`, `prenom`, `idStatut`, `sexeHum`) VALUES (10,"."'".$n."'".", "."'".$p."'".", "."'".$adr."'".", ".$num.", "."'".$mail."'".", "."'".$mdp."'".")";
+/*Demande-t-on à l'utilisateur de choisir son id ? Ou on peut faire une auto incrémentation*/
+
+	/* pour que le if suivant fonctionne il faut passer le type de benevole et employe en radio et l'appeler statut (une seule variable comme genre) */
+	if($statut=="benevole"){
+	$idStatut=2;	
+	}	
+	else if($statut="employé"){
+	$idStatut=1;	
+	}
+	else{
+	echo "Nous n'avons pas pu déterminer quel est votre statut"
+	}
+	
+	$req="INSERT INTO `utilisateur` (`idUtilisateur`,`nom`, `prenom`,'mdp', `idStatut`, `sexeHum`) VALUES ('".$nom."'".","."'".$prenom."'".", "."'".$id."'".", "."'".$mdp."'".", ".$idStatut.", "."'".$sexeH."')";
 	echo $req;
 	$reponse = $bdd->query($req);
 	$reponse->closeCursor();
 }
 
-if($_GET['n']==""||$_GET['p']==""||$_GET['adr']==""||$_GET['mdp1']==""||$_GET['mdp2']==""||$_GET['genre']==""||$_GET['age']==""||$_GET['mdp1']!=$_GET['mdp2']){
-echo "<meta http-equiv='refresh' content='2; URL=nouveau.php?n=".$_GET['n']."&p=".$_GET['p']."&adr=".$_GET['adr']."&num=".$_GET['num']."&mail=".$_GET['mail']."&age=".$_GET['age']."'>";
+/* le if suivant renvoie à la page du formulaire avec le nom prenom et l'id remplis si un des paramètres n'est pas rempli */
+if($_GET['nom']==""||$_GET['prenom']==""||$_GET['id']==""||$_GET['mdp']==""||$_GET['statut']==""[[$_GET['SexeH']==""){
+echo "<meta http-equiv='refresh' content='2; URL=nouveau.php?nom=".$_GET['nom']."&prenom=".$_GET['prenom']."&id=".$_GET['id']."'>";
 }
 else{
-enregistrer($_GET['p'],$_GET['n'],$_GET['adr'],$_GET['mail'],$_GET['num'],$_GET['mdp1']);
-echo "<meta http-equiv='refresh' content='2; URL=index2.php'>";
+enregistrer($_GET['nom'],$_GET['prenom'],$_GET['id'],$_GET['mdp'],$_GET['satut'],$_GET['sexeH']);
+echo "<meta http-equiv='refresh' content='2; URL=bouton-ajout.php'>";
 }
 
 ?>
 </head>
 <body>
-<?php
-
-if(isset($_GET['p'])) {
-echo $_GET['p'];
-}
-else{
-echo "Le champ p n’existe pas";
-}
-
-echo '<BR>';
-
-if(isset($_GET['n'])) {
-echo $_GET['n'];
-}
-else{
-echo "Le champ n n’existe pas";
-}
-
-echo '<BR>';
-
-if(isset($_GET['genre'])) {
-echo $_GET['genre'];
-}
-else{
-echo "Le champ genre n’existe pas";
-}
-
-echo'<BR>';
-
-if(isset($_GET['age'])) {
-echo $_GET['age'];
-}
-else{
-echo "Le champ age n’existe pas";
-}
-
-echo'<BR>';
-
-if(isset($_GET['adr'])) {
-echo $_GET['adr'];
-}
-else{
-echo "Le champ adr n’existe pas";
-}
-
-echo '<BR>';
-
-if(isset($_GET['mail'])) {
-echo $_GET['mail'];
-}
-else{
-echo "Le champ mail n’existe pas";
-}
-
-echo '<BR>';
-
-if(isset($_GET['num'])) {
-echo $_GET['num'];
-}
-else{
-echo "Le champ num n’existe pas";
-}
-
-echo '<BR>';
-
-if(isset($_GET['mdp1'])) {
-echo $_GET['mdp1'];
-}
-else{
-echo "Le champ mdp1 n’existe pas";
-}
-
-echo '<BR>';
-
-if(isset($_GET['mdp2'])) {
-echo $_GET['mdp2'];
-}
-else{
-echo "Le champ mdp2 n’existe pas";
-}
-echo $_GET['mdp2'];
-
-?>
 
 </body>
 </html>
