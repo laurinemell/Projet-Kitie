@@ -6,19 +6,19 @@ body{
   border-color: red solid 5px;
 }
 #logo{
-  width: 200px;
+  width: 10em;
 }
 .fo{
 	/*Défini les boutons oranges*/
   background-color:#EB681F;
+  opacity: 0.7;
   border: none;
-  color: darkgray;
-  padding: 16px 50px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 32px;
-
+  color: white;
+  padding: 16px 60px;
+  border-radius: 5em;
+  width: 20em;
+  margin-top: 0.5em;
+  text-align: center;
 }
 
 .fb{

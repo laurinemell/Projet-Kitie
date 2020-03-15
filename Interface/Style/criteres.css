@@ -1,8 +1,49 @@
-#barreCriteres{
+*{
+	border : solid red 4px;
+}
+#Criteres{
 	background-color: #3B76C8;
-	width: 95%;
-	height: 70%;
+	width: 90%;
+	height: 40%;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 25px;
+	margin-top: 1em;
+	padding: 2em;
+	border-radius: 4em;
+}
+#Race{
+	width: 20em;
+}
+#Couleur{
+	width: 20em;
+}
+#selecteur{
+	width: 20em;
+	float: right;
+}
+#barreRecherche2{
+	border-radius: 0.5em;
+	border : 5px solid #FF8000; 
+	width: 50em;
+	height: 3em;
+	margin-top: -7em;
+}
+#bouton{
+	width: 3em;
+}
+#imagesAcc{
+	height: 10em;
+	width: 60em;
+}
+#image0{
+	margin-right: 3em;
+}
+#image1{
+	margin-right: 3em;
+}
+#image2{
+	margin-right: 3em;
+}
+#image3{
+	float: right;
 }
