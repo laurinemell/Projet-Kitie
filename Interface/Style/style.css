@@ -10,7 +10,7 @@ body{
 }
 .fo{
 	/*Défini les boutons oranges*/
-  background-color:#FEBE7E;
+  background-color:#EB681F;
   border: none;
   color: darkgray;
   padding: 16px 50px;
@@ -23,7 +23,7 @@ body{
 
 .fb{
 	/*Défini les boutons bleus*/
-  background-color:#3B76C8;
+  background-color:#3773C7;
   border: none;
   color: whitesmoke;
   padding: 16px 50px;
