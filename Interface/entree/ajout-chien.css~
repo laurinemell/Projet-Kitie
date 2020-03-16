@@ -31,7 +31,7 @@ p{
 		width: 35%;
 	height: 100%;
 	float: left;
-	margin-left:-150px;
+	margin-left: -150px;
 	padding-top: 3%;
 }
 .fb{
@@ -55,7 +55,7 @@ label{
 display:block;
 float:auto;
 width:150px;
-margin-bottom: 10px;
+margin-bottom: 5px;
 
 }
 input{float: left;
