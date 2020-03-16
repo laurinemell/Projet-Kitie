@@ -95,3 +95,34 @@ img:hover {
   position: relative;
   height: 200px;
 }
+
+.fixed-barre-top {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: whitesmoke;
+  z-index: 1;
+}
+
+.fixed-reste {
+  position: relative;
+  width: 100%;
+  top: 100px;
+}
+
+#block1{
+  position: relative;
+  top: -20px;
+  left: 30px;
+}
+
+#block2{
+  position: relative;
+  top: -20px;
+  left: 40px;
+}
+
+.img-chien{
+  height: 50px;
+  width: 50px;
+}
