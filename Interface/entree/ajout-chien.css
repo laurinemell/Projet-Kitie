@@ -31,7 +31,7 @@ p{
 		width: 35%;
 	height: 100%;
 	float: left;
-	margin-left:-150px;
+	margin-left: -150px;
 	padding-top: 3%;
 }
 .fb{
@@ -49,7 +49,7 @@ p{
 	margin-left: 40%;
 }
 #ann{
-	margin-right: 25%
+	margin-right: 25%;
 }
 label{
 display:block;
