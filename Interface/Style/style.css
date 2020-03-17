@@ -4,6 +4,7 @@ body{
 }
 *{
   border-color: red solid 5px;
+  font-family: "Agency FB", Calibri, "Californian FB", serif
 }
 #logo{
   width: 10em;
@@ -41,7 +42,6 @@ body{
 
 .rond {
   display: inline-block;
-  border: 2px solid orange;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -94,35 +94,4 @@ img:hover {
   transform: translateY(-50%);
   position: relative;
   height: 200px;
-}
-
-.fixed-barre-top {
-  position: fixed;
-  width: 100%;
-  height: 100px;
-  background-color: whitesmoke;
-  z-index: 1;
-}
-
-.fixed-reste {
-  position: relative;
-  width: 100%;
-  top: 100px;
-}
-
-#block1{
-  position: relative;
-  top: -20px;
-  left: 30px;
-}
-
-#block2{
-  position: relative;
-  top: -20px;
-  left: 40px;
-}
-
-.img-chien{
-  height: 50px;
-  width: 50px;
 }
