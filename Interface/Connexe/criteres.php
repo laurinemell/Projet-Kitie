@@ -1,59 +1,57 @@
 <html>
 	<head>
 		<title> Critères </title>
-		<link rel="stylesheet" href="style.css" type="text/css" />	
-		<link rel="stylesheet" href="home.css" type="text/css" />
-		<link rel="stylesheet" href="criteres.css" type="text/css" />	
+		<link rel="stylesheet" href="../Style/style.css" type="text/css" />	
+		<link rel="stylesheet" href="../Style/criteres.css" type="text/css" />
 	</head>
 	<?php $bdd = new PDO('mysql:host=localhost;dbname=kitie2;charset=utf8', 'root', 'root'); ?>
 	<body>
-		<img id="logo" src="spaLogo.png">
-		<div id="recherche">
-			<input type="text" id="barreRecherche" name="name">
-			<br>
-			<input type="submit" id="valider" name="name">
-		</div>
+		<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
+			<center><input type="search" id="barreRecherche2" name="name"></center>
 		<form action=recherche.php" method="post" autocomplete="on">
-		<div id="barreCriteres">
-			<div id="race">
+		<div id="Criteres">
+			<div id="Race">
 				<label for="taille">Race</label>
-				<select name="taille" id="taille">
+				<select name="taille" id="selecteur">
 				<option value="">Faite un choix</option>
 				<?php
-					$rep = $bdd->query('select * from races');
-					$ligne = $rep->fetch();
-						while ($ligne = $rep ->fetch()) {
-							echo '<option value="'.$ligne["idRace"].'">'.$ligne["nomRace"].'</option>';
+					$rep1 = $bdd->query('select * from races');
+					$ligne1 = $rep1->fetch();
+						while ($ligne1 = $rep1 ->fetch()) {
+							echo '<option value="'.$ligne1["idRace"].'">'.$ligne1["nomRace"].'</option>';
 						}
+					$rep1->closeCursor;
 				?>
 				</select>
 			</div>
-			<div>
-				<label for="taille">Sexe</label>
+			<div id="Couleur">
+				<label for="couleur">Couleur</label>
+				<select name="couleur" id="selecteur">
+				<option value="">Faite un choix</option>
 				<?php
-					$rep2 = $bdd->query('select * from sexe');
+					$rep2 = $bdd->query('select * from couleur');
 					$ligne2 = $rep2->fetch();
 						while ($ligne2 = $rep2 ->fetch()) {
-							echo '<div> <input type="checkbox" id="'.$ligne2["IdSexe"].'" name="'.$ligne2["IdSexe"].'"checked><label for="'.$ligne2["IdSexe"].'">'.$ligne2["NomSexe"].'</label>
-								</div>';
+							echo '<option value="'.$ligne2["idCouleur"].'">'.$ligne2["nomCouleur"].'
+							</option>';
 						}
-					$rep2 ->closeCursor()
-				?>
-			</div>
-			<div id="couleur">
-				<label for="couleur">Couleur</label>
-				<select name="couleur" id="couleur">
-				<option value="">Faite un choix</option>
-				<?php
-					$rep3 = $bdd->query('select * from couleur');
-					$ligne3 = $rep3->fetch();
-						while ($ligne3 = $rep3 ->fetch()) {
-							echo '<option value="'.$ligne3["idCouleur"].'">'.$ligne3["nomCouleur"].'</option>';
-						}
+					$rep2->closeCursor;
 				?>
 				</select>
-			</div>		
+			</div>
 		</div>
-		<input type="submit" id="valider" name="name">
 		</form>
+		<div id="imagesAcc">
+			<?php
+				$rep3 = $bdd->query('select * from chien');
+				$ligne3 = $rep3->fetch();
+				$i=0;
+				while ($ligne = $rep3 ->fetch()&& $i<=3) { 
+					echo '<div id=photo'.$i.'class="rond"> <img src="Image/'.$ligne["photo"].'> </div>';
+					$i=$i+1;
+				} 
+				$rep3->closeCursor;
+			?>
+			<center><bouton id="bouton" type=submit name=action><img src="../Image/recherche.png"></bouton></center>
+		</div>
 	</body>
