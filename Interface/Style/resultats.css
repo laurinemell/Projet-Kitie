@@ -1,0 +1,30 @@
+.chiens{
+	height: 15em;
+	width: 60em;
+	float: right;
+	background-color: wheat;
+	margin-top: 1em;
+	border-radius: 2em;
+}
+.rond{
+	margin-top: 2em;
+	margin-left: 2em;
+}
+.prenom{
+	margin-left: 12em;
+	margin-top: -8em;
+	font-size: 1.25em;
+}
+.nais{
+	float: right;
+	margin-top: -3em;
+	margin-right: 2em;
+}
+.sexe{
+	margin-left: 20em;
+	margin-top: 10em;
+}
+.ste{
+	margin-top: 4em;
+	margin-left: 20em;
+}
