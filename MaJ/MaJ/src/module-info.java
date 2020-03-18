@@ -1,0 +1,2 @@
+module MaJ {
+}

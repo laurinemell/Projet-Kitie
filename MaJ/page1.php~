@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>Enregistrement</title>
+<link rel="stylesheet" href="styles/style2.css" type="text/css" media="screen" />
+
+
+<?php
+echo "<meta http-equiv='refresh' content='2; URL=bd.php'>";
+?>
+
+</head>
+<body>
+
+</body>
+</html>
