@@ -121,6 +121,11 @@ img:hover {
   top: -20px;
   left: 40px;
 }
+#block3{
+  position: relative;
+  top:-20px;
+  left:40px;
+}
 
 .img-chien{
   height: 50px;
