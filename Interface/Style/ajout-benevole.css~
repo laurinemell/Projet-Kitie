@@ -1,0 +1,38 @@
+/*Création et disposition des différentes boites de la fiche ajout bénévole*/
+#FormulaireAjout{
+	width: 35%;
+	height: 100%;
+	float: left;
+	margin-left: 15%;
+}
+#FormulaireAjout2{
+	width: 30%;
+	height: 100%;
+	float: right;
+	margin-right: 15%;
+}
+#Formulaire{
+	margin-top: 6%;
+	width: 100%;
+	height: 60%;
+}
+
+/*Disposition des boutons*/
+#val{
+	margin-left: 40%;
+}
+#ann{
+	margin-right: 25%
+}
+.fo{
+	/*Défini les boutons oranges*/
+  background-color:#FEBE7E;
+  border: none;=
+  color: darkgray;
+  padding: 16px 50px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 32px;
+  float: right;
+}

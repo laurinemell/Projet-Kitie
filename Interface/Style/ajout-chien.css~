@@ -1,0 +1,60 @@
+html{
+	background-color: whitesmoke;
+}
+p{
+	font face="times new roman">Votre texte</font;
+}
+
+#FormulaireAjout{
+	width: 35%;
+	height: 100%;
+	float: left;
+	margin-bottom: 0;
+	padding-top: 3%;
+}
+#FormulaireAjout2{
+		width: 35%;
+	height: 100%;
+	float: left;
+	margin-left:-50px;
+	padding-top: 3%;
+}
+
+#valider{
+margin-left: -100px;
+
+}
+#ann{
+	margin-right: 25%
+}
+label{
+display:block;
+float:auto;
+width:150px;
+margin-bottom: 5px;
+
+}
+input{float: left;
+}
+.am{
+  background-color:#FFFFFF;
+  border: solid;
+  color: black;
+  padding: 16px 50px;
+text-decoration: none;
+  cursor: pointer;
+  border-radius: 15px;
+  float: bottom;
+}
+
+#rondChien{
+display: inline-block;
+  border: 2px dotted orange;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: -100px;
+  margin-top: -100px;
+	}
+	
