@@ -3,18 +3,6 @@
 		<title>Connexion</title>
 		<link rel="stylesheet" href="../Style/style.css" type="text/css" />
 		<style type="text/css">
-		.foc{
-			/*Défini les boutons oranges*/
- 		background-color:#EB681F;
- 		opacity: 0.7;
- 		border: none;
-  		color: white;
-  		padding: 16px 60px;
- 		border-radius: 5em;
- 		width: 15em;
- 		margin-top: 0.5em;
- 		text-align: center;
- 		}
 		div{
 			margin-left: auto;
 			margin-right: auto;
@@ -30,13 +18,12 @@
 		}
 		</style>
 	</head>
-		<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
 	<body>
 		<form action="../PHP/phpCo.php" method="get" autocomplete="on">
 		<div>
-			<center><input class="foc" type="text" name="id"value=""  placeholder="Identifiant"/></center>
+			<center><input class="fo" type="text" name="id"value=""  placeholder="Identifiant"/></center>
 			<br>
-			<center><input class="foc" type="password" name="mdp"value="" placeholder="Mot de passe"/></center>
+			<center><input class="fo" type="password" name="mdp"value="" placeholder="Mot de passe"/></center>
 			<br>
 			<center><button class="fb" name="valider">Valider</button></center>
 			<?php
