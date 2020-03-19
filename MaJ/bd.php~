@@ -4,12 +4,18 @@
 <link rel="stylesheet" href="styles/style2.css" type="text/css" media="screen" />
 
 <?php
-$page=fopen("chiens.html","r")
-echo $page;
+/* Récupérer les données du page du listing de la SPA */
+include "fonctions.php";
+
+$tableau_donnees=recuperer_donnees();
+echo "<pre>";
+print_r($tableau_donnees[0]);
+echo "</pre>";
 ?>
 
 </head>
 <body>
-blabla
+
 </body>
 </html>
+
