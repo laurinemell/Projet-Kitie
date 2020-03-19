@@ -14,12 +14,14 @@
 	<div id="bd">
 		<input type="search" id="barreRecherche" name="name" placeholder="Recherche par identifiant ou nom">
 		<?php
-		include "../bd.php";
-		$bdd = getBD();
+		$bdd = new PDO('mysql:host=localhost;dbname=projet-kitie;port=3306','root','');
 		$rep = $bdd->query('select * from chien');
 		echo '<ul>';
 		while ($ligne = $rep ->fetch()) {
 			echo '<li>';
+			if ($ligne["photo"] == NULL){
+				$ligne["photo"] = "default";
+			}
 			echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/></a>';
 			echo '<p class="prenom">Bonjour, je suis : '.$ligne["nomChien"].'</p>';
 			echo '</li>';

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="../Style/style.css" type="text/css" />
-	<title>test</title>
+	<link rel="stylesheet" href="../Interface/Style/style.css" type="text/css" />
+	<title>Base de données</title>
 
 </head>
 <body>
 	<div class="fixed-barre-top">
-		<img id="logo" src="../Image/spaLogo.png">
-		<a class="fo" id="block1" class="fo" href="ajout-chien" > Ajouter ou modifier un chien </a>
-		<a class="fo" id="block2" href="ajout-benevole"> Ajouter un bénévole </a>
+		<img id="logo" src="../Interface/Image/spaLogo.png">
+		<a class="fo" id="block1" class="fo" href="ajout-chien" > Ajouter un chien </a>
+		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
+		<a class="fo" id="block3" href="../Interface/Connexe/ajout-benevole.php"> Ajouter un bénévole </a>
 	</div>
 	<div class="fixed-reste">
 		<table class="flat-table" border="3">
