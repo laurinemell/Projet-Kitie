@@ -10,7 +10,7 @@
 		<img id="logo" src="../Interface/Image/spaLogo.png">
 		<a class="fo" id="block1" class="fo" href="ajout-chien" > Ajouter un chien </a>
 		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
-		<a class="fo" id="block3" href="../Interface/Connexe/ajout-benevole.php"> Ajouter un bénévole </a>
+		<a class="fo" id="block3" href="../Interface/Connexe/ajoutB.php"> Ajouter un bénévole </a>
 	</div>
 	<div class="fixed-reste">
 		<table class="flat-table" border="3">
