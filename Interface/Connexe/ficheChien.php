@@ -6,6 +6,7 @@
 </head>
 <body>
 	<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
+	<hr class="separation"/>
 	<?php
 	include "../bd.php";
 	$bdd = getBD();
@@ -15,13 +16,15 @@
 	$race=$race->fetch();
 	$sexe = $sexe->fetch();
 	$ligne = $rep->fetch();
+	echo '<img class="rond" src="../../BD/photo/'.$ligne["photo"].'">';
 	echo '<div id="chien">';
 	echo "<h1 id='titre'>".$ligne["nomChien"]."</h1>";
-	echo '<p> Identifiant : '.$ligne["idChien"].'</p>';
-	echo '<img class="rond" src="../../BD/photo/'.$ligne["photo"].'">';
+	echo '<p id="iden"> Identifiant : '.$ligne["idChien"].'</p>';
+	echo '<p>Date de Naissance : '.$ligne['dateNaissance'].'</p>';
 	echo '<p>Sexe : '.$sexe['NomSexe'].'</p>';
 	echo '<p>Race : '.$race['nomRace'].'</p>';
 	echo '</div>';
+	echo '<p id="description"> Description : <br> '.$ligne["description"].'</p>'
 	?>
 </body>
 </html>
