@@ -1,3 +1,4 @@
+/*L*/
 body{
   margin: 0px;
   background-color: whitesmoke;
@@ -76,13 +77,12 @@ img:hover {
   }
 
 .separation{
-	clear: both;
-	position: absolute;
-	margin-top :-400px;
-	margin-left: 900px;
-	height: 1000px;
-	width : 25px;
-	background: #FF8000;
+	position: fixed;
+	margin-top :0px;
+	margin-left: 20em;
+	height: 110%;
+	width : 2em;
+	background: #EB681F;
 	}
   .bouton{
   width: 100%;
