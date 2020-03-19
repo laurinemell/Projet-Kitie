@@ -4,7 +4,6 @@
 		<link rel="stylesheet" href="../Style/style.css" type="text/css" />	
 		<link rel="stylesheet" href="../Style/criteres.css" type="text/css" />
 	</head>
-	<?php $bdd = new PDO('mysql:host=localhost;dbname=kitie2;charset=utf8', 'root', 'root'); ?>
 	<body>
 		<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
 			<center><input type="search" id="barreRecherche2" name="name"></center>
@@ -15,6 +14,8 @@
 				<select name="taille" id="selecteur">
 				<option value="">Faite un choix</option>
 				<?php
+					include "../bd.php";
+					$bdd = getBD();
 					$rep1 = $bdd->query('select * from races');
 					$ligne1 = $rep1->fetch();
 						while ($ligne1 = $rep1 ->fetch()) {
@@ -38,6 +39,9 @@
 					$rep2->closeCursor;
 				?>
 				</select>
+			</div>
+			<div id="Sexe">
+				
 			</div>
 		</div>
 		</form>
