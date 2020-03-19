@@ -1,0 +1,33 @@
+/*Fiche de style de benevole*/
+#head{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -4em;
+	width: 35em;
+}
+#ab{
+	float: right;
+}
+#ac{
+	float: left;
+}
+#ic{
+	margin-left: auto;
+	margin-right: auto;
+}
+#bd{
+	width: 17.5em;
+	height: 100px;
+	float: right;
+	margin-top: -4em;
+	background-color: white;
+}
+ul{
+	white-space: nowrap;
+	overflow: scroll;
+	padding: 0px;
+	margin: 0px;
+}
+li{
+	display: block;
+}

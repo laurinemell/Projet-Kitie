@@ -69,11 +69,11 @@ img:hover {
 
 /* Deco */
 
-#imagesAcc{
+  #imagesAcc{
   width: 700px;
   margin-right: auto;
   margin-left: auto;
-}
+  }
 
 .separation{
 	clear: both;
@@ -89,11 +89,12 @@ img:hover {
   text-align: center;
   height: 100%
   }
-.bouton_img{
+  .bouton_img{
   top: 50%;
   transform: translateY(-50%);
   position: relative;
   height: 200px;
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 
@@ -135,3 +136,14 @@ img:hover {
 =======
 }
 >>>>>>> 7da4f5c69156f9a3ca7513c2fa57567f0a6adb38
+=======
+  }
+
+/*Barre de recherche*/
+#barreRecherche{
+  border-radius: 0.5em;
+  border : 5px solid #FF8000; 
+  width: 100%;
+  height: 3em;
+  }
+>>>>>>> 1d721e7650b751b18d4d557a204cbc88c7b1e099

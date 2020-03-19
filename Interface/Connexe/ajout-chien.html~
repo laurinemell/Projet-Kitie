@@ -8,17 +8,35 @@
 	<body>
 		<div id="Formulaire">
 			<div id="FormulaireAjout">
-			<label for="nom"> Taille </label>
-			<input class="fo" type="text"name="taille"value=""/></a>
-			<br>
 			<label for="prenom"> Race </label>
 			<input class="fo" type="text"name="race"value=""/></a>
 			<br>
 			<label for="id"> Box </label>
 			<input class="fo" type="text"name="box"value=""/></a>
 			<br>
-			<label for="nom"> Description </label>
-			<TEXTAREA style="font-family: times new roman"  class="am" rows="10" name="description"></TEXTAREA>
+			<label for="prenom"> Date entrée </label>
+			<input class="fo" type="text"name="dateentree"value=""/></a>
+			<br>
+			<label for="couleur">Couleur</label>
+			<select class="fo" name="couleur" id="couleur">
+    			<option value="">--Choisir une couleur--</option>
+    			<option value="couleur1">noir</option>
+    			<option value="couleur2">blanc</option>
+				</select>
+				<br>
+				<label for="id"> Evaluation mordeur </label>
+			<select class="fo" name="mordeur" id="mordeur">
+    			<option value="">--Choisir--</option>
+    			<option value="eva1">1</option>
+    			<option value="eva2">1</option>
+    			</select>
+    			<br>
+    			<label for="id"> Sociabilité </label>
+			<select class="fo" name="sociable" id="sociable">
+    			<option value="">--Choisir--</option>
+    			<option value="soc1">oui</option>
+    			<option value="soc2">non</option>
+    			</select>
 			</div>
 			
 			<div id="FormulaireAjout2">
@@ -31,23 +49,55 @@
 			<label for="id"> Date de naissance </label>
 			<input class="fo" type="text"name="date de naissance"value=""/></a>
 			<br>
-		<label for="couleur">Couleur</label>
-			<select class="fo" name="couleur" id="couleur">
-    			<option value="">--Choisir une couleur--</option>
-    			<option value="dog">noir</option>
-    			<option value="dog">blanc</option>
+			<label for="id"> Sexe </label>
+			<select class="fo" name="sexe" id="sexe">
+    			<option value="">--Choisir un sexe--</option>
+    			<option value="sexe1">mâle</option>
+    			<option value="sexe2">femelle</option>
+    			</select>
+    			<br>
+    		<label for="id"> Stérilisation </label>
+			<select class="fo" name="sterelisation" id="stérilisation">
+    			<option value="">--Choisir--</option>
+    			<option value="ste1">oui</option>
+    			<option value="ste2">non</option>
 				</select>
+				<br>
+				<label for="id"> LOF </label>
+			<select class="fo" name="lof" id="lof">
+    			<option value="">--Choisir--</option>
+    			<option value="lof1">oui</option>
+    			<option value="lof2">non</option>
+    			</select>
 				</div>
 			<div id="rondChien" class="rond">
   <img src="../Image/Kitie.jpg" alt="miaou" /> </div>
   <br>
+  
   <div id="FormulaireAjout2">
-
-  <label for="id"> Carnet de Vaccination</label>
-  <TEXTAREA  style="font-family: times new roman"  class="va" rows="14" name="description"></TEXTAREA>
+  <label for="nom"> Vaccin </label>
+		<select class="fb" name="couleur" id="couleur">
+    			<option value="">--Choisir un vaccin--</option>
+    			<option value="vaccin1">vaccin</option>
+    			<option value="vaccin2">vaccin</option>
+				</select>
+			<br>
+			<label for="datevaccin"> Date du vaccin </label>
+			<input class="fb" type="text"name="datevaccin"value=""/></a>
+			<label for="nom"> Description </label>
+			<br>
+			<label for="id"> Tarification </label>
+			<select class="fo" name="tarification" id="tarification">
+    			<option value="">--Choisir--</option>
+    			<option value="tar1">50 euros</option>
+    			<option value="tar2">100 euros</option>
+    			</select>
+    			<br>
+			<TEXTAREA style="font-family: times new roman"  class="am" rows="10" name="description"></TEXTAREA>
+			<br>
+			<br>
+			<input id="valider" class="fb" type="button" name="valider"value="Valider"/>
 			</div>
-			<input id="val" class="fb" type="button" name="valider"value="Valider"/>
-			  <div class="rectangle"></div>
 
 	</body>
 </html>
