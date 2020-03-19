@@ -1,4 +1,3 @@
-/*L*/
 body{
   margin: 0px;
   background-color: whitesmoke;
@@ -83,6 +82,7 @@ img:hover {
 	height: 110%;
 	width : 2em;
 	background: #EB681F;
+  border-style: none;
 	}
   .bouton{
   width: 100%;
@@ -94,8 +94,6 @@ img:hover {
   transform: translateY(-50%);
   position: relative;
   height: 200px;
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 
 .fixed-barre-top {
