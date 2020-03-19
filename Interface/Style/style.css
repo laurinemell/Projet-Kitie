@@ -4,6 +4,7 @@ body{
 }
 *{
   border-color: red solid 5px;
+  font-family: "Agency FB", Calibri, "Californian FB", serif
 }
 #logo{
   width: 10em;
@@ -41,7 +42,6 @@ body{
 
 .rond {
   display: inline-block;
-  border: 2px solid orange;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -94,6 +94,7 @@ img:hover {
   transform: translateY(-50%);
   position: relative;
   height: 200px;
+<<<<<<< HEAD
 }
 
 .fixed-barre-top {
@@ -131,3 +132,6 @@ img:hover {
   height: 50px;
   width: 50px;
 }
+=======
+}
+>>>>>>> 7da4f5c69156f9a3ca7513c2fa57567f0a6adb38
