@@ -13,6 +13,8 @@
 }
 #Couleur{
 	width: 20em;
+	margin-left: 25em;
+	margin-top: -2px;
 }
 #selecteur{
 	width: 20em;
@@ -31,16 +33,7 @@
 #imagesAcc{
 	height: 10em;
 	width: 60em;
-}
-#image0{
-	margin-right: 3em;
-}
-#image1{
-	margin-right: 3em;
-}
-#image2{
-	margin-right: 3em;
-}
-#image3{
-	float: right;
+
+.rond{
+	margin-left: 1em;
 }
