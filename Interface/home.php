@@ -2,16 +2,12 @@
 	<head>
 		<title> Projet Kitie </title>
 		<link rel="stylesheet" href="Style/style.css" type="text/css" />
-		<link rel="stylesheet" href="Style/home.css" type="text/css" />		
+		<link rel="stylesheet" href="Style/home.css" type="text/css" />	
+		<meta name="viewport" content="width=device-width, user-scalable=no">
 	</head>
 	<body>
-		<a href="Connexe/connexion.php>"><img id="logo" src="Image/spaLogo.png"></a>
-		<div id="recherche">
-			<input type="text" id="barreRecherche" name="name">
-			<br>
-			<center><input type="submit" id="valider" name="name"><img src="Image/recherche.png"></center>
-
-		</div> 
+		<a href="Connexe/connexion.php"><img id="logo" src="Image/spaLogo.png"></a>
+		<center><a href="Connexe/criteres.php"><input id="criteres" type="button" name="Criteres" value="Critères et Recherche"/></a></center>
 		<div id="interlude">
 			<h1> La SPA en quelques mots </h1>
 			<p>En 2019 la France 
@@ -26,15 +22,12 @@
 		</div>
 		<div id="imagesAcc">
 			<?php
-				include "bd.php";
-				$bdd = getBD();
-				$rep = $bdd->query('select * from chien');
-				$ligne = $rep->fetch();
-				$i=0;
-				while ($ligne = $rep ->fetch()&& $i<=9) { 
-					echo '<div id=photo'.$i.'class="rond"> <img src="Image/'.$ligne["photo"].'> </div>';
-					$i=$i+1;
-			} 
+			include "bd.php";
+			$bdd = getBD();
+			$photo = $bdd->query('select chien.nomChien,chien.photo,chien.idChien from chien where idTarification=1 and photo!="" order by rand() LIMIT 12');
+			while ($ligne = $photo ->fetch()) {
+				echo '<a href="Connexe/ficheChien.php?identifiant='.$ligne["idChien"].'"><img class=rond src="../BD/photo/'.$ligne["photo"].'"></a>';
+			}
 			?>
 		</div>
 	</body>
