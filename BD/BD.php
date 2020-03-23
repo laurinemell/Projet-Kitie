@@ -8,7 +8,7 @@
 <body>
 	<div class="fixed-barre-top">
 		<img id="logo" src="../Interface/Image/spaLogo.png">
-		<a class="fo" id="block1" class="fo" href="ajout-chien" > Ajouter un chien </a>
+		<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
 		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
 		<a class="fo" id="block3" href="../Interface/Connexe/ajoutB.php"> Ajouter un bénévole </a>
 	</div>
@@ -32,7 +32,7 @@
 
 			</tr>
 			<?php
-			$bdd = new PDO('mysql:host=localhost;dbname=projet-kitie;charset=utf8', 'root', '');
+			$bdd = new PDO('mysql:host=localhost;dbname=projet_kitie;charset=utf8', 'root', '');
 			$rep = $bdd->query('select chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin, races.nomRace, couleur.nomCouleur, box.idBox, chien.dateEntree, tarification.tarif,lof.Lof, etatlegal.description, chien.photo
 				FROM chien, sexe, sterilisation, vaccin, etrevaccine, races, etrerace, couleur, etredecouleur, box, loger, tarification, etatlegal, Lof
 				WHERE chien.idSexe=sexe.IdSexe 
