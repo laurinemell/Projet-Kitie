@@ -9,7 +9,6 @@
 	<body>
 	
 	<form method="get" action="enregistrement_chien_dans_la_BD.php" autocomplete="off">
-		<div id="Formulaire">
 			<div id="FormulaireAjout">
 <!-- 			<placehorder for="race">Race</placehorder>
  -->			<select class="fo" name="race" id="race">
@@ -41,18 +40,16 @@
        				min="2000-01-01" max="2100-12-31">
 			<br>
 			<br>
-			<!-- <label for="couleur">Couleur</label> -->
-			<select class="fo" name="couleur" id="couleur">
-    			<option>--Choisir une couleur--</option>
-    				<?php
-						
- 						$reponse = $bdd->query('SELECT * FROM couleur');
+<label for="couleur" class="fo"> Choisir une couleur : </label>
+		<?php
+ 				$reponse = $bdd->query('SELECT * FROM couleur');
  						while ($ligne = $reponse->fetch()) {
-                			echo '<option value="'.$ligne["idCouleur"].'">'.$ligne["nomCouleur"].'</option>';
-            			}
-            ?>
-				</select>
-				
+                			echo '<tr><td>'.$ligne["nomCouleur"].'</td>';
+                	echo" <td><input type='checkbox' name='couleur' value='".$ligne['idCouleur']."'></td>";
+                	echo"<br>";
+                	echo "</tr>";
+                }
+ 		?>
 				<br>
 				<!-- <placehorder for="mordeur">Evaluation mordeur</placehorder> -->
 			<select class="fo" name="mordeur" id="mordeur">
@@ -158,5 +155,8 @@
 			<input id="valider" class="fb" type="submit" name="valider"value="Valider"/>
 			</div>
 </form>
+<div>
+<!-- <hr class="separation" />
+ --></div>
 	</body>
 </html>
