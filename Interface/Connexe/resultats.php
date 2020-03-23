@@ -10,7 +10,17 @@
 	<?php
 	include "../bd.php";
 	$bdd = getBD();
-	$rep = $bdd->query('select * from chien');
+	$requete="select * from chien, etrerace, etredecouleur where";
+	if(isset($_GET["Race"])){
+		$requete."chien.idChien=etrerace.idChien and etrerace.idRace=".$_GET["Race"]." and ";
+	}
+	if(isset($_GET["Couleur"])){
+		$requete."etredecouleur.idCouleur=".$_GET["Couleur"]." and ";
+	}
+	if(isset($_GET["Sexe"])){
+		$requete."chien.idSexe=".$_GET["Sexe"];
+	}
+	$rep = $bdd->query($requete);
 	$sexe = $bdd->query('select sexe.NomSexe from chien,sexe where chien.idChien='.$_GET["identifiant"].' and chien.idSexe=sexe.IdSexe');
 	$race = $bdd->query('select races.nomRace from races, etrerace where etrerace.idChien='.$_GET["identifiant"].' and races.idRace=etrerace.idRace ');
 	while ($ligne = $rep ->fetch()) {

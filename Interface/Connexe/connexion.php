@@ -19,6 +19,7 @@
 		</style>
 	</head>
 	<body>
+		<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
 		<form action="../PHP/phpCo.php" method="get" autocomplete="on">
 		<div>
 			<center><input class="fo" type="text" name="id"value=""  placeholder="Identifiant"/></center>

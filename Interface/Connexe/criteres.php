@@ -7,11 +7,11 @@
 	<body>
 		<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
 			<center><input type="search" id="barreRecherche2" name="name"></center>
-		<form action=recherche.php" method="post" autocomplete="on">
+		<form action=resultats.php" method="get" autocomplete="on">
 		<div id="Criteres">
 			<div id="Race">
-				<label for="taille">Race</label>
-				<select name="taille" id="selecteur">
+				<label for="Race">Race</label>
+				<select name="Race" id="selecteur">
 				<option value="">Faite un choix</option>
 				<?php
 					include "../bd.php";
@@ -44,18 +44,15 @@
 				
 			</div>
 		</div>
-		</form>
 		<div id="imagesAcc">
 			<?php
-				$rep3 = $bdd->query('select * from chien');
-				$ligne3 = $rep3->fetch();
-				$i=0;
-				while ($ligne = $rep3 ->fetch()&& $i<=3) { 
-					echo '<div id=photo'.$i.'class="rond"> <img src="Image/'.$ligne["photo"].'> </div>';
-					$i=$i+1;
-				} 
-				$rep3->closeCursor;
+			$photo = $bdd->query('select chien.nomChien,chien.photo,chien.idChien from chien where idTarification=1 and photo!="" order by rand() LIMIT 5');
+			while ($ligne = $photo ->fetch()) {
+				echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><img class=rond src="../../BD/photo/'.$ligne["photo"].'"></a>';
+			}
 			?>
+			<center><button class="fb" name="valider">Valider</button></center>
 			<center><bouton id="bouton" type=submit name=action><img src="../Image/recherche.png"></bouton></center>
 		</div>
+		</form>
 	</body>
