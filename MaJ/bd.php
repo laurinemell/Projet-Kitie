@@ -6,7 +6,6 @@
 <?php
 /* Récupérer les données de la page du listing de la SPA */
 include "fonctions.php";
-
 $listing=recuperer_donnees_listing();
 //echo "<pre>";
 //print_r($listing[0]);
