@@ -9,15 +9,10 @@ function enregistrer ($identifiant, $p, $date, $dateentree, $sexe, $sterilisatio
 include "bd.php";
 $bdd = getBD();
  $req=("INSERT INTO chien (idChien,nomChien, dateNaissance, dateEntree, idSexe, idSterilisation, idTarification, idMordeur, description) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['p']."'".", "."'".$_GET['date']."'".", "."'".$_GET['dateentree']."'".", ".$_GET['sexe'].", "."'".$_GET['sterilisation']."'".", "."'".$_GET['tarif']."'".","."'".$_GET['mordeur']."'".","."'".$_GET['description']."'".")");
-$i=0
- while ($i<count($couleur) ) {
 
- $req1= ("INSERT INTO etredecouleur (idChien,idCouleur) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['couleur']."'".")");
- echo $req1;
-$i++;
-} 
+ $req1=("INSERT INTO etredecouleur (idChien,idCouleur) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['couleur']."'".")");
 
-  $req2= ("INSERT INTO loger (idBox,idChien) VALUES ("."'".$_GET['box']."'".","."'".$_GET['identifiant']."'".")");
+ $req2= ("INSERT INTO loger (idBox,idChien) VALUES ("."'".$_GET['box']."'".","."'".$_GET['identifiant']."'".")");
 
  $req3=("INSERT INTO etrevaccine (idChien,idVaccin,dateVaccin) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['vaccin']."'".","."'".$_GET['datevaccin']."'".")");
 
