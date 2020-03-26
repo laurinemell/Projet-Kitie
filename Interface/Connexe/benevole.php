@@ -11,6 +11,10 @@
 	<input id="ac" class="fo" type="button" value="Ajouter un chien">
 	<input id="ab" class="fo" type="button" value="Ajouter un bénévole">
 	</div>
+	<div id="donnee">
+		<div id="selection">
+		</div>
+	</div>
 	<div id="bd">
 		<input type="search" id="barreRecherche" name="name" placeholder="Recherche par identifiant ou nom">
 		<?php
