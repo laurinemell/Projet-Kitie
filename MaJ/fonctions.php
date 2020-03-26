@@ -37,12 +37,14 @@ function recuperer_donnees_BD(){
 	return $donnees;
 }
 
-function inserer_donnees($id,$nom,$date_naissance,$date_entree,$sexe,$sterilise){
+function inserer_donnees($id,$nom,$date_naissance,$date_entree,$sexe,$sterilise,$box){
 	$bdd = getBD();
 	$req="INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `idSexe`, `idSterilisation`, `idTarification`) VALUES ('".$id."', '".$nom."', '".$date_naissance."', '".$date_entree."', '".$sexe."', '".$sterilise."', '3')";
 	//echo $req;
-	$req2="INSERT INTO `loger` (`idBox`, `idChien`, `dateDebut`, `dateFin`) VALUES ('R709', '742021071', NULL, NULL)";
-	$reponse=$bdd->query($req);
+	$req2="INSERT INTO `loger` (`idBox`, `idChien`, `dateDebut`, `dateFin`) VALUES ('".$box."', '".$id."', '".$date_entree."', NULL)";
+	//echo $req2;
+	$reponse1=$bdd->query($req);
+	$reponse2=$bdd->query($req2);
 }
 
 function comparer_donnees($listing,$BD){
@@ -107,7 +109,7 @@ function comparer_donnees($listing,$BD){
 				
 				inserer_donnees($id_listing,$nom,$date_naissance,$date_entree,$sexe,$sterilise,$box);
 			}
-		/*on ajoute +13 à $i */
+		/*on ajoute +13 à $i pour passer à l'id suivant*/
 		$i++;
 		$i++;
 		$i++;
