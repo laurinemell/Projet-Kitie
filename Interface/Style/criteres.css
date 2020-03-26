@@ -1,3 +1,7 @@
+#titre{
+	margin-top: -1.5em;
+	color: #3B76C8;
+}
 #Criteres{
 	background-color: #3B76C8;
 	width: 90%;
@@ -8,32 +12,34 @@
 	padding: 2em;
 	border-radius: 4em;
 }
-#Race{
-	width: 20em;
-}
-#Couleur{
-	width: 20em;
-	margin-left: 25em;
-	margin-top: -2px;
-}
-#selecteur{
+select{
 	width: 20em;
 	float: right;
 }
-#barreRecherche2{
-	border-radius: 0.5em;
-	border : 5px solid #FF8000; 
-	width: 50em;
-	height: 3em;
-	margin-top: -7em;
-}
-#bouton{
-	width: 3em;
-}
 #imagesAcc{
 	height: 10em;
-	width: 60em;
-
-.rond{
-	margin-left: 1em;
+	width: 70%;
+	margin-top: 1em;
 }
+/*Styles particuliers*/
+#Races{
+	float: left;
+}
+#Couleur{
+	float: left;
+	margin-left: 10em;
+}
+#Sexe{
+	width: 5em;
+	float: left;
+	margin-left: 10em;
+}
+#valider{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0px;
+}
+.rond{
+	margin-left: 10px;
+}
+
