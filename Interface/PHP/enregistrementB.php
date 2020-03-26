@@ -6,27 +6,27 @@
 <?php
 
 function enregistrer($nom, $prenom, $age, $mail, $tel, $idStatut, $sexeHum, $mdp){
-	$bdd = new PDO('mysql:host=localhost;dbname=projet_kitie;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=projetkitie;charset=utf8', 'root', '');
 	$r="INSERT INTO utilisateur (nom, prenom, age, mail, tel, idStatut, sexeHum, mdp) VALUES ("."'".$_GET['nom']."'".", "."'".$_GET['prenom']."'".", "."'".$_GET['age']."'".",  "."'".$_GET['mail']."'".", "."'".$_GET['tel']."'".", "."'".$idStatut."'".","."'".$sexeHum."'".","."'".$_GET['mdp']."'".")";
+	echo $r;
 	$rep=$bdd->query($r); 
 	}
 ?>
 <?php
+
+$idStatut=0;
+$sexeHum=1;
+
 function statut($statut){
 	if($_GET['statut']=="employe"){
 		$idStatut=1;
 	}
-	else{
-		$idStatut=0;
-	}
+	
 }
 
 function sexeHum($genre){
 	if($_GET['genre']=="M"){
 		$sexeHum=0;
-	}
-	else{
-		$sexeHum=1;
 	}
 }
 

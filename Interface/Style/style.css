@@ -10,7 +10,7 @@ body{
   width: 10em;
 }
 .fo{
-	/*Défini les boutons oranges*/
+  /*Défini les boutons oranges*/
   background-color:#EB681F;
   opacity: 0.7;
   border: none;
@@ -23,7 +23,7 @@ body{
 }
 
 .fb{
-	/*Défini les boutons bleus*/
+  /*Défini les boutons bleus*/
   background-color:#3773C7;
   border: none;
   color: whitesmoke;
@@ -76,14 +76,155 @@ img:hover {
   }
 
 .separation{
-	position: fixed;
-	margin-top :0px;
-	margin-left: 20em;
-	height: 110%;
-	width : 2em;
-	background: #EB681F;
+  position: fixed;
+  margin-top :0px;
+  margin-left: 20em;
+  height: 110%;
+  width : 2em;
+  background: #EB681F;
   border-style: none;
-	}
+  }
+  .bouton{
+  width: 100%;
+  text-align: center;
+  height: 100%
+  }
+  .bouton_img{
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+  height: 200px;
+}
+
+.fixed-barre-top {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: whitesmoke;
+  z-index: 1;
+}
+
+.fixed-reste {
+  position: relative;
+  width: 100%;
+  top: 100px;
+}
+
+#block1{
+  position: relative;
+  top: -30px;
+  left: 30px;
+}
+
+#block2{
+  position: relative;
+  top: -30px;
+  left: 40px;
+}
+#block3{
+  position: relative;
+  top:-30px;
+  left:50px;
+}
+
+.img-chien{
+  height: 50px;
+  width: 50px;
+}
+
+/*Barre de recherche*/
+#barreRecherche{
+  border-radius: 0.5em;
+  border : 5px solid #FF8000; 
+  width: 100%;
+  height: 3em;
+  }
+body{
+  margin: 0px;
+  background-color: whitesmoke;
+}
+*{
+  border-color: red solid 5px;
+  font-family: "Agency FB", Calibri, "Californian FB", serif
+}
+#logo{
+  width: 10em;
+}
+.fo{
+  /*Défini les boutons oranges*/
+  background-color:#EB681F;
+  opacity: 0.7;
+  border: none;
+  color: white;
+  padding: 16px 60px;
+  border-radius: 5em;
+  width: 20em;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+.fb{
+  /*Défini les boutons bleus*/
+  background-color:#3773C7;
+  border: none;
+  color: whitesmoke;
+  padding: 16px 50px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 32px;
+}
+
+.rectangle{
+  width: 5%;
+  background-color: #FEBE7E;
+  height: 100%;
+}
+
+.rond {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+img {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+
+/* Bonus : keep aspect-ratio */ 
+img {
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* Bonus : effect on :hover */
+img {
+  transition: object-position .25s;
+}
+img:hover {
+  object-position: center;
+}
+
+/* Deco */
+
+  #imagesAcc{
+  width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  }
+
+.separation{
+  position: fixed;
+  margin-top :0px;
+  margin-left: 20em;
+  height: 110%;
+  width : 2em;
+  background: #EB681F;
+  border-style: none;
+  }
   .bouton{
   width: 100%;
   text-align: center;
