@@ -7,7 +7,7 @@ return $tableau_resultat;
 }
 
 function getBD(){
-$bdd = new PDO('mysql:host=localhost:8889;dbname=projet_kitie','root', 'root');
+$bdd = new PDO('mysql:host=localhost:8889;dbname=projetkitie','root', 'root');
 return $bdd;
 }
 
