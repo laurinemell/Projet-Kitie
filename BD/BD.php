@@ -32,7 +32,7 @@
 
 			</tr>
 			<?php
-			$bdd = new PDO('mysql:host=localhost;dbname=projet_kitie;charset=utf8', 'root', '');
+			$bdd = new PDO('mysql:host=localhost;dbname=projetkitie;charset=utf8', 'root', '');
 			$rep = $bdd->query('select chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin, races.nomRace, couleur.nomCouleur, box.idBox, chien.dateEntree, tarification.tarif,lof.Lof, etatlegal.description, chien.photo
 				FROM chien, sexe, sterilisation, vaccin, etrevaccine, races, etrerace, couleur, etredecouleur, box, loger, tarification, etatlegal, Lof
 				WHERE chien.idSexe=sexe.IdSexe 

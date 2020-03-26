@@ -6,19 +6,19 @@
 <?php
 
 function enregistrer($nom, $prenom, $age, $mail, $tel, $cp, $sexeHum){
-	$bdd = new PDO('mysql:host=localhost;dbname=projet_kitie;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=projetkitie;charset=utf8', 'root', '');
 	$r="INSERT INTO adoptant (nom, prenom, age, mail, tel, codePostal, sexe) VALUES ("."'".$_GET['nom']."'".", "."'".$_GET['prenom']."'".", "."'".$_GET['age']."'".",  "."'".$_GET['mail']."'".", "."'".$_GET['tel']."'".","."'".$_GET['cp']."'".","."'".$sexeHum."'".")";
-	echo $r;
+	$rep=$bdd->query($r); 
+
 	}
 ?>
 <?php
 
+$sexeHum=1;
+
 function sexeHum($genre){
 	if($_GET['genre']=="M"){
 		$sexeHum=0;
-	}
-	else{
-		$sexeHum=1;
 	}
 }
 
