@@ -15,7 +15,7 @@
 	if(isset($_GET["valider"])){
 		include "../bd.php";
 		$bdd = getBD();
-		$rep = $bdd->query('select * from utilisateur where mdp="'.$_GET["mdp"].'" and idUtilisateur="'.$_GET["id"].'"');
+		$rep = $bdd->query('select * from utilisateur where mdp="'.$_GET["mdp"].'" and mail="'.$_GET["id"].'"');
 		$data = $rep ->fetch();
 		echo "Session créée";
 			if(!empty($data)){
