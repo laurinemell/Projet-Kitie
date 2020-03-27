@@ -1,3 +1,14 @@
+<?php
+if (isset($_GET['synchroniser'])){
+	include '../MaJ/fonctions.php';
+	ob_start();
+	$listing=recuperer_donnees_listing();
+	$BD=recuperer_donnees_BD();
+	comparer_donnees($listing,$BD);
+	ob_end_clean();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +22,8 @@
 		<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
 		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
 		<a class="fo" id="block3" href="../Interface/Connexe/ajoutB.php"> Ajouter un bénévole </a>
+		<a class="fo" id="block1" class="fo" href="BD.php?synchroniser=true" > Synchroniser </a>
+
 	</div>
 	<div class="fixed-reste">
 		<table class="flat-table" border="3">
@@ -48,7 +61,8 @@
 					AND tarification.idTarification=chien.idTarification
 					AND lof.idLof=etrerace.idLof
 					AND etatlegal.idCategorie=etrerace.idCategorie
-				GROUP BY (chien.idChien)');
+				GROUP BY (chien.idChien)
+				ORDER BY chien.nomChien');
 			$ligne = $rep->fetch();
 			while ($ligne = $rep ->fetch()) { 
 			echo "<tr>";
