@@ -40,9 +40,9 @@ function recuperer_donnees_BD(){
 function inserer_donnees($id,$nom,$date_naissance,$date_entree,$sexe,$sterilise,$box){
 	$bdd = getBD();
 	$req="INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`,`dateSortie`, `idSexe`, `idSterilisation`, `idTarification`,`idMordeur`, `photo`, `description`) VALUES ('".$id."', '".$nom."', '".$date_naissance."', '".$date_entree."', NULL , '".$sexe."', '".$sterilise."', '3','0','default.jpg','')";
-	//echo $req;
+	echo $req;
 	$req2="INSERT INTO `loger` (`idBox`, `idChien`, `dateDebut`, `dateFin`) VALUES ('".$box."', '".$id."', '".$date_entree."', NULL)";
-	//echo $req2;
+	echo $req2;
 	$reponse1=$bdd->query($req);
 	$reponse2=$bdd->query($req2);
 }
