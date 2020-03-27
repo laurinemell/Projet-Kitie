@@ -40,8 +40,11 @@
        				min="2000-01-01" max="2100-12-31">
 			<br>
 			<br>
-<label for="couleur" class="fo"> Choisir une couleur : </label>
-		<?php
+<!-- <label for="couleur" class="fo"> Choisir une couleur : </label>
+
+ -->		
+ 			<div id="hau">
+ 				<?php
  				$reponse = $bdd->query('SELECT * FROM couleur');
  						while ($ligne = $reponse->fetch()) {
                 			echo '<tr><td>'.$ligne["nomCouleur"].'</td>';
@@ -50,6 +53,7 @@
                 	echo "</tr>";
                 }
  		?>
+ 	</div>
 				<br>
 				<!-- <placehorder for="mordeur">Evaluation mordeur</placehorder> -->
 			<select class="fo" name="mordeur" id="mordeur">
