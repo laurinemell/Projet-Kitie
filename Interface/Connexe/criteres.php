@@ -9,30 +9,32 @@
 			<center><h1 id="titre">Recherche et critères</h1></center>
 		<form action="resultats.php" method="get" autocomplete="on">
 		<div id="Criteres">
-				<select name="Race" id="Races">
-				<option value="">Faite un choix</option>
-				<?php
-					include "../bd.php";
-					$bdd = getBD();
-					$rep1 = $bdd->query('select * from races');
-					$ligne1 = $rep1->fetch();
-						while ($ligne1 = $rep1 ->fetch()) {
-							echo '<option value="'.$ligne1["idRace"].'">'.$ligne1["nomRace"].'</option>';
-						}
-					$rep1->closeCursor;
-				?>
+				<div id="Races">
+ 				<?php
+ 				include "../bd.php";
+				$bdd = getBD();
+ 				$reponse = $bdd->query('select * from races');
+ 						while ($ligne = $reponse->fetch()) {
+                			echo '<tr><td>'.$ligne["nomRace"].'</td>';
+                			echo" <td><input type='checkbox' name='couleur' value='".$ligne["idRace"]."'></td>";
+                			echo"<br>";
+                			echo "</tr>";
+                		}
+                		$ligne->closeCursor;
+ 				?>
+ 				</div>
 				</select>
-				<select name="Couleur" id="Couleur">
-				<option value="">Faite un choix</option>
-				<?php
-					$rep2 = $bdd->query('select * from couleur');
-					$ligne2 = $rep2->fetch();
-						while ($ligne2 = $rep2 ->fetch()) {
-							echo '<option value="'.$ligne2["idCouleur"].'">'.$ligne2["nomCouleur"].'
-							</option>';
-						}
-					$rep2->closeCursor;
-				?>
+				<div id="Couleur">
+ 				<?php
+ 				$reponse = $bdd->query('SELECT * FROM couleur');
+ 						while ($ligne = $reponse->fetch()) {
+                			echo '<tr><td>'.$ligne["nomCouleur"].'</td>';
+                			echo" <td><input type='checkbox' name='couleur' value='".$ligne['idCouleur']."'></td>";
+                			echo"<br>";
+                			echo "</tr>";
+                		}
+ 				?>
+ 				</div>
 				</select>
 			<div id="Sexe">
 				<?php
@@ -43,7 +45,7 @@
 				$rep3->closeCursor;
 				?>
 			</div>
-			<button id="valider" id="valider">Valider</button>
+			<center><button id="valider" class="fo">Valider</button></center>
 		</div>
 
 
