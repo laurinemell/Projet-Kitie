@@ -8,31 +8,26 @@
 <body>
 	<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
 	<div id="head">
-	<input id="ac" class="fo" type="button" value="Ajouter un chien">
-	<input id="ab" class="fo" type="button" value="Ajouter un bénévole">
+	<a href="ajout-chien.php" target="_blank"> <input id="ac" class="fo" type="button" type="button" value="Ajouter un chien"></a>
+	<a href="ajoutB.php" target="_blank"> <input id="ab" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>
 	</div>
 	<div id="donnee">
 		<div id="selection">
 		</div>
 	</div>
-	<div id="bd">
+	<div id="apercu">
 		<input type="search" id="barreRecherche" name="name" placeholder="Recherche par identifiant ou nom">
 		<?php
-		$bdd = new PDO('mysql:host=localhost;dbname=projet-kitie;port=3306','root','');
-		$rep = $bdd->query('select * from chien');
-		echo '<ul>';
+		include "../bd.php";
+		$bdd = getBD();
+		$rep = $bdd->query('SELECT * FROM chien ORDER BY dateEntree DESC ');
 		while ($ligne = $rep ->fetch()) {
-			echo '<li>';
-			if ($ligne["photo"] == NULL){
-				$ligne["photo"] = "default";
-			}
-			echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/></a>';
-			echo '<p class="prenom">Bonjour, je suis : '.$ligne["nomChien"].'</p>';
-			echo '</li>';
+			echo '<tr><td>'.$ligne["nomChien"].'</td>';
+			echo '<td><a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/></td>';
+			echo '</tr>';
 		}
-		echo '</ul>';
 		?>
 	</div>
-	<input id="ic" class="fo" type="button" value="Information sur les chiens">
+	<center><a href="../../BD/bd.php" target="_blank"> <input id="ic" class="fo" type="button" value="Information sur les chiens"> </a></body></center>
 </body>
 </html>
