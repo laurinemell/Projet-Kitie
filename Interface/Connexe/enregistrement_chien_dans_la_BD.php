@@ -1,22 +1,20 @@
 <html>
 <head>
 <title>Enregistrement</title>
-
 </head>
+
 <?php
 
 function enregistrer ($identifiant, $p, $date, $dateentree, $sexe, $sterilisation, $tarif, $mordeur, $box, $couleur, $lof, $vaccin, $datevaccin, $etat, $description) {
 	include "bd.php";
 	$bdd = getBD();
- 	$req=("INSERT INTO chien (idChien,nomChien, dateNaissance, dateEntree, idSexe, idSterilisation, idTarification, idMordeur, description) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['p']."'".", "."'".$_GET['date']."'".", "."'".$_GET['dateentree']."'".", ".$_GET['sexe'].", "."'".$_GET['sterilisation']."'".", "."'".$_GET['tarif']."'".","."'".$_GET['mordeur']."'".","."'".$_GET['description']."'".")");
-	$i=0;
-	
- 	while ($i<count($couleur) ) {
+ 	$req="INSERT INTO chien (idChien,nomChien, dateNaissance, dateEntree, idSexe, idSterilisation, idTarification, idMordeur, description) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['p']."'".", "."'".$_GET['date']."'".", "."'".$_GET['dateentree']."'".", ".$_GET['sexe'].", "."'".$_GET['sterilisation']."'".", "."'".$_GET['tarif']."'".","."'".$_GET['mordeur']."'".","."'".$_GET['description']."'".")";
 
- 		$req1="INSERT INTO etredecouleur (idChien,idCouleur) VALUES ('".$identifiant."','".$couleur[$i]."')";
+foreach ($couleur) {
+
+ 		$req1="INSERT INTO etredecouleur (idChien,idCouleur) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['couleur']."'".")";
  		echo $req1;
- 		$rep1=$bdd->query($req1);
-		$i++;
+ 		
 	} 
 
   	$req2= "INSERT INTO loger (idBox,idChien) VALUES ('".$_GET['box']."','".$_GET['identifiant']."')";
@@ -63,10 +61,7 @@ echo "<meta http-equiv='refresh' content='2; URL=chienxampp.php'>";
 
 
 ?>
-
 </head>
 <body>
-
-
 </body>
 </html>
