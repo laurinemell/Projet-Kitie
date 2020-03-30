@@ -1,7 +1,6 @@
 <html>
 <head>
 <title>Enregistrement</title>
-</head>
 
 <?php
 
@@ -10,11 +9,13 @@ function enregistrer ($identifiant, $p, $date, $dateentree, $sexe, $sterilisatio
 	$bdd = getBD();
  	$req="INSERT INTO chien (idChien,nomChien, dateNaissance, dateEntree, idSexe, idSterilisation, idTarification, idMordeur, description) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['p']."'".", "."'".$_GET['date']."'".", "."'".$_GET['dateentree']."'".", ".$_GET['sexe'].", "."'".$_GET['sterilisation']."'".", "."'".$_GET['tarif']."'".","."'".$_GET['mordeur']."'".","."'".$_GET['description']."'".")";
 
-foreach ($couleur) {
 
- 		$req1="INSERT INTO etredecouleur (idChien,idCouleur) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['couleur']."'".")";
- 		echo $req1;
- 		
+foreach ($_GET['couleur'] as $valeur ){
+			// echo $valeur;
+ 		$req1="INSERT INTO etredecouleur (idChien,idCouleur) VALUES ('".$_GET['identifiant']."','$valeur')"; 	
+ 		echo $req1;	
+ 		$reponse1 = $bdd->query($req1);
+		$reponse1->closeCursor();
 	} 
 
   	$req2= "INSERT INTO loger (idBox,idChien) VALUES ('".$_GET['box']."','".$_GET['identifiant']."')";
@@ -32,8 +33,8 @@ foreach ($couleur) {
 	$reponse = $bdd->query($req);
 	$reponse->closeCursor();
 
-	$reponse1 = $bdd->query($req1);
-	$reponse1->closeCursor();
+	// $reponse1 = $bdd->query($req1);
+	// $reponse1->closeCursor();
 
 	$reponse2 = $bdd->query($req2);
 	$reponse2->closeCursor();

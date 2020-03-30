@@ -48,7 +48,7 @@
  				$reponse = $bdd->query('SELECT * FROM couleur');
  						while ($ligne = $reponse->fetch()) {
                 			echo '<tr><td>'.$ligne["nomCouleur"].'</td>';
-                	echo" <td><input type='checkbox' name='couleur' value='".$ligne['idCouleur']."'></td>";
+                	echo" <td><input type='checkbox' name='couleur[]' value='".$ligne['idCouleur']."'></td>";
                 	echo"<br>";
                 	echo "</tr>";
                 }
