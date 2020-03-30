@@ -1,14 +1,10 @@
 <?php
+include "../Interface/bd.php";
 
 function recuperer_donnees_listing(){
 $codesource=file_get_contents('https://340201.refugilys.org/specif/340201/www/chiens.php?APPLI=340201');
 preg_match_all("#<td bgcolor=''>.+</td>#",$codesource,$tableau_resultat);
 return $tableau_resultat;
-}
-
-function getBD(){
-$bdd = new PDO('mysql:host=localhost:8889;dbname=projetkitie','root', 'root');
-return $bdd;
 }
 
 function separeNumeric($text) {

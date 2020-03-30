@@ -45,7 +45,7 @@ if (isset($_GET['synchroniser'])){
 
 			</tr>
 			<?php
-			include "bd.php";
+			include "../bd.php";
 			$bdd = getBD();
 			$rep = $bdd->query('select chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin, races.nomRace, couleur.nomCouleur, box.idBox, chien.dateEntree, tarification.tarif,lof.Lof, etatlegal.description, chien.photo
 				FROM chien, sexe, sterilisation, vaccin, etrevaccine, races, etrerace, couleur, etredecouleur, box, loger, tarification, etatlegal, Lof
