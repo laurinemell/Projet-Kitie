@@ -6,7 +6,8 @@
 <?php
 
 function enregistrer($nom, $prenom, $age, $mail, $tel, $idStatut, $sexeHum, $mdp){
-	$bdd = new PDO('mysql:host=localhost;dbname=projetkitie;charset=utf8', 'root', '');
+	include "bd.php";
+	$bdd = getBD();
 	$r="INSERT INTO utilisateur (nom, prenom, age, mail, tel, idStatut, sexeHum, mdp) VALUES ("."'".$_GET['nom']."'".", "."'".$_GET['prenom']."'".", "."'".$_GET['age']."'".",  "."'".$_GET['mail']."'".", "."'".$_GET['tel']."'".", "."'".$idStatut."'".","."'".$sexeHum."'".","."'".$_GET['mdp']."'".")";
 	echo $r;
 	$rep=$bdd->query($r); 
