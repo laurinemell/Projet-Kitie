@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 26 mars 2020 à 14:40
--- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Host: localhost:8889
+-- Generation Time: Mar 30, 2020 at 01:50 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,31 +19,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `projetkitie`
+-- Database: `projetkitie`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `adoptant`
+-- Table structure for table `adoptant`
 --
 
-DROP TABLE IF EXISTS `adoptant`;
-CREATE TABLE IF NOT EXISTS `adoptant` (
-  `idAdoptant` int(10) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `adoptant` (
+  `idAdoptant` int(10) NOT NULL,
   `sexe` int(1) DEFAULT NULL,
   `nom` varchar(15) DEFAULT NULL,
   `prenom` varchar(15) DEFAULT NULL,
   `age` int(3) DEFAULT NULL,
   `codePostal` int(6) DEFAULT NULL,
   `tel` int(10) DEFAULT NULL,
-  `mail` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`idAdoptant`),
-  KEY `idSexeH` (`sexe`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `mail` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `adoptant`
+-- Dumping data for table `adoptant`
 --
 
 INSERT INTO `adoptant` (`idAdoptant`, `sexe`, `nom`, `prenom`, `age`, `codePostal`, `tel`, `mail`) VALUES
@@ -52,17 +49,15 @@ INSERT INTO `adoptant` (`idAdoptant`, `sexe`, `nom`, `prenom`, `age`, `codePosta
 -- --------------------------------------------------------
 
 --
--- Structure de la table `box`
+-- Table structure for table `box`
 --
 
-DROP TABLE IF EXISTS `box`;
-CREATE TABLE IF NOT EXISTS `box` (
-  `idBox` varchar(4) NOT NULL,
-  PRIMARY KEY (`idBox`)
+CREATE TABLE `box` (
+  `idBox` varchar(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `box`
+-- Dumping data for table `box`
 --
 
 INSERT INTO `box` (`idBox`) VALUES
@@ -168,11 +163,10 @@ INSERT INTO `box` (`idBox`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `chien`
+-- Table structure for table `chien`
 --
 
-DROP TABLE IF EXISTS `chien`;
-CREATE TABLE IF NOT EXISTS `chien` (
+CREATE TABLE `chien` (
   `idChien` int(10) NOT NULL,
   `nomChien` varchar(50) DEFAULT NULL,
   `dateNaissance` date DEFAULT NULL,
@@ -183,47 +177,53 @@ CREATE TABLE IF NOT EXISTS `chien` (
   `idTarification` int(1) DEFAULT NULL,
   `idMordeur` int(1) DEFAULT NULL,
   `photo` text NOT NULL,
-  `description` text NOT NULL,
-  PRIMARY KEY (`idChien`),
-  KEY `idMordeur` (`idMordeur`),
-  KEY `idTarification` (`idTarification`),
-  KEY `idSterilisation` (`idSterilisation`),
-  KEY `idSexe` (`idSexe`)
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `chien`
+-- Dumping data for table `chien`
 --
 
 INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `dateSortie`, `idSexe`, `idSterilisation`, `idTarification`, `idMordeur`, `photo`, `description`) VALUES
 (14752163, 'NERVAL', '2014-02-01', '2019-11-10', '', 0, 1, 1, 0, '14752163.jpg', ''),
-(16602813, 'FALCO', '2014-02-01', '2019-12-14', '', 0, 1, 3, 0, '', ''),
-(100068026, 'FURAX', '2019-01-01', '2020-01-03', '', 1, 1, 3, 0, '', ''),
-(100068035, 'TYSON', '2012-01-01', '2020-01-03', '', 0, 1, 3, 0, '', ''),
-(100106783, 'BALOO', '2019-06-01', '2020-01-24', '', 0, 0, 3, 0, '', ''),
-(100107161, 'CORA', '2018-10-01', '2020-01-24', '', 1, 0, 3, 0, '', ''),
-(201766694, 'POKI', '2017-12-01', '2019-12-28', '', 0, 1, 3, 0, '', ''),
+(16602813, 'FALCO', '2014-02-01', '2019-12-14', '', 0, 1, 3, 0, 'default.jpg', ''),
+(100068026, 'FURAX', '2019-01-01', '2020-01-03', '', 1, 1, 3, 0, 'default.jpg', ''),
+(100068035, 'TYSON', '2012-01-01', '2020-01-03', '', 0, 1, 3, 0, 'default.jpg', ''),
+(100106783, 'BALOO', '2019-06-01', '2020-01-24', '', 0, 0, 3, 0, 'default.jpg', ''),
+(100106899, 'LOULOU', '2018-02-01', '2020-02-12', NULL, 0, 1, 3, 0, '100106899.jpg', ''),
+(100107018, 'LUNA', '2016-01-01', '2020-03-13', NULL, 1, 1, 3, 0, 'default.jpg', ''),
+(100107161, 'CORA', '2018-10-01', '2020-01-24', '', 1, 0, 3, 0, 'default.jpg', ''),
+(100107211, 'LUGO', '2018-01-01', '2020-03-13', NULL, 0, 0, 3, 0, 'default.jpg', ''),
+(201766694, 'POKI', '2017-12-01', '2019-12-28', '', 0, 1, 3, 0, 'default.jpg', ''),
 (400009792, 'CARAMEL', '2008-10-01', '2018-03-22', '', 0, 1, 1, 0, '400009792.jpg', ''),
 (500048691, 'PICSOU', '2007-11-01', '2020-01-31', '', 0, 1, 1, 1, '', ''),
 (500069127, 'DINGO DIT DISCO', '2008-04-01', '2020-01-06', '', 0, 1, 1, 0, '', ''),
 (500262918, 'JACK', '2009-04-01', '2019-12-09', '', 0, 1, 1, 0, '500262918.jpg', ''),
+(500471743, 'GUSTO', '2011-09-01', '2020-02-29', NULL, 0, 1, 3, 0, 'default.jpg', ''),
 (500561547, 'HERCULE', '2012-08-01', '2018-03-29', '', 0, 1, 1, 3, '500561547.jpg', ''),
+(500664190, 'MESSINE', '2014-12-01', '2020-01-08', NULL, 0, 1, 3, 0, 'default.jpg', ''),
 (500751919, 'DJANGO', '2015-02-01', '2020-01-03', '', 0, 1, 3, 0, '', ''),
 (500770405, 'CHAINA', '2013-08-01', '2019-09-30', '', 1, 1, 3, 0, '', ''),
 (501080512, 'GOLF', '2015-01-01', '2019-10-03', '', 1, 1, 2, 2, '501080512.jpg', ''),
 (501217962, 'TYSON', '2016-09-01', '2019-02-13', '', 0, 1, 1, 1, '', ''),
+(501343345, 'JAZZ', '2017-05-01', '2020-01-24', NULL, 1, 1, 3, 0, 'default.jpg', ''),
 (501387833, 'CHANCE', '2017-09-01', '2020-01-15', '', 1, 1, 3, 0, '', ''),
 (501408688, 'ZANGO', '2017-08-01', '2019-12-04', '', 0, 1, 3, 0, '', ''),
 (501507555, 'MEITAY', '2018-07-01', '2020-01-25', '', 1, 0, 3, 0, '', ''),
 (501631093, 'KIARA', '2018-11-01', '2019-12-26', '', 1, 1, 3, 0, '501631093.jpg', ''),
-(600041407, 'MAX', '2016-01-01', '2020-01-04', '', 0, 1, 3, 0, '', ''),
+(590090065, 'LUDO', '2019-02-01', '2020-02-14', NULL, 0, 1, 3, 0, 'default.jpg', ''),
+(590090742, 'KID', '2017-02-01', '2020-02-01', NULL, 0, 1, 3, 0, 'default.jpg', ''),
+(590090951, 'BUSTER', '2019-02-01', '2020-02-13', NULL, 0, 1, 3, 0, '590090951.jpg', ''),
+(590091057, 'ZOE', '2018-04-01', '2020-02-03', NULL, 1, 1, 3, 0, 'default.jpg', ''),
+(590092941, 'REGLYSS', '2019-02-01', '2020-02-13', NULL, 0, 1, 3, 0, '590092941.jpg', ''),
+(600041407, 'MAX', '2016-01-01', '2020-01-04', '', 0, 1, 3, 0, '600041407.jpg', ''),
 (600112272, 'PILOU', '2017-05-01', '2019-06-03', '', 0, 1, 3, 2, '', ''),
 (600192550, 'OPS', '2018-08-01', '2020-01-17', '', 0, 1, 3, 0, '', ''),
 (600230009, 'PINA', '2019-01-01', '2020-01-13', '', 1, 1, 3, 0, '', ''),
 (602218702, 'CHARLY', '2007-07-01', '2019-07-15', '', 0, 1, 1, 0, '602218702.jpg', ''),
 (602824117, 'E PITT VON DER GLUCKEN', '2009-12-01', '2020-01-11', '', 0, 1, 1, 0, '602824117.jpg', ''),
-(602842530, 'STRYKE', '2009-06-01', '2019-12-07', '', 0, 1, 1, 0, '', ''),
-(604021670, 'BILLY', '2008-05-01', '2020-01-10', '', 0, 0, 1, 0, '', ''),
+(602842530, 'STRYKE', '2009-06-01', '2019-12-07', '', 0, 1, 1, 0, '602842530.jpg', ''),
+(604021670, 'BILLY', '2008-05-01', '2020-01-10', '', 0, 0, 1, 0, '604021670.jpg', ''),
 (604150223, 'FILOU', '2010-05-01', '2020-01-25', '', 0, 1, 3, 0, '', ''),
 (604321869, 'FIDJI', '2011-01-01', '2020-01-13', '', 1, 1, 3, 0, '', ''),
 (604884959, 'ISIS', '2013-02-01', '2019-07-23', '', 1, 1, 1, 1, '604884959.jpg', ''),
@@ -232,9 +232,13 @@ INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `date
 (606191738, 'LUDIVINE', '2015-03-01', '2020-01-04', '', 1, 1, 3, 0, '', ''),
 (606201420, 'TURTLE', '2015-03-01', '2019-08-16', '', 0, 1, 2, 0, '606201420.jpg', ''),
 (606205619, 'CAMENBERT', '2015-03-01', '2019-10-10', '', 0, 1, 2, 0, '', ''),
-(606380724, 'JOE DIT SULTAN', '2014-12-01', '2019-10-13', '', 0, 1, 1, 1, '', ''),
+(606276123, 'AROS', '2014-10-01', '2020-03-11', NULL, 0, 1, 3, 0, 'default.jpg', ''),
+(606380724, 'JOE DIT SULTAN', '2014-12-01', '2019-10-13', '', 0, 1, 1, 1, '606380724.jpg', ''),
+(606526011, 'LUCIA', '2015-05-01', '2020-02-08', NULL, 1, 1, 3, 0, 'default.jpg', ''),
 (606558989, 'TYE', '2014-11-01', '2019-06-20', '', 0, 1, 2, 2, '', ''),
-(606594777, 'LUNA', '2012-10-01', '2019-12-18', '', 1, 1, 3, 0, '', ''),
+(606594777, 'LUNA', '2012-10-01', '2019-12-18', '', 1, 1, 3, 0, '606594777.jpg', ''),
+(606823461, 'NENGA', '2017-01-01', '2020-03-05', NULL, 0, 1, 3, 0, '606823461.jpg', ''),
+(606910780, 'KNOX', '2016-09-01', '2020-02-11', NULL, 0, 1, 3, 0, '606910780.jpg', ''),
 (608177696, 'PABLO', '2018-11-01', '2020-01-11', '', 0, 1, 3, 0, '', ''),
 (608258509, 'BOUBA', '2018-11-01', '2019-08-07', '', 0, 1, 3, 0, '', ''),
 (608298259, 'TYSON', '2018-09-01', '2019-12-29', '', 0, 1, 2, 0, '608298259.jpg', ''),
@@ -242,14 +246,16 @@ INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `date
 (711025363, 'ROCKY', '2013-08-01', '2017-06-10', '', 0, 1, 1, 1, '', ''),
 (712252412, 'CHAMALLOW', '2014-11-01', '2019-10-12', '', 0, 1, 2, 3, '712252412.jpg', ''),
 (712339421, 'E1BK22', '2015-08-01', '2019-10-17', '', 1, 1, 3, 0, '', ''),
-(712678597, 'OLLIE', '2018-04-01', '2020-01-21', '', 1, 1, 3, 0, '', ''),
+(712678597, 'OLLIE', '2018-04-01', '2020-01-21', '', 1, 1, 3, 0, '712678597.jpg', ''),
 (712678707, 'L6BX26', '2018-04-01', '2019-10-17', '', 1, 1, 3, 0, '', ''),
 (731020202, 'GEISHA', '2011-03-01', '2019-12-12', '', 1, 1, 3, 1, '', ''),
+(731055848, 'DIABOLO', '2013-08-01', '2020-02-23', NULL, 0, 1, 3, 0, '731055848.jpg', ''),
 (731452679, 'MOKA DIT MEIKO', '2016-04-01', '2019-10-26', '', 0, 1, 1, 1, '', ''),
 (731508984, 'ATHOS', '2014-07-01', '2020-01-02', '', 0, 1, 3, 0, '', ''),
+(731508988, 'NINA', '2012-12-01', '2020-02-11', NULL, 1, 1, 3, 0, 'default.jpg', ''),
 (731559255, 'MACHA', '2014-02-01', '2017-05-20', '', 1, 1, 1, 0, '', ''),
-(731559353, 'ROXY', '2015-04-01', '2019-09-10', '', 0, 1, 1, 1, '', ''),
-(731679311, 'NELSON', '2016-02-01', '2020-01-09', '', 0, 1, 3, 0, '', ''),
+(731559353, 'ROXY', '2015-04-01', '2019-09-10', '', 0, 1, 1, 1, '731559353.jpg', ''),
+(731679311, 'NELSON', '2016-02-01', '2020-01-09', '', 0, 1, 3, 0, '731679311.jpg', ''),
 (731701634, 'KIPPER', '2015-12-01', '2019-01-30', '', 0, 1, 1, 0, '731701634.jpg', ''),
 (732033195, 'PETIT', '2014-09-01', '2019-04-05', '', 0, 1, 1, 3, '', ''),
 (732137576, 'JAGGER', '2017-01-01', '2019-02-05', '', 0, 1, 1, 2, '732137576.jpg', ''),
@@ -268,16 +274,19 @@ INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `date
 (732579116, 'ARROW', '2018-07-01', '2019-07-22', '', 0, 1, 3, 1, '', ''),
 (732642022, 'PASSO', '2019-06-01', '2020-02-02', '', 0, 1, 3, 0, '', ''),
 (732642085, 'PACHA KENDJI', '2018-06-01', '2019-11-25', '', 0, 1, 1, 0, '', ''),
+(732645123, 'MONOI', '2014-09-01', '2020-02-15', NULL, 0, 1, 3, 0, 'default.jpg', ''),
 (732645184, 'OWEN', '2018-06-01', '2019-06-11', '', 0, 1, 2, 2, '', ''),
 (732645334, 'BOSS', '2014-07-01', '2020-01-09', '', 0, 1, 3, 0, '', ''),
+(732645369, 'HUDSON', '2018-06-01', '2020-02-16', NULL, 0, 1, 3, 0, 'default.jpg', ''),
+(742021071, 'PEYRON', '2019-02-01', '2020-02-08', NULL, 0, 1, 3, 0, 'default.jpg', ''),
 (743019646, 'PRINCE', '2015-09-01', '2019-08-28', '', 0, 1, 2, 0, '', ''),
 (743019910, 'MADIBA', '2014-08-01', '2019-07-15', '', 1, 1, 1, 0, '743019910.jpg', ''),
 (743057283, 'DARK', '2018-09-01', '2019-11-08', '', 0, 1, 2, 0, '743057283.jpg', ''),
 (743057463, 'HATCHI', '2018-09-01', '2019-12-22', '', 0, 1, 3, 0, '', ''),
-(743104287, 'MUJDAT', '2018-11-01', '2019-11-20', '', 0, 1, 3, 0, '', ''),
+(743104287, 'MUJDAT', '2018-11-01', '2019-11-20', '2020-03-01', 0, 1, 3, 0, '', ''),
 (743105653, 'NAYA', '2016-12-01', '2019-10-09', '', 1, 1, 3, 0, '', ''),
 (743105688, 'PIERROT', '2014-10-01', '2019-10-24', '', 0, 1, 1, 0, '', ''),
-(743105720, 'SPIKE', '2016-11-01', '2019-06-01', '', 0, 1, 3, 0, '', ''),
+(743105720, 'SPIKE', '2016-11-01', '2019-06-01', '', 0, 1, 3, 0, '743105720.jpg', ''),
 (743140960, 'PLATO', '2017-12-01', '2019-12-26', '', 0, 1, 3, 0, '', ''),
 (743140974, 'BELLA', '2009-04-01', '2019-11-23', '', 1, 1, 1, 0, '', ''),
 (743141181, 'ANETH DIT ETOILE', '2018-11-01', '2020-01-31', '', 1, 1, 3, 0, '', ''),
@@ -285,26 +294,42 @@ INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `date
 (743141270, 'HAWAI', '2013-11-01', '2019-11-26', '', 0, 1, 1, 0, '', ''),
 (743141300, 'KALY', '2012-11-01', '2019-07-12', '', 1, 1, 2, 0, '743141300.jpg', ''),
 (743185385, 'AYA', '2015-06-01', '2020-01-07', '', 1, 1, 3, 0, '', ''),
+(743185423, 'SILVER', '2016-09-01', '2020-03-12', NULL, 0, 0, 3, 0, 'default.jpg', ''),
 (743185584, 'PEPITA', '2018-08-01', '2019-12-10', '', 1, 1, 3, 0, '', ''),
 (743185862, 'MARCO', '2011-03-01', '2020-01-06', '', 0, 1, 3, 0, '', ''),
 (743185870, 'PAPRIKA', '2018-01-01', '2019-12-09', '', 1, 1, 3, 0, '', ''),
 (743185874, 'EPICE', '2019-01-01', '2020-01-22', '', 1, 0, 3, 0, '', ''),
+(743185884, 'THAI', '2019-01-01', '2019-10-30', NULL, 1, 1, 3, 0, 'default.jpg', ''),
 (743185886, 'NIKOS', '2009-12-01', '2019-12-20', '', 0, 1, 1, 0, '', ''),
 (743185900, 'ALIKA', '2019-02-01', '2020-01-13', '', 1, 1, 3, 0, '', ''),
+(743185904, 'DJULIA', '2017-02-01', '2020-02-28', NULL, 1, 1, 3, 0, 'default.jpg', ''),
+(743185910, 'UTA', '2018-02-01', '2020-02-29', NULL, 1, 1, 3, 0, 'default.jpg', ''),
 (743185918, 'DJUNE', '2019-01-01', '2020-01-09', '', 1, 1, 3, 0, '', ''),
 (743185920, 'ETNA', '2018-07-01', '2020-01-15', '', 1, 1, 3, 0, '', ''),
 (743185925, 'PIRATE', '2016-01-01', '2019-12-10', '', 0, 1, 3, 0, '', ''),
+(743185940, 'NAMI', '2019-08-01', '2020-02-25', NULL, 1, 1, 3, 0, 'default.jpg', ''),
+(743185946, 'AIOKI', '2017-02-01', '2019-12-09', NULL, 0, 1, 3, 0, '743185946.jpg', ''),
 (743185950, 'APOLO', '2019-01-01', '2020-01-11', '', 0, 1, 3, 0, '', ''),
 (743185952, 'ESPOIR', '2016-01-01', '2020-01-09', '', 0, 1, 3, 0, '', ''),
-(743185953, 'ASTON', '2016-01-01', '2020-01-16', '', 0, 1, 3, 0, '', ''),
+(743185953, 'ASTON', '2016-01-01', '2020-01-16', '', 0, 1, 3, 0, '743185953.jpg', ''),
+(743185958, 'EKTOR', '2017-02-01', '2020-02-25', NULL, 0, 1, 3, 0, 'default.jpg', ''),
 (743185967, 'SAMY', '2012-01-01', '2020-01-02', '', 0, 1, 1, 0, '', ''),
 (743185979, 'OLGA', '2009-12-01', '2019-12-14', '', 1, 1, 1, 0, '', ''),
-(743186025, 'ELTON', '2014-01-01', '2019-12-28', '', 0, 1, 3, 0, '', ''),
-(743186061, 'DYLAN', '2016-01-01', '2020-01-29', '', 0, 0, 3, 0, '', ''),
+(743185986, 'MANGA', '2014-03-01', '2020-03-11', NULL, 1, 0, 3, 0, 'default.jpg', ''),
+(743186015, 'NILUSI', '2019-04-01', '2020-02-15', NULL, 1, 1, 3, 0, '743186015.jpg', ''),
+(743186023, '', '2019-02-01', '2020-03-02', NULL, 0, 1, 3, 0, 'default.jpg', ''),
+(743186025, 'ELTON', '2014-01-01', '2019-12-28', '', 0, 1, 3, 0, '743186025.jpg', ''),
+(743186055, 'CALYPSO', '2017-01-01', '2020-03-10', NULL, 1, 1, 3, 0, 'default.jpg', ''),
+(743186061, 'DYLAN', '2016-01-01', '2020-01-29', '', 0, 0, 3, 0, '743186061.jpg', ''),
 (743186067, 'GALAK', '2018-01-01', '2020-01-27', '', 0, 0, 3, 0, '', ''),
+(743186069, 'APOLLON', '2008-12-01', '2019-12-29', NULL, 0, 1, 3, 0, '743186069.jpg', ''),
+(743186083, 'GLOBE', '2019-04-01', '2020-02-29', NULL, 1, 1, 3, 0, 'default.jpg', ''),
+(743186087, 'TISSIA', '2018-02-01', '2020-02-24', NULL, 1, 1, 3, 0, 'default.jpg', ''),
 (743186097, 'FLAMM', '2016-01-01', '2020-01-29', '', 0, 0, 3, 0, '', ''),
-(743186111, 'ROCKY', '2008-12-01', '2019-12-29', '', 0, 1, 2, 0, '', ''),
+(743186111, 'ROCKY', '2008-12-01', '2019-12-29', '', 0, 1, 2, 0, '743186111.jpg', ''),
 (743186127, 'GIANI', '2018-01-01', '2020-01-15', '', 0, 1, 3, 0, '', ''),
+(743186135, '', '2019-12-01', '2020-03-19', NULL, 0, 0, 3, 0, 'default.jpg', ''),
+(743186141, '', '2019-12-01', '2020-03-19', NULL, 1, 0, 3, 0, 'default.jpg', ''),
 (743186265, 'SNOOP', '2016-01-01', '2020-01-16', '', 0, 1, 3, 0, '', ''),
 (743186333, 'POMME', '2016-01-01', '2019-12-11', '', 1, 1, 3, 0, '', ''),
 (743565979, 'NINA', '2017-07-01', '2020-01-31', '', 1, 1, 3, 0, '', ''),
@@ -314,24 +339,23 @@ INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `date
 (810673865, 'LYLO', '2015-01-01', '2019-02-01', '', 0, 1, 1, 0, '810673865.jpg', ''),
 (811375114, 'INAYA', '2017-12-01', '2019-12-28', '', 1, 1, 3, 0, '', ''),
 (811381926, 'NACHOS DE L\'IMPREINTE DE GOLIA', '2017-05-01', '2019-01-24', '', 0, 1, 1, 1, '', ''),
+(811435567, 'KAINA', '2018-03-01', '2020-02-10', NULL, 1, 1, 3, 0, 'default.jpg', ''),
 (811542404, 'HARPER', '2012-07-01', '2020-01-27', '', 0, 0, 3, 0, '', ''),
 (812084551, 'MURPHY', '2016-10-01', '2019-10-24', '', 0, 1, 2, 0, '', '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `couleur`
+-- Table structure for table `couleur`
 --
 
-DROP TABLE IF EXISTS `couleur`;
-CREATE TABLE IF NOT EXISTS `couleur` (
+CREATE TABLE `couleur` (
   `idCouleur` int(2) NOT NULL,
-  `nomCouleur` varchar(31) DEFAULT NULL,
-  PRIMARY KEY (`idCouleur`)
+  `nomCouleur` varchar(31) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `couleur`
+-- Dumping data for table `couleur`
 --
 
 INSERT INTO `couleur` (`idCouleur`, `nomCouleur`) VALUES
@@ -355,20 +379,18 @@ INSERT INTO `couleur` (`idCouleur`, `nomCouleur`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etatlegal`
+-- Table structure for table `etatlegal`
 --
 
-DROP TABLE IF EXISTS `etatlegal`;
-CREATE TABLE IF NOT EXISTS `etatlegal` (
+CREATE TABLE `etatlegal` (
   `idCategorie` int(1) NOT NULL,
   `description` varchar(23) DEFAULT NULL,
   `races` varchar(26) DEFAULT NULL,
-  `obligations` varchar(109) DEFAULT NULL,
-  PRIMARY KEY (`idCategorie`)
+  `obligations` varchar(109) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `etatlegal`
+-- Dumping data for table `etatlegal`
 --
 
 INSERT INTO `etatlegal` (`idCategorie`, `description`, `races`, `obligations`) VALUES
@@ -379,19 +401,16 @@ INSERT INTO `etatlegal` (`idCategorie`, `description`, `races`, `obligations`) V
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etredecouleur`
+-- Table structure for table `etredecouleur`
 --
 
-DROP TABLE IF EXISTS `etredecouleur`;
-CREATE TABLE IF NOT EXISTS `etredecouleur` (
+CREATE TABLE `etredecouleur` (
   `idChien` int(10) NOT NULL,
-  `idCouleur` int(2) NOT NULL,
-  KEY `id` (`idChien`),
-  KEY `idCouleur1` (`idCouleur`)
+  `idCouleur` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `etredecouleur`
+-- Dumping data for table `etredecouleur`
 --
 
 INSERT INTO `etredecouleur` (`idChien`, `idCouleur`) VALUES
@@ -610,38 +629,30 @@ INSERT INTO `etredecouleur` (`idChien`, `idCouleur`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etremalade`
+-- Table structure for table `etremalade`
 --
 
-DROP TABLE IF EXISTS `etremalade`;
-CREATE TABLE IF NOT EXISTS `etremalade` (
+CREATE TABLE `etremalade` (
   `idMaladie` int(10) DEFAULT NULL,
   `idChien` int(10) DEFAULT NULL,
-  `dateDiagnostique` varchar(10) DEFAULT NULL,
-  KEY `idChien` (`idChien`),
-  KEY `idMaladie` (`idMaladie`)
+  `dateDiagnostique` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etrerace`
+-- Table structure for table `etrerace`
 --
 
-DROP TABLE IF EXISTS `etrerace`;
-CREATE TABLE IF NOT EXISTS `etrerace` (
+CREATE TABLE `etrerace` (
   `idChien` int(11) NOT NULL,
   `idRace` int(11) NOT NULL,
   `idCategorie` int(11) NOT NULL,
-  `idLof` int(11) NOT NULL,
-  KEY `idRace` (`idRace`),
-  KEY `idLof` (`idLof`),
-  KEY `idChien` (`idChien`),
-  KEY `idCategorie` (`idCategorie`)
+  `idLof` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `etrerace`
+-- Dumping data for table `etrerace`
 --
 
 INSERT INTO `etrerace` (`idChien`, `idRace`, `idCategorie`, `idLof`) VALUES
@@ -786,20 +797,17 @@ INSERT INTO `etrerace` (`idChien`, `idRace`, `idCategorie`, `idLof`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etresociable`
+-- Table structure for table `etresociable`
 --
 
-DROP TABLE IF EXISTS `etresociable`;
-CREATE TABLE IF NOT EXISTS `etresociable` (
+CREATE TABLE `etresociable` (
   `idChien` int(9) DEFAULT NULL,
   `idIndividu` int(1) DEFAULT NULL,
-  `Appreciation` varchar(5) DEFAULT NULL,
-  KEY `idChien` (`idChien`),
-  KEY `idIndividu` (`idIndividu`)
+  `Appreciation` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `etresociable`
+-- Dumping data for table `etresociable`
 --
 
 INSERT INTO `etresociable` (`idChien`, `idIndividu`, `Appreciation`) VALUES
@@ -860,20 +868,17 @@ INSERT INTO `etresociable` (`idChien`, `idIndividu`, `Appreciation`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etrevaccine`
+-- Table structure for table `etrevaccine`
 --
 
-DROP TABLE IF EXISTS `etrevaccine`;
-CREATE TABLE IF NOT EXISTS `etrevaccine` (
+CREATE TABLE `etrevaccine` (
   `idChien` int(10) DEFAULT NULL,
   `idVaccin` int(1) DEFAULT NULL,
-  `dateVaccin` varchar(14) DEFAULT NULL,
-  KEY `idChien` (`idChien`),
-  KEY `idVaccin` (`idVaccin`)
+  `dateVaccin` varchar(14) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `etrevaccine`
+-- Dumping data for table `etrevaccine`
 --
 
 INSERT INTO `etrevaccine` (`idChien`, `idVaccin`, `dateVaccin`) VALUES
@@ -1001,18 +1006,16 @@ INSERT INTO `etrevaccine` (`idChien`, `idVaccin`, `dateVaccin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `individu`
+-- Table structure for table `individu`
 --
 
-DROP TABLE IF EXISTS `individu`;
-CREATE TABLE IF NOT EXISTS `individu` (
+CREATE TABLE `individu` (
   `idIndividu` int(1) NOT NULL,
-  `nomIndividu` varchar(7) DEFAULT NULL,
-  PRIMARY KEY (`idIndividu`)
+  `nomIndividu` varchar(7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `individu`
+-- Dumping data for table `individu`
 --
 
 INSERT INTO `individu` (`idIndividu`, `nomIndividu`) VALUES
@@ -1023,18 +1026,16 @@ INSERT INTO `individu` (`idIndividu`, `nomIndividu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `lof`
+-- Table structure for table `lof`
 --
 
-DROP TABLE IF EXISTS `lof`;
-CREATE TABLE IF NOT EXISTS `lof` (
+CREATE TABLE `lof` (
   `idLof` int(1) NOT NULL,
-  `Lof` varchar(3) DEFAULT NULL,
-  PRIMARY KEY (`idLof`)
+  `Lof` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `lof`
+-- Dumping data for table `lof`
 --
 
 INSERT INTO `lof` (`idLof`, `Lof`) VALUES
@@ -1044,21 +1045,18 @@ INSERT INTO `lof` (`idLof`, `Lof`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `loger`
+-- Table structure for table `loger`
 --
 
-DROP TABLE IF EXISTS `loger`;
-CREATE TABLE IF NOT EXISTS `loger` (
+CREATE TABLE `loger` (
   `idBox` varchar(4) DEFAULT NULL,
   `idChien` int(10) DEFAULT NULL,
   `dateDebut` varchar(10) DEFAULT NULL,
-  `dateFin` varchar(10) DEFAULT NULL,
-  KEY `seLoger` (`idBox`),
-  KEY `idChienLoger` (`idChien`)
+  `dateFin` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `loger`
+-- Dumping data for table `loger`
 --
 
 INSERT INTO `loger` (`idBox`, `idChien`, `dateDebut`, `dateFin`) VALUES
@@ -1181,23 +1179,58 @@ INSERT INTO `loger` (`idBox`, `idChien`, `dateDebut`, `dateFin`) VALUES
 ('R711', 606594777, '', ''),
 ('R712', 743186025, '', ''),
 ('R713', 604884959, '', ''),
-('R714', 608298259, '', '');
+('R714', 608298259, '', ''),
+('R101', 743186141, '2020-03-19', NULL),
+('R101', 743186135, '2020-03-19', NULL),
+('R107', 743186055, '2020-03-10', NULL),
+('R109', 590091057, '2020-02-03', NULL),
+('R112', 743185946, '2019-12-09', NULL),
+('R112', 732645123, '2020-02-15', NULL),
+('R202', 606276123, '2020-03-11', NULL),
+('R203', 743185958, '2020-02-25', NULL),
+('R203', 743185940, '2020-02-25', NULL),
+('R204', 743185910, '2020-02-29', NULL),
+('R204', 743186083, '2020-02-29', NULL),
+('R205', 100106899, '2020-02-12', NULL),
+('R206', 100107211, '2020-03-13', NULL),
+('R206', 100107018, '2020-03-13', NULL),
+('R207', 743185986, '2020-03-11', NULL),
+('R207', 743185423, '2020-03-12', NULL),
+('R210', 590092941, '2020-02-13', NULL),
+('R212', 606823461, '2020-03-05', NULL),
+('R213', 743186069, '2019-12-29', NULL),
+('R302', 743185904, '2020-02-28', NULL),
+('R303', 501343345, '2020-01-24', NULL),
+('R305', 731055848, '2020-02-23', NULL),
+('R309', 590090951, '2020-02-13', NULL),
+('R311', 731508988, '2020-02-11', NULL),
+('R401', 500471743, '2020-02-29', NULL),
+('R402', 743186015, '2020-02-15', NULL),
+('R404', 606910780, '2020-02-11', NULL),
+('R408', 732645369, '2020-02-16', NULL),
+('R409', 743186087, '2020-02-24', NULL),
+('R410', 500664190, '2020-01-08', NULL),
+('R412', 590090065, '2020-02-14', NULL),
+('R413', 606526011, '2020-02-08', NULL),
+('R414', 811435567, '2020-02-10', NULL),
+('R602', 743185884, '2019-10-30', NULL),
+('R709', 742021071, '2020-02-08', NULL),
+('R712', 590090742, '2020-02-01', NULL),
+('R403', 743186023, '2020-03-02', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `maladie`
+-- Table structure for table `maladie`
 --
 
-DROP TABLE IF EXISTS `maladie`;
-CREATE TABLE IF NOT EXISTS `maladie` (
+CREATE TABLE `maladie` (
   `idMaladie` int(1) NOT NULL,
-  `nomMaladie` varchar(19) DEFAULT NULL,
-  PRIMARY KEY (`idMaladie`)
+  `nomMaladie` varchar(19) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `maladie`
+-- Dumping data for table `maladie`
 --
 
 INSERT INTO `maladie` (`idMaladie`, `nomMaladie`) VALUES
@@ -1213,18 +1246,16 @@ INSERT INTO `maladie` (`idMaladie`, `nomMaladie`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mordeur`
+-- Table structure for table `mordeur`
 --
 
-DROP TABLE IF EXISTS `mordeur`;
-CREATE TABLE IF NOT EXISTS `mordeur` (
+CREATE TABLE `mordeur` (
   `idMordeur` int(1) NOT NULL,
-  `Evaluation` varchar(3) DEFAULT NULL,
-  PRIMARY KEY (`idMordeur`)
+  `Evaluation` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `mordeur`
+-- Dumping data for table `mordeur`
 --
 
 INSERT INTO `mordeur` (`idMordeur`, `Evaluation`) VALUES
@@ -1237,18 +1268,16 @@ INSERT INTO `mordeur` (`idMordeur`, `Evaluation`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `races`
+-- Table structure for table `races`
 --
 
-DROP TABLE IF EXISTS `races`;
-CREATE TABLE IF NOT EXISTS `races` (
+CREATE TABLE `races` (
   `idRace` int(3) NOT NULL,
-  `nomRace` varchar(34) DEFAULT NULL,
-  PRIMARY KEY (`idRace`)
+  `nomRace` varchar(34) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `races`
+-- Dumping data for table `races`
 --
 
 INSERT INTO `races` (`idRace`, `nomRace`) VALUES
@@ -1424,18 +1453,16 @@ INSERT INTO `races` (`idRace`, `nomRace`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sexe`
+-- Table structure for table `sexe`
 --
 
-DROP TABLE IF EXISTS `sexe`;
-CREATE TABLE IF NOT EXISTS `sexe` (
+CREATE TABLE `sexe` (
   `IdSexe` int(1) NOT NULL,
-  `NomSexe` varchar(7) DEFAULT NULL,
-  PRIMARY KEY (`IdSexe`)
+  `NomSexe` varchar(7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `sexe`
+-- Dumping data for table `sexe`
 --
 
 INSERT INTO `sexe` (`IdSexe`, `NomSexe`) VALUES
@@ -1445,18 +1472,16 @@ INSERT INTO `sexe` (`IdSexe`, `NomSexe`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sexehumain`
+-- Table structure for table `sexehumain`
 --
 
-DROP TABLE IF EXISTS `sexehumain`;
-CREATE TABLE IF NOT EXISTS `sexehumain` (
+CREATE TABLE `sexehumain` (
   `sexeHum` int(1) NOT NULL,
-  `etat` varchar(7) DEFAULT NULL,
-  PRIMARY KEY (`sexeHum`)
+  `etat` varchar(7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `sexehumain`
+-- Dumping data for table `sexehumain`
 --
 
 INSERT INTO `sexehumain` (`sexeHum`, `etat`) VALUES
@@ -1466,20 +1491,18 @@ INSERT INTO `sexehumain` (`sexeHum`, `etat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `statut`
+-- Table structure for table `statut`
 --
 
-DROP TABLE IF EXISTS `statut`;
-CREATE TABLE IF NOT EXISTS `statut` (
+CREATE TABLE `statut` (
   `idStatut` int(11) NOT NULL,
   `statut` varchar(100) DEFAULT NULL,
   `lecture` varchar(100) DEFAULT NULL,
-  `modification` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`idStatut`)
+  `modification` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `statut`
+-- Dumping data for table `statut`
 --
 
 INSERT INTO `statut` (`idStatut`, `statut`, `lecture`, `modification`) VALUES
@@ -1489,18 +1512,16 @@ INSERT INTO `statut` (`idStatut`, `statut`, `lecture`, `modification`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sterilisation`
+-- Table structure for table `sterilisation`
 --
 
-DROP TABLE IF EXISTS `sterilisation`;
-CREATE TABLE IF NOT EXISTS `sterilisation` (
+CREATE TABLE `sterilisation` (
   `idSterilisation` int(1) NOT NULL,
-  `Etat` varchar(3) DEFAULT NULL,
-  PRIMARY KEY (`idSterilisation`)
+  `Etat` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `sterilisation`
+-- Dumping data for table `sterilisation`
 --
 
 INSERT INTO `sterilisation` (`idSterilisation`, `Etat`) VALUES
@@ -1510,19 +1531,17 @@ INSERT INTO `sterilisation` (`idSterilisation`, `Etat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tarification`
+-- Table structure for table `tarification`
 --
 
-DROP TABLE IF EXISTS `tarification`;
-CREATE TABLE IF NOT EXISTS `tarification` (
+CREATE TABLE `tarification` (
   `idTarification` int(1) NOT NULL,
   `description` varchar(11) DEFAULT NULL,
-  `tarif` int(3) DEFAULT NULL,
-  PRIMARY KEY (`idTarification`)
+  `tarif` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `tarification`
+-- Dumping data for table `tarification`
 --
 
 INSERT INTO `tarification` (`idTarification`, `description`, `tarif`) VALUES
@@ -1534,12 +1553,11 @@ INSERT INTO `tarification` (`idTarification`, `description`, `tarif`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateur`
+-- Table structure for table `utilisateur`
 --
 
-DROP TABLE IF EXISTS `utilisateur`;
-CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `idUtilisateur` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `utilisateur` (
+  `idUtilisateur` int(11) NOT NULL,
   `nom` varchar(100) DEFAULT NULL,
   `prenom` varchar(100) DEFAULT NULL,
   `age` int(11) NOT NULL,
@@ -1547,14 +1565,11 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `tel` int(11) NOT NULL,
   `idStatut` int(11) NOT NULL,
   `sexeHum` int(11) NOT NULL,
-  `mdp` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`idUtilisateur`),
-  KEY `idStatut` (`idStatut`),
-  KEY `sexeHum` (`sexeHum`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `mdp` varchar(100) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `utilisateur`
+-- Dumping data for table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`idUtilisateur`, `nom`, `prenom`, `age`, `mail`, `tel`, `idStatut`, `sexeHum`, `mdp`) VALUES
@@ -1563,18 +1578,16 @@ INSERT INTO `utilisateur` (`idUtilisateur`, `nom`, `prenom`, `age`, `mail`, `tel
 -- --------------------------------------------------------
 
 --
--- Structure de la table `vaccin`
+-- Table structure for table `vaccin`
 --
 
-DROP TABLE IF EXISTS `vaccin`;
-CREATE TABLE IF NOT EXISTS `vaccin` (
+CREATE TABLE `vaccin` (
   `idVaccin` int(1) NOT NULL,
-  `nomVaccin` varchar(6) DEFAULT NULL,
-  PRIMARY KEY (`idVaccin`)
+  `nomVaccin` varchar(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `vaccin`
+-- Dumping data for table `vaccin`
 --
 
 INSERT INTO `vaccin` (`idVaccin`, `nomVaccin`) VALUES
@@ -1585,17 +1598,190 @@ INSERT INTO `vaccin` (`idVaccin`, `nomVaccin`) VALUES
 (4, 'CHP');
 
 --
--- Contraintes pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Contraintes pour la table `adoptant`
+-- Indexes for table `adoptant`
+--
+ALTER TABLE `adoptant`
+  ADD PRIMARY KEY (`idAdoptant`),
+  ADD KEY `idSexeH` (`sexe`);
+
+--
+-- Indexes for table `box`
+--
+ALTER TABLE `box`
+  ADD PRIMARY KEY (`idBox`);
+
+--
+-- Indexes for table `chien`
+--
+ALTER TABLE `chien`
+  ADD PRIMARY KEY (`idChien`),
+  ADD KEY `idMordeur` (`idMordeur`),
+  ADD KEY `idTarification` (`idTarification`),
+  ADD KEY `idSterilisation` (`idSterilisation`),
+  ADD KEY `idSexe` (`idSexe`);
+
+--
+-- Indexes for table `couleur`
+--
+ALTER TABLE `couleur`
+  ADD PRIMARY KEY (`idCouleur`);
+
+--
+-- Indexes for table `etatlegal`
+--
+ALTER TABLE `etatlegal`
+  ADD PRIMARY KEY (`idCategorie`);
+
+--
+-- Indexes for table `etredecouleur`
+--
+ALTER TABLE `etredecouleur`
+  ADD KEY `id` (`idChien`),
+  ADD KEY `idCouleur1` (`idCouleur`);
+
+--
+-- Indexes for table `etremalade`
+--
+ALTER TABLE `etremalade`
+  ADD KEY `idChien` (`idChien`),
+  ADD KEY `idMaladie` (`idMaladie`);
+
+--
+-- Indexes for table `etrerace`
+--
+ALTER TABLE `etrerace`
+  ADD KEY `idRace` (`idRace`),
+  ADD KEY `idLof` (`idLof`),
+  ADD KEY `idChien` (`idChien`),
+  ADD KEY `idCategorie` (`idCategorie`);
+
+--
+-- Indexes for table `etresociable`
+--
+ALTER TABLE `etresociable`
+  ADD KEY `idChien` (`idChien`),
+  ADD KEY `idIndividu` (`idIndividu`);
+
+--
+-- Indexes for table `etrevaccine`
+--
+ALTER TABLE `etrevaccine`
+  ADD KEY `idChien` (`idChien`),
+  ADD KEY `idVaccin` (`idVaccin`);
+
+--
+-- Indexes for table `individu`
+--
+ALTER TABLE `individu`
+  ADD PRIMARY KEY (`idIndividu`);
+
+--
+-- Indexes for table `lof`
+--
+ALTER TABLE `lof`
+  ADD PRIMARY KEY (`idLof`);
+
+--
+-- Indexes for table `loger`
+--
+ALTER TABLE `loger`
+  ADD KEY `seLoger` (`idBox`),
+  ADD KEY `idChienLoger` (`idChien`);
+
+--
+-- Indexes for table `maladie`
+--
+ALTER TABLE `maladie`
+  ADD PRIMARY KEY (`idMaladie`);
+
+--
+-- Indexes for table `mordeur`
+--
+ALTER TABLE `mordeur`
+  ADD PRIMARY KEY (`idMordeur`);
+
+--
+-- Indexes for table `races`
+--
+ALTER TABLE `races`
+  ADD PRIMARY KEY (`idRace`);
+
+--
+-- Indexes for table `sexe`
+--
+ALTER TABLE `sexe`
+  ADD PRIMARY KEY (`IdSexe`);
+
+--
+-- Indexes for table `sexehumain`
+--
+ALTER TABLE `sexehumain`
+  ADD PRIMARY KEY (`sexeHum`);
+
+--
+-- Indexes for table `statut`
+--
+ALTER TABLE `statut`
+  ADD PRIMARY KEY (`idStatut`);
+
+--
+-- Indexes for table `sterilisation`
+--
+ALTER TABLE `sterilisation`
+  ADD PRIMARY KEY (`idSterilisation`);
+
+--
+-- Indexes for table `tarification`
+--
+ALTER TABLE `tarification`
+  ADD PRIMARY KEY (`idTarification`);
+
+--
+-- Indexes for table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  ADD PRIMARY KEY (`idUtilisateur`),
+  ADD KEY `idStatut` (`idStatut`),
+  ADD KEY `sexeHum` (`sexeHum`);
+
+--
+-- Indexes for table `vaccin`
+--
+ALTER TABLE `vaccin`
+  ADD PRIMARY KEY (`idVaccin`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `adoptant`
+--
+ALTER TABLE `adoptant`
+  MODIFY `idAdoptant` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  MODIFY `idUtilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `adoptant`
 --
 ALTER TABLE `adoptant`
   ADD CONSTRAINT `idSexeH` FOREIGN KEY (`sexe`) REFERENCES `sexehumain` (`sexeHum`);
 
 --
--- Contraintes pour la table `chien`
+-- Constraints for table `chien`
 --
 ALTER TABLE `chien`
   ADD CONSTRAINT `idMordeur` FOREIGN KEY (`idMordeur`) REFERENCES `mordeur` (`idMordeur`),
@@ -1604,35 +1790,35 @@ ALTER TABLE `chien`
   ADD CONSTRAINT `idTarification` FOREIGN KEY (`idTarification`) REFERENCES `tarification` (`idTarification`);
 
 --
--- Contraintes pour la table `etredecouleur`
+-- Constraints for table `etredecouleur`
 --
 ALTER TABLE `etredecouleur`
   ADD CONSTRAINT `id` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
   ADD CONSTRAINT `idCouleur1` FOREIGN KEY (`idCouleur`) REFERENCES `couleur` (`idCouleur`);
 
 --
--- Contraintes pour la table `etremalade`
+-- Constraints for table `etremalade`
 --
 ALTER TABLE `etremalade`
   ADD CONSTRAINT `idChien` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
   ADD CONSTRAINT `idMaladie` FOREIGN KEY (`idMaladie`) REFERENCES `maladie` (`idMaladie`);
 
 --
--- Contraintes pour la table `etresociable`
+-- Constraints for table `etresociable`
 --
 ALTER TABLE `etresociable`
   ADD CONSTRAINT `etresociable_ibfk_1` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
   ADD CONSTRAINT `etresociable_ibfk_2` FOREIGN KEY (`idIndividu`) REFERENCES `individu` (`idIndividu`);
 
 --
--- Contraintes pour la table `etrevaccine`
+-- Constraints for table `etrevaccine`
 --
 ALTER TABLE `etrevaccine`
   ADD CONSTRAINT `etrevaccine_ibfk_1` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
   ADD CONSTRAINT `etrevaccine_ibfk_2` FOREIGN KEY (`idVaccin`) REFERENCES `vaccin` (`idVaccin`);
 
 --
--- Contraintes pour la table `loger`
+-- Constraints for table `loger`
 --
 ALTER TABLE `loger`
   ADD CONSTRAINT `idChienLoger` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
