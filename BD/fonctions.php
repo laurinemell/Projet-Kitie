@@ -1,5 +1,5 @@
 <?php
-include "../Interface/bd.php";
+include "getbd.php";
 
 function recuperer_donnees_listing(){
 $codesource=file_get_contents('https://340201.refugilys.org/specif/340201/www/chiens.php?APPLI=340201');

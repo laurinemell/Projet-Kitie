@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['synchroniser'])){
-	include '../MaJ/fonctions.php';
+	include 'fonctions.php';
 	ob_start();
 	$listing=recuperer_donnees_listing();
 	$BD=recuperer_donnees_BD();
@@ -45,7 +45,7 @@ if (isset($_GET['synchroniser'])){
 
 			</tr>
 			<?php
-			include "../bd.php";
+			include "getbd.php";
 			$bdd = getBD();
 			$rep = $bdd->query('select chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin, races.nomRace, couleur.nomCouleur, box.idBox, chien.dateEntree, tarification.tarif,lof.Lof, etatlegal.description, chien.photo
 				FROM chien, sexe, sterilisation, vaccin, etrevaccine, races, etrerace, couleur, etredecouleur, box, loger, tarification, etatlegal, Lof
@@ -81,7 +81,7 @@ if (isset($_GET['synchroniser'])){
 			echo "<th>".$ligne["Lof"]."</th>";
 			echo "<th>".$ligne["description"]."</th>";
 			if ($ligne["photo"] == NULL){
-				$ligne["photo"] = "default";
+				$ligne["photo"] = "default.jpg";
 			}
 			echo "<th>"."<img class='img-chien' src='photo/".$ligne["photo"]."' />"."</th>";
 			echo "<tr>";
