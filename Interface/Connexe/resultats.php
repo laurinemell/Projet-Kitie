@@ -10,38 +10,44 @@
 	<?php
 	// Partie de la requête
 	include "../bd.php";
-	$bdd = getBD();
+	//$bdd=getBD();
+	$bdd = new PDO('mysql:host=localhost;dbname=kitie;port=3306','root','root');
 	$requete="select * from chien, etrerace, etredecouleur where";
-	//
-	//Etat de Race
-	if (isset($_GET["Race"])) {
-		$race=' chien.idChien=etrerace.idChien and etrerace.idRace='.$_GET["Race"];
+
+	//Requêtes pour les races
+	if (isset($_GET["races"])) {
+		$race=' chien.idChien=etrerace.idChien';
 		$requete=$requete.$race;
-		if(!empty($_GET["Sexe"]) or !empty($_GET["Couleur"])){
+		foreach ($_GET['races'] as $value) {
+			$race=' or etrerace.idRace='.$value;
+			$requete=$requete.$race;
+			}
+		if(!empty($_GET["sexe"]) or !empty($_GET["couleur"])){
 			$requete=$requete." and";
 		}
 	}
-	//
-	//Etat de Couleur
-	if (isset($_GET["Couleur"])) {
-		$couleur=' etredecouleur.idChien=chien.idChien and etredecouleur.idCouleur='.$_GET["Couleur"];
+
+	//Requêtes pour les couleur
+	if (isset($_GET["couleur"])) {
+		$couleur=' etredecouleur.idChien=chien.idChien';
 		$requete=$requete.$couleur;
+		foreach ($_GET['couleur'] as $value) {
+			$couleur=' or etredecouleur.idCouleur='.$value;
+			$requete=$requete.$couleur;
+			}
 		if(empty($_GET["Sexe"])){
 			$requete=$requete." and";
 		}
 	}
-	//
-	//Etat du Sexe
-	if(isset($_GET["Sexe"])){
-		$sexe=" chien.idSexe=".$_GET["Sexe"];
+
+	//Requêtes pour le sexe
+	if(isset($_GET["sexe"])){
+		$sexe=" chien.idSexe=".$_GET["sexe"];
 		$requete=$requete.$sexe;
 	}
-	//Requête entrée
+	echo $requete;
+	echo gettype($requete);
 	$rep = $bdd->query($requete);
-	if(empty($rep)){
-		echo '<p>Désolé aucuns résultats</p>';
-		echo "<meta http-equiv='refresh' content='1; URL=criteres.php?msg='Aucun résultats désolé'";
-	}
 	while ($ligne = $rep ->fetch()) {
 		echo '<div class="chiens">';
 			echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/></a>';
@@ -49,7 +55,8 @@
 			echo '<p class="ste">'.$ligne["idSterilisation"].'</p>';
 		echo '</div>';
 	}
+
 	?>
-	<hr class="separation"/>
+
 </body>
 </html>

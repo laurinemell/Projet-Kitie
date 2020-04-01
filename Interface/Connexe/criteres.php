@@ -16,7 +16,7 @@
  				$reponse = $bdd->query('select * from races');
  						while ($ligne = $reponse->fetch()) {
                 			echo '<tr><td>'.$ligne["nomRace"].'</td>';
-                			echo" <td><input type='checkbox' name='couleur' value='".$ligne["idRace"]."'></td>";
+                			echo" <td><input type='checkbox' name='races[]' value='".$ligne["idRace"]."'></td>";
                 			echo"<br>";
                 			echo "</tr>";
                 		}
@@ -29,7 +29,7 @@
  				$reponse = $bdd->query('SELECT * FROM couleur');
  						while ($ligne = $reponse->fetch()) {
                 			echo '<tr><td>'.$ligne["nomCouleur"].'</td>';
-                			echo" <td><input type='checkbox' name='couleur' value='".$ligne['idCouleur']."'></td>";
+                			echo" <td><input type='checkbox' name='couleur[]' value='".$ligne['idCouleur']."'></td>";
                 			echo"<br>";
                 			echo "</tr>";
                 		}
@@ -40,7 +40,7 @@
 				<?php
 				$rep3 = $bdd->query('select * from sexe');
 				while ($ligne3 = $rep3 ->fetch()) {
-					echo '<INPUT type="radio" name="Sexe" value="'.$ligne3["IdSexe"].'">'.$ligne3["NomSexe"].'<br/>';
+					echo '<INPUT type="radio" name="sexe" value="'.$ligne3["IdSexe"].'">'.$ligne3["NomSexe"].'<br/>';
 				}
 				$rep3->closeCursor;
 				?>

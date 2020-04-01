@@ -7,7 +7,7 @@
 			margin-left: auto;
 			margin-right: auto;
 			margin-top: 7em;
-			width: 15em;
+			width: 20em;
 		}
 		p{
 			background-color: #f64545;
