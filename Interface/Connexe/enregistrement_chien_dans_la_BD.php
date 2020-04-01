@@ -13,8 +13,8 @@ else{
 	include "../bd.php";
 	$bdd = getBD();
 	
-	if(isset($_GET['identifiant']) && isset($_GET['p']) && isset($_GET['date']) && isset($_GET['dateentree']) && isset ($_GET['sexe']) && isset($_GET['sterilisation']) && isset ($_GET['tarif']) && isset($_GET['mordeur']) && isset($_GET['description'])){
- 	$req="INSERT INTO chien (idChien,nomChien, dateNaissance, dateEntree, idSexe, idSterilisation, idTarification, idMordeur, description, photo) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['p']."'".", "."'".$_GET['date']."'".", "."'".$_GET['dateentree']."'".", ".$_GET['sexe'].", "."'".$_GET['sterilisation']."'".", "."'".$_GET['tarif']."'".","."'".$_GET['mordeur']."'".","."'".$_GET['description']."','default.jpg')";
+	if(isset($_GET['identifiant']) && isset($_GET['p']) && isset($_GET['date']) && isset($_GET['dateentree']) && isset ($_GET['sexe']) && isset($_GET['sterilisation']) && isset ($_GET['tarif']) && isset($_GET['mordeur']) && isset($_GET['description']) && isset($_GET['photo'])){
+ 	$req="INSERT INTO chien (idChien,nomChien, dateNaissance, dateEntree, idSexe, idSterilisation, idTarification, idMordeur, description, photo) VALUES ("."'".$_GET['identifiant']."'".","."'".$_GET['p']."'".", "."'".$_GET['date']."'".", "."'".$_GET['dateentree']."'".", ".$_GET['sexe'].", "."'".$_GET['sterilisation']."'".", "."'".$_GET['tarif']."'".","."'".$_GET['mordeur']."'".", "."'".$_GET['description']."'".","."'".$_GET['photo']."')";
 	//echo $req."</BR>";
 	$reponse = $bdd->query($req);
 	$reponse->closeCursor();
