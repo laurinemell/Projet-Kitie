@@ -2,19 +2,19 @@
 <html>
 	<head>
 	<title>Ajouter un chien</title>
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="ajout-chien.css" type="text/css" />
+	<link rel="stylesheet" href="../Style/style.css" type="text/css" />
+	<link rel="stylesheet" href="../Style/ajout-chien.css" type="text/css" />
 	</head>
 	<img id="logo" src="../Image/spaLogo.png" >
 	<body>
 	
-	<form method="get" action="enregistrement_chien_dans_la_BD.php" autocomplete="off">
+	<form method="get" action="enregistrement_chien_dans_la_BD.php" autocomplete="off" enctype= »multipart/form-data>
 			<div id="FormulaireAjout">
 <!-- 			<placehorder for="race">Race</placehorder>
  -->			<select class="fo" name="race" id="race">
     			<option>--Choisir une race--</option>
     				<?php
-						include "bd.php";
+						include "../bd.php";
 						$bdd = getBD();
  						$reponse = $bdd->query('SELECT * FROM races');
 						//$ligne = $reponse->fetch(); ne pas le mettre sinon ça ne prends pas la première donnée
@@ -119,13 +119,26 @@
 <INPUT type= "radio" name="lof" value="1"> Oui
 				<br>
 				<br>
+			<label for="photo"> Choisir une photo </label>
+			  	<input align="center" type="file" id="photo" name="photo" accept="image/*" onchange="loadFile(event)" value="upload">
+
+				<br>
 				</div>
 			<div id="rondChien" class="rond">
-  <img src="../Image/Kitie.jpg" alt="miaou" /> </div>
+<img id="output"/>
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
+</div>
   <br>
   
   <div id="FormulaireAjout2">
-
  <label for="vaccin">Vaccin</label>
 			<select class="fb" name="vaccin" id="vaccin">
     			<option>--Choisir--</option>
