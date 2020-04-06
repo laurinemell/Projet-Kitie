@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 30, 2020 at 01:50 PM
+-- Generation Time: Apr 06, 2020 at 11:54 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -185,8 +185,10 @@ CREATE TABLE `chien` (
 --
 
 INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `dateSortie`, `idSexe`, `idSterilisation`, `idTarification`, `idMordeur`, `photo`, `description`) VALUES
+(1, 'essai', '2020-03-04', '2020-03-05', NULL, 1, 1, 1, 0, 'default.jpg', 'ok'),
 (14752163, 'NERVAL', '2014-02-01', '2019-11-10', '', 0, 1, 1, 0, '14752163.jpg', ''),
 (16602813, 'FALCO', '2014-02-01', '2019-12-14', '', 0, 1, 3, 0, 'default.jpg', ''),
+(80202553, 'p', '2020-03-04', '2020-02-26', NULL, 0, 1, 2, 1, 'default.jpg', 'description'),
 (100068026, 'FURAX', '2019-01-01', '2020-01-03', '', 1, 1, 3, 0, 'default.jpg', ''),
 (100068035, 'TYSON', '2012-01-01', '2020-01-03', '', 0, 1, 3, 0, 'default.jpg', ''),
 (100106783, 'BALOO', '2019-06-01', '2020-01-24', '', 0, 0, 3, 0, 'default.jpg', ''),
@@ -624,7 +626,17 @@ INSERT INTO `etredecouleur` (`idChien`, `idCouleur`) VALUES
 (743105688, 1),
 (731020202, 1),
 (743019646, 1),
-(732033195, 1);
+(732033195, 1),
+(14752163, 1),
+(14752163, 2),
+(802025753, 3),
+(802025753, 4),
+(802025753, 6),
+(802025753, 9),
+(802025753, 10),
+(802025753, 11),
+(1, 1),
+(1, 2);
 
 -- --------------------------------------------------------
 
@@ -792,7 +804,8 @@ INSERT INTO `etrerace` (`idChien`, `idRace`, `idCategorie`, `idLof`) VALUES
 (606594777, 13, 3, 0),
 (743186025, 83, 3, 0),
 (604884959, 118, 3, 1),
-(608298259, 13, 3, 0);
+(608298259, 13, 3, 0),
+(1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1001,7 +1014,9 @@ INSERT INTO `etrevaccine` (`idChien`, `idVaccin`, `dateVaccin`) VALUES
 (743186097, 0, ''),
 (606090147, 0, ''),
 (602824117, 0, ''),
-(743186025, 0, '');
+(743186025, 0, ''),
+(14752163, 1, '2020-03-03'),
+(1, 0, '2020-03-05');
 
 -- --------------------------------------------------------
 
@@ -1216,7 +1231,8 @@ INSERT INTO `loger` (`idBox`, `idChien`, `dateDebut`, `dateFin`) VALUES
 ('R602', 743185884, '2019-10-30', NULL),
 ('R709', 742021071, '2020-02-08', NULL),
 ('R712', 590090742, '2020-02-01', NULL),
-('R403', 743186023, '2020-03-02', NULL);
+('R403', 743186023, '2020-03-02', NULL),
+('R101', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1487,6 +1503,24 @@ CREATE TABLE `sexehumain` (
 INSERT INTO `sexehumain` (`sexeHum`, `etat`) VALUES
 (0, 'Homme'),
 (1, 'Femme');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sociabilite`
+--
+
+CREATE TABLE `sociabilite` (
+  `idSociabilite` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `sociabilite`
+--
+
+INSERT INTO `sociabilite` (`idSociabilite`) VALUES
+(1),
+(0);
 
 -- --------------------------------------------------------
 
