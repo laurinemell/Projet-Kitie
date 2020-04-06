@@ -2,8 +2,8 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Apr 06, 2020 at 11:54 AM
+-- Host: localhost:3306
+-- Generation Time: Apr 06, 2020 at 12:53 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `projetkitie`
+-- Database: `kitie-projet`
 --
 
 -- --------------------------------------------------------
@@ -816,7 +816,7 @@ INSERT INTO `etrerace` (`idChien`, `idRace`, `idCategorie`, `idLof`) VALUES
 CREATE TABLE `etresociable` (
   `idChien` int(9) DEFAULT NULL,
   `idIndividu` int(1) DEFAULT NULL,
-  `Appreciation` varchar(5) DEFAULT NULL
+  `Appreciation` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -824,59 +824,59 @@ CREATE TABLE `etresociable` (
 --
 
 INSERT INTO `etresociable` (`idChien`, `idIndividu`, `Appreciation`) VALUES
-(604021670, 2, 'TRUE'),
-(600192550, 1, 'TRUE'),
-(600192550, 3, 'TRUE'),
-(810539115, 2, 'TRUE'),
-(811542404, 1, 'TRUE'),
-(811542404, 2, 'TRUE'),
-(811542404, 3, 'TRUE'),
-(732642022, 2, 'TRUE'),
-(14752163, 2, 'FALSE'),
-(743019910, 2, 'FALSE'),
-(732642085, 1, 'TRUE'),
-(732642085, 2, 'FALSE'),
-(732642085, 3, 'TRUE'),
-(743186111, 1, 'FALSE'),
-(743186111, 2, 'FALSE'),
-(743186111, 3, 'TRUE'),
-(606205619, 1, 'TRUE'),
-(606205619, 1, 'TRUE'),
-(732340306, 1, 'TRUE'),
-(732340306, 3, 'TRUE'),
-(501387833, 1, 'FALSE'),
-(501387833, 2, 'FALSE'),
-(501387833, 3, 'TRUE'),
-(500262918, 1, 'FALSE'),
-(500262918, 2, 'FALSE'),
-(500262918, 3, 'TRUE'),
-(811375114, 1, 'FALSE'),
-(811375114, 3, 'TRUE'),
-(500048691, 1, 'TRUE'),
-(731559255, 1, 'FALSE'),
-(732137576, 1, 'TRUE'),
-(732137576, 2, 'TRUE'),
-(732137576, 3, 'FALSE'),
-(501631093, 1, 'TRUE'),
-(732033195, 1, 'TRUE'),
-(732033195, 2, 'FALSE'),
-(732033195, 3, 'TRUE'),
-(743057283, 1, 'TRUE'),
-(712252412, 2, 'TRUE'),
-(600112272, 2, 'FALSE'),
-(600112272, 3, 'TRUE'),
-(810673865, 1, 'FALSE'),
-(810673865, 2, 'FALSE'),
-(732137799, 1, 'FALSE'),
-(732137799, 2, 'FALSE'),
-(732234302, 3, 'TRUE'),
-(400009792, 1, 'FALSE'),
-(400009792, 3, 'FALSE'),
-(602842530, 1, 'FALSE'),
-(602842530, 2, 'TRUE'),
-(732301158, 1, 'TRUE'),
-(608298259, 1, 'FALSE'),
-(608298259, 3, 'FALSE');
+(600192550, 1, 1),
+(600192550, 3, 1),
+(810539115, 2, 1),
+(811542404, 1, 1),
+(811542404, 2, 1),
+(811542404, 3, 1),
+(732642022, 2, 1),
+(14752163, 2, 0),
+(743019910, 2, 0),
+(732642085, 1, 1),
+(732642085, 2, 0),
+(732642085, 3, 1),
+(743186111, 1, 0),
+(743186111, 2, 0),
+(743186111, 3, 1),
+(606205619, 1, 1),
+(606205619, 1, 1),
+(732340306, 1, 1),
+(732340306, 3, 1),
+(501387833, 1, 0),
+(501387833, 2, 0),
+(501387833, 3, 1),
+(500262918, 1, 0),
+(500262918, 2, 0),
+(500262918, 3, 1),
+(811375114, 1, 0),
+(811375114, 3, 1),
+(500048691, 1, 1),
+(731559255, 1, 0),
+(732137576, 1, 1),
+(732137576, 2, 1),
+(732137576, 3, 0),
+(501631093, 1, 1),
+(732033195, 1, 1),
+(732033195, 2, 0),
+(732033195, 3, 1),
+(743057283, 1, 1),
+(712252412, 2, 1),
+(600112272, 2, 0),
+(600112272, 3, 1),
+(810673865, 1, 0),
+(810673865, 2, 0),
+(732137799, 1, 0),
+(732137799, 2, 0),
+(732234302, 3, 1),
+(400009792, 1, 0),
+(400009792, 3, 0),
+(602842530, 1, 0),
+(602842530, 2, 1),
+(732301158, 1, 1),
+(608298259, 1, 0),
+(608298259, 3, 0),
+(604021670, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -1511,16 +1511,17 @@ INSERT INTO `sexehumain` (`sexeHum`, `etat`) VALUES
 --
 
 CREATE TABLE `sociabilite` (
-  `idSociabilite` tinyint(1) NOT NULL
+  `idSociabilite` tinyint(1) NOT NULL,
+  `Note` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `sociabilite`
 --
 
-INSERT INTO `sociabilite` (`idSociabilite`) VALUES
-(1),
-(0);
+INSERT INTO `sociabilite` (`idSociabilite`, `Note`) VALUES
+(0, 'Non'),
+(1, 'Oui');
 
 -- --------------------------------------------------------
 
@@ -1755,6 +1756,12 @@ ALTER TABLE `sexe`
 --
 ALTER TABLE `sexehumain`
   ADD PRIMARY KEY (`sexeHum`);
+
+--
+-- Indexes for table `sociabilite`
+--
+ALTER TABLE `sociabilite`
+  ADD PRIMARY KEY (`idSociabilite`);
 
 --
 -- Indexes for table `statut`
