@@ -22,7 +22,7 @@ if (isset($_GET['synchroniser'])){
 		<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
 		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
 		<a class="fo" id="block3" href="../Interface/Connexe/ajoutB.php"> Ajouter un bénévole </a>
-		<a class="fo" id="block1" class="fo" href="BD.php?synchroniser=true" > Synchroniser </a>
+		<a class="fo" id="block4" class="fo" href="BD.php?synchroniser=true" > Synchroniser </a>
 
 	</div>
 	<div class="fixed-reste">
@@ -67,19 +67,22 @@ if (isset($_GET['synchroniser'])){
 			$ligne = $rep->fetch();
 			while ($ligne = $rep ->fetch()) { 
 			echo "<tr>";
-			echo "<th>".$ligne["nomChien"]."</th>";
-			echo "<th>".$ligne["idChien"]."</th>";
-			echo "<th>".$ligne["dateNaissance"]."</th>";
-			echo "<th>".$ligne["NomSexe"]."</th>";
-			echo "<th>".$ligne["Etat"]."</th>";
-			echo "<th>".$ligne["nomVaccin"]."</th>";
-			echo "<th>".$ligne["nomRace"]."</th>";
-			echo "<th>".$ligne["nomCouleur"]."</th>";
-			echo "<th>".$ligne["idBox"]."</th>";
-			echo "<th>".$ligne["dateEntree"]."</th>";
-			echo "<th>".$ligne["tarif"]."</th>";
-			echo "<th>".$ligne["Lof"]."</th>";
-			echo "<th>".$ligne["description"]."</th>";
+		$array = [$ligne["nomChien"], 
+					$ligne["idChien"],
+					$ligne["dateNaissance"],
+					$ligne["NomSexe"],
+					$ligne["Etat"],
+					$ligne["nomVaccin"],
+					$ligne["nomRace"],
+					$ligne["nomCouleur"],
+					$ligne["idBox"],
+					$ligne["dateEntree"],
+					$ligne["tarif"],
+					$ligne["Lof"],
+					$ligne["description"]];
+			foreach ($array as $x) {
+				echo "<td><a href='../Interface/Connexe/ficheChien.php?identifiant=".$ligne["idChien"]."' >".$x."</td>";
+			}
 			if ($ligne["photo"] == NULL){
 				$ligne["photo"] = "default.jpg";
 			}

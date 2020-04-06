@@ -149,7 +149,7 @@ if (isset($_GET['synchroniser'])){
 		<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
 		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
 		<a class="fo" id="block3" href="../Interface/Connexe/ajoutB.php"> Ajouter un bénévole </a>
-		<a class="fo" id="block1" class="fo" href="BD.php?synchroniser=true" > Synchroniser </a>
+		<a class="fo" id="block4" class="fo" href="BD.php?synchroniser=true" > Synchroniser </a>
 
 	</div>
 	<div class="fixed-reste">
