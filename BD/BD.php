@@ -1,17 +1,7 @@
-<?php
-if (isset($_GET['synchroniser'])){
-	include 'fonctions.php';
-	ob_start();
-	$listing=recuperer_donnees_listing();
-	$BD=recuperer_donnees_BD();
-	comparer_donnees($listing,$BD);
-	ob_end_clean();
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript" src="synchro.js"></script>
 	<link rel="stylesheet" href="../Interface/Style/style.css" type="text/css" />
 	<title>Base de données</title>
 
@@ -22,7 +12,7 @@ if (isset($_GET['synchroniser'])){
 		<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
 		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
 		<a class="fo" id="block3" href="../Interface/Connexe/ajoutB.php"> Ajouter un bénévole </a>
-		<a class="fo" id="block4" class="fo" href="BD.php?synchroniser=true" > Synchroniser </a>
+		<button onclick="synchro()">Synchroniser</button>
 
 	</div>
 	<div class="fixed-reste">
