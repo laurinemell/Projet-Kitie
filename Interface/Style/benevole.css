@@ -1,28 +1,25 @@
-/*Fiche de style de benevole*/
-*{
-	border: solid red px;
-}
 #head{
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: -4.5em;
-	padding: 0px;
 	width: 35em;
-	height: 4em;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -4em;
+}
+#ajoutChien{
+	float: left;
+}
+#ajoutBenevole{
+	float: right;
 }
 #apercu{
 	width: 20em;
 	overflow-y: scroll;
 	overflow-x:none;
-	height:43em;
-	float: right;
-	margin-top: -610px;
+	height: 30em;
+	position: fixed;
+	right: 0px;
+	top: 1em;
 	background-color: white;
-}
-tr{
-	margin-top: 10px;
-	border: solid green 2px;
-	display: inline-block;
+	border-radius: 1em;
 }
 #barreRecherche{
 	height: 3em;
@@ -34,25 +31,36 @@ tr{
 	border-radius: 0.5em;
 }
 
-#ab{
-	float: right;
+#deconnexion{
+	position: fixed;
+	bottom: 1em;
+	left : 1em;
 }
-#ac{
-	float: left;
+#Chien{
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
 }
-#ic{
-	margin-top: 2em;
-}
-#donnee{
-	width: 70%;
-	height: 400px;
+#espaceGraphe{
+	position: fixed;
+	left: 2em;
+	top: 6em;
 	background-color: #3773C7;
-	margin-top: 2em;
-	margin-left: 3em;
-	border-radius: 3em;
+	width: 55em;
+	height: 25em;
+	border-radius: 1em;
 }
 #selection{
-	width: 20%;
-	height: 90%;
-
+	width: 10em;
+	height: 100%;
+	border-radius: 1em;
+	background-color: #EB681F;
+}
+#graphe{
+	margin-top: -23em;
+	margin-left: 20em;
+	height: 20em;
+	width: 20em;
+	border-radius: 1em;
+	background-color: whitesmoke;
 }

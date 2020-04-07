@@ -10,9 +10,8 @@
 	<?php
 	// Partie de la requête
 	include "../bd.php";
-	//$bdd=getBD();
-	$bdd = new PDO('mysql:host=localhost;dbname=kitie;port=3306','root','root');
-	$requete="select * from chien, etrerace, etredecouleur where";
+	$bdd=getBD();
+	$requete="select chien.* from chien, etrerace, etredecouleur where";
 
 	//Requêtes pour les races
 	if (isset($_GET["races"])) {
@@ -35,7 +34,7 @@
 			$couleur=' or etredecouleur.idCouleur='.$value;
 			$requete=$requete.$couleur;
 			}
-		if(empty($_GET["Sexe"])){
+		if(!empty($_GET["Sexe"])){
 			$requete=$requete." and";
 		}
 	}
@@ -45,15 +44,25 @@
 		$sexe=" chien.idSexe=".$_GET["sexe"];
 		$requete=$requete.$sexe;
 	}
-	echo $requete;
-	echo gettype($requete);
+	$requete=$requete." GROUP BY chien.idChien";
 	$rep = $bdd->query($requete);
+	if (empty($rep)) {
+		echo 'Désolé aucun résultats trouvés.';
+	}
+	echo $requete;
 	while ($ligne = $rep ->fetch()) {
-		echo '<div class="chiens">';
-			echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/></a>';
+		$id=$ligne["idChien"];
+		$sexe = $bdd->query('select sexe.NomSexe from sexe where sexe.IdSexe='.$ligne["idSexe"]);
+		$sexe=$sexe ->fetch();
+		$ste=$bdd->query('select sterilisation.Etat from sterilisation where sterilisation.idSterilisation='.$ligne["idSterilisation"]);
+		$ste=$ste ->fetch();
+			echo '<a href="ficheChien.php?identifiant='.$id.'"><div class="chiens">';
+			echo '<p class="sexe"> Sexe : '.$sexe['NomSexe'].'</p>';
+			echo '<img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/>';
 			echo '<p class="prenom">Bonjour, je suis : '.$ligne["nomChien"].'</p>';
-			echo '<p class="ste">'.$ligne["idSterilisation"].'</p>';
-		echo '</div>';
+			echo '<p class="ste"> Stérilisé.e : '.$ste["Etat"].'</p>';
+			echo '<p class="id">'.$id.'</p>';
+		echo '</div></a>';
 	}
 
 	?>
