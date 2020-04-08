@@ -45,10 +45,15 @@
 		let Races=JSON.stringify(races, null, '\t');
 		console.log(Races)
 	</script>
-	<div id="head">
-			<a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajouter un chien"></a>
-			<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>
-	</div>
+	<?php
+	if($_SESSION["Statut"]==1){
+		echo '<div id="head">';
+			echo '<a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajouter un chien"></a>';
+			echo '<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>';
+		echo '</div>';
+	}
+
+	?>
 	<?php
 	echo '<a href="../PHP/sessionDestruction.php" target="_blank"> <input id="deconnexion" class="fo" type="button" type="button" value="Vous déconnecter, '.$_SESSION["prenom"].'"></a>';
 	?>
