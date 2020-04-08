@@ -1,0 +1,17 @@
+body{
+  margin: 0px;
+  background-color: whitesmoke;
+}
+#logo{
+	margin-top: 1em;
+	width: 10em;
+}
+
+#barreRecherche{
+	border-radius: 0.5em;
+	border : 5px solid #FF8000; 
+	width: 90%;
+	height: 3em;
+	margin-top: 3em;
+	text-align: center;
+	}

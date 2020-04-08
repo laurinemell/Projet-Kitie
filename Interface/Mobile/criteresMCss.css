@@ -1,0 +1,17 @@
+p{
+	background-color: #3773C7;
+	border-radius: 0 0 1em 1em;
+	margin-top: 0;
+	height: 1em;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	padding: 0.2em;
+	font-size: 2em;
+	color: white;
+}
+#selecteur{
+	width: 17em;
+	float: right;
+}
