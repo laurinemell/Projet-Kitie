@@ -1,9 +1,3 @@
-<?php session_start() ?>
-<?php
-	if (isset($_SESSION["id"])) {
-		echo "<meta http-equiv='refresh' content='0.000000001; URL=benevole.php'>";
-	}
-?>
 <html>
 	<head>
 		<title>Connexion</title>

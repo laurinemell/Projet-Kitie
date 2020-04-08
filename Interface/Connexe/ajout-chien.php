@@ -178,9 +178,16 @@
     		<label for="description"> Description </label>
 			<TEXTAREA style="font-family: times new roman"  class="am" rows="10" name="description"></TEXTAREA>
 			 <br>
-			 
+
+<?php
+if($_FILES['photo']['name']==""){
+}
+else{
+?>
 <input type="hidden" name="nomphoto" value=<?php echo $_FILES['photo']['name'] ?> >			 
-			 
+<?php
+}
+?>
 			<br>
 			<input id="valider" class="fb" type="submit" name="valider"value="Valider"/>
 			</div>

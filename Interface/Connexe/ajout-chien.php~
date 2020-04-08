@@ -8,7 +8,7 @@
 	<img id="logo" src="../Image/spaLogo.png" >
 	<body>
 
-        <p style= color:red;>Le nom de la photo doit être l'identifiant du chien et au format .jpg :<p>
+        <p style= color:red;>Le format de la photo doit être .jpg :<p>
         <form method="post" enctype="multipart/form-data">
             <input type="file" name="photo">
             <input type="submit" name="valider_photo" value="Visualiser la photo">
@@ -178,11 +178,20 @@
     		<label for="description"> Description </label>
 			<TEXTAREA style="font-family: times new roman"  class="am" rows="10" name="description"></TEXTAREA>
 			 <br>
-			 
+
+<?php
+if($_FILES['photo']['name']==""){
+}
+else{
+?>
 <input type="hidden" name="nomphoto" value=<?php echo $_FILES['photo']['name'] ?> >			 
 			 
 			<br>
 			<input id="valider" class="fb" type="submit" name="valider"value="Valider"/>
+			
+			<?php
+		}
+		?>
 			</div>
 
 <div>
