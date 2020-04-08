@@ -2,20 +2,43 @@
 <html>
 	<head>
 	<title>Ajouter un chien</title>
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="ajout-chien.css" type="text/css" />
+	<link rel="stylesheet" href="../Style/style.css" type="text/css" />
+	<link rel="stylesheet" href="../Style/ajout-chien.css" type="text/css" />
 	</head>
 	<img id="logo" src="../Image/spaLogo.png" >
 	<body>
+
+        <p style= color:red;>Le nom de la photo doit être l'identifiant du chien et au format .jpg :<p>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="photo">
+            <input type="submit" name="valider_photo" value="Visualiser la photo">
+        </form>
+        
+    <?php
+    if(isset($_POST['valider_photo'])){
+    	if (isset($_FILES['photo']['tmp_name'])) {
+    		if($_FILES['photo']['type']=='image/jpeg'){
+       		 $retour = copy($_FILES['photo']['tmp_name'], $_FILES['photo']['name']);
+       			 if($retour) {
+          			  echo "<div style=float:right; id='rondChien' class='rond'>"."<img src=../../BD/photo/".$_FILES['photo']['name']." id='output'/>"."</div>"."</BR>"."</BR>";
+          			  rename($_FILES['photo']['name'], "../../BD/photo/".$_FILES['photo']['name']);
+    			    }
+    		    }
+      	  else{
+				echo "La photo n'est pas au format .jpg";        
+       		 }
+       	 }
+        }
+    ?>
+    	
 	
-	<form method="get" action="enregistrement_chien_dans_la_BD.php" autocomplete="off">
-		<div id="Formulaire">
+	<form method="get" action="enregistrement_chien_dans_la_BD.php" autocomplete="off" enctype= »multipart/form-data>
 			<div id="FormulaireAjout">
 <!-- 			<placehorder for="race">Race</placehorder>
  -->			<select class="fo" name="race" id="race">
     			<option>--Choisir une race--</option>
     				<?php
-						include "bd.php";
+						include "../bd.php";
 						$bdd = getBD();
  						$reponse = $bdd->query('SELECT * FROM races');
 						//$ligne = $reponse->fetch(); ne pas le mettre sinon ça ne prends pas la première donnée
@@ -41,18 +64,20 @@
        				min="2000-01-01" max="2100-12-31">
 			<br>
 			<br>
-			<!-- <label for="couleur">Couleur</label> -->
-			<select class="fo" name="couleur" id="couleur">
-    			<option>--Choisir une couleur--</option>
-    				<?php
-						
- 						$reponse = $bdd->query('SELECT * FROM couleur');
+<!-- <label for="couleur" class="fo"> Choisir une couleur : </label>
+
+ -->		
+ 			<div id="hau">
+ 				<?php
+ 				$reponse = $bdd->query('SELECT * FROM couleur');
  						while ($ligne = $reponse->fetch()) {
-                			echo '<option value="'.$ligne["idCouleur"].'">'.$ligne["nomCouleur"].'</option>';
-            			}
-            ?>
-				</select>
-				
+                			echo '<tr><td>'.$ligne["nomCouleur"].'</td>';
+                	echo" <td><input type='checkbox' name='couleur[]' value='".$ligne['idCouleur']."'></td>";
+                	echo"<br>";
+                	echo "</tr>";
+                }
+ 		?>
+ 	</div>
 				<br>
 				<!-- <placehorder for="mordeur">Evaluation mordeur</placehorder> -->
 			<select class="fo" name="mordeur" id="mordeur">
@@ -118,13 +143,12 @@
 <INPUT type= "radio" name="lof" value="1"> Oui
 				<br>
 				<br>
-				</div>
-			<div id="rondChien" class="rond">
-  <img src="../Image/Kitie.jpg" alt="miaou" /> </div>
+
+
+</div>
   <br>
   
   <div id="FormulaireAjout2">
-
  <label for="vaccin">Vaccin</label>
 			<select class="fb" name="vaccin" id="vaccin">
     			<option>--Choisir--</option>
@@ -154,9 +178,17 @@
     		<label for="description"> Description </label>
 			<TEXTAREA style="font-family: times new roman"  class="am" rows="10" name="description"></TEXTAREA>
 			 <br>
+			 
+<input type="hidden" name="nomphoto" value=<?php echo $_FILES['photo']['name'] ?> >			 
+			 
 			<br>
 			<input id="valider" class="fb" type="submit" name="valider"value="Valider"/>
 			</div>
+
+<div>
 </form>
+    
+<!-- <hr class="separation" />
+ --></div>
 	</body>
 </html>

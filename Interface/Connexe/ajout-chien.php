@@ -7,6 +7,30 @@
 	</head>
 	<img id="logo" src="../Image/spaLogo.png" >
 	<body>
+
+        <p style= color:red;>Le nom de la photo doit être l'identifiant du chien et au format .jpg :<p>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="photo">
+            <input type="submit" name="valider_photo" value="Visualiser la photo">
+        </form>
+        
+    <?php
+    if(isset($_POST['valider_photo'])){
+    	if (isset($_FILES['photo']['tmp_name'])) {
+    		if($_FILES['photo']['type']=='image/jpeg'){
+       		 $retour = copy($_FILES['photo']['tmp_name'], $_FILES['photo']['name']);
+       			 if($retour) {
+          			  echo "<div style=float:right; id='rondChien' class='rond'>"."<img src=../../BD/photo/".$_FILES['photo']['name']." id='output'/>"."</div>"."</BR>"."</BR>";
+          			  rename($_FILES['photo']['name'], "../../BD/photo/".$_FILES['photo']['name']);
+    			    }
+    		    }
+      	  else{
+				echo "La photo n'est pas au format .jpg";        
+       		 }
+       	 }
+        }
+    ?>
+    	
 	
 	<form method="get" action="enregistrement_chien_dans_la_BD.php" autocomplete="off" enctype= »multipart/form-data>
 			<div id="FormulaireAjout">
@@ -119,22 +143,8 @@
 <INPUT type= "radio" name="lof" value="1"> Oui
 				<br>
 				<br>
-			<label for="photo"> Choisir une photo </label>
-			  	<input align="center" type="file" id="photo" name="photo" accept="image/*" onchange="loadFile(event)" value="upload">
 
-				<br>
-				</div>
-			<div id="rondChien" class="rond">
-<img id="output"/>
-<script>
-  var loadFile = function(event) {
-    var output = document.getElementById('output');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function() {
-      URL.revokeObjectURL(output.src) // free memory
-    }
-  };
-</script>
+
 </div>
   <br>
   
@@ -168,11 +178,16 @@
     		<label for="description"> Description </label>
 			<TEXTAREA style="font-family: times new roman"  class="am" rows="10" name="description"></TEXTAREA>
 			 <br>
+			 
+<input type="hidden" name="nomphoto" value=<?php echo $_FILES['photo']['name'] ?> >			 
+			 
 			<br>
 			<input id="valider" class="fb" type="submit" name="valider"value="Valider"/>
 			</div>
-</form>
+
 <div>
+</form>
+    
 <!-- <hr class="separation" />
  --></div>
 	</body>
