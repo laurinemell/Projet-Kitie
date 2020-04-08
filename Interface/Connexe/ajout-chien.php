@@ -8,7 +8,7 @@
 	<img id="logo" src="../Image/spaLogo.png" >
 	<body>
 
-        <p style= color:red;>Le nom de la photo doit être l'identifiant du chien et au format .jpg :<p>
+        <p style= color:red;>Le format de la photo doit être .jpg :<p>
         <form method="post" enctype="multipart/form-data">
             <input type="file" name="photo">
             <input type="submit" name="valider_photo" value="Visualiser la photo">
