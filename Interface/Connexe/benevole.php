@@ -19,28 +19,37 @@
 		if (empty($_SESSION['prenom'])) {
 			echo "<meta http-equiv='refresh' content='1; URL=connexion.php?msg=Merci, de vous connectez !'>";
 		}
-
-
+		$fichier='sexe.json';
+		if(file_exists($fichier)){
+			unlink($fichier);
+		}
+		$fichier='couleur.json';
+		if(file_exists($fichier)){
+			unlink($fichier);
+		}
 // Recupere les donnees pour creation des graphes 
 		$sexe=$bdd->query("select COUNT(chien.idChien) as nombre, sexe.NomSexe as sexe FROM chien,sexe where chien.idSexe=sexe.IdSexe GROUP BY chien.idSexe");
 		$couleur=$bdd->query("select COUNT(chien.idChien) as nombre, couleur.nomCouleur as couleur FROM chien,etredecouleur,couleur where chien.idChien=etredecouleur.idChien and etredecouleur.idCouleur=couleur.idCouleur GROUP BY etredecouleur.idCouleur");	
 		$sexeTab=array();
-		while ($lgn = $sexe ->fetch()) {
-			$sexeTab=array(
-				'x' => $lgn['sexe'],
-				'value' => $lgn['nombre']
+		while($ligne=$sexe ->fetch()){
+			$sexeTab[] = array(
+				'x' => $ligne['sexe'],
+				'value' => $ligne['nombre']
 			);
 		}
-		$sexe=json_encode($sexeTab);
-		print_r($sexe);
-		file_put_contents('sexe.json',$sexe);
+		$Sex=json_encode($sexeTab);
+		$nom='sexe.json';
+		file_put_contents($nom, $Sex);
 		$couleurTab=array();
-		while ($lgn1 = $couleur ->fetch){
-			$couleurTab=array(
-			'x'=>$lng1['couleur'],
-			'value'=>$lgn1['nombre']
-		);}
-		file_put_contents('couleur.json',json_encode($couleurTab));	
+		while($ligne=$couleur ->fetch()){
+			$couleurTab[] = array(
+				'x' => $ligne['couleur'],
+				'value' => $ligne['nombre']
+			);
+		}
+		$Cou=json_encode($couleurTab);
+		$nom='couleur.json';
+		file_put_contents($nom, $Cou);
 	?>
 	<?php
 	if($_SESSION["Statut"]==1){
