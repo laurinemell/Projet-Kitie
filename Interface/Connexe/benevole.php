@@ -22,33 +22,35 @@
 
 
 // Recupere les donnees pour creation des graphes 
-		$sexe=$bdd->query("SELECT COUNT(chien.idChien) as nombre, sexe.NomSexe as sexe FROM chien,sexe where chien.idSexe=sexe.IdSexe GROUP BY chien.idSexe");
-		$races=$bdd->query("SELECT COUNT(chien.idChien) as nombre, couleur.nomCouleur as couleur FROM chien,etredecouleur,couleur where chien.idChien=etredecouleur.idChien and etredecouleur.idCouleur=couleur.idCouleur GROUP BY etredecouleur.idCouleur");
-	?>
-	<script type="text/javascript">
-		let sexe=[
-		<?php
+		$sexe=$bdd->query("select COUNT(chien.idChien) as nombre, sexe.NomSexe as sexe FROM chien,sexe where chien.idSexe=sexe.IdSexe GROUP BY chien.idSexe");
+		$couleur=$bdd->query("select COUNT(chien.idChien) as nombre, couleur.nomCouleur as couleur FROM chien,etredecouleur,couleur where chien.idChien=etredecouleur.idChien and etredecouleur.idCouleur=couleur.idCouleur GROUP BY etredecouleur.idCouleur");	
+		$sexeTab=array();
 		while ($lgn = $sexe ->fetch()) {
-		echo '{x : "'.$lgn['sexe'].'",value : '.$lgn['nombre'].',},';
+			$sexeTab=array(
+				'x' => $lgn['sexe'],
+				'value' => $lgn['nombre']
+			);
 		}
-		?>
-		]
-		let Sexe=JSON.stringify(sexe, null, '\t');
-		console.log(Sexe)
-		let races=[
-		<?php
-		while ($lgn1 = $races ->fetch()) {
-		echo '{x : "'.$lgn1['couleur'].'",value : '.$lgn1['nombre'].',},';
-		}
-		?>
-		]
-		let Races=JSON.stringify(races, null, '\t');
-		console.log(Races)
-	</script>
-	<div id="head">
-			<a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajouter un chien"></a>
-			<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>
-	</div>
+		$sexe=json_encode($sexeTab);
+		print_r($sexe);
+		file_put_contents('sexe.json',$sexe);
+		$couleurTab=array();
+		while ($lgn1 = $couleur ->fetch){
+			$couleurTab=array(
+			'x'=>$lng1['couleur'],
+			'value'=>$lgn1['nombre']
+		);}
+		file_put_contents('couleur.json',json_encode($couleurTab));	
+	?>
+	<?php
+	if($_SESSION["Statut"]==1){
+		echo '<div id="head">';
+			echo '<a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajouter un chien"></a>';
+			echo '<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>';
+		echo '</div>';
+	}
+
+	?>
 	<?php
 	echo '<a href="../PHP/sessionDestruction.php" target="_blank"> <input id="deconnexion" class="fo" type="button" type="button" value="Vous déconnecter, '.$_SESSION["prenom"].'"></a>';
 	?>

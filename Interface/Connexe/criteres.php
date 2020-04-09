@@ -6,14 +6,21 @@
 	</head>
 	<body>
 		<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
-			<center><h1 id="titre">Recherche et critères</h1></center>
+		<?php
+		if(isset($_GET["msg"])){
+			echo '<center><h1 id="alert">'.$_GET['msg'].'</h1></center>';
+		}
+		else{
+			echo '<center><h1 id="titre">Recherche et critères</h1></center>';
+		}
+		?>
 		<form action="resultats.php" method="get" autocomplete="on">
 		<div id="Criteres">
 				<div id="Races">
  				<?php
  				include "../bd.php";
 				$bdd = getBD();
- 				$reponse = $bdd->query('select * from races');
+ 				$reponse = $bdd->query('select races.* from etrerace,races where etrerace.idRace=races.idRace group by races.idRace');
  						while ($ligne = $reponse->fetch()) {
                 			echo '<tr><td>'.$ligne["nomRace"].'</td>';
                 			echo" <td><input type='checkbox' name='races[]' value='".$ligne["idRace"]."'></td>";
@@ -26,7 +33,7 @@
 				</select>
 				<div id="Couleur">
  				<?php
- 				$reponse = $bdd->query('SELECT * FROM couleur');
+ 				$reponse = $bdd->query('select couleur.* from couleur,etredecouleur where etredecouleur.idCouleur=couleur.idCouleur group by couleur.idCouleur');
  						while ($ligne = $reponse->fetch()) {
                 			echo '<tr><td>'.$ligne["nomCouleur"].'</td>';
                 			echo" <td><input type='checkbox' name='couleur[]' value='".$ligne['idCouleur']."'></td>";
