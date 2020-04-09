@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="synchro.js"></script>
 	<link rel="stylesheet" href="../Interface/Style/style.css" type="text/css" />
 	<title>Base de données</title>
 
+<?php
+include ('fonctions.php');
+if (isset($_GET['synchroniser'])){
+	ob_start();
+	$listing=recuperer_donnees_listing();
+	$BD=recuperer_donnees_BD();
+	comparer_donnees($listing,$BD);
+	ob_end_clean();
+	echo "<meta http-equiv='refresh' content='2; URL=BD.php'>";
+}
+?>
+
+
 </head>
 <body>
+
 	<div class="fixed-barre-top">
 		<img id="logo" src="../Interface/Image/spaLogo.png">
-		<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
-		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
-		<a class="fo" id="block3" href="../Interface/Connexe/ajoutB.php"> Ajouter un bénévole </a>
-		<button onclick="synchro()">Synchroniser</button>
-
+		<a class="fo" id="block1" class="fo" href="BD.php?synchroniser=true" > Mise à jour </a>
+		<a class="fo" id="block2" href="listing.php"> Retour au listing </a>
 	</div>
 	<div class="fixed-reste">
 		<table class="flat-table" border="3">
@@ -34,8 +44,7 @@
 				<th>Photo</th>
 
 			</tr>
-			<?php
-			include "getbd.php";
+			<?php	
 			$bdd = getBD();
 			$rep = $bdd->query('select chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin, races.nomRace, couleur.nomCouleur, box.idBox, chien.dateEntree, tarification.tarif,lof.Lof, etatlegal.description, chien.photo
 				FROM chien, sexe, sterilisation, vaccin, etrevaccine, races, etrerace, couleur, etredecouleur, box, loger, tarification, etatlegal, Lof
