@@ -1,3 +1,11 @@
+#FormulaireAjout3{
+	width: 35%;
+	height: 100%;
+	float: left;
+	margin-top: -100px;
+/*	padding-top: 3%;
+*//*	margin-left: -350px;
+*/}
 html{
 	background-color: whitesmoke;
 }
@@ -48,14 +56,16 @@ text-decoration: none;
 }
 
 #rondChien{
-display: inline-block;
-  border: 2px dotted orange;
+/*display: inline-block;
+*/  border: 2px dotted orange;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  overflow: hidden;
-  margin-left: -100px;
-  margin-top: -100px;
+margin-right: -750px;
+margin-top: -590px;
+/*  overflow: hidden;
+  margin-left: 100px;
+  margin-top: -100px;*/
 	}
 	
 	#hau {
