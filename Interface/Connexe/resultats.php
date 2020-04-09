@@ -11,46 +11,61 @@
 	// Partie de la requête
 	include "../bd.php";
 	$bdd=getBD();
-	$requete="select chien.* from chien, etrerace, etredecouleur where";
+	if(empty($_GET["races"]) and empty($_GET["sexe"]) and empty($_GET["couleur"])){
+		$requete="select chien.* from chien";
+	}
+	else{
+		$requete="select chien.* from chien, etredecouleur, etrerace where chien.idChien=etredecouleur.idChien and chien.idChien=etrerace.idChien and ";
 
-	//Requêtes pour les races
-	if (isset($_GET["races"])) {
-		$race=' chien.idChien=etrerace.idChien';
-		$requete=$requete.$race;
-		foreach ($_GET['races'] as $value) {
-			$race=' or etrerace.idRace='.$value;
-			$requete=$requete.$race;
+		//Requêtes pour les races
+		if (isset($_GET["races"])) {
+			$requete=$requete."(";
+			$i=0;
+			while ($i< sizeof($_GET['races'])) {
+				$race='etrerace.idRace='.$_GET['races'][$i];
+				$requete=$requete.$race;
+				$i++;
+				if($i != sizeof($_GET['races'])){
+					$requete=$requete." or ";
+				}
 			}
-		if(!empty($_GET["sexe"]) or !empty($_GET["couleur"])){
-			$requete=$requete." and";
-		}
-	}
-
-	//Requêtes pour les couleur
-	if (isset($_GET["couleur"])) {
-		$couleur=' etredecouleur.idChien=chien.idChien';
-		$requete=$requete.$couleur;
-		foreach ($_GET['couleur'] as $value) {
-			$couleur=' or etredecouleur.idCouleur='.$value;
-			$requete=$requete.$couleur;
+			$requete=$requete.")";
+			if(!empty($_GET["sexe"]) or !empty($_GET["couleur"])){
+				$requete=$requete." and";
 			}
-		if(!empty($_GET["Sexe"])){
-			$requete=$requete." and";
 		}
-	}
 
-	//Requêtes pour le sexe
-	if(isset($_GET["sexe"])){
-		$sexe=" chien.idSexe=".$_GET["sexe"];
-		$requete=$requete.$sexe;
+		//Requêtes pour les couleurs
+		if (isset($_GET["couleur"])) {
+			$requete=$requete."(";
+			$i=0;
+			while ($i< sizeof($_GET['couleur'])) {
+				$couleur=' etredecouleur.idCouleur='.$_GET['couleur'][$i];
+				$requete=$requete.$couleur;
+				$i++;
+				if($i != sizeof($_GET['couleur'])){
+					$requete=$requete." or ";
+				}
+			}
+			$requete=$requete.")";
+			if(!empty($_GET["Sexe"])){
+				$requete=$requete." and";
+			}
+		}
+
+		//Requêtes pour le sexe
+		if(isset($_GET["sexe"])){
+			$sexe=" chien.idSexe=".$_GET["sexe"];
+			$requete=$requete.$sexe;
+		}
+		$requete=$requete." group by chien.idChien";
 	}
-	$requete=$requete." GROUP BY chien.idChien";
-	$rep = $bdd->query($requete);
-	if (empty($rep)) {
-		echo 'Désolé aucun résultats trouvés.';
+		$rep = $bdd->query($requete);
+	if (!$rep){
+		echo "<meta http-equiv='refresh' content='0.001; URL=criteres.php?msg=Autres critères !'>";
 	}
-	echo $requete;
-	while ($ligne = $rep ->fetch()) {
+	else{
+		while ($ligne = $rep ->fetch()) {
 		$id=$ligne["idChien"];
 		$sexe = $bdd->query('select sexe.NomSexe from sexe where sexe.IdSexe='.$ligne["idSexe"]);
 		$sexe=$sexe ->fetch();
@@ -64,7 +79,8 @@
 			echo '<p class="id">'.$id.'</p>';
 		echo '</div></a>';
 	}
-
+	$rep->closeCursor();
+}
 	?>
 
 </body>
