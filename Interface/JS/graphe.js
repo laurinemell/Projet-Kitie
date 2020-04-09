@@ -1,5 +1,5 @@
 function graphe(el){
-	anychart.onDocumentReady(function() {
+	anychart.onDocumentReady(function() {n
         var data = console.log(el)
         //Création du graphique
         var chart = anychart.pie(); 
