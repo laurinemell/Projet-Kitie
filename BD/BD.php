@@ -63,7 +63,7 @@ if (isset($_GET['synchroniser'])){
 			AND sterilisation.idSterilisation=chien.idSterilisation
 			GROUP BY chien.idChien, vaccin.idVaccin, races.idRace, couleur.idCouleur, box.idBox, lof.idLof, etatlegal.idCategorie
 			ORDER BY chien.nomChien');
-			$ligne = $rep->fetch();
+
 			while ($ligne = $rep ->fetch()) { 
 			if($ligne["nomChien"]==""||$ligne["idChien"]==""||$ligne["dateNaissance"]==""||$ligne["NomSexe"]==""||$ligne["Etat"]==""||$ligne["nomVaccin"]==""||$ligne["nomRace"]==""||$ligne["nomCouleur"]==""||$ligne["idBox"]==""||$ligne["dateEntree"]==""||$ligne["tarif"]==""||$ligne["Lof"]==""||$ligne["description"]==""){
 			echo "<th style='color:orange;'>".$ligne["nomChien"]."</th>";

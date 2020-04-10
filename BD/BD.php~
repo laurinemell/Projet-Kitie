@@ -65,21 +65,36 @@ if (isset($_GET['synchroniser'])){
 			ORDER BY chien.nomChien');
 			$ligne = $rep->fetch();
 			while ($ligne = $rep ->fetch()) { 
-			echo "<tr>";
-		$array = [$ligne["nomChien"], 
-					$ligne["idChien"],
-					$ligne["dateNaissance"],
-					$ligne["NomSexe"],
-					$ligne["Etat"],
-					$ligne["nomVaccin"],
-					$ligne["nomRace"],
-					$ligne["nomCouleur"],
-					$ligne["idBox"],
-					$ligne["dateEntree"],
-					$ligne["tarif"],
-					$ligne["Lof"],
-					$ligne["description"]];
-			foreach ($array as $x) {
+			if($ligne["nomChien"]==""||$ligne["idChien"]==""||$ligne["dateNaissance"]==""||$ligne["NomSexe"]==""||$ligne["Etat"]==""||$ligne["nomVaccin"]==""||$ligne["nomRace"]==""||$ligne["nomCouleur"]==""||$ligne["idBox"]==""||$ligne["dateEntree"]==""||$ligne["tarif"]==""||$ligne["Lof"]==""||$ligne["description"]==""){
+			echo "<th style='color:orange;'>".$ligne["nomChien"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["idChien"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["dateNaissance"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["NomSexe"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["Etat"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["nomVaccin"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["nomRace"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["nomCouleur"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["idBox"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["dateEntree"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["tarif"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["Lof"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["description"]."</th>";
+			}
+			else{
+			echo "<th>".$ligne["nomChien"]."</th>";
+			echo "<th>".$ligne["idChien"]."</th>";
+			echo "<th>".$ligne["dateNaissance"]."</th>";
+			echo "<th>".$ligne["NomSexe"]."</th>";
+			echo "<th>".$ligne["Etat"]."</th>";
+			echo "<th>".$ligne["nomVaccin"]."</th>";
+			echo "<th>".$ligne["nomRace"]."</th>";
+			echo "<th>".$ligne["nomCouleur"]."</th>";
+			echo "<th>".$ligne["idBox"]."</th>";
+			echo "<th>".$ligne["dateEntree"]."</th>";
+			echo "<th>".$ligne["tarif"]."</th>";
+			echo "<th>".$ligne["Lof"]."</th>";
+			echo "<th>".$ligne["description"]."</th>";
+			}			foreach ($array as $x) {
 				echo "<td><a href='../Interface/Connexe/ficheChien.php?identifiant=".$ligne["idChien"]."' >".$x."</td>";
 			}
 			if ($ligne["photo"] == NULL){

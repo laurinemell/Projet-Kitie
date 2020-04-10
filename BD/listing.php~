@@ -87,7 +87,6 @@ if (isset($_GET['synchroniser'])){
 	$ligne = $rep->fetch();
 	while ($ligne = $rep ->fetch()) { 
 			if(in_array($ligne["idChien"],$listing_comparaison)){
-
 			echo "<tr>";
 			if($ligne["nomChien"]==""||$ligne["idChien"]==""||$ligne["dateNaissance"]==""||$ligne["NomSexe"]==""||$ligne["Etat"]==""||$ligne["nomVaccin"]==""||$ligne["nomRace"]==""||$ligne["nomCouleur"]==""||$ligne["idBox"]==""||$ligne["dateEntree"]==""||$ligne["tarif"]==""||$ligne["Lof"]==""||$ligne["description"]==""){
 			echo "<th style='color:orange;'>".$ligne["nomChien"]."</th>";

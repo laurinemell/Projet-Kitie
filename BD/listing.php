@@ -84,7 +84,7 @@ if (isset($_GET['synchroniser'])){
 		$i+=13;
 	}
 			
-	$ligne = $rep->fetch();
+
 	while ($ligne = $rep ->fetch()) { 
 			if(in_array($ligne["idChien"],$listing_comparaison)){
 			echo "<tr>";
