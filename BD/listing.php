@@ -53,23 +53,23 @@ if (isset($_GET['synchroniser'])){
 			preg_match_all("#<td bgcolor=''>.+</td>#",$codesource,$listing);
 			$bdd = getBD();
 			
-			$req='select chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin, races.nomRace, couleur.nomCouleur, box.idBox, chien.dateEntree, tarification.tarif,lof.Lof, etatlegal.description, chien.photo
-				FROM chien, sexe, sterilisation, vaccin, etrevaccine, races, etrerace, couleur, etredecouleur, box, loger, tarification, etatlegal, Lof
-				WHERE chien.idSexe=sexe.IdSexe 
-					AND sterilisation.idSterilisation=chien.idSterilisation 
-					AND vaccin.idVaccin=etrevaccine.idVaccin 
-					AND etrevaccine.idChien=chien.idChien 
-					AND races.idRace=etrerace.idRace
-					AND etredecouleur.idCouleur=couleur.idCouleur 
-					AND chien.idChien=etredecouleur.idChien
-					AND etrerace.idChien=chien.idChien
-					AND loger.idBox=box.idBox 
-					AND loger.idChien=chien.idChien
-					AND tarification.idTarification=chien.idTarification
-					AND lof.idLof=etrerace.idLof
-					AND etatlegal.idCategorie=etrerace.idCategorie
-				GROUP BY (chien.idChien)
-				ORDER BY chien.nomChien';
+			$req='select chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin, races.nomRace, couleur.nomCouleur, box.idBox, chien.dateEntree, tarification.tarif, lof.Lof, etatlegal.description, chien.photo
+			FROM sexe, sterilisation, chien
+			LEFT JOIN etrevaccine ON chien.idChien=etrevaccine.idChien
+			LEFT JOIN vaccin ON etrevaccine.idVaccin=vaccin.idVaccin
+			LEFT JOIN etrerace ON chien.idChien=etrerace.idChien
+			LEFT JOIN races ON etrerace.idRace=races.idRace
+			LEFT JOIN etredecouleur ON etredecouleur.idChien=chien.idChien
+			LEFT JOIN couleur ON etredecouleur.idCouleur=couleur.idCouleur
+			LEFT JOIN loger ON loger.idChien=chien.idChien
+			LEFT JOIN box ON loger.idBox=box.idBox
+			LEFT JOIN tarification ON chien.idTarification=tarification.idTarification
+			LEFT JOIN lof ON lof.idLof=etrerace.idLof
+			LEFT JOIN etatlegal ON etatlegal.idCategorie=etrerace.idCategorie
+			WHERE chien.idSexe=sexe.IdSexe
+			AND sterilisation.idSterilisation=chien.idSterilisation
+			GROUP BY chien.idChien, vaccin.idVaccin, races.idRace, couleur.idCouleur, box.idBox, lof.idLof, etatlegal.idCategorie
+			ORDER BY chien.nomChien';
 				
 			$rep = $bdd->query($req);
 			$ligne = $rep->fetch();
@@ -86,21 +86,39 @@ if (isset($_GET['synchroniser'])){
 			
 	$ligne = $rep->fetch();
 	while ($ligne = $rep ->fetch()) { 
-		echo "<tr>";
-		$array = [$ligne["nomChien"], 
-					$ligne["idChien"],
-					$ligne["dateNaissance"],
-					$ligne["NomSexe"],
-					$ligne["Etat"],
-					$ligne["nomVaccin"],
-					$ligne["nomRace"],
-					$ligne["nomCouleur"],
-					$ligne["idBox"],
-					$ligne["dateEntree"],
-					$ligne["tarif"],
-					$ligne["Lof"],
-					$ligne["description"]];
-			foreach ($array as $x) {
+			if(in_array($ligne["idChien"],$listing_comparaison)){
+			echo "<tr>";
+			if($ligne["nomChien"]==""||$ligne["idChien"]==""||$ligne["dateNaissance"]==""||$ligne["NomSexe"]==""||$ligne["Etat"]==""||$ligne["nomVaccin"]==""||$ligne["nomRace"]==""||$ligne["nomCouleur"]==""||$ligne["idBox"]==""||$ligne["dateEntree"]==""||$ligne["tarif"]==""||$ligne["Lof"]==""||$ligne["description"]==""){
+			echo "<th style='color:orange;'>".$ligne["nomChien"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["idChien"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["dateNaissance"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["NomSexe"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["Etat"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["nomVaccin"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["nomRace"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["nomCouleur"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["idBox"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["dateEntree"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["tarif"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["Lof"]."</th>";
+			echo "<th style='color:orange;'>".$ligne["description"]."</th>";
+			}
+			else{
+			echo "<th>".$ligne["nomChien"]."</th>";
+			echo "<th>".$ligne["idChien"]."</th>";
+			echo "<th>".$ligne["dateNaissance"]."</th>";
+			echo "<th>".$ligne["NomSexe"]."</th>";
+			echo "<th>".$ligne["Etat"]."</th>";
+			echo "<th>".$ligne["nomVaccin"]."</th>";
+			echo "<th>".$ligne["nomRace"]."</th>";
+			echo "<th>".$ligne["nomCouleur"]."</th>";
+			echo "<th>".$ligne["idBox"]."</th>";
+			echo "<th>".$ligne["dateEntree"]."</th>";
+			echo "<th>".$ligne["tarif"]."</th>";
+			echo "<th>".$ligne["Lof"]."</th>";
+			echo "<th>".$ligne["description"]."</th>";
+			}
+				foreach ($array as $x) {
 				echo "<td><a href='../Interface/Connexe/ficheChien.php?identifiant=".$ligne["idChien"]."' >".$x."</td>";
 			}
 			if ($ligne["photo"] == NULL){
@@ -109,6 +127,7 @@ if (isset($_GET['synchroniser'])){
 			echo "<th>"."<img class='img-chien' src='photo/".$ligne["photo"]."' />"."</th>";
 			echo "<tr>";
 		} 
+		}
 		$rep ->closeCursor()
 		?>
 		</table>
