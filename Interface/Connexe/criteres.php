@@ -47,7 +47,7 @@
 				<?php
 				$rep3 = $bdd->query('select * from sexe');
 				while ($ligne3 = $rep3 ->fetch()) {
-					echo '<INPUT type="radio" name="sexe" value="'.$ligne3["IdSexe"].'">'.$ligne3["NomSexe"].'<br/>';
+					echo '<INPUT type="checkbox" name="sexe" value="'.$ligne3["IdSexe"].'">'.$ligne3["NomSexe"].'<br/>';
 				}
 				$rep3->closeCursor;
 				?>

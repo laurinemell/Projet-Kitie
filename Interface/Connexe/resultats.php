@@ -11,7 +11,7 @@
 	// Partie de la requête
 	include "../bd.php";
 	$bdd=getBD();
-	if(empty($_GET["races"]) and empty($_GET["sexe"]) and empty($_GET["couleur"])){
+	if(empty($_GET["races"]) and !isset($_GET["sexe"]) and empty($_GET["couleur"])){
 		$requete="select chien.* from chien";
 	}
 	else{
@@ -30,7 +30,7 @@
 				}
 			}
 			$requete=$requete.")";
-			if(!empty($_GET["sexe"]) or !empty($_GET["couleur"])){
+			if(isset($_GET["sexe"]) or isset($_GET["couleur"])){
 				$requete=$requete." and";
 			}
 		}
@@ -48,7 +48,7 @@
 				}
 			}
 			$requete=$requete.")";
-			if(!empty($_GET["Sexe"])){
+			if(isset($_GET["sexe"])){
 				$requete=$requete." and";
 			}
 		}
@@ -61,6 +61,7 @@
 		$requete=$requete." group by chien.idChien";
 	}
 		$rep = $bdd->query($requete);
+	
 	if (!$rep){
 		echo "<meta http-equiv='refresh' content='0.001; URL=criteres.php?msg=Autres critères !'>";
 	}
