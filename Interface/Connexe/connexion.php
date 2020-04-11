@@ -12,7 +12,7 @@
 		div{
 			margin-left: auto;
 			margin-right: auto;
-			margin-top: 7em;
+			margin-top: 13em;
 			width: 20em;
 		}
 		p{
