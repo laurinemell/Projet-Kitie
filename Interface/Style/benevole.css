@@ -64,3 +64,16 @@
 	border-radius: 1em;
 	background-color: whitesmoke;
 }
+.mesChiens{
+	margin-top: 2px;
+	padding: 0.5em;
+}
+.rond{
+	margin-left: 5em;
+}
+p{
+	color: orange;
+}
+a{
+	text-decoration: none;
+}
