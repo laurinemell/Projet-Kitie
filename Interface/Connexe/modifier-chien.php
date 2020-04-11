@@ -85,10 +85,10 @@
             <label for="dateentree">Date entree</label>
             <input classe="fb" type="date" id="dateentree" name="dateentree"
                     min="2000-01-01" max="2100-12-31" value=<?php echo date('Y-m-d',strtotime($line["dateEntree"])) ?>>
-          <!--           <br>
+         	<br>
             <label for="datesortie">Date Sortie</label>
             <input classe="fb" type="date" id="datesortie" name="datesortie"
-                    min="2000-01-01" max="2100-12-31"> -->
+                    min="2000-01-01" max="2100-12-31">
             <br>
             <br>
             <div id="hau">

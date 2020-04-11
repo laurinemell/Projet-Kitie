@@ -5,31 +5,94 @@
 <?php
 
 if(!isset($_GET['identifiant'])){
-	echo "Vous devez remplir toutes les informations"."</BR>";
+	echo "Vous devez saisir un identifiant"."</BR>";
 	echo "<meta http-equiv='refresh' content='2; URL=selection-chien.php'>";
 }
 
 else{
+
 	include "../bd.php";
 	$bdd = getBD();
+
+if(isset($_GET['p'])){
+	$req="UPDATE `chien` SET `nomChien` = '".$_GET['p']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "Le prénom a été mis à jour"."</BR>";
+	}
 	
-	if(isset($_GET['identifiant']) && isset($_GET['p']) && isset($_GET['date']) && isset($_GET['dateentree']) && isset ($_GET['sexe']) && isset($_GET['sterilisation']) && isset ($_GET['tarif']) && isset($_GET['mordeur']) && isset($_GET['description']) && isset($_GET['nomphoto'])){
- 	rename("../../BD/photo/".$_GET['nomphoto'],"../../BD/photo/".$_GET['identifiant'].".jpg");
+if(isset($_GET['date'])){
+	$req="UPDATE `chien` SET `dateNaissance` = '".$_GET['date']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "La date de naissance a été mise à jour"."</BR>";
+	}
+	
+if(isset($_GET['dateentree'])){
+	$req="UPDATE `chien` SET `dateEntree` = '".$_GET['dateentree']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "La date d'entrée a été mise à jour"."</BR>";
+	}
+	
+if(isset($_GET['datesortie'])){
+	$req="UPDATE `chien` SET `dateSortie` = '".$_GET['datesortie']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "La date de sortie a été mise à jour"."</BR>";
+	}
+
+if(isset ($_GET['sexe'])){
+	$req="UPDATE `chien` SET `idSexe` = '".$_GET['sexe']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "Le sexe a été mis à jour"."</BR>";
+	}
+
+if(isset($_GET['sterilisation'])){
+	$req="UPDATE `chien` SET `idSterilisation` = '".$_GET['sterilisation']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "La stérilisation a été mise à jour"."</BR>";
+	}
+	
+if(isset ($_GET['tarif'])){
+	$req="UPDATE `chien` SET `idTarification` = '".$_GET['tarif']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	echo $req;
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "Le tarif a été mis à jour"."</BR>";
+	}
+
+if(isset($_GET['mordeur'])){
+	$req="UPDATE `chien` SET `idMordeur` = '".$_GET['mordeur']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "L'évaluation mordeur a été mise à jour"."</BR>";
+	}
+
+if(isset($_GET['description'])){
+	$req="UPDATE `chien` SET `description` = '".$_GET['description']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "La description a été mise à jour"."</BR>";
+	}
+
+if(isset($_GET['nomphoto'])){
+	rename("../../BD/photo/".$_GET['nomphoto'],"../../BD/photo/".$_GET['identifiant'].".jpg");
  	//echo $_GET['nomphoto'];
  	//echo $_GET['identifiant'];
- 	$req="INSERT INTO chien (idChien,nomChien, dateNaissance, dateEntree, idSexe, idSterilisation, idTarification, idMordeur, description, photo) VALUES ('".$_GET['identifiant']."','".$_GET['p']."', '".$_GET['date']."', '".$_GET['dateentree']."', ".$_GET['sexe'].", '".$_GET['sterilisation']."', '".$_GET['tarif']."','".$_GET['mordeur']."', '".$_GET['description']."','".$_GET['identifiant'].".jpg')";
-	//echo $req."</BR>";
-	$reponse = $bdd->query($req);
-	$reponse->closeCursor();
-	echo "Les informations concernant la table chien ont bien été saisies"."</BR>";
+	$req="UPDATE `chien` SET `photo` = '".$_GET['identifiant'].".jpg' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	echo $req;
+	$rep=$bdd->query($req);
+	$rep->closeCursor();
+	echo "La photo a été mise à jour"."</BR>";
 	}
-	elseif(isset($_GET['identifiant']) && isset($_GET['p']) && isset($_GET['date']) && isset($_GET['dateentree']) && isset ($_GET['sexe']) && isset($_GET['sterilisation']) && isset ($_GET['tarif']) && isset($_GET['mordeur']) && isset($_GET['description']) && !isset($_GET['nomphoto'])){
-	$req="INSERT INTO chien (idChien,nomChien, dateNaissance, dateEntree, idSexe, idSterilisation, idTarification, idMordeur, description, photo) VALUES ('".$_GET['identifiant']."','".$_GET['p']."', '".$_GET['date']."', '".$_GET['dateentree']."', ".$_GET['sexe'].", '".$_GET['sterilisation']."', '".$_GET['tarif']."','".$_GET['mordeur']."', '".$_GET['description']."','default.jpg')";
-	//echo $req."</BR>";
-	$reponse = $bdd->query($req);
-	$reponse->closeCursor();
-	echo "Les informations concernant la table chien ont bien été saisies"."</BR>";
-	}
+
+
+
+
+
 	
 if(isset($_GET['couleur'])){
 	foreach ($_GET['couleur'] as $valeur ){
