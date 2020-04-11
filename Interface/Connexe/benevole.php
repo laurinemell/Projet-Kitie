@@ -33,7 +33,7 @@
 		$sexeTab=array();
 		while($ligne=$sexe ->fetch()){
 			$sexeTab[] = array(
-				'x' => $ligne['sexe'],
+				'label' => $ligne['sexe'],
 				'value' => $ligne['nombre']
 			);
 		}
@@ -43,11 +43,11 @@
 		$couleurTab=array();
 		while($ligne=$couleur ->fetch()){
 			$couleurTab[] = array(
-				'x' => $ligne['couleur'],
+				'label' => $ligne['couleur'],
 				'value' => $ligne['nombre']
 			);
 		}
-		$Cou=json_encode($couleurTab);
+		$Cou=$couleurTab;
 		$nom='couleur.json';
 		file_put_contents($nom, $Cou);
 	?>
@@ -69,8 +69,8 @@
 		<?php
 		$rep = $bdd->query('SELECT * FROM chien ORDER BY dateEntree DESC ');
 		while ($ligne = $rep ->fetch()) {
-			echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><div>';
-			echo $ligne["nomChien"];
+			echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><div class="mesChiens">';
+			echo '<p>'.$ligne["nomChien"].'</p>';
 			echo '<img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/>';
 			echo '</div></a>';
 		}
