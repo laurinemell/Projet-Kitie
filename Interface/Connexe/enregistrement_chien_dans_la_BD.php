@@ -64,8 +64,25 @@ if(isset($_GET['race']) && isset($_GET['etat']) && isset($_GET['lof'])){
 	$reponse4->closeCursor();
 	echo "Les informations concernant la table etrerace ont bien été saisies"."</BR>";
 	}
-
-//echo "<meta http-equiv='refresh' content='2; URL=chienxampp.php'>";
+if(isset($_GET['chien'])){
+ 	$req5="INSERT INTO etresociable (idChien,idIndividu,Appreciation) VALUES ('".$_GET['identifiant']."',1,'".$_GET['chien']."')";
+	$reponse5 = $bdd->query($req5);
+	$reponse5->closeCursor();
+	echo "Les informations concernant la table etresociable ont bien été saisies"."</BR>";
+	}
+if(isset($_GET['chat'])){
+ 	$req6="INSERT INTO etresociable (idChien,idIndividu,Appreciation) VALUES ('".$_GET['identifiant']."',2,'".$_GET['chat']."')";
+	$reponse6 = $bdd->query($req6);
+	$reponse6->closeCursor();
+	echo "Les informations concernant la table etresociable ont bien été saisies"."</BR>";
+	}
+if(isset($_GET['enfant'])){
+ 	$req7="INSERT INTO etresociable (idChien,idIndividu,Appreciation) VALUES ('".$_GET['identifiant']."',3,'".$_GET['enfant']."')";
+	$reponse7 = $bdd->query($req7);
+	$reponse7->closeCursor();
+	echo "Les informations concernant la table etresociable ont bien été saisies"."</BR>";
+	}
+// echo "<meta http-equiv='refresh' content='2; URL=chienxampp.php'>";
 }
 
 ?>

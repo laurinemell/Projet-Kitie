@@ -69,14 +69,21 @@
                 </select>
                 <br>
 
-                <!-- <label for="sociable"> Sociabilité </label> -->
-            <!-- <select class="fo" name="sociable" id="sociable"> -->
-                <!-- <option value="">--Choisir--</option> -->
-                <!-- <option value="soc1">oui</option> -->
-                <!-- <option value="soc2">non</option> -->
-                <!-- </select> -->
                 <br>
-                <!-- <label for="etat">Etat Légal</label> -->
+                <label class="fo" for="sociable">Sociabilité</label>
+                <p>Chien :</p>
+                <INPUT type= "radio" name="chien" value="0"> Non
+                <br>
+                <INPUT type= "radio" name="chien" value="1"> Oui
+                 <p>Chat :</p>
+                <INPUT type= "radio" name="chat" value="0"> Non
+                <br>
+                <INPUT type= "radio" name="chat" value="1"> Oui
+                <p> Enfant :</p>
+                <INPUT type= "radio" name="enfant" value="0"> Non
+                <br>
+                <INPUT type= "radio" name="enfant" value="1"> Oui
+                <br>
             <select class="fo" name="etat" id="etat">
                 <option>--Choisir un Etat légal--</option>
                     <?php
