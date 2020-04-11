@@ -69,7 +69,7 @@
 		<?php
 		$rep = $bdd->query('SELECT * FROM chien ORDER BY dateEntree DESC ');
 		while ($ligne = $rep ->fetch()) {
-			echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><div class="mesChiens">';
+			echo '<a href="modifier-chien.php?identifiant='.$ligne["idChien"].'"><div class="mesChiens">';
 			echo '<p>'.$ligne["nomChien"].'</p>';
 			echo '<img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/>';
 			echo '</div></a>';
