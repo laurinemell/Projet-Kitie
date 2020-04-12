@@ -69,7 +69,7 @@
     <head>
     <title>Modifier un chien</title>
     <link rel="stylesheet" href="../Style/style.css" type="text/css" />
-    <link rel="stylesheet" href="../Style/modifer-chien.css" type="text/css" />
+    <link rel="stylesheet" href="../Style/modifier-chien.css" type="text/css" />
     </head>
 <div class="fixed-barre-top">
     <a href=".php>"><img id="logo" src="../Image/spaLogo.png"></a>
