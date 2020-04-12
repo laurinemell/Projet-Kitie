@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +25,21 @@ if (isset($_GET['synchroniser'])){
 <body>
 	<div class="fixed-barre-top">
 		<img id="logo" src="../Interface/Image/spaLogo.png">
+		<?php
+    if($_SESSION["Statut"]==1){
+        echo '<div id="head">';
+            echo '<a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajouter un chien"></a>';
+            echo '<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>';
+        echo '</div>';
+    }
+
+           // <a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajouter un chien"></a>';
+            //echo '<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>';
+       // echo '</div>';
+    
+
+
+    ?>
 		<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
 		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
 		<a class="fo" id="block3" class="fo" href="listing.php?synchroniser=true" > Mise à jour </a>
@@ -86,48 +104,39 @@ if (isset($_GET['synchroniser'])){
 			
 
 	while ($ligne = $rep ->fetch()) { 
-			if(in_array($ligne["idChien"],$listing_comparaison)){
-			echo "<tr>";
-			if($ligne["nomChien"]==""||$ligne["idChien"]==""||$ligne["dateNaissance"]==""||$ligne["NomSexe"]==""||$ligne["Etat"]==""||$ligne["nomVaccin"]==""||$ligne["nomRace"]==""||$ligne["nomCouleur"]==""||$ligne["idBox"]==""||$ligne["dateEntree"]==""||$ligne["tarif"]==""||$ligne["Lof"]==""||$ligne["description"]==""){
-			echo "<th style='color:orange;'>".$ligne["nomChien"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["idChien"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["dateNaissance"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["NomSexe"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["Etat"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["nomVaccin"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["nomRace"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["nomCouleur"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["idBox"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["dateEntree"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["tarif"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["Lof"]."</th>";
-			echo "<th style='color:orange;'>".$ligne["description"]."</th>";
-			}
-			else{
-			echo "<th>".$ligne["nomChien"]."</th>";
-			echo "<th>".$ligne["idChien"]."</th>";
-			echo "<th>".$ligne["dateNaissance"]."</th>";
-			echo "<th>".$ligne["NomSexe"]."</th>";
-			echo "<th>".$ligne["Etat"]."</th>";
-			echo "<th>".$ligne["nomVaccin"]."</th>";
-			echo "<th>".$ligne["nomRace"]."</th>";
-			echo "<th>".$ligne["nomCouleur"]."</th>";
-			echo "<th>".$ligne["idBox"]."</th>";
-			echo "<th>".$ligne["dateEntree"]."</th>";
-			echo "<th>".$ligne["tarif"]."</th>";
-			echo "<th>".$ligne["Lof"]."</th>";
-			echo "<th>".$ligne["description"]."</th>";
-			}
-				foreach ($array as $x) {
-				echo "<td><a href='../Interface/Connexe/ficheChien.php?identifiant=".$ligne["idChien"]."' >".$x."</td>";
-			}
-			if ($ligne["photo"] == NULL){
-				$ligne["photo"] = "default.jpg";
-			}
-			echo "<th>"."<img class='img-chien' src='photo/".$ligne["photo"]."' />"."</th>";
-			echo "<tr>";
-		} 
-		}
+				echo "<tr>";
+				$non_rempli = $ligne["nomChien"]==""||$ligne["idChien"]==""||$ligne["dateNaissance"]==""||$ligne["NomSexe"]==""||$ligne["Etat"]==""||$ligne["nomVaccin"]==""||$ligne["nomRace"]==""||$ligne["nomCouleur"]==""||$ligne["idBox"]==""||$ligne["dateEntree"]==""||$ligne["tarif"]==""||$ligne["Lof"]==""||$ligne["description"]=="";
+				if ($non_rempli) {
+					$color_ligne = 'orange';
+				} else {
+					$color_ligne = 'black';
+				}
+				$donnees_table = array($ligne["nomChien"],
+					$ligne["idChien"],
+					$ligne["dateNaissance"],
+					$ligne["NomSexe"],
+					$ligne["Etat"],
+					$ligne["nomVaccin"],
+					$ligne["nomRace"],
+					$ligne["nomCouleur"],
+					$ligne["idBox"],
+					$ligne["dateEntree"],
+					$ligne["tarif"],
+					$ligne["Lof"],
+					$ligne["description"]);
+				// Afficher toutes les donnees sauf la photo 
+				foreach ($donnees_table as $donnee_colonne) {
+					echo "<td><a  style='color:".$color_ligne.";' href='../Interface/Connexe/ficheChien.php?identifiant=".$ligne["idChien"]."' >".$donnee_colonne."</td>";
+				}
+				// Afficher les photos des chiens si il y en a, photo default sinon
+				if ($ligne["photo"] == NULL) {
+					$photo = "default.jpg";
+				} else {
+					$photo = $ligne["photo"];
+				}
+				echo "<th>"."<img class='img-chien' src='photo/".$photo."' />"."</th>";
+				echo "</tr>";
+			} 
 		$rep ->closeCursor()
 		?>
 		</table>

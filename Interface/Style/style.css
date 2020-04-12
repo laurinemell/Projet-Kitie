@@ -115,30 +115,31 @@ img:hover {
 
 #block1{
   position: relative;
-  top: -20px;
-  left: 30px;
+  top: 30px;
+  left: 180px;
 }
 
 #block2{
   position: relative;
-  top: -20px;
-  left: 40px;
+  top: 30px;
+  left: 190px;
 }
 #block3{
   position: relative;
-  top:-20px;
-  left:40px;
+  top:30px;
+  left:200px;
 }
+#block4{
+  position: relative;
+  top:30px;
+  left:210px;
+}
+
 
 .img-chien{
   height: 50px;
   width: 50px;
 }
-=======
-}
->>>>>>> 7da4f5c69156f9a3ca7513c2fa57567f0a6adb38
-=======
-  }
 
 /*Barre de recherche*/
 #barreRecherche{
@@ -147,4 +148,3 @@ img:hover {
   width: 100%;
   height: 3em;
   }
->>>>>>> 1d721e7650b751b18d4d557a204cbc88c7b1e099
