@@ -7,7 +7,7 @@
     </head>
     <img id="logo" src="../Image/spaLogo.png" >
     <body>
-                   <img id="img" src="chienquibouge.gif">
+                   <img id="img" src="../Image/chien.gif">
 
         
         <h1>Modifier un chien </h1>
