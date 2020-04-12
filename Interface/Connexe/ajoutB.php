@@ -22,12 +22,24 @@
 		<div id="Droit">
 			<br/>
 			<strong>Sexe:</strong> <br/>
-			<INPUT type="radio" name="genre" value="M"> homme <br/>
-			<INPUT type="radio" name="genre" value="F"> femme<br/>
+			<?php
+				include "../bd.php";
+				$bdd = getBD();
+ 				$reponse = $bdd->query('SELECT * FROM sexehumain');
+ 				while ($ligne = $reponse->fetch()) {
+ 					echo '<INPUT type="radio" name="sexe" value="'.$ligne["sexeHum"].'">'.$ligne["etat"].'<br/>';
+ 				}
+ 			?>
+		
 			<br/>
+    			
 			<strong>Statut:</strong> <br/>
-			<INPUT type="radio" name="statut" value="benevole">bénévole <br/>
-			<INPUT type="radio" name="statut" value="employe"> employé
+			<?php
+ 				$reponse = $bdd->query('SELECT * FROM statut');
+ 				while ($ligne = $reponse->fetch()) {
+ 					echo '<INPUT type="radio" name="statut" value="'.$ligne["idStatut"].'">'.$ligne["statut"].'<br/>';
+ 				}
+ 			?>
 		</div>
 		<div id="Valider">
 			<input id="val" class="fb"  type="submit" name="valider" value="Valider"/>

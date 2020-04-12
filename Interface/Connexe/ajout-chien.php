@@ -5,10 +5,10 @@
     <link rel="stylesheet" href="../Style/style.css" type="text/css" />
     <link rel="stylesheet" href="../Style/ajout-chien.css" type="text/css" />
     </head>
-    <img id="logo" src="../Image/spaLogo.png" >
-    <body>
-        
-        
+    <div class="fixed-barre-top">
+    <a href=".php>"><img id="logo" src="../Image/spaLogo.png"></a>
+</div>
+    <body>        
     
     <form method="get" action="enregistrement_chien_dans_la_BD.php" autocomplete="off" enctype= »multipart/form-data>
             <div id="FormulaireAjout">
@@ -211,7 +211,7 @@ else{
                     }
                 }
           else{
-                echo "La photo n'est pas au format .jpg";        
+                echo "<br><br>La photo n'est pas au format .jpg";        
              }
          }
         }
