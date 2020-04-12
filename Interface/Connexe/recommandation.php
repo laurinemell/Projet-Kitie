@@ -1,21 +1,28 @@
 <?php
+include "../bd.php";
+$bdd = getBD();
+
 function recommandation($idChien,$req){
 	include "../bd.php";
 	$bdd=getBD();
-	$chien='select chien.* from chien where chien.idChien='$idChien;
+	$chien='select chien.* from chien where chien.idChien=';
 	$chien=$bdd->query($chien);
 	$lesChiens=$bdd->query($req);
 	
 	//Création de array du chien principal
-	array()
-	while($ligne1=$chien ->fetch()){
-			$lesChiensTab[] = array(
-				$ligne['idChien'],
-				$ligne['races'],
-				$ligne['couleur'],
-				$ligne['sexe']
-			);
+	$chienTab = array();
+	$ligne = $rep ->fetch();
+	array_push($chienTab, $ligne['idChien']);
+	array_push($chienTab, $ligne['races']);
+	array_push($chienTab, $ligne['couleur']);
+	array_push($chienTab, $ligne['sexe']);
+	 echo $chienTab;
+	//Calcul de la somme des carre du chien de référence
+	$sumXcarre=0;
+	for ($i=0; $i <sizeof($chienTab) ; $i++) { 
+		$sumXcarre+=$chien[$i];
 	}
+
 
 
 	//Création du tableau des chiens
@@ -28,39 +35,40 @@ function recommandation($idChien,$req){
 				$ligne['sexe']
 			);
 	}
-	$i=0
-	$sumXY=0;
-	$sumXcarre=0;
-	$sumYcarre=0;
-	$resultat=array();
-	//Le while permet de passer à la ligne suivante
-	while($y<sizeof($lesChiensTab[])){
-		$sumXY=0;
-		$sumXcarre=0;
-		$sumYcarre=0;
-		//moyenne de la ligne y
-		//$moyenneLigne=array_sum($lesChiensTab[$y])/sizeof($lesChiensTab[$xi]);
-		//Calcule de ligne en ligne
-		for($x = 1; $x <= sizeof($lesChiensTab[$y]); $x++){
-			//moyenne de la colone x
-			//$moyenneColone=0;
-			//for ($yb=0; $yb <=sizeof($lesChiensTab[]) ; $yb++) { 
-			//	$moyenneColone+=$lesChiensTab[$yb][$xi];
-			//}
-			//Calcul de xi-MoyenneLigne
-			$sumXi=$lesChiensTab[y][x]-$moyenneLigne;
-			$sumYi=$lesChiensTab[x][y]-$moyenneColone;
-			$sumXY+=$sumXi*$sumYi;
-			$sumXcarre+=pow(sumXi, 2);
-			$sumYcarre+=pow(sumYi, 2);
-		}
-		$sumBas=sqrt($sumYcarre*$sumXcarre);
-		$fomule=$sumXY/$sumBas;
-		$resultat[]=array(
-			//récupére l'identifiant du chien à comparer
-			$lesChiensTab[y][0],
-			$formule
-		);
-	}
 
+
+	$i=0
+	$cosTab=array();
+	$chiffreAgarder=array();
+	//Le while permet de passer à la ligne suivante, calcul de cos
+	while ( $i <= sizeof($lesChiensTab)) {
+		$donnee=array();
+		array_push($donnee, $lesChiensTab[$i][0]);
+		$sumXY=0;
+		$sumYcarre=0;
+		for ($j=1; $j < sizeof($lesChiensTab[$i]); $i++) { 
+			$sumXY+=$chienTab[$j]*$lesChiensTab[$i][$j];
+			$sumYcarre+=pow($lesChiensTab[$i][$j], 2);
+		}
+		$racine=sqrt($sumXcarre*$sumYcarre);
+		$equation=$sumXY/$racine;
+		array_push($chiffreAgarder, $equation);
+		array_push($donnee, $equation);
+		array_push($cosTab, $donnee);
+	 }
+	 //tablebis qui permet le trie de manières décroissante les valeurs 
+	$chiffreAgarder=asort($chiffreAgarder);
+
+	 //Rangement par maximum seule les 5 plus grands cos sont conservé
+	$donneeFinal=array();
+	 for ($i=0; $i <5; $i++) { 
+	 	$chiffreAgarder[$i];
+	 	for ($j=0; $j < sizeof($cosTab); $j++) { 
+	 		if($chiffreAgarder[$i]=$cosTab[$j][2])
+	 			array_push($donneeFinal, $cosTab[$j][1]);
+	 			unset($cosTab[$j][2]);
+	 	}
+	 }
+	//retoure l'dentifiant des 5 chiens correspondant le plus
+	return $donneeFinal;
 ?>
