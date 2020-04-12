@@ -58,7 +58,7 @@ if(isset($_GET['sterilisation'])){
 	
 if(isset ($_GET['tarif'])){
 	$req="UPDATE `chien` SET `idTarification` = '".$_GET['tarif']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
-	// echo $req;
+	echo $req;
 	$rep=$bdd->query($req);
 	$rep->closeCursor();
 	echo "Le tarif a été mis à jour"."</BR>";
@@ -112,22 +112,27 @@ if(isset($_GET['box'])){
 	}
   	
 if(isset($_GET['vaccin']) && isset($_GET['datevaccin'])){
- 	$req3="INSERT INTO etrevaccine (idChien,idVaccin,dateVaccin) VALUES ('".$_GET['identifiant']."','".$_GET['vaccin']."','".$_GET['datevaccin']."')";
- 	//echo $req3."</BR>";
+ 	$req3="UPDATE `etrevaccine` SET `idVaccin` = '".$_GET['vaccin']."',`dateVaccin` = '".$_GET['datevaccin']."' WHERE `etrevaccine`.`idChien` =".$_GET['identifiant'];
+ 	echo $req3."</BR>";
  	$reponse3 = $bdd->query($req3);
 	$reponse3->closeCursor();
-	echo "Les informations concernant la table etrevaccine ont bien été saisies"."</BR>";
+	echo "Les informations concernant la table etrevaccine ont bien été mises à jour"."</BR>";
 	}
-
 if(isset($_GET['race']) && isset($_GET['etat']) && isset($_GET['lof'])){
- 	$req4="INSERT INTO etrerace (idChien,idRace,idCategorie,idLof) VALUES ('".$_GET['identifiant']."','".$_GET['race']."','".$_GET['etat']."','".$_GET['lof']."')";
-	//echo $req4."</BR>";
-	$reponse4 = $bdd->query($req4);
+ $req4="UPDATE `etrerace` SET `idRace` = '".$_GET['race']."',`idCategorie` = '".$_GET['etat']."',`idLof` = '".$_GET['lof']."' WHERE `etrerace`.`idChien` =".$_GET['identifiant'];
+ 	echo $req4."</BR>";
+ 	$reponse4 = $bdd->query($req4);
 	$reponse4->closeCursor();
-	echo "Les informations concernant la table etrerace ont bien été saisies"."</BR>";
+	echo "Les informations concernant la table etrerace ont bien été mises à jour"."</BR>";
+	}
+if(isset($_GET['maladie']) && isset($_GET['datediagnostique'])){
+ 	$req5="UPDATE `etremalade` SET `idMaladie` = '".$_GET['maladie']."',`dateDiagnostique` = '".$_GET['datediagnostique']."' WHERE `etremalade`.`idChien` =".$_GET['identifiant'];
+ 	echo $req5."</BR>";
+ 	$reponse5 = $bdd->query($req5);
+	$reponse5->closeCursor();
+	echo "Les informations concernant la table etremalade ont bien été mises à jour"."</BR>";
 	}
 
-//echo "<meta http-equiv='refresh' content='2; URL=chienxampp.php'>";
 }
 
 ?>
