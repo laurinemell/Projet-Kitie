@@ -1,0 +1,20 @@
+h2{
+  text-align: center;
+  color: #3773C7;
+}
+h1{
+    text-align: center;
+    color: #EB681F;
+    font-size: 50px;
+}    
+#div{
+    margin-left: 600px;
+}
+#img{
+    margin-left: 600px;
+    width: 200px;
+    height: 200px;               
+} 
+.fo{
+  padding: 16px 10px; 
+}
