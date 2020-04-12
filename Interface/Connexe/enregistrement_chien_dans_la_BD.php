@@ -82,6 +82,13 @@ if(isset($_GET['enfant'])){
 	$reponse7->closeCursor();
 	echo "Les informations concernant la table etresociable ont bien été saisies"."</BR>";
 	}
+if(isset($_GET['maladie']) && isset($_GET['datediagnostique'])){
+ 	$req8="INSERT INTO etremalade (idMaladie,idChien,dateDiagnostique) VALUES ('".$_GET['maladie']."','".$_GET['identifiant']."','".$_GET['datediagnostique']."')";
+ 	//echo $req8."</BR>";
+ 	$reponse8 = $bdd->query($req8);
+	$reponse8->closeCursor();
+	echo "Les informations concernant la table etremalade ont bien été saisies"."</BR>";
+	}
 // echo "<meta http-equiv='refresh' content='2; URL=chienxampp.php'>";
 }
 

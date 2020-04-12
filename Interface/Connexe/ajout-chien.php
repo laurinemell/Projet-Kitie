@@ -57,20 +57,7 @@
         ?>
     </div>
                 <br>
-                <!-- <placehorder for="mordeur">Evaluation mordeur</placehorder> -->
-            <select class="fo" name="mordeur" id="mordeur">
-                <option>--Choisir une évaluation mordeur--</option>
-                    <?php
-                        $reponse = $bdd->query('SELECT * FROM mordeur');
-                        while ($ligne = $reponse->fetch()) {
-                            echo '<option value="'.$ligne["idMordeur"].'">'.$ligne["Evaluation"].'</option>';
-                        }
-            ?>
-                </select>
-                <br>
-
-                <br>
-                <label class="fo" for="sociable">Sociabilité</label>
+                 <label class="fo" for="sociable">Sociabilité</label>
                 <p>Chien :</p>
                 <INPUT type= "radio" name="chien" value="0"> Non
                 <br>
@@ -84,16 +71,8 @@
                 <br>
                 <INPUT type= "radio" name="enfant" value="1"> Oui
                 <br>
-            <select class="fo" name="etat" id="etat">
-                <option>--Choisir un Etat légal--</option>
-                    <?php
-                        $reponse = $bdd->query('SELECT * FROM etatlegal');
-                        while ($ligne = $reponse->fetch()) {
-                            echo '<option value="'.$ligne["idCategorie"].'">'.$ligne["description"].'</option>';
-                        }
-            ?>
-                </select>
-            </div>
+                <br>
+               </div>
             
             <div id="FormulaireAjout2">
             <label for="p"> Prenom </label>
@@ -128,15 +107,35 @@
 <INPUT type= "radio" name="lof" value="1"> Oui
                 <br>
                 <br>
+                <select class="fo" name="mordeur" id="mordeur">
+                <option>--Choisir une évaluation mordeur--</option>
+                    <?php
+                        $reponse = $bdd->query('SELECT * FROM mordeur');
+                        while ($ligne = $reponse->fetch()) {
+                            echo '<option value="'.$ligne["idMordeur"].'">'.$ligne["Evaluation"].'</option>';
+                        }
+            ?>
+                </select>
+                <br>
+                 <select class="fo" name="etat" id="etat">
+                <option>--Choisir un Etat légal--</option>
+                    <?php
+                        $reponse = $bdd->query('SELECT * FROM etatlegal');
+                        while ($ligne = $reponse->fetch()) {
+                            echo '<option value="'.$ligne["idCategorie"].'">'.$ligne["description"].'</option>';
+                        }
+            ?>
+                </select>
+                <br>
+                <br>
 
 
 </div>
   <br>
   
   <div id="FormulaireAjout2">
- <label for="vaccin">Vaccin</label>
             <select class="fb" name="vaccin" id="vaccin">
-                <option>--Choisir--</option>
+                <option>--Choisir un Vaccin--</option>
                     <?php
                         $reponse = $bdd->query('SELECT * FROM vaccin');
                         while ($ligne = $reponse->fetch()) {
@@ -149,6 +148,22 @@
             <input classe="fb" type="date" id="datevaccin" name="datevaccin"
                     min="2000-01-01" max="2100-12-31">
                     <br>
+                    <br>
+            <select class="fb" name="maladie" id="maladie">
+            <option>--Choisir une maladie--</option>
+            <?php
+            $reponse = $bdd->query('SELECT * FROM maladie');
+                while ($ligne = $reponse->fetch()) {
+                    echo '<option value="'.$ligne["idMaladie"].'">'.$ligne["nomMaladie"].'</option>';
+                        }
+            ?>
+                </select>
+                <label for="datediagnostique">Date du diagnostique</label>
+            <input classe="fb" type="date" id="datediagnostique" name="datediagnostique"
+                    min="2000-01-01" max="2100-12-31">
+                    <br>
+
+                <br>
             <label for="tarif">Tarification</label>
             <select class="fb" name="tarif" id="tarif">
                 <option>--Choisir--</option>

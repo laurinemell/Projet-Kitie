@@ -58,7 +58,7 @@ if(isset($_GET['sterilisation'])){
 	
 if(isset ($_GET['tarif'])){
 	$req="UPDATE `chien` SET `idTarification` = '".$_GET['tarif']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
-	echo $req;
+	// echo $req;
 	$rep=$bdd->query($req);
 	$rep->closeCursor();
 	echo "Le tarif a été mis à jour"."</BR>";
@@ -66,6 +66,7 @@ if(isset ($_GET['tarif'])){
 
 if(isset($_GET['mordeur'])){
 	$req="UPDATE `chien` SET `idMordeur` = '".$_GET['mordeur']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	echo $req;
 	$rep=$bdd->query($req);
 	$rep->closeCursor();
 	echo "L'évaluation mordeur a été mise à jour"."</BR>";
@@ -73,6 +74,7 @@ if(isset($_GET['mordeur'])){
 
 if(isset($_GET['description'])){
 	$req="UPDATE `chien` SET `description` = '".$_GET['description']."' WHERE `chien`.`idChien` =".$_GET['identifiant'];
+	echo $req;
 	$rep=$bdd->query($req);
 	$rep->closeCursor();
 	echo "La description a été mise à jour"."</BR>";
@@ -90,26 +92,23 @@ if(isset($_GET['nomphoto'])){
 	}
 
 
-
-
-
 	
 if(isset($_GET['couleur'])){
 	foreach ($_GET['couleur'] as $valeur ){
- 		$req1="INSERT INTO etredecouleur (idChien,idCouleur) VALUES ('".$_GET['identifiant']."','$valeur')"; 	
+		$req1="UPDATE `etredecouleur` SET `idCouleur` = '$valeur' WHERE `etredecouleur`.`idChien` =".$_GET['identifiant'];
  		//echo $req1."</BR>";	
  		$reponse1 = $bdd->query($req1);
 		$reponse1->closeCursor();
-		echo "Les informations concernant la table couleur ont bien été saisies"."</BR>";
+		echo "Les informations concernant les couleurs ont été mises à jour."."</BR>";
 	}
 	}
 
 if(isset($_GET['box'])){
-  	$req2= "INSERT INTO loger (idBox,idChien) VALUES ('".$_GET['box']."','".$_GET['identifiant']."')";
+	$req2="UPDATE `loger` SET `idBox` = '".$_GET['box']."' WHERE `loger`.`idChien` =".$_GET['identifiant'];
   	//echo $req2."</BR>";
   	$reponse2 = $bdd->query($req2);
 	$reponse2->closeCursor();
-	echo "Les informations concernant la table loger ont bien été saisies"."</BR>";
+	echo "Le numéro du box a été mis à jour."."</BR>";
 	}
   	
 if(isset($_GET['vaccin']) && isset($_GET['datevaccin'])){

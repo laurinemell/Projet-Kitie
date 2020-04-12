@@ -85,7 +85,7 @@
             <label for="dateentree">Date entree</label>
             <input classe="fb" type="date" id="dateentree" name="dateentree"
                     min="2000-01-01" max="2100-12-31" value=<?php echo date('Y-m-d',strtotime($line["dateEntree"])) ?>>
-         	<br>
+            <br>
             <label for="datesortie">Date Sortie</label>
             <input classe="fb" type="date" id="datesortie" name="datesortie"
                     min="2000-01-01" max="2100-12-31">
@@ -104,9 +104,10 @@
         ?>
     </div>
                 <br>
+                <label>Evaluation Mordeur</label>
             <select class="fo" name="mordeur" id="mordeur">
-                <option><?php  echo "<p>".$mordeur["Evaluation"]."</p>" ?></option>
-                    <?php
+            <?php echo '<option value="'.$line["idMordeur"].'">'.$mordeur["Evaluation"].'</option>'; ?>
+                   <?php
                         $reponse = $bdd->query('SELECT * FROM mordeur');
                         while ($ligne = $reponse->fetch()) {
                             echo '<option value="'.$ligne["idMordeur"].'">'.$ligne["Evaluation"].'</option>';
@@ -187,8 +188,8 @@
                     <br>
             <label for="tarif">Tarification</label>
             <select class="fb" name="tarif" id="tarif">
-                <option><?php  echo "<p>".$tarification["tarif"]."</p>"; ?></option>
-                    <?php
+            <?php echo '<option value="'.$line["idTarification"].'">'.$tarification["tarif"].'</option>'; ?>
+                  <?php
                         $reponse = $bdd->query('SELECT * FROM tarification');
                         while ($ligne = $reponse->fetch()) {
                             echo '<option value="'.$ligne["idTarification"].'">'.$ligne["tarif"].'</option>';
@@ -197,7 +198,7 @@
                 </select>
                 <br>
             <label for="description"> Description </label>
-            <TEXTAREA style="font-family: times new roman"  class="am" rows="10" name="description" value= <?php  echo "<p>".$line["description"].""; ?> </TEXTAREA>
+            <TEXTAREA style="font-family: times new roman"  class="am" rows="10" name="description" value= <?php  echo "<p>".$line["description"].""; ?>> </TEXTAREA>
              <br>
 
 <?php
