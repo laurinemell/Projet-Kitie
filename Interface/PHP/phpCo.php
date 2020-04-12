@@ -6,7 +6,7 @@
 </head>
 <style type="text/css">
 	body {
-  background: linear-gradient(45deg, #3773C7, #EB681F);
+  background: linear-gradient(45deg, #3773C7, #eb984e);
   background-size: 4000% 4000%;
   animation: gradient 2s ease infinite; /*Je l'ai mis plus lent c'est plus joli*/
   margin-left :auto;
@@ -43,7 +43,7 @@ h1{
 				$_SESSION["id"] = $ligne["idUtilisateur"];
 				$_SESSION["nom"] = $ligne["nom"];
 				$_SESSION["prenom"] = $ligne["prenom"];
-				$_SESSION["Statu"] = $ligne["idStatu"];
+				$_SESSION["Statut"] = $ligne["idStatut"];
 				echo "<meta http-equiv='refresh' content='1; URL=../Connexe/benevole.php'>";
 		}
 		else{
