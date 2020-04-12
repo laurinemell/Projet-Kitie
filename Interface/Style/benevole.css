@@ -2,7 +2,7 @@
 	width: 35em;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 0.5em;
+	margin-top: 0em;
 }
 #ajoutChien{
 	float: left;
@@ -61,7 +61,7 @@
 	margin-left: 20em;
 	height: 20em;
 	width: 20em;
-	border-radius: 1em;
+	opacity: 0.7;
 	background-color: whitesmoke;
 }
 .mesChiens{
