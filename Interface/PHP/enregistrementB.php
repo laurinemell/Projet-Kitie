@@ -6,41 +6,22 @@
 <?php
 
 function enregistrer($nom, $prenom, $age, $mail, $tel, $idStatut, $sexeHum, $mdp){
-	include "bd.php";
+	include "../bd.php";
 	$bdd = getBD();
-	$r="INSERT INTO utilisateur (nom, prenom, age, mail, tel, idStatut, sexeHum, mdp) VALUES ("."'".$_GET['nom']."'".", "."'".$_GET['prenom']."'".", "."'".$_GET['age']."'".",  "."'".$_GET['mail']."'".", "."'".$_GET['tel']."'".", "."'".$idStatut."'".","."'".$sexeHum."'".","."'".$_GET['mdp']."'".")";
-	echo $r;
-	$rep=$bdd->query($r); 
-	}
+	$req="INSERT INTO utilisateur (nom, prenom, age, mail, tel, idStatut, sexeHum, mdp) VALUES ("."'".$_GET['nom']."'".", "."'".$_GET['prenom']."'".", "."'".$_GET['age']."'".",  "."'".$_GET['mail']."'".", "."'".$_GET['tel']."'".","."'".$_GET['statut']."'".","."'".$_GET['sexe']."'".","."'".$_GET['mdp']."'".")";
+	$reponse = $bdd->query($req);
+	$reponse->closeCursor();	}
 ?>
 <?php
 
-$idStatut=0;
-$sexeHum=1;
 
-function statut($statut){
-	if($_GET['statut']=="employe"){
-		$idStatut=1;
-	}
-	
-}
-
-function sexeHum($genre){
-	if($_GET['genre']=="M"){
-		$sexeHum=0;
-	}
-}
-
-
-if($_GET['mdp']!= $_GET['mdp1'] || $_GET['mdp']=="" || $_GET['nom']=="" || $_GET['prenom']=="" || $_GET['mail']=="" || $_GET['genre']==""||$_GET['statut']==""){
+if($_GET['mdp']!= $_GET['mdp1'] || $_GET['mdp']=="" || $_GET['nom']=="" || $_GET['prenom']=="" || $_GET['mail']=="" || $_GET['sexe']==""||$_GET['statut']==""){
 	echo "<meta http-equiv='refresh' content='2; URL=../Connexe/bouton-echec.html'>";
 	echo "<meta http-equiv='refresh' content='2; URL=../Connexe/ajoutB.php'>";
 }
 	
 else {
-		statut($_GET['statut']);
-		sexeHum($_GET['genre']);
-		enregistrer($_GET['nom'],$_GET['prenom'],$_GET['age'],$_GET['mail'],$_GET['tel'],$idStatut,$sexeHum,$_GET['mdp']);
+		enregistrer($_GET['nom'],$_GET['prenom'],$_GET['age'],$_GET['mail'],$_GET['tel'],$_GET['statut'],$_GET['sexe'],$_GET['mdp']);
 		echo "<meta http-equiv='refresh' content='2; URL=../Connexe/bouton-ajout.php'>";
 
 	}

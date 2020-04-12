@@ -20,9 +20,15 @@
 		</div>
 		<div id="Droit">
 			<br/>
-			<strong>Sexe:</strong> <br/>
-			<INPUT type="radio" name="genre" value="M"> homme <br/>
-			<INPUT type="radio" name="genre" value="F"> femme<br/>
+			<?php
+				include "../bd.php";
+				$bdd = getBD();
+ 				$reponse = $bdd->query('SELECT * FROM sexehumain');
+ 				while ($ligne = $reponse->fetch()) {
+ 					echo '<INPUT type="radio" name="sexe" value="'.$ligne["sexeHum"].'">'.$ligne["etat"].'<br/>';
+ 				}
+ 			?>
+		
 			<br/>
 		</div>
 		<div id="Valider">
