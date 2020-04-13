@@ -93,15 +93,17 @@ if(isset($_GET['nomphoto'])){
 	echo "La photo a été mise à jour"."</BR>";
 	}
 
-$req11= $bdd->query('SELECT * FROM etredecouleur WHERE etredecouleur.idChien='.$_GET["identifiant"]);
+$req11= $bdd->query('select * from etredecouleur WHERE etredecouleur.idChien='.$_GET["identifiant"]);
 	 $req11 = $req11->fetch();
 	 //print_r($req11);
 	
 if(isset($_GET['couleur'])){
 	foreach ($_GET['couleur'] as $valeur ){
 	if (in_array($_GET['identifiant'], $req11)) {
-	$req14="DELETE FROM etredecouleur WHERE etredecouleur.idChien=".$_GET['identifiant'];
+	$req14="DELETE FROM etredecouleur WHERE idChien=".$_GET['identifiant'];
    $req12="INSERT INTO etredecouleur (idChien,idCouleur) VALUES ('".$_GET['identifiant']."','".$valeur."')";
+   $reponse14=$bdd->query($req14);
+   // $reponse14=closeCursor();
  	$reponse12= $bdd->query($req12);
 	$reponse12->closeCursor();
 	echo "Les informations concernant les couleurs ont été mises à jour"."</BR>";
@@ -115,7 +117,7 @@ else {
 	}
 	}
 	
-$req11->closeCursor();
+// $req11->closeCursor();
 
 
 if(isset($_GET['box'])){
@@ -154,6 +156,8 @@ else {
 	}
 
 }
+	// $req5->closeCursor();
+
 
 $req8= $bdd->query('select * from etrevaccine where etrevaccine.idChien='.$_GET["identifiant"]);
 	 $req8 = $req8->fetch();
@@ -176,7 +180,7 @@ else {
 }
 } 
 
-$req8->closeCursor();
+// $req8->closeCursor();
 
 ?>
 </head>
