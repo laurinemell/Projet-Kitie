@@ -1,4 +1,5 @@
 <?php
+//
 include "../bd.php";
 $bdd = getBD();
 
