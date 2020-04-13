@@ -1,7 +1,4 @@
 /*Fiche style chien*/
-.separation{
-	margin-top: -6%;
-}
 .rond{
 	float: right;
 	width: 20em;
@@ -23,7 +20,7 @@
 	height: 10em;
 	width: 15em;
 	margin-left: 25em;
-	margin-top: 5em;
+	margin-top: 3em;
 }
 #prix{
 	float: right;
@@ -35,25 +32,25 @@
 #sante{
 	position: absolute;
 	background-color: #3773C7;
-	width: 20em;
-	height: 10em;
-	top : 26em;
-	right: 2em;
+	width: 15em;
+	height: 25em;
+	top : 8em;
+	left: 4em;
 	border-radius: 1em;
 }
 #vaccin{
 	float: left;
-	width: 7em;
-	height: 8em;
+	width: 10em;
+	height: 10em;
 	background-color: white;
-	margin-left: 2em;
 	margin-top: 1em;
+	margin-left: 1em;
 	border-radius: 1em;
 }
 #malade{
-	float: right;
-	width: 7em;
-	height: 8em;
+	float: left;
+	width: 10em;
+	height: 10em;
 	background-color: white;
 	margin-right: 2em;
 	margin-top: 1em;

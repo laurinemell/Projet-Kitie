@@ -4,6 +4,7 @@ include "../bd.php";
 $bdd = getBD();
 $sexe=$bdd->query("select COUNT(chien.idChien) as nombre, sexe.NomSexe as sexe FROM chien,sexe where chien.idSexe=sexe.IdSexe GROUP BY chien.idSexe");
 $couleur=$bdd->query("select COUNT(chien.idChien) as nombre, couleur.nomCouleur as couleur FROM chien,etredecouleur,couleur where chien.idChien=etredecouleur.idChien and etredecouleur.idCouleur=couleur.idCouleur GROUP BY etredecouleur.idCouleur");
+$race=$bdd->query("select COUNT(etrerace.idChien) as nombre, races.nomRace from etrerace, races where etrerace.idRace=races.idRace group by races.nomRace ORDER BY `nombre` DESC limit 10 ");
 $couleurTab=array();
     while($ligne=$couleur ->fetch()){
       $couleurTab[] = array(
@@ -21,7 +22,14 @@ $sexeTab[]=array('Sexe','Nombre');
       );
     }
 $sexe=json_encode($sexeTab);
-echo $sexe;
+$raceTab=array();
+    while($ligne=$race ->fetch()){
+      $raceTab[] = array(
+        $ligne['nomRace'],
+        (int)$ligne['nombre']
+      );
+    }
+$race=json_encode($raceTab);
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,10 +62,12 @@ echo $sexe;
       // Set chart options
       var options = {'title':'Répartition des Couleurs',
                      'width':400,
-                     'height':300};
+                     'height':300,
+                     backgroundColor: { fill:'transparent' }
+                 };
 
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.PieChart(document.getElementById('graphe'));
+      var chart = new google.visualization.PieChart(document.getElementById('couleur'));
       chart.draw(data, options);
     }
 	</script>
@@ -71,9 +81,6 @@ echo $sexe;
         var data = google.visualization.arrayToDataTable(<?php echo $sexe ?>);
 
         var options = {
-          chart: {
-            title: 'Répartition des sexes',
-          }
         };
 
         var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
@@ -81,6 +88,39 @@ echo $sexe;
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
+
+    <!--Création du graphique pour les races-->
+
+    <script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+      // Create the data table.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'race');
+      data.addColumn('number', 'nombre');
+      data.addRows(<?php echo $race ?>);
+
+      // Set chart options
+      var options = {'title':'Répartition des Races',
+                     'width':400,
+                     'height':300,
+                     backgroundColor: { fill:'transparent' }
+                 };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('races'));
+      chart.draw(data, options);
+    }
+	</script>
 
 
 
@@ -136,7 +176,6 @@ echo $sexe;
 	?>
 	<center><a href="../../BD/bd.php" target="_blank"> <input id="Chien" class="fo" type="button" value="Information sur les chiens"> </a></body></center>
 	<div id="apercu">
-		<input type="search" id="barreRecherche" name="name" placeholder="Recherche par identifiant ou nom">
 		<?php
 		$rep = $bdd->query('SELECT * FROM chien ORDER BY dateEntree DESC ');
 		while ($ligne = $rep ->fetch()) {
@@ -145,15 +184,13 @@ echo $sexe;
 			echo '<img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/>';
 			echo '</div></a>';
 		}
+		
+
 		?>
 		<div id="espaceGraphe">
-			<div id="selection">
-					<button onclick="graphe(sexe)" >Sexe</button>
-					<button onclick="graphe(races)" >Races</button>
-			</div>
-			<div id="graphe" style="width:400; height:300"></div>
-			<div id="columnchart_material" style="width: 400px; height: 200px;"></div>
-
+			<div id="couleur" style="width:500; height:300" onclick="style('graphe')"></div>
+			<div id="races" style="width:400; height:300" onclick="style('graphe')"></div>
+			<div id="columnchart_material" style="width: 380px; height: 190px;"></div>
 		</div>
 </body>
 </html>

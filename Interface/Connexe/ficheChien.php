@@ -6,7 +6,7 @@
 </head>
 <body>
 	<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
-	<hr class="separation"/>
+
 	<?php
 	 function age($date) { 
 	 	/*

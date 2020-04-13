@@ -6,7 +6,7 @@
 }
 #Criteres{
 	background-color: #3B76C8;
-	width: 90%;
+	width: 75%;
 	height: 40%;
 	margin-left: auto;
 	margin-right: auto;
@@ -26,7 +26,7 @@ select{
 /*Styles particuliers*/
 #Races{
 	overflow-y: scroll;
-	width: 16em;
+	width: 10em;
 	height: 200px;
 	padding: 1em;
 	border-radius: 1em;
@@ -36,7 +36,7 @@ select{
 #Sexe{
 	width: 5em;
 	float: left;
-	margin-left: 60em;
+	margin-left: 50em;
 	margin-top: -10em;
 }
 #valider{
@@ -57,7 +57,23 @@ select{
 	background-color: whitesmoke;
 	opacity: 0.7;
 	float: left;
-	margin-left: 25em;
+	margin-left: 21em;
 	margin-top: -15em;
   }
+
+  @media screen and (max-width: 400px)
+{
+#Criteres{
+	width: 100%;
+	border-radius: 0px;
+}
+#titre{
+	color: #3B76C8;
+	font-size: 3em;
+}
+#alert{
+	color:  #f14f3b;
+}
+
+}
 

@@ -45,7 +45,7 @@
 	position: fixed;
 	left: 2em;
 	top: 6em;
-	background-color: #3773C7;
+	background-color: #FDE9E0;
 	width: 55em;
 	height: 25em;
 	border-radius: 1em;
@@ -76,4 +76,15 @@ p{
 }
 a{
 	text-decoration: none;
+}
+#races{
+	float: right;
+	margin-top: -310px;
+}
+#couleur{
+	margin-top: -20px;
+}
+#columnchart_material{
+	margin-top: -71px;
+	margin-left: 450px;
 }

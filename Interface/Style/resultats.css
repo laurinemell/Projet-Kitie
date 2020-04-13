@@ -2,7 +2,7 @@
 	height: 15em;
 	width: 60em;
 	float: right;
-	background-color: wheat;
+	background-color: #FDE9E0;
 	margin-top: 1em;
 	border-radius: 2em;
 	margin-right: 2em;
@@ -41,4 +41,12 @@
 	float: right;
 	margin-right: 2em;
 	margin-bottom: : 4em;
+}
+.race{
+	float: right;
+	margin-top: 6em;
+	margin-right: -10em;
+}
+a:hover {
+  background-color: gold;
 }

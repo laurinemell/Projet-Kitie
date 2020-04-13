@@ -1,11 +1,8 @@
 <?php
-//
-include "../bd.php";
-$bdd = getBD();
-
-function recommandation($bdd,$idChien,$couleur[],$races[],$sexe){
-	$bdd=$bdd;
-	$chien=$array($couleur[],races[],$sexe);
+function recommandation($idChien,$couleur,$races,$sexe){
+	return $idChien;
+	/*$bdd=$bdd;
+	$chien=$array($couleur[],$races[],$sexe);
 	$req='select chien.idChien,chien.idSexe from chien';
 	$lesChiens=$bdd->query($req);
 	$tabChiens=array();
@@ -19,7 +16,7 @@ function recommandation($bdd,$idChien,$couleur[],$races[],$sexe){
 	//Calcul de la somme des carre du chien de référence
 	$sumXcarre=0;
 	for ($i=0; $i <sizeof($chienTab) ; $i++) { 
-		$sumXcarre+=$chien[$i];
+		$sumXcarre+=pow($chien[$i],2);
 	}
 
 
@@ -70,4 +67,6 @@ function recommandation($bdd,$idChien,$couleur[],$races[],$sexe){
 	 }
 	//retoure l'dentifiant des 5 chiens correspondant le plus
 	return $donneeFinal;
+	*/
+}
 ?>
