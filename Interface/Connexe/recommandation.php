@@ -2,21 +2,19 @@
 include "../bd.php";
 $bdd = getBD();
 
-function recommandation($idChien,$req){
-	include "../bd.php";
-	$bdd=getBD();
-	$chien='select chien.* from chien where chien.idChien=';
-	$chien=$bdd->query($chien);
+function recommandation($bdd,$idChien,$couleur[],$races[],$sexe){
+	$bdd=$bdd;
+	$chien=$array($couleur[],races[],$sexe);
+	$req='select chien.idChien,chien.idSexe from chien';
 	$lesChiens=$bdd->query($req);
+	$tabChiens=array();
+	$couleur=
+	while($ligne=$lesChiens ->fetch()){
+		$tabChiens[]=array(
+		)
+	}
+
 	
-	//Création de array du chien principal
-	$chienTab = array();
-	$ligne = $rep ->fetch();
-	array_push($chienTab, $ligne['idChien']);
-	array_push($chienTab, $ligne['races']);
-	array_push($chienTab, $ligne['couleur']);
-	array_push($chienTab, $ligne['sexe']);
-	 echo $chienTab;
 	//Calcul de la somme des carre du chien de référence
 	$sumXcarre=0;
 	for ($i=0; $i <sizeof($chienTab) ; $i++) { 
