@@ -194,7 +194,7 @@ else{
 
 </form>
 <div id="FormulaireAjout3">
- <p style= color:red;>Le format de la photo doit être .jpg :</p>
+ <p style= color:red;>Veuillez insérer une photo EN PREMIER svp </BR>Le format de la photo doit être .jpg :</p>
         <form method="post" enctype="multipart/form-data">
             <input type="file" name="photo">
             <input type="submit" name="valider_photo" value="Visualiser la photo">
