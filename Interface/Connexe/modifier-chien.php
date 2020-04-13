@@ -115,8 +115,15 @@
             <br>
             <br>
             <div id="hau">
-                <?php  echo "<p>Couleurs : ".$couleur["nomCouleur"]."</p>"; ?>
+               <?php
+               echo "Couleurs : ";
+                $reponse = $bdd->query('SELECT DISTINCT couleur.nomCouleur from couleur, etredecouleur where etredecouleur.idChien='.$_GET["identifiant"].' and couleur.idCouleur=etredecouleur.idCouleur ');
+                        while ($ligne = $reponse->fetch()) {
+                            echo '<a>'.$ligne["nomCouleur"].'  </a>';
+                }
+        ?>
                 <?php
+                echo "<br>";
                 $reponse = $bdd->query('SELECT * FROM couleur');
                         while ($ligne = $reponse->fetch()) {
                             echo '<tr><td>'.$ligne["nomCouleur"].'</td>';
