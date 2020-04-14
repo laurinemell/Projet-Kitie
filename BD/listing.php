@@ -71,7 +71,7 @@ if (isset($_GET['synchroniser'])){
 			preg_match_all("#<td bgcolor=''>.+</td>#",$codesource,$listing);
 			$bdd = getBD();
 			
-			$req='select chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin,group_concat(races.nomRace) as nomRace, group_concat(couleur.nomCouleur) as nomCouleur, box.idBox, chien.dateEntree, tarification.tarif, lof.Lof, etatlegal.description, chien.photo
+			$req='select DISTINCT chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin,group_concat(DISTINCT races.nomRace) as nomRace, group_concat(DISTINCT couleur.nomCouleur) as nomCouleur, box.idBox, chien.dateEntree, tarification.tarif, lof.Lof, etatlegal.description, chien.photo
 			FROM sexe, sterilisation, chien
 			LEFT JOIN etrevaccine ON chien.idChien=etrevaccine.idChien
 			LEFT JOIN vaccin ON etrevaccine.idVaccin=vaccin.idVaccin
