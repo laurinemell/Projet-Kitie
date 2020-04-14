@@ -148,3 +148,11 @@ img:hover {
   width: 100%;
   height: 3em;
   }
+
+input:hover{
+  background-color: #FDE9E0;
+  color: black;
+}
+button:hover{
+  background-color: #3366ff;
+}
