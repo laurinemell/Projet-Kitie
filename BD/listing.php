@@ -10,6 +10,7 @@ session_start();
 <?php
 include ('fonctions.php');
 
+// cette condition permet de mettre à jour les données lorsque le bouton "mettre à jour" a été cliqué //
 if (isset($_GET['synchroniser'])){
 	ob_start();
 	$listing=recuperer_donnees_listing();
@@ -71,6 +72,9 @@ if (isset($_GET['synchroniser'])){
 			preg_match_all("#<td bgcolor=''>.+</td>#",$codesource,$listing);
 			$bdd = getBD();
 			
+			// cette requête récupère les informations sur les chiens que l'on va afficher //
+			// en groupant les informations multiples (comme race et couleur) //
+			// et en permettant de récupérer les informations non remplies (LEFT JOIN) //
 			$req='select DISTINCT chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin,group_concat(DISTINCT races.nomRace) as nomRace, group_concat(DISTINCT couleur.nomCouleur) as nomCouleur, box.idBox, chien.dateEntree, tarification.tarif, lof.Lof, etatlegal.description, chien.photo
 			FROM sexe, sterilisation, chien
 			LEFT JOIN etrevaccine ON chien.idChien=etrevaccine.idChien
@@ -91,6 +95,8 @@ if (isset($_GET['synchroniser'])){
 				
 			$rep = $bdd->query($req);
 			
+	// puisque l'on veut afficher que les chiens qui sont présents dans le listing //
+	// on récupère les identifiants des chiens du listing de la SPA //
 	$i=10;
 	$longueur_listing=count($listing[0]);
 	$listing_comparaison=array();
@@ -106,10 +112,14 @@ if (isset($_GET['synchroniser'])){
 				echo "<tr>";
 				$non_rempli = $ligne["nomChien"]==""||$ligne["idChien"]==""||$ligne["dateNaissance"]==""||$ligne["NomSexe"]==""||$ligne["Etat"]==""||$ligne["nomVaccin"]==""||$ligne["nomRace"]==""||$ligne["nomCouleur"]==""||$ligne["idBox"]==""||$ligne["dateEntree"]==""||$ligne["tarif"]==""||$ligne["Lof"]==""||$ligne["description"]=="";
 				if ($non_rempli) {
+				// puisque certains chiens ont des informations manquantes on les met en avant avec la couleur orange //
+				// pour que l'utilisateur voie qu'il faut compléter les informations //
 					$color_ligne = 'orange';
 				} else {
 					$color_ligne = 'black';
 				}
+				// on affiche que les chiens qui sont dans le listing de la SPA //
+				if(in_array($ligne['idChien'],$listing_comparaison)){
 				$donnees_table = array($ligne["nomChien"],
 					$ligne["idChien"],
 					$ligne["dateNaissance"],
@@ -135,6 +145,7 @@ if (isset($_GET['synchroniser'])){
 				}
 				echo "<th>"."<img class='img-chien' src='photo/".$photo."' />"."</th>";
 				echo "</tr>";
+				}
 			} 
 		$rep ->closeCursor()
 		?>

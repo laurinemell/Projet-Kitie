@@ -1,13 +1,14 @@
 <?php
 include "getbd.php";
 
+// on commence par récupérer les données de la page du listing de la SPA que la directrice nous a donné//
 function recuperer_donnees_listing(){
 $codesource=file_get_contents('https://340201.refugilys.org/specif/340201/www/chiens.php?APPLI=340201');
 preg_match_all("#<td bgcolor=''>.+</td>#",$codesource,$tableau_resultat);
 return $tableau_resultat;
 }
-$listing=recuperer_donnees_listing();
-			print_r($listing[0]);
+
+// cette fonction servira a récupérer uniquement les lettres dans une chaîne de caractère//
 function separeNumeric($text) {
         $nums="";
         if ($text!=null&&strlen($text)>0) {
@@ -22,6 +23,7 @@ function separeNumeric($text) {
         return $nums;
 }
 
+// on récupère les données de la BD//
 function recuperer_donnees_BD(){
 	$bdd = getBD();
 	$req="SELECT DISTINCT * FROM chien";
@@ -34,6 +36,7 @@ function recuperer_donnees_BD(){
 	return $donnees;
 }
 
+// cette fonction servira à insérer les données dans la BD//
 function inserer_donnees($id,$nom,$date_naissance,$date_entree,$sexe,$sterilise,$box){
 	$bdd = getBD();
 	$req="INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`,`dateSortie`, `idSexe`, `idSterilisation`, `idTarification`,`idMordeur`, `photo`, `description`) VALUES ('".$id."', '".$nom."', '".$date_naissance."', '".$date_entree."', NULL , '".$sexe."', '".$sterilise."', '3','0','default.jpg','')";
@@ -44,6 +47,8 @@ function inserer_donnees($id,$nom,$date_naissance,$date_entree,$sexe,$sterilise,
 	$reponse2=$bdd->query($req2);
 }
 
+// cette fonction traite d'abord les données récupérées dans le listing car elles ne sont pas comparable telles quelles //
+// puis elle compare avec les données de la BD pour décider s'il faut ajouter ces informations dans la BD ou si elles y sont déjà //
 function comparer_donnees($listing,$BD){
 	$i=10;
 	$longueur_listing=count($listing[0]);

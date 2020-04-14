@@ -5,6 +5,8 @@
 	<title>Historique</title>
 
 <?php
+
+// Les fonctions de la mise à jour sont dans le fichier fonctions//
 include ('fonctions.php');
 if (isset($_GET['synchroniser'])){
 	ob_start();
@@ -46,6 +48,8 @@ if (isset($_GET['synchroniser'])){
 
 			<?php	
 			$bdd = getBD();
+			
+			// La requête affiche les données groupées de chaque chien présent dans la BD//
 			$rep = $bdd->query('select DISTINCT chien.nomChien, chien.idChien, chien.dateNaissance, sexe.NomSexe, sterilisation.Etat, vaccin.nomVaccin,group_concat(DISTINCT races.nomRace) as nomRace, group_concat(DISTINCT couleur.nomCouleur) as nomCouleur, box.idBox, chien.dateEntree, tarification.tarif, lof.Lof, etatlegal.description, chien.photo
 			FROM sexe, sterilisation, chien
 			LEFT JOIN etrevaccine ON chien.idChien=etrevaccine.idChien
@@ -64,6 +68,7 @@ if (isset($_GET['synchroniser'])){
 			GROUP BY chien.idChien, vaccin.idVaccin,box.idBox, lof.idLof, etatlegal.idCategorie
 			ORDER BY chien.nomChien');
 
+			// Affichage des données récupérées//
 			while ($ligne = $rep ->fetch()) { 
 				echo "<tr>";
 				$non_rempli = $ligne["nomChien"]==""||$ligne["idChien"]==""||$ligne["dateNaissance"]==""||$ligne["NomSexe"]==""||$ligne["Etat"]==""||$ligne["nomVaccin"]==""||$ligne["nomRace"]==""||$ligne["nomCouleur"]==""||$ligne["idBox"]==""||$ligne["dateEntree"]==""||$ligne["tarif"]==""||$ligne["Lof"]==""||$ligne["description"]=="";
