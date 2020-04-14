@@ -98,23 +98,17 @@ $req11= $bdd->query('select * from etredecouleur WHERE etredecouleur.idChien='.$
 	 //print_r($req11);
 	
 if(isset($_GET['couleur'])){
-	foreach ($_GET['couleur'] as $valeur ){
 	if (in_array($_GET['identifiant'], $req11)) {
 	$req14="DELETE FROM etredecouleur WHERE idChien=".$_GET['identifiant'];
+	$reponse14=$bdd->query($req14);
+	}
+	foreach ($_GET['couleur'] as $valeur ){
    $req12="INSERT INTO etredecouleur (idChien,idCouleur) VALUES ('".$_GET['identifiant']."','".$valeur."')";
-   $reponse14=$bdd->query($req14);
-   // $reponse14=closeCursor();
  	$reponse12= $bdd->query($req12);
 	$reponse12->closeCursor();
 	echo "Les informations concernant les couleurs ont été mises à jour"."</BR>";
 	}
-else {
-	$req13="INSERT INTO etredecouleur (idChien,idCouleur) VALUES ('".$_GET['identifiant']."','".$valeur."')";
- 	$reponse13 = $bdd->query($req13);
-	$reponse13->closeCursor();
-	echo "Les informations concernant les couleurs ont été mises à jour"."</BR>";
-	}	
-	}
+	// $reponse14=closeCursor();
 	}
 	
 // $req11->closeCursor();
