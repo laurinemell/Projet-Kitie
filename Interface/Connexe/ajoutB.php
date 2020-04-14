@@ -1,3 +1,8 @@
+<?php session_start() ?>
+<?php
+include "../bd.php";
+sessionEmploye();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +11,7 @@
 <title>Nouveau</title>
 </head>
 <body>
-	<img id="logo" src="../Image/spaLogo.png">
+	<a href="benevole.php"><img id="logo" src="../Image/spaLogo.png"></a>
 <form method="get" action="../PHP/enregistrementB.php" autocomplete="on">
 	<div id="Formulaire">
 		<div id="Identite">
@@ -23,7 +28,7 @@
 			<br/>
 			<strong>Sexe:</strong> <br/>
 			<?php
-				include "../bd.php";
+			
 				$bdd = getBD();
  				$reponse = $bdd->query('SELECT * FROM sexehumain');
  				while ($ligne = $reponse->fetch()) {
@@ -43,7 +48,7 @@
 		</div>
 		<div id="Valider">
 			<input id="val" class="fb"  type="submit" name="valider" value="Valider"/>
-			<a id="val" class="fb" href="home.php" > Annuler </a>
+			<a href="benevole.php" target="_blank"> <input class="fb" type="button" type="button" value="Annuler">
 
 		</div>
 	</div>
