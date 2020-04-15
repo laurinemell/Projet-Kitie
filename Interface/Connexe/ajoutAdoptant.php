@@ -38,7 +38,7 @@
 		</div>
 		<div id="Valider">
 			<input id="val" class="fb"  type="submit" name="valider" value="Valider"/>
-			<a id="val" class="fb" href="benevole.php" > Annuler </a>
+			<a href="benevole.php" target="_blank"> <input class="fb" type="button" type="button" value="Annuler">
 
 		</div>
 	</div>
