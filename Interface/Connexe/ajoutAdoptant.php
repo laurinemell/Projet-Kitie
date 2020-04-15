@@ -6,6 +6,12 @@
 <title>Nouveau</title>
 </head>
 <body>
+	<?php
+    include "../bd.php";
+    session_start();
+    sessionEmploye();
+    ?>
+
 	<img id="logo" src="../Image/spaLogo.png">
 <form method="get" action="../PHP/enregistrementAdoptant.php" autocomplete="on">
 	<div id="Formulaire">
@@ -21,7 +27,6 @@
 		<div id="Droit">
 			<br/>
 			<?php
-				include "../bd.php";
 				$bdd = getBD();
  				$reponse = $bdd->query('SELECT * FROM sexehumain');
  				while ($ligne = $reponse->fetch()) {
@@ -33,7 +38,7 @@
 		</div>
 		<div id="Valider">
 			<input id="val" class="fb"  type="submit" name="valider" value="Valider"/>
-			<a id="val" class="fb" href="home.php" > Annuler </a>
+			<a id="val" class="fb" href="benevole.php" > Annuler </a>
 
 		</div>
 	</div>
