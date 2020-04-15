@@ -1,5 +1,6 @@
 <html>
 <head>
+	//
 	<title>Résultats</title>
 	<link rel="stylesheet" href="../Style/style.css" type="text/css" />
 	<link rel="stylesheet" href="../Style/ficheChien.css" type="text/css" />
