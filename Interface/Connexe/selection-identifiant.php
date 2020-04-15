@@ -12,7 +12,7 @@
     include('../bd.php');
     session_start();
     sessionEmploye();
-	?>
+    ?>
                    <img id="img" src="../Image/chien.gif">
 
         
@@ -33,7 +33,7 @@
                 </select>
                 <br>
                 <br>
-    <input style="margin-left: 75px;" type="submit" name="valider" value="Valider">
+    <input type="submit" name="valider" value="Valider">
 </div>
 
 </form>
