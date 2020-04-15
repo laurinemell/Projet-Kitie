@@ -77,7 +77,7 @@
     <link rel="stylesheet" href="../Style/modifier-chien.css" type="text/css" />
     </head>
 <div class="fixed-barre-top">
-    <a href=".php>"><img id="logo" src="../Image/spaLogo.png"></a>
+    <a href="../../BD/listing.php>"><img id="logo" src="../Image/spaLogo.png"></a>
 </div>
     <body>
         <!-- 

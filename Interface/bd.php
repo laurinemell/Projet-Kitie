@@ -1,6 +1,6 @@
 <?php
 	function getBD(){
-		$bdd = new PDO('mysql:host=localhost;dbname=kitie-projet;port=3306','root','root');
+		$bdd = new PDO('mysql:host=localhost;dbname=projetkitie;port=3306','root','root');
 		return $bdd;
 	}
 	function sessionEmploye(){

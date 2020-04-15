@@ -101,8 +101,8 @@ if(isset($_GET['maladie']) && isset($_GET['datediagnostique'])){
 	$reponse8->closeCursor();
 	echo "Les informations concernant la table etremalade ont bien été saisies"."</BR>";
 	}
-// echo "<meta http-equiv='refresh' content='2; URL=chienxampp.php'>";
 }
+echo "<meta http-equiv='refresh' content='2; URL=../../BD/listing.php'>";
 
 ?>
 </head>
