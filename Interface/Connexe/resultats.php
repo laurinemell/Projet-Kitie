@@ -58,7 +58,7 @@ h1{
 		$requete="select chien.* from chien where chien.dateSortie='' or chien.dateSortie=null ";
 	}
 	else{
-		$requete="select chien.* from chien, etredecouleur, etrerace where chien.idChien=etredecouleur.idChien and chien.idChien=etrerace.idChien and chien.dateSortie='' or chien.dateSortie=null and ";
+		$requete="select chien.* from chien, etredecouleur, etrerace where chien.idChien=etredecouleur.idChien and chien.idChien=etrerace.idChien and chien.dateSortie='' and ";
 
 		//Requêtes pour les races
 		if (isset($_GET["races"])) {
@@ -112,7 +112,7 @@ h1{
 		while ($ligne = $rep ->fetch()) {
 		$id=$ligne["idChien"];
 		$sexe = $bdd->query('select sexe.NomSexe from sexe where sexe.IdSexe='.$ligne["idSexe"]);
-		$racer = $bdd->query('select races.nomRace from races,etrerace where races.idRace=etrerace.idRace and etrerace.idChien='.$id);
+		$race=$bdd->query('select races.nomRace from races,etrerace where races.idRace=etrerace.idRace and etrerace.idChien='.$id);
 		$sexe=$sexe ->fetch();
 		$ste=$bdd->query('select sterilisation.Etat from sterilisation where sterilisation.idSterilisation='.$ligne["idSterilisation"]);
 		$couleur=$bdd->query('select couleur.nomCouleur from couleur, etredecouleur where couleur.idCouleur=etredecouleur.idCouleur and etredecouleur.idChien='.$id);
@@ -121,12 +121,12 @@ h1{
 			echo '<p class="sexe"> Sexe : '.$sexe['NomSexe'].'</p>';
 			echo '<img class="rond" src="../../BD/photo/'.$ligne["photo"].'"/>';
 			echo '<p class="prenom">Je suis : '.$ligne["nomChien"].', '.age($ligne['dateNaissance']).' ans</p>';
-			//echo '<p class="age">Age : '.age($ligne['dateNaissance']).' ans</p>';
 			echo '<p class="ste"> Stérilisé.e : '.$ste["Etat"].'</p>';
 			echo '<p class="id">'.$id.'</p>';
-			echo '<ul class="race">';
-			while($race=$racer ->fetch()){
-				echo '<li>'.$race['nomRace'].'</li>';
+			echo '<ul class="couleur">';
+			echo '<li> Race.s : </li>';
+			while($raceLecture=$race ->fetch()){
+				echo '<li>'.$raceLecture['nomRace'].' </li>';
 			}
 			echo '</ul>';
 			echo '<ul class="couleur">';

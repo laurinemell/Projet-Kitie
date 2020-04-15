@@ -55,11 +55,7 @@ li{
 }
 .couleur{
 	position: relative;
-	top: 8em;
-	left: 40em;
-}
-.race{
-	position: relative;
-	top: 11em;
-	left: 40em;
+	top: 6em;
+	left: 20em;
+	width: 20em;
 }
