@@ -1,6 +1,11 @@
 <?php
     include "../bd.php";
     $bdd = getBD();
+
+    session_start();
+    sessionEmploye();
+
+    
     $rep = $bdd->query('select * from chien where idChien='.$_GET["identifiant"]);
     $sexe = $bdd->query('select sexe.NomSexe from chien,sexe where chien.idChien='.$_GET["identifiant"].' and chien.idSexe=sexe.IdSexe');
     $race = $bdd->query('select races.nomRace from races, etrerace where etrerace.idChien='.$_GET["identifiant"].' and races.idRace=etrerace.idRace ');

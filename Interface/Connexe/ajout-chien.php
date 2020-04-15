@@ -10,13 +10,18 @@
 </div>
     <body>        
     
+    <?php
+    include('../bd.php');
+    session_start();
+    sessionEmploye();
+	?>
+    
     <form method="get" action="enregistrement_chien_dans_la_BD.php" autocomplete="off" enctype= »multipart/form-data>
             <div id="FormulaireAjout">
 <!--            <placehorder for="race">Race</placehorder>
  -->            <select class="fo" name="race" id="race">
                 <option>--Choisir une race--</option>
                     <?php
-                        include "../bd.php";
                         $bdd = getBD();
                         $reponse = $bdd->query('SELECT * FROM races');
                         //$ligne = $reponse->fetch(); ne pas le mettre sinon ça ne prends pas la première donnée

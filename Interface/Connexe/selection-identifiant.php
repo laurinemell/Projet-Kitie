@@ -7,6 +7,12 @@
     </head>
     <img id="logo" src="../Image/spaLogo.png" >
     <body>
+    
+        <?php
+    include('../bd.php');
+    session_start();
+    sessionEmploye();
+	?>
                    <img id="img" src="../Image/chien.gif">
 
         
@@ -18,7 +24,6 @@
            <select class="fo" name="identifiant" id="identifiant">
             <option>Choisir un chien</option>
                     <?php
-                        include "../bd.php";
                         $bdd = getBD();
                         $reponse = $bdd->query('SELECT * FROM chien');
                         while ($ligne = $reponse->fetch()) {

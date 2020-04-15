@@ -10,13 +10,17 @@
 </div>
     <body>        
     
+    <?php
+    include('../bd.php');
+    sessionEmploye();
+	?>
+    
     <form method="get" action="enregistrement_chien_dans_la_BD.php" autocomplete="off" enctype= »multipart/form-data>
             <div id="FormulaireAjout">
 <!--            <placehorder for="race">Race</placehorder>
  -->            <select class="fo" name="race" id="race">
                 <option>--Choisir une race--</option>
                     <?php
-                        include "../bd.php";
                         $bdd = getBD();
                         $reponse = $bdd->query('SELECT * FROM races');
                         //$ligne = $reponse->fetch(); ne pas le mettre sinon ça ne prends pas la première donnée
@@ -194,7 +198,7 @@ else{
 
 </form>
 <div id="FormulaireAjout3">
- <p style= color:red;>Le format de la photo doit être .jpg :</p>
+ <p style= color:red;>Veuillez insérer une photo EN PREMIER svp </BR>Le format de la photo doit être .jpg :</p>
         <form method="post" enctype="multipart/form-data">
             <input type="file" name="photo">
             <input type="submit" name="valider_photo" value="Visualiser la photo">
