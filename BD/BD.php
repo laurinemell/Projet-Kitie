@@ -19,7 +19,6 @@ if (isset($_GET['synchroniser'])){
 
 
 session_start();
-echo $_SESSION['Statut'];
 
 	echo "	<div class='fixed-barre-top'>
 		<img id='logo' src='../Interface/Image/spaLogo.png'>
