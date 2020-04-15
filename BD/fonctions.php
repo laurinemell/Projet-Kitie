@@ -1,5 +1,5 @@
 <?php
-include "getbd.php";
+include "../Interface/bd.php";
 
 // on commence par récupérer les données de la page du listing de la SPA que la directrice nous a donné//
 function recuperer_donnees_listing(){

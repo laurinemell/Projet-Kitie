@@ -16,17 +16,24 @@ if (isset($_GET['synchroniser'])){
 	ob_end_clean();
 	echo "<meta http-equiv='refresh' content='2; URL=BD.php'>";
 }
-?>
 
+
+session_start();
+
+	echo "	<div class='fixed-barre-top'>
+		<img id='logo' src='../Interface/Image/spaLogo.png'>
+		<a class='fo' id='block1' class='fo' href='BD.php?synchroniser=true' > Mise à jour </a>
+		<a class='fo' id='block2' href='listing.php'> Retour au listing </a>
+	</div>";
+	
+	if(!isset($_SESSION['id'])){
+	echo "<meta http-equiv='refresh' content='0.000000001; URL=../Interface/Connexe/connexion.php'>";
+	}
+?>
 
 </head>
 <body>
 
-	<div class="fixed-barre-top">
-		<img id="logo" src="../Interface/Image/spaLogo.png">
-		<a class="fo" id="block1" class="fo" href="BD.php?synchroniser=true" > Mise à jour </a>
-		<a class="fo" id="block2" href="listing.php"> Retour au listing </a>
-	</div>
 	<div class="fixed-reste">
 		<table class="flat-table" border="3">
 			<tr>

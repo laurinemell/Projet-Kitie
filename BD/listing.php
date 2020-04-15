@@ -10,6 +10,11 @@ session_start();
 <?php
 include ('fonctions.php');
 
+	
+	if(!isset($_SESSION['id'])){
+	echo "<meta http-equiv='refresh' content='0.000000001; URL=../Interface/Connexe/connexion.php'>";
+	}
+
 // cette condition permet de mettre à jour les données lorsque le bouton "mettre à jour" a été cliqué //
 if (isset($_GET['synchroniser'])){
 	ob_start();
@@ -26,26 +31,22 @@ if (isset($_GET['synchroniser'])){
 <body>
 	<div class="fixed-barre-top">
 		<img id="logo" src="../Interface/Image/spaLogo.png">
+		<div id="head">
 		<?php
     if($_SESSION["Statut"]==1){
-        echo '<div id="head">';
-            echo '<a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajouter un chien"></a>';
-            echo '<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>';
-        echo '</div>';
+
+            echo '<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
+		<a class="fo" id="block2" class="fo" href="../Interface/Connexe/selection-identifiant.php" > Modifier un chien </a>
+		<a class="fo" id="block3" class="fo" href="../Interface/Connexe/ajoutB.php" >Ajouter un bénévole</a>';
+
     }
 
-           // <a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajouter un chien"></a>';
-            //echo '<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>';
-       // echo '</div>';
-    
-
-
     ?>
-		<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
-		<a class="fo" id="block2" class="fo" href="modif-chien" > Modifier un chien </a>
-		<a class="fo" id="block3" class="fo" href="listing.php?synchroniser=true" > Mise à jour </a>
+
+		<a class="fo" id="block4" class="fo" href="listing.php?synchroniser=true" > Mise à jour </a>
 		<a class="fo" id="block4" href="BD.php"> Historique </a>
 
+		</div>
 
 	</div>
 	<div class="fixed-reste">

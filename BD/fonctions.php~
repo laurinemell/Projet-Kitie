@@ -112,6 +112,7 @@ function comparer_donnees($listing,$BD){
 				inserer_donnees($id_listing,$nom,$date_naissance,$date_entree,$sexe,$sterilise,$box);
 			}
 		/*on ajoute +13 à $i pour passer à l'id suivant*/
+		// sur mon ordinateur $i+=13; ne fonctionne pas...//
 		$i++;
 		$i++;
 		$i++;
