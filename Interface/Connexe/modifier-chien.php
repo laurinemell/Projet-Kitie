@@ -21,7 +21,7 @@
 
     $datevaccin = $bdd->query('select etrevaccine.dateVaccin from etrevaccine where etrevaccine.idChien='.$_GET["identifiant"].'');
     $tarification = $bdd->query('select tarification.tarif from tarification, chien where chien.idChien='.$_GET["identifiant"].' and tarification.idTarification=chien.idTarification');
-    // $sociabilite =$bdd->query('select individu.nomIndividu, etresociable.Appreciation from individu,etresociable where etresociable.idChien='.$_GET["identifiant"].' and etresociable.idIndividu=individu.idIndividu');
+    $sociabilite =$bdd->query('select individu.nomIndividu, sociabilite.Note from individu,etresociable,sociabilite where individu.idIndividu=etresociable.idIndividu and etresociable.Appreciation=sociabilite.idSociabilite and etresociable.idChien='.$_GET["identifiant"].'');
      $maladie = $bdd->query('select etremalade.idMaladie,maladie.nomMaladie from maladie, etremalade where etremalade.idChien='.$_GET["identifiant"].' and etremalade.idMaladie=maladie.idMaladie');
      $maladie1= $bdd->query('select * from etremalade where idChien='.$_GET["identifiant"]);   
        $datediagnostique = $bdd->query('select etremalade.dateDiagnostique from etremalade where etremalade.idChien='.$_GET["identifiant"].'');
@@ -39,7 +39,7 @@
     $vaccin1=$vaccin1->fetch();
     $datevaccin=$datevaccin->fetch();
     $tarification=$tarification->fetch();
-    // $sociabilite=$sociabilite->fetch();
+    $sociabilite=$sociabilite->fetch();
     $maladie=$maladie->fetch();
     $maladie1=$maladie1->fetch();
     $datediagnostique=$datediagnostique->fetch();
@@ -61,7 +61,7 @@
     // echo '<p> Date vaccin : '.$datevaccin['dateVaccin'].'</p>';
     // echo '<p> Tarification : '.$tarification['tarif'].'</p>';
     // echo '<p> Description : '.$line["description"].'</p>'
-    // echo '<p> Sociabilité : '.$sociabilite["Appreciation"].'</p>';
+    // echo '<p> Sociabilité : '.$sociabilite["Note"].'</p>';
     // echo '<p> Sociabilité : '.$sociabilite["nomIndividu"].'</p>';
     // echo '<p>Maladie : '.$maladie['nomMaladie'].'</p>';
     // echo '<p>Date diagnostique : '.$datediagnostique['dateDiagnostique'].'</p>';
@@ -141,6 +141,14 @@
 
                 <br>
                  <label class="fo" for="sociable">Sociabilité</label>
+                  <?php
+                $reponse = $bdd->query('select individu.nomIndividu, sociabilite.Note from individu,etresociable,sociabilite where individu.idIndividu=etresociable.idIndividu and etresociable.Appreciation=sociabilite.idSociabilite and etresociable.idChien='.$_GET["identifiant"].'');
+                        while ($ligne = $reponse->fetch()) {
+                            echo '<a>'.$ligne["nomIndividu"].' : </a>';
+                            echo '<a>'.$ligne["Note"].'  </a><br>';
+                }
+        ?>
+        <p style="text-decoration: underline;"> Modifier :</p>
                 <p>Chien :</p>
                 <INPUT type= "radio" name="chien" value="0"> Non
                 <br>
@@ -169,8 +177,7 @@
                     min="2000-01-01" max="2100-12-31" value=<?php echo date('Y-m-d',strtotime($line["dateNaissance"])) ?>>
             <br>
 
-<label for="sexe" class="fo"><?php  echo "<p> Sexe du chien : ".$sexe["NomSexe"]."</p>" ?>
-     Changer le sexe : </label>
+<label for="sexe" class="fo"><?php  echo "<p> Sexe du chien : ".$sexe["NomSexe"]." <br> Modifier le sexe :</p>" ?></label>
                 <INPUT type= "radio" name="sexe" value="0" > Male
                 <br>
                 <INPUT type= "radio" name="sexe" value="1"> Femelle
@@ -182,8 +189,7 @@
                 <INPUT type= "radio" name="sterilisation" value="1"> Oui
                 <br>
                 <br>
-                <label for="lof" class="fo"> <?php  echo "<p>LOF: ".$lof["Lof"]."</p>" ?>
-     Changer l'état :</label>
+                <label for="lof" class="fo"> <?php  echo "<p>LOF: ".$lof["Lof"]." <br>Modifier l'état : </p>" ?></label>
                 <INPUT type= "radio" name="lof" value="0"> Non
                 <br>
                 <INPUT type= "radio" name="lof" value="1"> Oui
@@ -204,7 +210,7 @@
                 <br>
             <label>Etat légal</label>
             <select class="fo" name="etat" id="etat">
-            <?php echo '<option value="'.$etat1["idCategorie"].'">'.$mordeur["Evaluation"].'</option>'; ?>
+            <?php echo '<option value="'.$etat1["idCategorie"].'">'.$etat["description"].'</option>'; ?>
                     <?php
                         $reponse = $bdd->query('SELECT * FROM etatlegal');
                         while ($ligne = $reponse->fetch()) {
@@ -245,7 +251,7 @@
                <br>
                     <label for="datediagnostique">Date du diagnostique</label>
             <input classe="fb" type="date" id="datediagnostique" name="datediagnostique"
-                    min="2000-01-01" max="2100-12-31" value=<?php echo date('Y-m-d',strtotime($datediagnostique["dateDiagnostique"])) ?>>
+                    min="2000-01-01" max="2100-12-31" value=<?php echo date('Y-m-d',strtotime($datediagnostique["dateDiagnostique"])) ?>
                     <br>
 
             <label for="tarif">Tarification</label>

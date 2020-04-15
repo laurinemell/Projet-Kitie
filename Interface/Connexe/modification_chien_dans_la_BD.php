@@ -92,6 +92,7 @@ if(isset($_GET['nomphoto'])){
 	$rep->closeCursor();
 	echo "La photo a été mise à jour"."</BR>";
 	}
+	
 
 $req11= $bdd->query('select * from etredecouleur WHERE etredecouleur.idChien='.$_GET["identifiant"]);
 	 $req11 = $req11->fetch();
@@ -123,14 +124,6 @@ if(isset($_GET['box'])){
 	}
   	
 
-if(isset($_GET['race']) && isset($_GET['etat']) && isset($_GET['lof'])){
- $req4="UPDATE `etrerace` SET `idRace` = '".$_GET['race']."',`idCategorie` = '".$_GET['etat']."',`idLof` = '".$_GET['lof']."' WHERE `etrerace`.`idChien` =".$_GET['identifiant'];
- 	echo $req4."</BR>";
- 	$reponse4 = $bdd->query($req4);
-	$reponse4->closeCursor();
-	echo "Les informations concernant la race ont bien été mises à jour"."</BR>";
-	}
-
 $req5 = $bdd->query('select * from etremalade where etremalade.idChien='.$_GET["identifiant"]);
 	 $req5 = $req5->fetch();
 	     // print_r($req5);
@@ -145,7 +138,7 @@ if(isset($_GET['maladie']) && isset($_GET['datediagnostique'])){
 else {
 	$req7="INSERT INTO etremalade (idMaladie,idChien,dateDiagnostique) VALUES ('".$_GET['maladie']."','".$_GET['identifiant']."','".$_GET['datediagnostique']."')";
  	$reponse7 = $bdd->query($req7);
-	$reponse7->closeCursor();
+	// $reponse7->closeCursor();
 	echo "Les informations concernant la santé ont bien été saisies"."</BR>";
 	}
 
@@ -170,8 +163,79 @@ else {
 	$reponse10->closeCursor();
 	echo "Les informations concernant le vaccin ont bien été saisies"."</BR>";
 	}
-
 }
+
+$req11= $bdd->query('select * from etresociable where etresociable.idIndividu=1 and etresociable.idChien='.$_GET["identifiant"]);
+	 $req11 = $req11->fetch();
+
+if(isset ($_GET['chien'])){
+		if (in_array($_GET['identifiant'], $req11)) {
+	$req12="UPDATE `etresociable` SET `Appreciation` = '".$_GET['chien']."' WHERE `etresociable`.`idIndividu`=1 and `etresociable`.`idChien` =".$_GET['identifiant']; 
+	$reponse12=$bdd->query($req12);
+	// $reponse12->closeCursor();
+	echo "La sociabilité avec le chien a été mis à jour"."</BR>";
+	}
+	else{
+		$req13="INSERT INTO etresociable (idChien,idIndividu,Appreciation) VALUES ('".$_GET['identifiant']."',1,'".$_GET['chien']."')";
+		$reponse13=$bdd->query($req13);
+		// $reponse13=closeCursor();
+		echo "Les informations concernant la table etresociable ont été saisies";
+	}
+}
+
+$req14= $bdd->query('select * from etresociable where etresociable.idIndividu=2 and etresociable.idChien='.$_GET["identifiant"]);
+	 $req14 = $req14->fetch();
+
+if(isset ($_GET['chat'])){
+		if (in_array($_GET['identifiant'], $req14)) {
+	$req15="UPDATE `etresociable` SET `Appreciation` = '".$_GET['chat']."' WHERE `etresociable`.`idIndividu`=2 and `etresociable`.`idChien` =".$_GET['identifiant']; 
+	$reponse15=$bdd->query($req15);
+	// $reponse15->closeCursor();
+	echo "La sociabilité avec le chat a été mis à jour"."</BR>";
+	}
+	else{
+		$req16="INSERT INTO etresociable (idChien,idIndividu,Appreciation) VALUES ('".$_GET['identifiant']."',2,'".$_GET['chat']."')";
+		$reponse16=$bdd->query($req16);
+		// $reponse16=closeCursor();
+		echo "Les informations concernant la table etresociable ont été saisies";
+	}
+}
+
+$req17= $bdd->query('select * from etresociable where etresociable.idIndividu=3 and etresociable.idChien='.$_GET["identifiant"]);
+	 $req17 = $req17->fetch();
+
+if(isset ($_GET['enfant'])){
+		if (in_array($_GET['identifiant'], $req17)) {
+	$req18="UPDATE `etresociable` SET `Appreciation` = '".$_GET['enfant']."' WHERE `etresociable`.`idIndividu`=3 and `etresociable`.`idChien` =".$_GET['identifiant']; 
+	$reponse18=$bdd->query($req18);
+	// $reponse18->closeCursor();
+	echo "La sociabilité avec l'enfant a été mis à jour"."</BR>";
+	}
+	else{
+		$req19="INSERT INTO etresociable (idChien,idIndividu,Appreciation) VALUES ('".$_GET['identifiant']."',3,'".$_GET['enfant']."')";
+		$reponse19=$bdd->query($req19);
+		// $reponse19=closeCursor();
+		echo "Les informations concernant la table etresociable ont été saisies";
+	}
+}
+
+$req20= $bdd->query('select * from etrerace where etrerace.idChien='.$_GET["identifiant"]);
+	 $req20 = $req20->fetch();
+
+	if(isset($_GET['race']) && isset($_GET['etat']) && isset($_GET['lof'])){
+		if (in_array($_GET['identifiant'], $req20)) {
+ $req21="UPDATE `etrerace` SET `idRace` = '".$_GET['race']."',`idCategorie` = '".$_GET['etat']."',`idLof` = '".$_GET['lof']."' WHERE `etrerace`.`idChien` =".$_GET['identifiant'];
+ 	$reponse21 = $bdd->query($req21);
+	// $reponse21->closeCursor();
+	echo " Les informations concernant la race ont bien été mise à jour.";
+ }
+	else{
+		$req22="INSERT INTO etrerace (idChien,idRace,idCategorie,idLof) VALUES ('".$_GET['identifiant']."','".$_GET['race']."','".$_GET['etat']."','".$_GET['lof']."')";
+		$reponse22=$bdd->query($req22);
+	echo "Les informations concernant la race ont bien été saisies"."</BR>";
+	}
+}
+
 } 
 
 // $req8->closeCursor();

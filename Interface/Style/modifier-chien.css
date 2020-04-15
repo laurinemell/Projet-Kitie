@@ -2,31 +2,31 @@
   padding: 1px 10px; 
 }
 #FormulaireAjout3{
-	width: 35%;
-	height: 100%;
-	float: left;
-	margin-top: -75px;
+  width: 35%;
+  height: 100%;
+  float: left;
+  margin-top: -35px;
 }
 html{
-	background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 p{
-	font face="times new roman">Votre texte</font;
+  font face="times new roman">Votre texte</font;
 }
 
 #FormulaireAjout{
-	width: 35%;
-	height: 100%;
-	float: left;
-	margin-bottom: 0;
-	padding-top: 8%;
+  width: 35%;
+  height: 100%;
+  float: left;
+  margin-bottom: 0;
+  padding-top: 8%;
 }
 #FormulaireAjout2{
-		width: 35%;
-	height: 100%;
-	float: left;
-	margin-left:-50px;
-	padding-top: 8%;
+    width: 35%;
+  height: 100%;
+  float: left;
+  margin-left:-50px;
+  padding-top: 8%;
 }
 
 #valider{
@@ -34,7 +34,7 @@ margin-left: -300px;
 
 }
 #ann{
-	margin-right: 25%
+  margin-right: 25%
 }
 label{
 display:block;
@@ -62,11 +62,11 @@ display: inline-block;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-margin-right: -810px;
-margin-top: -750px;
+margin-right: -830px;
+margin-top: -880px;
  overflow: hidden;
-	}
-	
+  }
+  
 #hau {
     overflow-y: scroll;
 width: 200px;
@@ -74,7 +74,7 @@ height: 100px;
   }
   .fixed-barre-top {
   position: fixed;
-  width: 83%;
+  width: 80%;
   height: 100px;
   background-color: whitesmoke;
   z-index: 1;
