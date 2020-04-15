@@ -32,7 +32,7 @@
 	$prix = $bdd->query('select tarification.tarif from tarification,chien where chien.idTarification=tarification.idTarification and chien.idChien='.$id);
 	$etatLegal = $bdd->query('select etatlegal.idCategorie,etatlegal.description from etatlegal,etrerace where etrerace.idCategorie=etatlegal.idCategorie and etrerace.idChien='.$id.' group by etrerace.idCategorie'); 
 	$vaccin = $bdd->query('select vaccin.nomVaccin from vaccin,etrevaccine where vaccin.idVaccin=etrevaccine.idVaccin and etrevaccine.idChien='.$id);
-	$malade = $bdd->query('select maladie.nomMaladie from maladie,etremalade where maladie.idMaladie=etremalade.idMaladie and etremalade.idChien=732301158 ');
+	$malade = $bdd->query('select maladie.nomMaladie from maladie,etremalade where maladie.idMaladie=etremalade.idMaladie and etremalade.idChien='.$id);
 	$social=$bdd->query('select sociabilite.Note, individu.nomIndividu from sociabilite,individu,etresociable where sociabilite.idSociabilite=etresociable.Appreciation and individu.idIndividu=etresociable.idIndividu and etresociable.idChien='.$id);
 
 
@@ -54,6 +54,7 @@
 	echo '</div>';
 	echo '<p id="description"> Description : <br> '.$ligne["description"].'</p>';
 	echo '<div id="sante">';
+	echo '<p id="carnet"> Carnet de santé : </p>';
 	echo '<div id="vaccin">';
 	echo '<p>Vaccin.s :</p>';
 	echo '<ul>';

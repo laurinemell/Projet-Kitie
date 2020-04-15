@@ -1,6 +1,6 @@
 .chiens{
 	height: 15em;
-	width: 60em;
+	width: 65em;
 	float: right;
 	background-color: #FDE9E0;
 	margin-top: 1em;
@@ -16,15 +16,10 @@
 	margin-top: -8em;
 	font-size: 1.25em;
 }
-.nais{
-	float: right;
-	margin-top: -3em;
-	margin-right: 2em;
+.age{
+	position: relative;
+	top: 2em;
 }
-.separation{
-	margin-top: -6%;
-}
-
 .sexe{
 	float: right;
 }
@@ -47,6 +42,24 @@
 	margin-top: 6em;
 	margin-right: -10em;
 }
+.age{
+	margin-left: 12em;
+	margin-top: -8em;
+	font-size: 1.25em;
+}
 a:hover {
   background-color: gold;
+}
+li{
+	display: inline;
+}
+.couleur{
+	position: relative;
+	top: 8em;
+	left: 40em;
+}
+.race{
+	position: relative;
+	top: 11em;
+	left: 40em;
 }

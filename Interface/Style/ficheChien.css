@@ -43,7 +43,7 @@
 	width: 10em;
 	height: 10em;
 	background-color: white;
-	margin-top: 1em;
+	margin-top: 0em;
 	margin-left: 1em;
 	border-radius: 1em;
 }
@@ -52,17 +52,24 @@
 	width: 10em;
 	height: 10em;
 	background-color: white;
-	margin-right: 2em;
+	margin-left: 1em;
 	margin-top: 1em;
 	border-radius: 1em;
 }
 #social{
 	position:absolute;
+	background-color: white;
+	border-radius: 1em;
 	width: 8em;
 	height: 10em;
 	top: 24em;
 	right: 22em;
+	text-align: center;
 }
 #titre{
 	margin-top: -0.5em;
+}
+#carnet{
+	color: white;
+	margin-left: 1em;
 }

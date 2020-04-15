@@ -2,7 +2,6 @@
 	width: 35em;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 0em;
 }
 #ajoutChien{
 	float: left;
@@ -14,10 +13,10 @@
 	width: 20em;
 	overflow-y: scroll;
 	overflow-x:none;
-	height: 30em;
+	height: 25em;
 	position: fixed;
 	right: 0px;
-	top: 1em;
+	top: 6em;
 	background-color: white;
 	border-radius: 1em;
 }
@@ -87,4 +86,16 @@ a{
 #columnchart_material{
 	margin-top: -71px;
 	margin-left: 450px;
+}
+#age{
+	margin-top: -3em;
+	margin-left: 1em;
+	background-color: whitesmoke;
+	width: 10em;
+	padding: 0.7em;
+	border-radius: 1em;
+}
+#ajoutAdoptant{
+	position: fixed;
+	right: 2em;
 }
