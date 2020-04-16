@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <html>
 	<head>
 		<title> Critères </title>
@@ -58,14 +61,20 @@
 			<center><button id="valider" class="fo">Valider</button></center>
 		</div>
 
-
 		<div id="imagesAcc">
-			<?php
-			$photo = $bdd->query('select chien.nomChien,chien.photo,chien.idChien from chien where idTarification=1 and photo!="" order by rand() LIMIT 5');
-			while ($ligne = $photo ->fetch()) {
+		<?php
+			if ($_SESSION['recommandation_chien_img']=="")
+				$_SESSION['recommandation_chien_img']=array(); 
+			$n=count($_SESSION['recommandation_chien_img']);
+			if ($n < 5) {
+				$chiens_bdd=$bdd->query('select chien.nomChien,chien.photo,chien.idChien from chien where photo!="" order by rand() LIMIT '.(5-$n) );
+				while($chien_bdd = $chiens_bdd->fetch())
+					array_push($_SESSION['recommandation_chien_img'], $chien_bdd);
+			}
+			foreach ($_SESSION['recommandation_chien_img'] as $ligne) {
 				echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><img class=rond src="../../BD/photo/'.$ligne["photo"].'"></a>';
 			}
-			mysql_close($photo);
+		//mysql_close($photo);
 			?>
 		</div>
 		</form>
