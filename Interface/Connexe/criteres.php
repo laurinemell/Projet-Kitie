@@ -3,6 +3,8 @@
 		<title> Critères </title>
 		<link rel="stylesheet" href="../Style/style.css" type="text/css" />	
 		<link rel="stylesheet" href="../Style/criteres.css" type="text/css" />
+		<link rel="stylesheet" media="screen and (max-width: 400px)" href="../Mobile/criteresMCss.css" />
+
 	</head>
 	<body>
 		<a href="../home.php"><img id="logo" src="../Image/spaLogo.png"></a>
@@ -27,7 +29,7 @@
                 			echo"<br>";
                 			echo "</tr>";
                 		}
-                		$ligne->closeCursor;
+                $reponse ->closeCursor(); 
  				?>
  				</div>
 				</select>
@@ -40,6 +42,7 @@
                 			echo"<br>";
                 			echo "</tr>";
                 		}
+                $reponse ->closeCursor(); 
  				?>
  				</div>
 				</select>
@@ -49,7 +52,7 @@
 				while ($ligne3 = $rep3 ->fetch()) {
 					echo '<INPUT type="checkbox" name="sexe" value="'.$ligne3["IdSexe"].'">'.$ligne3["NomSexe"].'<br/>';
 				}
-				$rep3->closeCursor;
+				$rep3->closeCursor();
 				?>
 			</div>
 			<center><button id="valider" class="fo">Valider</button></center>
@@ -62,6 +65,7 @@
 			while ($ligne = $photo ->fetch()) {
 				echo '<a href="ficheChien.php?identifiant='.$ligne["idChien"].'"><img class=rond src="../../BD/photo/'.$ligne["photo"].'"></a>';
 			}
+			mysql_close($photo);
 			?>
 		</div>
 		</form>
