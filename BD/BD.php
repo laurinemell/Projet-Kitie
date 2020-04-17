@@ -21,7 +21,7 @@ if (isset($_GET['synchroniser'])){
 session_start();
 ?>
 	<div class='fixed-barre-top'>
-		<a href="../Interface/home.php"><img id="logo" src="../Interface/Image/spaLogo.png"></a>
+		<a href="../Interface/Connexe/benevole.php"><img id="logo" src="../Interface/Image/spaLogo.png"></a>
 		<a class='fo' id='block1' class='fo' href='BD.php?synchroniser=true' > Mise à jour </a>
 		<a class='fo' id='block2' href='listing.php'> Retour au listing </a>
 	</div>

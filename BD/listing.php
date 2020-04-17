@@ -30,7 +30,7 @@ if (isset($_GET['synchroniser'])){
 </head>
 <body>
 	<div class="fixed-barre-top">
-		<a href="../Interface/home.php"><img id="logo" src="../Interface/Image/spaLogo.png"></a>
+		<a href="../Interface/Connexe/benevole.php"><img id="logo" src="../Interface/Image/spaLogo.png"></a>
 		<div id="head">
 		<?php
     if($_SESSION["Statut"]==1){
