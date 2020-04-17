@@ -17,7 +17,6 @@ function enregistrer($nom, $prenom, $age, $mail, $tel, $idStatut, $sexeHum, $mdp
 
 if($_GET['mdp']!= $_GET['mdp1'] || $_GET['mdp']=="" || $_GET['nom']=="" || $_GET['prenom']=="" || $_GET['mail']=="" || $_GET['sexe']==""||$_GET['statut']==""){
 	echo "<meta http-equiv='refresh' content='2; URL=../Connexe/bouton-echec.html'>";
-	echo "<meta http-equiv='refresh' content='2; URL=../Connexe/ajoutB.php'>";
 }
 	
 else {

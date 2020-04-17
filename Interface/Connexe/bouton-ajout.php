@@ -38,7 +38,7 @@
 </head>
 <body>
 <div class="bouton">
-<img src="../Image/Ajoute.png" alt="bouton ajout" class="bouton_img">
+	<a href="benevole.php"><img id="logo" src="../Image/Ajoute.png" class="bouton_img"></a>
 </div>
 </body>
 </html>
