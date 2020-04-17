@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Apr 15, 2020 at 09:36 AM
--- Server version: 5.7.24
--- PHP Version: 7.2.14
+-- Hôte : 127.0.0.1
+-- Généré le : ven. 17 avr. 2020 à 14:11
+-- Version du serveur :  10.4.11-MariaDB
+-- Version de PHP : 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `projetkitie`
+-- Base de données : `projetkitie`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adoptant`
+-- Structure de la table `adoptant`
 --
 
 CREATE TABLE `adoptant` (
@@ -40,7 +40,7 @@ CREATE TABLE `adoptant` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `adoptant`
+-- Déchargement des données de la table `adoptant`
 --
 
 INSERT INTO `adoptant` (`idAdoptant`, `sexe`, `nom`, `prenom`, `age`, `codePostal`, `tel`, `mail`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `adoptant` (`idAdoptant`, `sexe`, `nom`, `prenom`, `age`, `codePosta
 -- --------------------------------------------------------
 
 --
--- Table structure for table `box`
+-- Structure de la table `box`
 --
 
 CREATE TABLE `box` (
@@ -57,7 +57,7 @@ CREATE TABLE `box` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `box`
+-- Déchargement des données de la table `box`
 --
 
 INSERT INTO `box` (`idBox`) VALUES
@@ -163,7 +163,7 @@ INSERT INTO `box` (`idBox`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chien`
+-- Structure de la table `chien`
 --
 
 CREATE TABLE `chien` (
@@ -181,7 +181,7 @@ CREATE TABLE `chien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `chien`
+-- Déchargement des données de la table `chien`
 --
 
 INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `dateSortie`, `idSexe`, `idSterilisation`, `idTarification`, `idMordeur`, `photo`, `description`) VALUES
@@ -382,7 +382,7 @@ INSERT INTO `chien` (`idChien`, `nomChien`, `dateNaissance`, `dateEntree`, `date
 -- --------------------------------------------------------
 
 --
--- Table structure for table `couleur`
+-- Structure de la table `couleur`
 --
 
 CREATE TABLE `couleur` (
@@ -391,7 +391,7 @@ CREATE TABLE `couleur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `couleur`
+-- Déchargement des données de la table `couleur`
 --
 
 INSERT INTO `couleur` (`idCouleur`, `nomCouleur`) VALUES
@@ -415,7 +415,7 @@ INSERT INTO `couleur` (`idCouleur`, `nomCouleur`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etatlegal`
+-- Structure de la table `etatlegal`
 --
 
 CREATE TABLE `etatlegal` (
@@ -426,7 +426,7 @@ CREATE TABLE `etatlegal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `etatlegal`
+-- Déchargement des données de la table `etatlegal`
 --
 
 INSERT INTO `etatlegal` (`idCategorie`, `description`, `races`, `obligations`) VALUES
@@ -437,7 +437,18 @@ INSERT INTO `etatlegal` (`idCategorie`, `description`, `races`, `obligations`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etredecouleur`
+-- Structure de la table `etreadopte`
+--
+
+CREATE TABLE `etreadopte` (
+  `idChien` int(11) NOT NULL,
+  `idAdoptant` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `etredecouleur`
 --
 
 CREATE TABLE `etredecouleur` (
@@ -446,7 +457,7 @@ CREATE TABLE `etredecouleur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `etredecouleur`
+-- Déchargement des données de la table `etredecouleur`
 --
 
 INSERT INTO `etredecouleur` (`idChien`, `idCouleur`) VALUES
@@ -673,7 +684,7 @@ INSERT INTO `etredecouleur` (`idChien`, `idCouleur`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etremalade`
+-- Structure de la table `etremalade`
 --
 
 CREATE TABLE `etremalade` (
@@ -685,7 +696,7 @@ CREATE TABLE `etremalade` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etrerace`
+-- Structure de la table `etrerace`
 --
 
 CREATE TABLE `etrerace` (
@@ -696,7 +707,7 @@ CREATE TABLE `etrerace` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `etrerace`
+-- Déchargement des données de la table `etrerace`
 --
 
 INSERT INTO `etrerace` (`idChien`, `idRace`, `idCategorie`, `idLof`) VALUES
@@ -841,7 +852,7 @@ INSERT INTO `etrerace` (`idChien`, `idRace`, `idCategorie`, `idLof`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etresociable`
+-- Structure de la table `etresociable`
 --
 
 CREATE TABLE `etresociable` (
@@ -851,7 +862,7 @@ CREATE TABLE `etresociable` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `etresociable`
+-- Déchargement des données de la table `etresociable`
 --
 
 INSERT INTO `etresociable` (`idChien`, `idIndividu`, `Appreciation`) VALUES
@@ -912,7 +923,7 @@ INSERT INTO `etresociable` (`idChien`, `idIndividu`, `Appreciation`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etrevaccine`
+-- Structure de la table `etrevaccine`
 --
 
 CREATE TABLE `etrevaccine` (
@@ -922,7 +933,7 @@ CREATE TABLE `etrevaccine` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `etrevaccine`
+-- Déchargement des données de la table `etrevaccine`
 --
 
 INSERT INTO `etrevaccine` (`idChien`, `idVaccin`, `dateVaccin`) VALUES
@@ -1051,7 +1062,7 @@ INSERT INTO `etrevaccine` (`idChien`, `idVaccin`, `dateVaccin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `individu`
+-- Structure de la table `individu`
 --
 
 CREATE TABLE `individu` (
@@ -1060,7 +1071,7 @@ CREATE TABLE `individu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `individu`
+-- Déchargement des données de la table `individu`
 --
 
 INSERT INTO `individu` (`idIndividu`, `nomIndividu`) VALUES
@@ -1071,7 +1082,7 @@ INSERT INTO `individu` (`idIndividu`, `nomIndividu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lof`
+-- Structure de la table `lof`
 --
 
 CREATE TABLE `lof` (
@@ -1080,7 +1091,7 @@ CREATE TABLE `lof` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `lof`
+-- Déchargement des données de la table `lof`
 --
 
 INSERT INTO `lof` (`idLof`, `Lof`) VALUES
@@ -1090,7 +1101,7 @@ INSERT INTO `lof` (`idLof`, `Lof`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `loger`
+-- Structure de la table `loger`
 --
 
 CREATE TABLE `loger` (
@@ -1101,7 +1112,7 @@ CREATE TABLE `loger` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `loger`
+-- Déchargement des données de la table `loger`
 --
 
 INSERT INTO `loger` (`idBox`, `idChien`, `dateDebut`, `dateFin`) VALUES
@@ -1296,7 +1307,7 @@ INSERT INTO `loger` (`idBox`, `idChien`, `dateDebut`, `dateFin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `maladie`
+-- Structure de la table `maladie`
 --
 
 CREATE TABLE `maladie` (
@@ -1305,7 +1316,7 @@ CREATE TABLE `maladie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `maladie`
+-- Déchargement des données de la table `maladie`
 --
 
 INSERT INTO `maladie` (`idMaladie`, `nomMaladie`) VALUES
@@ -1321,7 +1332,7 @@ INSERT INTO `maladie` (`idMaladie`, `nomMaladie`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mordeur`
+-- Structure de la table `mordeur`
 --
 
 CREATE TABLE `mordeur` (
@@ -1330,7 +1341,7 @@ CREATE TABLE `mordeur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mordeur`
+-- Déchargement des données de la table `mordeur`
 --
 
 INSERT INTO `mordeur` (`idMordeur`, `Evaluation`) VALUES
@@ -1343,7 +1354,7 @@ INSERT INTO `mordeur` (`idMordeur`, `Evaluation`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `races`
+-- Structure de la table `races`
 --
 
 CREATE TABLE `races` (
@@ -1352,7 +1363,7 @@ CREATE TABLE `races` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `races`
+-- Déchargement des données de la table `races`
 --
 
 INSERT INTO `races` (`idRace`, `nomRace`) VALUES
@@ -1528,7 +1539,7 @@ INSERT INTO `races` (`idRace`, `nomRace`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sexe`
+-- Structure de la table `sexe`
 --
 
 CREATE TABLE `sexe` (
@@ -1537,7 +1548,7 @@ CREATE TABLE `sexe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `sexe`
+-- Déchargement des données de la table `sexe`
 --
 
 INSERT INTO `sexe` (`IdSexe`, `NomSexe`) VALUES
@@ -1547,7 +1558,7 @@ INSERT INTO `sexe` (`IdSexe`, `NomSexe`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sexehumain`
+-- Structure de la table `sexehumain`
 --
 
 CREATE TABLE `sexehumain` (
@@ -1556,7 +1567,7 @@ CREATE TABLE `sexehumain` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `sexehumain`
+-- Déchargement des données de la table `sexehumain`
 --
 
 INSERT INTO `sexehumain` (`sexeHum`, `etat`) VALUES
@@ -1566,7 +1577,7 @@ INSERT INTO `sexehumain` (`sexeHum`, `etat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sociabilite`
+-- Structure de la table `sociabilite`
 --
 
 CREATE TABLE `sociabilite` (
@@ -1575,7 +1586,7 @@ CREATE TABLE `sociabilite` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `sociabilite`
+-- Déchargement des données de la table `sociabilite`
 --
 
 INSERT INTO `sociabilite` (`idSociabilite`, `Note`) VALUES
@@ -1585,7 +1596,7 @@ INSERT INTO `sociabilite` (`idSociabilite`, `Note`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `statut`
+-- Structure de la table `statut`
 --
 
 CREATE TABLE `statut` (
@@ -1596,7 +1607,7 @@ CREATE TABLE `statut` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `statut`
+-- Déchargement des données de la table `statut`
 --
 
 INSERT INTO `statut` (`idStatut`, `statut`, `lecture`, `modification`) VALUES
@@ -1606,7 +1617,7 @@ INSERT INTO `statut` (`idStatut`, `statut`, `lecture`, `modification`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sterilisation`
+-- Structure de la table `sterilisation`
 --
 
 CREATE TABLE `sterilisation` (
@@ -1615,7 +1626,7 @@ CREATE TABLE `sterilisation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `sterilisation`
+-- Déchargement des données de la table `sterilisation`
 --
 
 INSERT INTO `sterilisation` (`idSterilisation`, `Etat`) VALUES
@@ -1625,7 +1636,7 @@ INSERT INTO `sterilisation` (`idSterilisation`, `Etat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tarification`
+-- Structure de la table `tarification`
 --
 
 CREATE TABLE `tarification` (
@@ -1635,7 +1646,7 @@ CREATE TABLE `tarification` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tarification`
+-- Déchargement des données de la table `tarification`
 --
 
 INSERT INTO `tarification` (`idTarification`, `description`, `tarif`) VALUES
@@ -1647,7 +1658,7 @@ INSERT INTO `tarification` (`idTarification`, `description`, `tarif`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utilisateur`
+-- Structure de la table `utilisateur`
 --
 
 CREATE TABLE `utilisateur` (
@@ -1663,7 +1674,7 @@ CREATE TABLE `utilisateur` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `utilisateur`
+-- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`idUtilisateur`, `nom`, `prenom`, `age`, `mail`, `tel`, `idStatut`, `sexeHum`, `mdp`) VALUES
@@ -1672,7 +1683,7 @@ INSERT INTO `utilisateur` (`idUtilisateur`, `nom`, `prenom`, `age`, `mail`, `tel
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vaccin`
+-- Structure de la table `vaccin`
 --
 
 CREATE TABLE `vaccin` (
@@ -1681,7 +1692,7 @@ CREATE TABLE `vaccin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `vaccin`
+-- Déchargement des données de la table `vaccin`
 --
 
 INSERT INTO `vaccin` (`idVaccin`, `nomVaccin`) VALUES
@@ -1692,24 +1703,24 @@ INSERT INTO `vaccin` (`idVaccin`, `nomVaccin`) VALUES
 (4, 'CHP');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `adoptant`
+-- Index pour la table `adoptant`
 --
 ALTER TABLE `adoptant`
   ADD PRIMARY KEY (`idAdoptant`),
   ADD KEY `idSexeH` (`sexe`);
 
 --
--- Indexes for table `box`
+-- Index pour la table `box`
 --
 ALTER TABLE `box`
   ADD PRIMARY KEY (`idBox`);
 
 --
--- Indexes for table `chien`
+-- Index pour la table `chien`
 --
 ALTER TABLE `chien`
   ADD PRIMARY KEY (`idChien`),
@@ -1719,33 +1730,40 @@ ALTER TABLE `chien`
   ADD KEY `idSexe` (`idSexe`);
 
 --
--- Indexes for table `couleur`
+-- Index pour la table `couleur`
 --
 ALTER TABLE `couleur`
   ADD PRIMARY KEY (`idCouleur`);
 
 --
--- Indexes for table `etatlegal`
+-- Index pour la table `etatlegal`
 --
 ALTER TABLE `etatlegal`
   ADD PRIMARY KEY (`idCategorie`);
 
 --
--- Indexes for table `etredecouleur`
+-- Index pour la table `etreadopte`
+--
+ALTER TABLE `etreadopte`
+  ADD KEY `idChien` (`idChien`),
+  ADD KEY `idAdoptant` (`idAdoptant`);
+
+--
+-- Index pour la table `etredecouleur`
 --
 ALTER TABLE `etredecouleur`
   ADD KEY `id` (`idChien`),
   ADD KEY `idCouleur1` (`idCouleur`);
 
 --
--- Indexes for table `etremalade`
+-- Index pour la table `etremalade`
 --
 ALTER TABLE `etremalade`
   ADD KEY `idChien` (`idChien`),
   ADD KEY `idMaladie` (`idMaladie`);
 
 --
--- Indexes for table `etrerace`
+-- Index pour la table `etrerace`
 --
 ALTER TABLE `etrerace`
   ADD KEY `idRace` (`idRace`),
@@ -1754,94 +1772,94 @@ ALTER TABLE `etrerace`
   ADD KEY `idCategorie` (`idCategorie`);
 
 --
--- Indexes for table `etresociable`
+-- Index pour la table `etresociable`
 --
 ALTER TABLE `etresociable`
   ADD KEY `idChien` (`idChien`),
   ADD KEY `idIndividu` (`idIndividu`);
 
 --
--- Indexes for table `etrevaccine`
+-- Index pour la table `etrevaccine`
 --
 ALTER TABLE `etrevaccine`
   ADD KEY `idChien` (`idChien`),
   ADD KEY `idVaccin` (`idVaccin`);
 
 --
--- Indexes for table `individu`
+-- Index pour la table `individu`
 --
 ALTER TABLE `individu`
   ADD PRIMARY KEY (`idIndividu`);
 
 --
--- Indexes for table `lof`
+-- Index pour la table `lof`
 --
 ALTER TABLE `lof`
   ADD PRIMARY KEY (`idLof`);
 
 --
--- Indexes for table `loger`
+-- Index pour la table `loger`
 --
 ALTER TABLE `loger`
   ADD KEY `seLoger` (`idBox`),
   ADD KEY `idChienLoger` (`idChien`);
 
 --
--- Indexes for table `maladie`
+-- Index pour la table `maladie`
 --
 ALTER TABLE `maladie`
   ADD PRIMARY KEY (`idMaladie`);
 
 --
--- Indexes for table `mordeur`
+-- Index pour la table `mordeur`
 --
 ALTER TABLE `mordeur`
   ADD PRIMARY KEY (`idMordeur`);
 
 --
--- Indexes for table `races`
+-- Index pour la table `races`
 --
 ALTER TABLE `races`
   ADD PRIMARY KEY (`idRace`);
 
 --
--- Indexes for table `sexe`
+-- Index pour la table `sexe`
 --
 ALTER TABLE `sexe`
   ADD PRIMARY KEY (`IdSexe`);
 
 --
--- Indexes for table `sexehumain`
+-- Index pour la table `sexehumain`
 --
 ALTER TABLE `sexehumain`
   ADD PRIMARY KEY (`sexeHum`);
 
 --
--- Indexes for table `sociabilite`
+-- Index pour la table `sociabilite`
 --
 ALTER TABLE `sociabilite`
   ADD PRIMARY KEY (`idSociabilite`);
 
 --
--- Indexes for table `statut`
+-- Index pour la table `statut`
 --
 ALTER TABLE `statut`
   ADD PRIMARY KEY (`idStatut`);
 
 --
--- Indexes for table `sterilisation`
+-- Index pour la table `sterilisation`
 --
 ALTER TABLE `sterilisation`
   ADD PRIMARY KEY (`idSterilisation`);
 
 --
--- Indexes for table `tarification`
+-- Index pour la table `tarification`
 --
 ALTER TABLE `tarification`
   ADD PRIMARY KEY (`idTarification`);
 
 --
--- Indexes for table `utilisateur`
+-- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`idUtilisateur`),
@@ -1849,39 +1867,39 @@ ALTER TABLE `utilisateur`
   ADD KEY `sexeHum` (`sexeHum`);
 
 --
--- Indexes for table `vaccin`
+-- Index pour la table `vaccin`
 --
 ALTER TABLE `vaccin`
   ADD PRIMARY KEY (`idVaccin`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `adoptant`
+-- AUTO_INCREMENT pour la table `adoptant`
 --
 ALTER TABLE `adoptant`
   MODIFY `idAdoptant` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `utilisateur`
+-- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   MODIFY `idUtilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `adoptant`
+-- Contraintes pour la table `adoptant`
 --
 ALTER TABLE `adoptant`
   ADD CONSTRAINT `idSexeH` FOREIGN KEY (`sexe`) REFERENCES `sexehumain` (`sexeHum`);
 
 --
--- Constraints for table `chien`
+-- Contraintes pour la table `chien`
 --
 ALTER TABLE `chien`
   ADD CONSTRAINT `idMordeur` FOREIGN KEY (`idMordeur`) REFERENCES `mordeur` (`idMordeur`),
@@ -1890,35 +1908,42 @@ ALTER TABLE `chien`
   ADD CONSTRAINT `idTarification` FOREIGN KEY (`idTarification`) REFERENCES `tarification` (`idTarification`);
 
 --
--- Constraints for table `etredecouleur`
+-- Contraintes pour la table `etreadopte`
+--
+ALTER TABLE `etreadopte`
+  ADD CONSTRAINT `etreadopte_ibfk_1` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
+  ADD CONSTRAINT `etreadopte_ibfk_2` FOREIGN KEY (`idAdoptant`) REFERENCES `adoptant` (`idAdoptant`);
+
+--
+-- Contraintes pour la table `etredecouleur`
 --
 ALTER TABLE `etredecouleur`
   ADD CONSTRAINT `id` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
   ADD CONSTRAINT `idCouleur1` FOREIGN KEY (`idCouleur`) REFERENCES `couleur` (`idCouleur`);
 
 --
--- Constraints for table `etremalade`
+-- Contraintes pour la table `etremalade`
 --
 ALTER TABLE `etremalade`
   ADD CONSTRAINT `idChien` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
   ADD CONSTRAINT `idMaladie` FOREIGN KEY (`idMaladie`) REFERENCES `maladie` (`idMaladie`);
 
 --
--- Constraints for table `etresociable`
+-- Contraintes pour la table `etresociable`
 --
 ALTER TABLE `etresociable`
   ADD CONSTRAINT `etresociable_ibfk_1` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
   ADD CONSTRAINT `etresociable_ibfk_2` FOREIGN KEY (`idIndividu`) REFERENCES `individu` (`idIndividu`);
 
 --
--- Constraints for table `etrevaccine`
+-- Contraintes pour la table `etrevaccine`
 --
 ALTER TABLE `etrevaccine`
   ADD CONSTRAINT `etrevaccine_ibfk_1` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
   ADD CONSTRAINT `etrevaccine_ibfk_2` FOREIGN KEY (`idVaccin`) REFERENCES `vaccin` (`idVaccin`);
 
 --
--- Constraints for table `loger`
+-- Contraintes pour la table `loger`
 --
 ALTER TABLE `loger`
   ADD CONSTRAINT `idChienLoger` FOREIGN KEY (`idChien`) REFERENCES `chien` (`idChien`),
