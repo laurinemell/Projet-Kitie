@@ -12,7 +12,7 @@
     sessionEmploye();
     ?>
 
-    <a href="benvole.php"><img id="logo" src="../Image/spaLogo.png"></a>
+    <a href="benevole.php"><img id="logo" src="../Image/spaLogo.png"></a>
 <form method="get" action="../PHP/enregistrementAdoptant.php" autocomplete="on">
 	<div id="Formulaire">
 		<div id="Identite">
