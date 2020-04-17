@@ -19,13 +19,13 @@ if (isset($_GET['synchroniser'])){
 
 
 session_start();
-
-	echo "	<div class='fixed-barre-top'>
-		<img id='logo' src='../Interface/Image/spaLogo.png'>
+?>
+	<div class='fixed-barre-top'>
+		<a href="../Interface/home.php"><img id="logo" src="../Interface/Image/spaLogo.png"></a>
 		<a class='fo' id='block1' class='fo' href='BD.php?synchroniser=true' > Mise à jour </a>
 		<a class='fo' id='block2' href='listing.php'> Retour au listing </a>
-	</div>";
-	
+	</div>
+<?php	
 	if(!isset($_SESSION['id'])){
 	echo "<meta http-equiv='refresh' content='0.000000001; URL=../Interface/Connexe/connexion.php'>";
 	}

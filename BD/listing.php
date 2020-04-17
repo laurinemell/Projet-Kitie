@@ -30,20 +30,18 @@ if (isset($_GET['synchroniser'])){
 </head>
 <body>
 	<div class="fixed-barre-top">
-		<img id="logo" src="../Interface/Image/spaLogo.png">
+		<a href="../Interface/home.php"><img id="logo" src="../Interface/Image/spaLogo.png"></a>
 		<div id="head">
 		<?php
     if($_SESSION["Statut"]==1){
 
             echo '<a class="fo" id="block1" class="fo" href="../Interface/Connexe/ajout-chien.php" > Ajouter un chien </a>
-		<a class="fo" id="block2" class="fo" href="../Interface/Connexe/selection-identifiant.php" > Modifier un chien </a>
-		<a class="fo" id="block3" class="fo" href="../Interface/Connexe/ajoutB.php" >Ajouter un bénévole</a>';
-
+		<a class="fo" id="block2" class="fo" href="../Interface/Connexe/selection-identifiant.php" > Modifier un chien </a>';
     }
 
     ?>
 
-		<a class="fo" id="block4" class="fo" href="listing.php?synchroniser=true" > Mise à jour </a>
+		<a class="fo" id="block3" class="fo" href="listing.php?synchroniser=true" > Mise à jour </a>
 		<a class="fo" id="block4" href="BD.php"> Historique </a>
 
 		</div>
