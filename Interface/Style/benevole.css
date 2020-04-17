@@ -1,13 +1,10 @@
-#head{
-	width: 35em;
-	margin-right: auto;
-	margin-left: auto;
-}
 #ajoutChien{
-	float: left;
+	position: fixed;
+	right: 36em;
 }
 #ajoutBenevole{
-	float: right;
+	position: fixed;
+	right: 53em;
 }
 #apercu{
 	width: 20em;
@@ -98,4 +95,12 @@ a{
 #ajoutAdoptant{
 	position: fixed;
 	right: 2em;
+}
+.fo{
+	width: 15em;
+	text-align: center;
+}
+#benevole{
+	position: fixed;
+	right: 19em;
 }

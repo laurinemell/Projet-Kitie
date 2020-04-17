@@ -18,9 +18,9 @@ function age($date) {
 include "../bd.php";
 $bdd = getBD();
 $sexe=$bdd->query("select COUNT(chien.idChien) as nombre, sexe.NomSexe as sexe FROM chien,sexe where chien.idSexe=sexe.IdSexe GROUP BY chien.idSexe");
-$couleur=$bdd->query("select COUNT(chien.idChien) as nombre, couleur.nomCouleur as couleur FROM chien,etredecouleur,couleur where chien.idChien=etredecouleur.idChien and etredecouleur.idCouleur=couleur.idCouleur GROUP BY etredecouleur.idCouleur");
+$couleur=$bdd->query("select COUNT(chien.idChien) as nombre, couleur.nomCouleur as couleur FROM chien,etredecouleur,couleur where chien.idChien=etredecouleur.idChien and etredecouleur.idCouleur=couleur.idCouleur and chien.dateSortie='' GROUP BY etredecouleur.idCouleur");
 $race=$bdd->query("select COUNT(etrerace.idChien) as nombre, races.nomRace from etrerace, races where etrerace.idRace=races.idRace group by races.nomRace ORDER BY `nombre` DESC limit 10 ");
-$ageMoyen=$bdd->query('select chien.dateNaissance from chien where chien.dateSortie=null or chien.dateSortie=""');
+$ageMoyen=$bdd->query('select chien.dateNaissance from chien where chien.dateSortie=""');
 $lesAge=array();
 while($age=$ageMoyen->fetch()){
     $lesAge[] = (int)age($age['dateNaissance']);
@@ -187,17 +187,18 @@ $race=json_encode($raceTab);
 	<?php
 	if($_SESSION["Statut"]==1){
 		echo '<div id="head">';
-			echo '<a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajouter un chien"></a>';
-			echo '<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajouter un bénévole"></a>';
-			echo '<a href="ajoutAdoptant.php" target="_blank"> <input id="ajoutAdoptant" class="fo" type="button" type="button" value="Ajouter un adoptant"></a>';
+			echo '<a href="ajout-chien.php" target="_blank"> <input id="ajoutChien" class="fo" type="button" type="button" value="Ajout chien"></a>';
+			echo '<a href="ajoutB.php" target="_blank"> <input id="ajoutBenevole" class="fo" type="button" type="button" value="Ajout bénévole"></a>';
+			echo '<a href="ajoutAdoptant.php" target="_blank"> <input id="ajoutAdoptant" class="fo" type="button" type="button" value="Ajout adoptant"></a>';
+      echo '<a href="navigationBenevole.php" target="_blank"> <input id="benevole" class="fo" type="button" type="button" value="Bénévoles"></a>';
 		echo '</div>';
 	}
 
 	?>
 	<?php
-	echo '<a href="../PHP/sessionDestruction.php" target="_blank"> <input id="deconnexion" class="fo" type="button" type="button" value="Vous déconnecter, '.$_SESSION["prenom"].'"></a>';
+	echo '<a href="../PHP/sessionDestruction.php" target="_blank"> <input id="deconnexion" class="fo" type="button" type="button" value="Déconnecter,'.$_SESSION["prenom"].'"></a>';
 	?>
-	<center><a href="../../BD/listing.php" target="_blank"> <input id="Chien" class="fo" type="button" value="Information sur les chiens"> </a></body></center>
+	<center><a href="../../BD/listing.php" target="_blank"> <input id="Chien" class="fo" type="button" value="Infos chiens"> </a></body></center>
 	<div id="apercu">
 		<?php
 		$rep = $bdd->query('SELECT * FROM chien ORDER BY dateEntree DESC ');
