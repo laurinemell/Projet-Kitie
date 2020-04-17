@@ -35,6 +35,41 @@
                 <br>
     <input type="submit" name="valider" value="Valider">
 </div>
+</form>
+
+        <h2>Si la modification concerne une adoption :</h2>
+
+<form  method="get" action="enregistrementAdoption.php" autocomplete="off">
+        <div id="div">
+           <select class="fo" name="identifiant" id="identifiant">
+            <option>Choisir un chien</option>
+                    <?php
+                        $bdd = getBD();
+                        $reponse = $bdd->query('SELECT * FROM chien');
+                        while ($ligne = $reponse->fetch()) {
+                            echo '<option value="'.$ligne["idChien"].'">'.$ligne["idChien"].'</option>';
+                        }
+            ?>
+                </select>
+                <br>
+                <select class="fo" name="idA" >
+            <option>Choisir un adoptant</option>
+                    <?php
+                        $reponse = $bdd->query('SELECT * FROM adoptant');
+                        while ($ligne = $reponse->fetch()) {
+                            echo '<option value="'.$ligne["idAdoptant"].'">'.$ligne["nom"].'</option>';
+                        }
+            ?>
+                </select>
+                <br>
+                <br>
+                <label for="datesortie">Date Sortie</label>
+            <input classe="fb" type="date" id="datesortie" name="datesortie"
+                    min="2000-01-01" max="2100-12-31">
+                <br>
+                <br>
+    <input type="submit" name="valider" value="Valider">
+</div>
 
 </form>
 </body>
