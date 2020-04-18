@@ -1,6 +1,5 @@
 <html>
 <head>
-	//
 	<title>Résultats</title>
 	<link rel="stylesheet" href="../Style/style.css" type="text/css" />
 	<link rel="stylesheet" href="../Style/ficheChien.css" type="text/css" />
@@ -31,17 +30,38 @@
 	$sexe = $bdd->query('select sexe.NomSexe from chien,sexe where chien.idChien='.$id.' and chien.idSexe=sexe.IdSexe');
 	$race = $bdd->query('select races.nomRace from races, etrerace where etrerace.idChien='.$id.' and races.idRace=etrerace.idRace ');
 	$prix = $bdd->query('select tarification.tarif from tarification,chien where chien.idTarification=tarification.idTarification and chien.idChien='.$id);
-	$etatLegal = $bdd->query('select etatlegal.idCategorie,etatlegal.description from etatlegal,etrerace where etrerace.idCategorie=etatlegal.idCategorie and etrerace.idChien='.$id.' group by etrerace.idCategorie'); 
-	$vaccin = $bdd->query('select vaccin.nomVaccin from vaccin,etrevaccine where vaccin.idVaccin=etrevaccine.idVaccin and etrevaccine.idChien='.$id);
-	$malade = $bdd->query('select maladie.nomMaladie from maladie,etremalade where maladie.idMaladie=etremalade.idMaladie and etremalade.idChien='.$id);
+	$etatLegal= $bdd->query('select etatlegal.idCategorie,etatlegal.description from etatlegal,etrerace where etrerace.idCategorie=etatlegal.idCategorie and etrerace.idChien='.$id.' group by etrerace.idCategorie'); 
+	$vaccin=$bdd->query('select vaccin.nomVaccin from vaccin,etrevaccine where vaccin.idVaccin=etrevaccine.idVaccin and etrevaccine.idChien='.$id);
+	$malade= $bdd->query('select maladie.nomMaladie from maladie,etremalade where maladie.idMaladie=etremalade.idMaladie and etremalade.idChien='.$id);
 	$social=$bdd->query('select sociabilite.Note, individu.nomIndividu from sociabilite,individu,etresociable where sociabilite.idSociabilite=etresociable.Appreciation and individu.idIndividu=etresociable.idIndividu and etresociable.idChien='.$id);
-
 
 	$race=$race->fetch();
 	$sexe = $sexe->fetch();
 	$prix = $prix->fetch();
 	$ligne = $rep->fetch();
 	$etat=$etatLegal->fetch();
+	echo '<div id=social>';
+    echo '<p> Socialité</p>';
+    while ($socials=$social->fetch()) {
+    	echo '<p>'.$socials['nomIndividu']. ' : '.$socials['Note'].' </p>';
+    }
+    $social->closeCursor();
+    echo '</div>';
+    
+
+
+	$recommandation=recommandation($id);
+	echo '<ul id="reco">';
+	echo '<p id="pRe">Chiens susceptibles de vous interesser</p>';
+	for ($i=0; $i <5 ; $i++) { 
+		$photo=$bdd->query('select chien.nomChien, chien.photo,chien.idChien from chien where chien.idChien='.$recommandation[$i]);
+		$photo=$photo->fetch();
+		echo '<a href="ficheChien.php?identifiant='.$photo['idChien'].'"><li class="chien">';
+		echo '<p>'.$photo['nomChien'].'</p>';
+		echo '<img class="rond2" src="../../BD/photo/'.$photo['photo'].'">';
+		echo '</li></a>';	
+	}
+	echo '</ul>';
 
 	echo '<img class="rond" src="../../BD/photo/'.$ligne["photo"].'">';
 	echo '<div id="chien">';
@@ -54,18 +74,29 @@
 	echo '<p id="cat"> Catégorie : '.$etat['idCategorie'].', '.$etat['description'].'</p>';
 	echo '</div>';
 	echo '<p id="description"> Description : <br> '.$ligne["description"].'</p>';
+	$rep->closeCursor();
 	echo '<div id="sante">';
 	echo '<p id="carnet"> Carnet de santé : </p>';
 	echo '<div id="vaccin">';
 	echo '<p>Vaccin.s :</p>';
-	echo '<ul>';
-	while ($vaccin=$vaccin->fetch()) {
-		echo '<li>'.$vaccin['nomVaccin'].'</li>';
+	while ($vaccins=$vaccin->fetch()) {
+		echo '<p>- '.$vaccins['nomVaccin'].'</p>';
     }
-    echo'</ul>';
+    $vaccin->closeCursor();
+    echo '</div>';
+    echo '<div id="malade">';
+    echo '<p>Maladie.s :</p>';
+	echo '<ul>';
+	while ($malades=$malade->fetch()) {
+		echo '<p>'.$malades['nomMaladie'].'</p>';
+    }
+    echo '</div>';
     echo '</div>';
 
-    echo '<div id="malade">';
+    
+
+
+    /*echo '<div id="malade">';
     echo '<p>Maladie.s :</p>';
 	echo '<ul>';
 	while ($malade=$malade->fetch()) {
@@ -76,14 +107,13 @@
     echo '</div>';
 
     echo '<div id="social">';
-    echo '<p>Social</p>';
-	echo '<ul>';
-	while ($social=$social->fetch()) {
-		echo '<li>'.$social['Note'].' : '.$social['nomIndividu'].'</li>';
+    echo '<ul>';
+    echo '<li> Social </li>';
+    while ($socialW=$social->fetch()){
+    	echo '<li>'.$socialW['nomIndividu'].' : '.$socialW['Note'].'</li>';
     }
-    echo'</ul>';
-    echo '</div>';
-
+    echo '</ul>';
+    echo '</div>';*/
 	?>
 </body>
 </html>

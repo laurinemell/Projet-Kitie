@@ -3,24 +3,25 @@
 	float: right;
 	width: 20em;
 	height: 20em;
-	margin-right: 5em;
+	margin-right: 2em;
+	margin-top: 1em;
 }
 #chien{
 	background-color: wheat;
 	padding: 2em;
 	width: 20em;
 	border-radius: 1em;
-	margin-left: 25em;
+	margin-left: 30em;
 	margin-top: 1em;
 }
 #description{
 	background-color: white;
 	border-radius: 1em;
-	padding: 1em;
-	height: 10em;
-	width: 15em;
+	padding: 0.5em;
+	height: 4em;
+	width: 20em;
 	margin-left: 25em;
-	margin-top: 3em;
+	margin-top: 1em;
 }
 #prix{
 	float: right;
@@ -32,10 +33,10 @@
 #sante{
 	position: absolute;
 	background-color: #3773C7;
-	width: 15em;
+	width: 12em;
 	height: 25em;
 	top : 8em;
-	left: 4em;
+	left: 2em;
 	border-radius: 1em;
 }
 #vaccin{
@@ -57,13 +58,13 @@
 	border-radius: 1em;
 }
 #social{
-	position:absolute;
+	position:fixed;
 	background-color: white;
 	border-radius: 1em;
-	width: 8em;
-	height: 10em;
-	top: 24em;
-	right: 22em;
+	width: 10em;
+	height: 12em;
+	top: 12em;
+	left: 17em;
 	text-align: center;
 }
 #titre{
@@ -72,4 +73,39 @@
 #carnet{
 	color: white;
 	margin-left: 1em;
+}
+#reco{
+	white-space: nowrap;
+	overflow: scroll;
+	padding: 0px;
+	margin: 0px;
+	margin-top: -1em;
+	height: 12em;
+	width: 45em;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: wheat;
+	border-radius: 1em;
+	overflow: hidden;
+	text-align: center;
+	color: white;
+}
+.chien{
+	display: inline-block;
+	margin-left: 0.5em;
+	background-color:  #ffbd48;
+	border-radius: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	text-align: center;
+}
+.rond2{
+display: inline-block;
+width: 5em;
+height: 5em;
+border-radius: 50%;
+overflow: hidden;
+}
+li{
+	list-style: none;
 }
