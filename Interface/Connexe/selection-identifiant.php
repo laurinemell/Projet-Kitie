@@ -22,7 +22,7 @@
     <form  method="get" action="modifier-chien.php" autocomplete="off">
         <div id="div">
            <select class="fo" name="identifiant" id="identifiant">
-            <option>Choisir un chien</option>
+            <option id="ch1">Choisir un chien</option>
                     <?php
                         $bdd = getBD();
                         $reponse = $bdd->query('SELECT * FROM chien');
@@ -33,13 +33,13 @@
                 </select>
                 <br>
                 <br>
-    <input type="submit" name="valider" value="Valider">
+    <input type="submit" class="fb" style="margin-left: 75px;" name="valider" value="Valider">
 </div>
 </form>
 
         <h2>Si la modification concerne une adoption :</h2>
 
-<form  method="get" action="enregistrementAdoption.php" autocomplete="off">
+<form  method="get" action="enregistrementAdoption.php" autocomplete="off" name="mon_form" onSubmit="return validation(this.form)">
         <div id="div">
            <select class="fo" name="identifiant" id="identifiant">
             <option>Choisir un chien</option>
@@ -68,7 +68,7 @@
                     min="2000-01-01" max="2100-12-31">
                 <br>
                 <br>
-    <input type="submit" name="valider" value="Valider">
+    <input type="submit" class="fb" style="margin-left: 75px; name="valider" value="Valider">
 </div>
 
 </form>
