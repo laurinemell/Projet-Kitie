@@ -17,12 +17,14 @@ $req="UPDATE `chien` SET `dateSortie` = '".$_GET['datesortie']."' WHERE `chien`.
 <?php
 
 
-if($_GET['idA']==""){
-	echo "<meta http-equiv='refresh' content='2; URL=selection-identifiant.php'> Vous devez remplir toutes les informations !";
+if($_GET['idA']=="Choisir un adoptant" || $_GET['identifiant']=="Choisir un chien"){
+	echo "<h1>Vous devez remplir toutes les informations </h1>"."</BR>";
+	echo "<meta http-equiv='refresh' content='2; URL=selection-identifiant.php'>";
 }
 	
 else {
-		enregistrer($_GET['idA']);
+		enregistrer($_GET['idA'],$_GET['datesortie']);
+		echo "<h1>L'adoption à été enregistrée !</h1>"."</BR>";
 		echo "<meta http-equiv='refresh' content='2; URL=../../BD/listing.php'>";
 
 
